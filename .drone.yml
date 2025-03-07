@@ -7,9 +7,26 @@ platform:
   arch: amd64
 
 clone:
+  disable: true
   skip_verify: true
 
 steps:
+  - name: sync-code
+    image: alpine/git
+    environment:
+      SSH_KEY:
+        from_secret: ssh_key_dev
+      SSH_FINGERPRINT:
+        from_secret: ssh_fingerprint
+    commands:
+      - mkdir /root/.ssh 
+      - echo -n "$SSH_KEY" >> ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - echo "$SSH_FINGERPRINT" > /etc/ssh/ssh_known_hosts
+      - wc -c ~/.ssh/id_rsa
+      - wc -c /etc/ssh/ssh_known_hosts
+      - git clone git@192.168.5.10:customer-jfyz/jfindx-wms-offical-ui.git -b dev /drone/src/jfindx-wms-offical-ui
+
   - name: publish
     image: plugins/docker
     daemon_off: true
@@ -30,7 +47,7 @@ steps:
       build_args:
         - MILLET_BUILD_ARG=dev
     depends_on:
-      - clone
+      - sync-clone
 
   - name: deploy
     image: dockerhub.milletcode.com/carbon/deploy-bot
@@ -70,9 +87,27 @@ platform:
   arch: amd64
 
 clone:
+  disable: true
   skip_verify: true
 
 steps:
+  - name: sync-code
+    image: alpine/git
+    environment:
+      SSH_KEY:
+        from_secret: ssh_key_dev
+      SSH_FINGERPRINT:
+        from_secret: ssh_fingerprint
+    commands:
+      - mkdir /root/.ssh 
+      - echo -n "$SSH_KEY" >> ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - echo "$SSH_FINGERPRINT" > /etc/ssh/ssh_known_hosts
+      - wc -c ~/.ssh/id_rsa
+      - wc -c /etc/ssh/ssh_known_hosts
+      - git clone git@192.168.5.10:customer-jfyz/jfindx-wms-offical-ui.git -b dev /drone/src/jfindx-wms-offical-ui
+
+
   - name: publish
     image: plugins/docker
     daemon_off: true
@@ -92,7 +127,8 @@ steps:
         - jfindx
       build_args:
         - MILLET_BUILD_ARG=production
-
+    depends_on:
+      - sync-clone
 
   - name: deploy
     image: dockerhub.milletcode.com/carbon/deploy-bot
