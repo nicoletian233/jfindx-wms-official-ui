@@ -25,7 +25,7 @@ steps:
       - echo "$SSH_FINGERPRINT" > /etc/ssh/ssh_known_hosts
       - wc -c ~/.ssh/id_rsa
       - wc -c /etc/ssh/ssh_known_hosts
-      - git clone git@192.168.5.10:customer-jfyz/jfindx-wms-offical-ui.git -b dev /drone/src/jfindx-wms-offical-ui
+      - git clone git@192.168.5.10:customer-jfyz/jfindx-wms-official-ui.git -b dev /drone/src/jfindx-wms-official-ui
 
   - name: publish
     image: plugins/docker
@@ -63,8 +63,8 @@ steps:
       repo:
         from_secret: docker_dev_repo
       namespace: studio
-      deployment: jfindx-wms-offical-ui-dev
-      container: jfindx-wms-offical-ui
+      deployment: jfindx-wms-official-ui-dev
+      container: jfindx-wms-official-ui
       tag: ${DRONE_COMMIT_SHA}
     depends_on:
       - publish
@@ -72,7 +72,7 @@ steps:
 volumes:
   - name: cache
     host:
-      path: /mnt/data/drone-build/jfindx/jfindx-wms-offical-ui/node_modules
+      path: /mnt/data/drone-build/jfindx/jfindx-wms-official-ui/node_modules
 
 trigger:
   branch:
@@ -105,7 +105,7 @@ steps:
       - echo "$SSH_FINGERPRINT" > /etc/ssh/ssh_known_hosts
       - wc -c ~/.ssh/id_rsa
       - wc -c /etc/ssh/ssh_known_hosts
-      - git clone git@192.168.5.10:customer-jfyz/jfindx-wms-offical-ui.git -b dev /drone/src/jfindx-wms-offical-ui
+      - git clone git@192.168.5.10:customer-jfyz/jfindx-wms-official-ui.git -b dev /drone/src/jfindx-wms-official-ui
 
 
   - name: publish
@@ -144,8 +144,8 @@ steps:
       repo:
         from_secret: docker_jfindx_repo
       namespace: studio
-      deployment: jfindx-wms-offical-ui-jfindx
-      container: jfindx-wms-offical-ui
+      deployment: jfindx-wms-official-ui-jfindx
+      container: jfindx-wms-official-ui
       tag: ${DRONE_COMMIT_SHA}
     depends_on:
       - publish
@@ -153,7 +153,7 @@ steps:
 volumes:
   - name: cache
     host:
-      path: /mnt/data/drone-build/jfindx/jfindx-wms-offical-ui/node_modules
+      path: /mnt/data/drone-build/jfindx/jfindx-wms-official-ui/node_modules
 
 trigger:
   branch:
