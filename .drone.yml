@@ -26,8 +26,7 @@ steps:
         - dev
       build_args:
         - MILLET_BUILD_ARG=dev
-    depends_on:
-      - build
+
 
   - name: deploy
     image: dockerhub.milletcode.com/carbon/deploy-bot
@@ -89,8 +88,7 @@ steps:
         - jfindx
       build_args:
         - MILLET_BUILD_ARG=production
-    depends_on:
-      - build
+
 
   - name: deploy
     image: dockerhub.milletcode.com/carbon/deploy-bot
