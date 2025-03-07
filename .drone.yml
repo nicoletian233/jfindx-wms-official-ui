@@ -47,7 +47,7 @@ steps:
       build_args:
         - MILLET_BUILD_ARG=dev
     depends_on:
-      - sync-clone
+      - sync-code
 
   - name: deploy
     image: dockerhub.milletcode.com/carbon/deploy-bot
@@ -128,7 +128,7 @@ steps:
       build_args:
         - MILLET_BUILD_ARG=production
     depends_on:
-      - sync-clone
+      - sync-code
 
   - name: deploy
     image: dockerhub.milletcode.com/carbon/deploy-bot
