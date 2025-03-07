@@ -25,7 +25,7 @@ steps:
       - echo "$SSH_FINGERPRINT" > /etc/ssh/ssh_known_hosts
       - wc -c ~/.ssh/id_rsa
       - wc -c /etc/ssh/ssh_known_hosts
-      - git clone git@192.168.5.10:customer-jfyz/jfindx-wms-official-ui.git -b dev /drone/src/jfindx-wms-official-ui
+      - git clone --depth 1 git@192.168.5.10:customer-jfyz/jfindx-wms-official-ui.git -b ${DRONE_COMMIT_SHA} /drone/src
 
   - name: publish
     image: plugins/docker
@@ -105,7 +105,7 @@ steps:
       - echo "$SSH_FINGERPRINT" > /etc/ssh/ssh_known_hosts
       - wc -c ~/.ssh/id_rsa
       - wc -c /etc/ssh/ssh_known_hosts
-      - git clone git@192.168.5.10:customer-jfyz/jfindx-wms-official-ui.git -b dev /drone/src/jfindx-wms-official-ui
+      - git clone --depth 1 git@192.168.5.10:customer-jfyz/jfindx-wms-official-ui.git -b ${DRONE_COMMIT_SHA} /drone/src
 
 
   - name: publish
