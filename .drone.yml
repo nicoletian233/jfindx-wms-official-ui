@@ -1,0 +1,122 @@
+---
+kind: pipeline
+name: dev
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: publish
+    image: plugins/docker
+    daemon_off: true
+    privileged: true
+    settings:
+      username:
+        from_secret: docker_dev_username
+      password:
+        from_secret: docker_dev_password
+      registry:
+        from_secret: docker_dev_registry
+      repo:
+        from_secret: docker_dev_repo
+      tags:
+        - ${DRONE_COMMIT_SHA}
+        - ${DRONE_COMMIT_BRANCH//\//-}
+        - dev
+      build_args:
+        - MILLET_BUILD_ARG=dev
+    depends_on:
+      - build
+
+  - name: deploy
+    image: dockerhub.milletcode.com/carbon/deploy-bot
+    daemon_off: true
+    privileged: true
+    settings:
+      kubernetes_server:
+        from_secret: kube_dev_api
+      kubernetes_token:
+        from_secret: kube_dev_token
+      kubernetes_cert:
+        from_secret: kube_dev_cert
+      repo:
+        from_secret: docker_dev_repo
+      namespace: studio
+      deployment: jfindx-wms-offical-ui-dev
+      container: jfindx-wms-offical-ui
+      tag: ${DRONE_COMMIT_SHA}
+    depends_on:
+      - publish
+
+volumes:
+  - name: cache
+    host:
+      path: /mnt/data/drone-build/jfindx/jfindx-wms-offical-ui/node_modules
+
+trigger:
+  branch:
+    - dev
+
+---
+kind: pipeline
+name: jfindx
+
+platform:
+  os: linux
+  arch: amd64
+
+clone:
+  skip_verify: true
+
+steps:
+  - name: publish
+    image: plugins/docker
+    daemon_off: true
+    privileged: true
+    settings:
+      username:
+        from_secret: docker_jfindx_username
+      password:
+        from_secret: docker_jfindx_password
+      registry:
+        from_secret: docker_jfindx_registry
+      repo:
+        from_secret: docker_jfindx_repo
+      tags:
+        - ${DRONE_COMMIT_SHA}
+        - ${DRONE_COMMIT_BRANCH//\//-}
+        - jfindx
+      build_args:
+        - MILLET_BUILD_ARG=production
+    depends_on:
+      - build
+
+  - name: deploy
+    image: dockerhub.milletcode.com/carbon/deploy-bot
+    daemon_off: true
+    privileged: true
+    settings:
+      kubernetes_server:
+        from_secret: kube_jfindx_api
+      kubernetes_token:
+        from_secret: kube_jfindx_token
+      kubernetes_cert:
+        from_secret: kube_jfindx_cert
+      repo:
+        from_secret: docker_jfindx_repo
+      namespace: studio
+      deployment: jfindx-wms-offical-ui-jfindx
+      container: jfindx-wms-offical-ui
+      tag: ${DRONE_COMMIT_SHA}
+    depends_on:
+      - publish
+
+volumes:
+  - name: cache
+    host:
+      path: /mnt/data/drone-build/jfindx/jfindx-wms-offical-ui/node_modules
+
+trigger:
+  branch:
+    - master
