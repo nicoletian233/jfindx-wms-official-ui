@@ -6,6 +6,9 @@ platform:
   os: linux
   arch: amd64
 
+clone:
+  skip_verify: true
+
 steps:
   - name: publish
     image: plugins/docker
