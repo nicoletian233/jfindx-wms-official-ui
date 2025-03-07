@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>客户案例-响应式仓储货架销售企业网站模板 - 带下载功能和三级栏目</title>
+<title>在线留言-响应式仓储货架销售企业网站模板 - 带下载功能和三级栏目</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" href="static/css/common.css">
@@ -92,7 +92,7 @@
 
 <div class="webban"><img src="static/picture/1715473978677542.jpg" class="abban_img"/>
   <div class="webba_con">
-    <p>客户案例</p>
+    <p>在线留言</p>
     <i></i><span></span></div>
 </div>
 
@@ -102,44 +102,65 @@
       
       <div class="clear"></div>
     </ul>
-    <p><img src="static/picture/crumb.png" class="ab_mbx"/>当前位置：<a href="/">首页</a> >> <a href="/case/">客户案例</a></p>
+    <p><img src="static/picture/crumb.png" class="ab_mbx"/>当前位置：<a href="/">首页</a> >> <a href="/gbook/">在线留言</a></p>
     <div class="clear"></div>
   </div>
 </div>
-<div class="webhonor">
-  <div class="webhonor_main">
-    <div class="webhonor_list">
-      <ul>
-        
-        <li>
-          <div class="webhonor_img"><a href="/case/78.html"><img src="static/picture/1715475975470920.jpg" alt="案例展示四" width="100%"/></a></div>
-          <a href="/case/78.html" class="webhonor_Name">案例展示四</a></li>
-        
-        <li>
-          <div class="webhonor_img"><a href="/case/77.html"><img src="static/picture/1715475975931572.jpg" alt="案例展示三" width="100%"/></a></div>
-          <a href="/case/77.html" class="webhonor_Name">案例展示三</a></li>
-        
-        <li>
-          <div class="webhonor_img"><a href="/case/76.html"><img src="static/picture/1715475974139943.jpg" alt="案例展示二" width="100%"/></a></div>
-          <a href="/case/76.html" class="webhonor_Name">案例展示二</a></li>
-        
-        <li>
-          <div class="webhonor_img"><a href="/case/75.html"><img src="static/picture/1715475974468286.jpg" alt="案例展示一" width="100%"/></a></div>
-          <a href="/case/75.html" class="webhonor_Name">案例展示一</a></li>
-        
-        <div class="clear"></div>
-      </ul>
+<div class="weborder">
+  <div class="weborder_main">
+    <div class="weborder_left">
+      <p>欢迎您来到我们的<br />
+        在线留言板块！</p>
+      <span>请填写左侧的表格，收到您的留言，我们会尽快与您取得联系。</span>
+      <div class="weborder_btn"><a href="/contact/"><img src="static/picture/ico06.png"/>联系我们</a></div>
     </div>
-    
-    <div class="pagebar">
-    <div class="pagination">
-    <a class="page-item page-link hidden-sm" href="/case/" title="首页">首页</a>
-    <a href="/case/" class="page-num page-num-current">1</a>
-    <a class="page-item page-link" href="javascript:;" title="当前页/总页数">1/1</a>
-    <a class="page-item page-link hidden-sm" href="/case/" title="尾页">尾页</a>
+    <div class="weborder_right">
+      <div class="ly_msg" id="ly_msg">
+          <form action="/message/"  method="post">
+            <h3>留言框 </h3>
+            <ul>
+              <li>
+                <h4 class="xh">您的姓名：</h4>
+                <div class="msg_ipt1">
+                  <input class="textborder" sizetype='text' id='name' name='name' placeholder="请输入您的姓名"/>
+                </div>
+              </li>
+              <li>
+                <h4 class="xh">联系电话：</h4>
+                <div class="msg_ipt1">
+                  <input class="textborder" type='text' id='tel' name='tel' placeholder="请输入您的联系电话"/>
+                </div>
+              </li>
+              <li>
+                <h4>常用邮箱：</h4>
+                <div class="msg_ipt12">
+                  <input class="textborder" type='text' id='email' name='email' placeholder="请输入您的常用邮箱"/>
+                </div>
+              </li>
+              <li>
+                <h4>联系地址：</h4>
+                <div class="msg_ipt12">
+                  <input class="textborder" type='text' id='dizhi' name='dizhi' placeholder="请输入您的联系地址"/>
+                </div>
+              </li>
+              <li>
+                <h4>留言内容：</h4>
+                <div class="msg_ipt12 msg_ipt0">
+                  <textarea class="areatext" style="width:100%;" id='content' name='content' placeholder="请输入您的任何要求、意见或建议"></textarea>
+                </div>
+              </li>
+              <li>
+                <h4></h4>
+                <div class="msg_btn">
+                  <input type="submit" value="提 交" class="msg_btn1" id="tj"/>
+                  <input type="reset" value="重 填"/>
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div>
     </div>
-    </div>	
-    
+    <div class="clear"></div>
   </div>
 </div>
 <div class="ab_foot web_foot">
@@ -188,5 +209,15 @@
   </div>
   <script type="text/javascript" src="static/js/customer.js"></script>
 </div>
+<script>
+	$(function(){
+		$('#tj').click(function(){
+			//alert(1)
+			if($('#name').val()==''){alert('请输入您的姓名！'); $("#name").focus(); return false;}
+			if ($("#tel").val() == "") { alert("请输入你的手机！"); $("#tel").focus(); return false; } 
+			if (!$("#tel").val().match(/^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|(16[0-9]{1})|(17[0-9]{1})|(18[0-9]{1})|(19[0-9]{1}))+\d{8})$/)) { alert("手机号码格式不正确！"); $("#tel").focus(); return false;} 
+		})
+	})
+</script>
 </body>
 </html>
