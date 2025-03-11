@@ -48,10 +48,10 @@
           <div class="col-lg-7 d-none d-lg-block">
             <div class="header-navigation-area">
               <ul class="main-menu nav position-relative">
-                <li><a href="">Home</a></li>
-                <li class="has-submenu"><a href="services.html">Services</a>
+                <li><a href="" data-i18n="home">Home</a></li>
+                <li class="has-submenu"><a href="services.html" data-i18n="services">Services</a>
                   <ul class="submenu-nav">
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="services.html" data-i18n="services">Services</a></li>
                     <li><a href="service-details.html">Service Details</a></li>
                   </ul>
                 </li>
@@ -84,11 +84,18 @@
           </div>
           <div class="col-8 col-sm-6 col-lg-3">
             <div class="header-action-area">
-              <div class="header-lang-dropdown">
+              <!-- <div class="header-lang-dropdown">
                 <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown" aria-expanded="false">EN</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownLang">
                   <li class="dropdown-item active">EN</li>
                   <li class="dropdown-item">CN</li>
+                </ul>
+              </div> -->
+              <div class="header-lang-dropdown">
+                <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown" aria-expanded="false">EN</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
+                  <li class="dropdown-item" data-lang="en">EN</li>
+                  <li class="dropdown-item" data-lang="cn">CN</li>
                 </ul>
               </div>
               <div class="header-action-btn">
@@ -123,10 +130,10 @@
                         <div class="content">
                           <div class="inner-content">
                             <div class="wrap-one">
-                              <h2>Fast & trusted transportation service.</h2>
+                              <h2 data-i18n="hero_title">Fast & trusted transportation service.</h2>
                             </div>
                             <div class="wrap-two">
-                              <p>It is long established fact that reader will be distracted readable content of page when looking.</p>
+                              <p data-i18n="hero_text">It is long established fact that reader will be distracted readable content of page when looking.</p>
                             </div>
                             <div class="wrap-three">
                               <a href="contact.html" class="btn-theme">Booking Now</a>
@@ -664,7 +671,7 @@
               </div>
               <div class="content">
                 <a href="blog.html" class="meta-tag"><span class="post-date"></span>31 June 2022</a>
-                <h3 class="title"><a href="blog-details.html">Fast & trusted transportation service. five centurie’s the into technology.</a></h3>
+                <h3 class="title"><a href="blog-details.html" >Fast & trusted transportation service. five centurie’s the into technology.</a></h3>
                 <p>Stay connect with for daily logistic service update from our logistic action source</p>
                 <a class="btn-link" href="blog-details.html">Read More</a>
               </div>
@@ -860,3 +867,73 @@
 </body>
 
 </html>
+<script>
+  // 初始化语言系统
+  const translations = {
+    "en": {
+      "home": "Home",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "pages": "Pages",
+      "blog": "Blog",
+      "contact": "Contact",
+      "hero_title": "Fast & trusted transportation service.",
+      "hero_text": "It is long established fact that reader will be distracted readable content of page when looking.",
+      // 补充其他需要翻译的字段...
+    },
+    "cn": {
+      "home": "首页",
+      "services": "服务项目",
+      "portfolio": "项目案例", 
+      "pages": "页面",
+      "blog": "新闻资讯",
+      "contact": "联系我们",
+      "hero_title": "快速可靠的运输服务",
+      "hero_text": "读者在浏览页面时容易被可读内容分散注意力，这是长期以来公认的事实。",
+      // 补充其他翻译...
+    }
+  };
+  
+  let currentLang = localStorage.getItem('language') || 'en';
+  
+  // 核心翻译函数
+  function updateLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    
+    // 更新所有带翻译标记的元素
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      element.textContent = translations[lang][key];
+    });
+  
+    // 更新按钮显示
+    document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+    
+    // 切换logo（需要准备中英文logo文件）
+    const logo = document.querySelector('.logo-main');
+    logo.src = lang === 'en' ? 'static/picture/logo.png' : 'static/picture/logo_cn.png';
+  }
+  
+  // 初始化
+  document.addEventListener('DOMContentLoaded', () => {
+    // 初始化语言
+    updateLanguage(currentLang);
+  
+    // 绑定语言切换事件
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = e.target.getAttribute('data-lang');
+        updateLanguage(lang);
+        
+        // 手动关闭下拉菜单（Bootstrap5方法）
+        const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+        dropdown.hide();
+      });
+    });
+  
+    // 初始化Bootstrap下拉组件
+    new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+  });
+  </script>
