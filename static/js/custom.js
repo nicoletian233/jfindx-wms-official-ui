@@ -30,12 +30,16 @@
 
   // Swipper JS
 
-  // Home Two Slider
+  // 首页 Two Slider
   var swiper = new Swiper('.home-slider-container', {
     slidesPerView: 1,
     loop: true,
     spaceBetween: 0,
     effect: 'fade',
+    navigation: {
+      nextEl: '.swiper-btn-next', // 下一页按钮
+      prevEl: '.swiper-btn-prev' // 上一页按钮
+    },
     fadeEffect: {
       crossFade: true,
     },
@@ -149,35 +153,29 @@
   });
 
   var teamSlider = new Swiper('.team-slider-container', {
-    slidesPerView : 4,
-    speed: 1000,
-    loop: true,
-    spaceBetween : 30,
-    autoplay: false,
+    slidesPerView : 4, // 默认显示6个幻灯片
+    speed: 1000, // 切换速度
+    loop: true, // 开启循环模式
+    spaceBetween: 30, // 幻灯片之间的间距
+    autoplay: false, // 是否自动播放
     breakpoints: {
-      1200:{
-          slidesPerView : 4
+      1200: {
+          slidesPerView: 4 // 在1200px宽度下显示5个
       },
-
-      992:{
-          slidesPerView : 4
+      992: {
+          slidesPerView: 4 // 在992px宽度下显示4个
       },
-
-      769:{
-          slidesPerView : 4
-
+      769: {
+          slidesPerView: 4 // 在769px宽度下显示3个
       },
-
-      576:{
-          slidesPerView : 3
+      576: {
+          slidesPerView: 3 // 在576px宽度下显示2个
       },
-
-      381:{
-          slidesPerView : 2
+      381: {
+          slidesPerView: 2 // 在381px宽度下显示2个
       },
-
-      0:{
-          slidesPerView : 1
+      0: {
+          slidesPerView: 1 // 在0px宽度下显示1个
       }
     }
   });
@@ -276,7 +274,7 @@
     }
   });
 
-  // Ajax Contact Form JS
+  // Ajax 联系我们 Form JS
   var form = $('#contact-form');
   var formMessages = $('.form-message');
 
