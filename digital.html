@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JFindX ">
+    <meta name="keywords" content="Logistic, Moving Company, Transportation, business, Transport, Cargo Delivery">
+    <meta name="author" content="Codecarnival">
+
+    <title>智能仓储系统WMS - JFindX </title>
+
+    <!--== Google Fonts ==-->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="static/css/css2.css" rel="stylesheet">
+
+    <!--== Bootstrap CSS ==-->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <!--== Icofont CSS ==-->
+    <link href="static/css/icofont.css" rel="stylesheet">
+    <!--== Swiper CSS ==-->
+    <link href="static/css/swiper.min.css" rel="stylesheet">
+    <!--== Main Style CSS ==-->
+    <link href="static/css/style.css" rel="stylesheet">
+    <style>
+
+      .model-container {
+          height: 500px;
+          background-color: #f8f9fa;
+          border-radius: 8px;
+          margin-bottom: 2rem;
+          position: relative;
+          overflow: hidden;
+      }
+      .feature-card {
+          border: none;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          transition: transform 0.3s;
+          height: 100%;
+      }
+      .feature-card:hover {
+          transform: translateY(-10px);
+      }
+      .case-study {
+          background-color: #f8f9fa;
+          padding: 2rem;
+          border-radius: 8px;
+          margin-bottom: 2rem;
+      }
+      .comparison-chart {
+          height: 300px;
+          background-color: white;
+          border-radius: 8px;
+          margin: 1rem 0;
+          padding: 1rem;
+      }
+      .process-step {
+          text-align: center;
+          padding: 1.5rem;
+      }
+      .process-step .step-number {
+          width: 50px;
+          height: 50px;
+          background-color: #2a5298;
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+          font-weight: bold;
+      }
+  </style>
+</head>
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper page-blog-details-wrapper">
+
+  <!--== Start Header Wrapper ==-->
+  <header class="header-wrapper">
+    <div class="header-area header-default header-transparent sticky-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-4 col-sm-6 col-lg-2">
+            <div class="header-logo-area">
+              <a href="">
+                <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161" height="48">
+                <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161" height="48">
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-9 d-none d-lg-block">
+            <div class="header-navigation-area">
+              <ul class="main-menu nav position-relative">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="wms.html">智能仓储系统WMS</a></li>
+                <li><a href="wcs.html">自动化设备管理系统WCS</a></li>
+                <li class="has-submenu active"><a href="digital.html">数字孪生系统</a></li>
+                <li><a href="about.html">关于我们</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-8 col-sm-6 col-lg-1">
+            <div class="header-action-area">
+              <div class="header-lang-dropdown">
+                <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown" aria-expanded="false">EN</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
+                  <li class="dropdown-item" data-lang="en">EN</li>
+                  <li class="dropdown-item" data-lang="cn">CN</li>
+                </ul>
+              </div>
+              <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <span class="icon-line"></span>
+                <span class="icon-line"></span>
+                <span class="icon-line"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--== End Header Wrapper ==-->
+  
+  <main class="main-content">
+    <!--== Start Page Title Area ==-->
+    <section class="page-title-area bg-img" data-bg-img="static/picture/bwms-1.jpg">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 m-auto">
+            <div class="page-title-content text-center">
+              <h2 class="title">数字孪生系统</h2>
+              <div class="bread-crumbs"><span class="breadcrumb-sep">为您的仓储设施打造虚拟镜像。提前预见问题，优化运营决策，开启智能化仓储新境界。</span></div>
+              <!-- <div class="bread-crumbs"><a href="index.html"> 首页 </a><span class="breadcrumb-sep"> // </span><span class="active"> 数字孪生系统</span></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-overlay3"></div>
+    </section>
+    <!--== End Page Title Area ==-->
+     
+    <!--== Start Blog Area Wrapper ==-->
+      <!-- 3D模型展示 -->
+      <section class="blog-details-area mb-5">
+        <div class="container">
+          <h2 class="text-center mb-4">3D数字孪生模型展示</h2>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="post-details-content">
+                <div class="post-details-body">
+                  <div class="thumb">
+                    <img class="w-100" src="static/picture/dig04.jpg" alt="Image" width="1170" height="550">
+                  </div>
+                  <div class="thumb">
+                    <img class="w-100" src="static/picture/dig05.jpg" alt="Image" width="1170" height="550">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="model-container" id="digitalTwinModel">
+              <!-- 这里将使用Three.js或其他3D库加载模型 -->
+              <div class="d-flex justify-content-center align-items-center h-100">
+                  <div class="text-center">
+                      <div class="spinner-border text-primary" role="status">
+                          <span class="visually-hidden">加载中...</span>
+                      </div>
+                      <p class="mt-3">正在加载3D模型...</p>
+                  </div>
+              </div>
+          </div>
+          <div class="text-center">
+              <button class="btn btn-outline-primary me-2" id="rotateModel">旋转视图</button>
+              <button class="btn btn-outline-primary me-2" id="zoomIn">放大</button>
+              <button class="btn btn-outline-primary" id="zoomOut">缩小</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 创建过程 -->
+      <section class="blog-details-area mb-5">
+        <div class="container">
+          <h2 class="text-center mb-4">数字孪生创建过程</h2>
+          <div class="row">
+              <div class="col-md-3 process-step">
+                  <div class="step-number">1</div>
+                  <h5>数据采集</h5>
+                  <p>通过IoT传感器、激光扫描和CAD图纸获取设施全维度数据</p>
+              </div>
+              <div class="col-md-3 process-step">
+                  <div class="step-number">2</div>
+                  <h5>模型构建</h5>
+                  <p>利用专业软件构建高精度3D模型，还原物理世界细节</p>
+              </div>
+              <div class="col-md-3 process-step">
+                  <div class="step-number">3</div>
+                  <h5>数据集成</h5>
+                  <p>将实时运营数据与模型关联，实现动态映射</p>
+              </div>
+              <div class="col-md-3 process-step">
+                  <div class="step-number">4</div>
+                  <h5>系统部署</h5>
+                  <p>在云端或本地服务器部署，支持多终端访问</p>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 预测性维护 -->
+      <section class="blog-details-area mb-5">
+        <div class="container">
+          <h2 class="text-center mb-4">预测性维护功能</h2>
+          <div class="row">
+              <div class="col-md-4 mb-4">
+                  <div class="card feature-card">
+                      <div class="card-body">
+                          <div class="text-center mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#2a5298" viewBox="0 0 16 16">
+                                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zM4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8z"/>
+                              </svg>
+                          </div>
+                          <h4 class="card-title text-center">设备故障预警</h4>
+                          <p class="card-text">通过机器学习分析设备运行数据，提前发现异常模式，在故障发生前发出预警，减少非计划停机时间。</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                  <div class="card feature-card">
+                      <div class="card-body">
+                          <div class="text-center mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#2a5298" viewBox="0 0 16 16">
+                                  <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                              </svg>
+                          </div>
+                          <h4 class="card-title text-center">性能优化建议</h4>
+                          <p class="card-text">基于数字孪生模拟不同运营场景，自动生成设备参数调整建议，提升整体运行效率15-30%。</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                  <div class="card feature-card">
+                      <div class="card-body">
+                          <div class="text-center mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#2a5298" viewBox="0 0 16 16">
+                                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                  <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+                                  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                                  <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                              </svg>
+                          </div>
+                          <h4 class="card-title text-center">寿命预测</h4>
+                          <p class="card-text">结合设备使用频率、维护记录和环境因素，预测关键部件剩余寿命，科学规划备件采购和更换计划。</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="alert alert-info" style="background-color: #0b1d43;border-color: #0b1d43;color: #fff;">
+              <h5 class="alert-heading">实时监控面板示例</h5>
+              <div class="row mt-3">
+                  <div class="col-md-6">
+                      <div class="mb-3">
+                          <label class="form-label">设备健康度: <strong>92%</strong></label>
+                          <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label">预测故障概率: <strong>8%</strong></label>
+                          <div class="progress">
+                              <div class="progress-bar bg-warning" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="mb-3">
+                          <label class="form-label">能耗效率: <strong>88%</strong></label>
+                          <div class="progress">
+                              <div class="progress-bar bg-info" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                      </div>
+                      <div class="mb-3">
+                          <label class="form-label">优化潜力: <strong>15%</strong></label>
+                          <div class="progress">
+                              <div class="progress-bar bg-primary" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 应用案例 -->
+      <section class="blog-details-area mb-5">
+        <div class="container">
+          <h2 class="text-center mb-4">实际应用案例</h2>
+          
+          <div class="case-study">
+              <h4>贵阳S1号线立体仓储孪生系统</h4>
+              <p>通过数字孪生系统模拟真实立体的仓储情况，对每天的出入库数据以及库位占用情况进行实时监控，优化了堆垛机、输送线和不同设备的协同工作模式。</p>
+              <div class="thumb">
+                <img class="w-100" src="static/picture/dig01.png" alt="Image" width="1170" height="550">
+              </div>
+              <div class="row mt-4">
+                  <div class="col-md-6">
+                      <h5>优化前</h5>
+                      <ul class="list-group mb-3">
+                          <li class="list-group-item">月均能耗: 85,000 kWh</li>
+                          <li class="list-group-item">设备综合效率: 72%</li>
+                          <li class="list-group-item">峰值负载: 450 kW</li>
+                      </ul>
+                  </div>
+                  <div class="col-md-6">
+                      <h5>优化后</h5>
+                      <ul class="list-group mb-3">
+                          <li class="list-group-item list-group-item-success">月均能耗: 68,000 kWh <span class="badge bg-success rounded-pill">-20%</span></li>
+                          <li class="list-group-item list-group-item-success">设备综合效率: 86% <span class="badge bg-success rounded-pill">+14%</span></li>
+                          <li class="list-group-item list-group-item-success">峰值负载: 380 kW <span class="badge bg-success rounded-pill">-15.5%</span></li>
+                      </ul>
+                  </div>
+              </div>
+              
+              <div class="comparison-chart">
+                  <!-- 这里将使用Chart.js等库渲染能耗对比图表 -->
+                  <canvas id="energyComparisonChart"></canvas>
+              </div>
+          </div>
+          
+          <div class="case-study">
+              <h4>高性能烧结钕铁硼智慧系统</h4>
+              <p>海拓智创园高性能烧结钕铁硼智慧系统中的工厂数字孪生平台。通过对核心设备数据提取，对接生产车间管理系统，对接现场自主导航智能叉车调度系统，实现物理环境在虚拟环境下的真实映射，有效的推动硼砂成型压机工厂实现智能化运营，提升效率和加强质量、工艺监控，解决过去存在的问题。打造实时信息流驱动生产和管理活动，将工厂变成透明工厂、智能工厂。</p>
+              <div class="thumb">
+                <img class="w-100" src="static/picture/dig02.png" alt="Image" width="1170" height="550">
+              </div>
+              <div class="row mt-4">
+                  <div class="col-md-6">
+                      <h5>实施前</h5>
+                      <ul class="list-group mb-3">
+                          <li class="list-group-item">年平均非计划停机: 42小时</li>
+                          <li class="list-group-item">故障预测准确率: N/A</li>
+                          <li class="list-group-item">维护成本: ¥380,000/年</li>
+                      </ul>
+                  </div>
+                  <div class="col-md-6">
+                      <h5>实施后</h5>
+                      <ul class="list-group mb-3">
+                          <li class="list-group-item list-group-item-success">年平均非计划停机: 9小时 <span class="badge bg-success rounded-pill">-78.6%</span></li>
+                          <li class="list-group-item list-group-item-success">故障预测准确率: 92%</li>
+                          <li class="list-group-item list-group-item-success">维护成本: ¥260,000/年 <span class="badge bg-success rounded-pill">-31.6%</span></li>
+                      </ul>
+                  </div>
+              </div>
+              
+              <div class="comparison-chart">
+                  <!-- 这里将使用Chart.js等库渲染故障率对比图表 -->
+                  <canvas id="downtimeComparisonChart"></canvas>
+              </div>
+          </div>
+        </div>
+      </section>
+
+  <!--== Start Divider Area Wrapper ==-->
+  <section class="divider-area divider-default-area">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-8 col-md-7">
+          <div class="content">
+            <h2 class="title">准备好体验数字孪生的力量了吗？</h2>
+            <p style="margin: 10px 0;
+    color: #ccc;">我们的专家团队将为您定制专属的数字孪生解决方案</p>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-5">
+          <div class="divider-btn">
+            <a class="btn-theme btn-white" href="index.html">预约演示 <i class="icofont-rounded-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shape-group">
+      <div class="shape-style4">
+        <img src="static/picture/42.webp" alt="Image" width="560" height="250">
+      </div>
+    </div>
+  </section>
+  <!--== End Divider Area Wrapper ==-->
+
+    <!--== End Blog Area Wrapper ==-->
+
+   
+  </main>
+
+  <!--== Start Footer Area Wrapper ==-->
+  <footer class="footer-area default-style">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+            <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
+               <div class="gt-widget-about">
+                  <div class="about-logo">
+                     <a href=""><img src="static/picture/logo.png" alt="Realar"></a>
+                  </div>
+                  <p class="about-text"> JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。
+                  </p>
+                  <div class="gt-social style2">
+                     <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
+                     <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
+                     <a href="https://www.instagram.com/"><i class="icon icofont-linkedin"></i></a>
+                     <a href="https://www.youtube.com/"><i class="icon icofont-skype"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+          <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
+            <div class="widget-item">
+              <h4 class="widget-title">热门产品</h4>
+              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-2">热门产品</h4>
+              <div id="dividerId-2" class="collapse widget-collapse-body">
+                <nav class="widget-menu-wrap">
+                  <ul class="nav-menu nav">
+                    <li><a href="wms.html"><i class="icofont-minus"></i>智能仓储系统WMS</a></li>
+                    <li><a href="wcs.html"><i class="icofont-minus"></i>自动化设备管理系统WCS</a></li>
+                    <li><a href="digital.html"><i class="icofont-minus"></i>数字孪生系统</a></li>
+                    <li><a href="about.html"><i class="icofont-minus"></i>关于我们</a></li>
+                     
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2 col-xl-4">
+            <div class="widget-item ml-35 lg-ml-0">
+              <h4 class="widget-title">联系我们</h4>
+              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-4">联系我们</h4>
+              <div id="dividerId-4" class="collapse widget-collapse-body">
+                <nav class="widget-menu-wrap">
+                  <ul class="nav-menu nav">
+                    <li><a href=""><i class="icofont-minus"></i>公司邮箱</a></li>
+                    <li><a href=""><i class="icofont-minus"></i>130 5204 4828</a></li>
+                    <li><a href="" style="line-height: 35px;
+    vertical-align: sub;"><i class="icofont-minus"></i>浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-shape bg-img" data-bg-img="assets/img/photos/footer1.webp"></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="widget-copyright">
+                 <p>宁波捷方优制科技有限公司版权所有 -
+        <a href="http://beian.miit.gov.cn/" target="_blank">浙ICP备2023030316号</a>
+      </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--== End Footer Area Wrapper ==-->
+  
+  <!--== Scroll Top Button ==-->
+  <div class="scroll-to-top"><span class="icofont-rounded-double-left icofont-rotate-90"></span></div>
+
+  <!--== Start Side Menu ==-->
+  <aside class="off-canvas-area offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Start Mobile Menu Wrapper -->
+      <div class="res-mobile-menu">
+        <nav id="offcanvasNav" class="offcanvas-menu">
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="wms.html">智能仓储系统WMS</a></li>
+            <li><a href="wcs.html">自动化设备管理系统WCS</a></li>
+            <li><a class="color-theme" href="javascript:void(0)">数字孪生系统</a></li>
+            <li><a href="about.html">关于我们</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- End Mobile Menu Wrapper -->
+    </div>
+  </aside>
+  <!--== End Side Menu ==-->
+</div>
+
+<!--=======================Javascript============================-->
+<script>
+   // 这里添加3D模型加载和交互的JavaScript代码
+   document.addEventListener('DOMContentLoaded', function() {
+            // 初始化3D场景
+            init3DModel();
+            
+            // 初始化图表
+            initCharts();
+            
+            // 按钮事件
+            document.getElementById('rotateModel').addEventListener('click', function() {
+                // 旋转模型的代码
+                console.log('旋转模型');
+            });
+            
+            document.getElementById('zoomIn').addEventListener('click', function() {
+                // 放大模型的代码
+                console.log('放大模型');
+            });
+            
+            document.getElementById('zoomOut').addEventListener('click', function() {
+                // 缩小模型的代码
+                console.log('缩小模型');
+            });
+        });
+        
+        function init3DModel() {
+            // 实际项目中这里会使用Three.js或其他3D库加载和渲染模型
+            console.log('初始化3D模型');
+            
+            // 示例代码 - 实际项目需要更复杂的实现
+            const container = document.getElementById('digitalTwinModel');
+            
+            // 创建场景、相机、渲染器等
+            // const scene = new THREE.Scene();
+            // const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            // const renderer = new THREE.WebGLRenderer();
+            // renderer.setSize(container.clientWidth, container.clientHeight);
+            // container.appendChild(renderer.domElement);
+            
+            // 加载模型等操作...
+        }
+        
+        function initCharts() {
+            // 能耗对比图表
+            const energyCtx = document.getElementById('energyComparisonChart').getContext('2d');
+            new Chart(energyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                    datasets: [
+                        {
+                            label: '优化前能耗 (kWh)',
+                            data: [85000, 82000, 87000, 84000, 86000, 88000],
+                            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                        },
+                        {
+                            label: '优化后能耗 (kWh)',
+                            data: [68000, 67000, 69000, 66000, 68000, 67000],
+                            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '月度能耗对比'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: '能耗 (kWh)'
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 故障率对比图表
+            const downtimeCtx = document.getElementById('downtimeComparisonChart').getContext('2d');
+            new Chart(downtimeCtx, {
+                type: 'line',
+                data: {
+                    labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+                    datasets: [
+                        {
+                            label: '实施前停机时间 (小时)',
+                            data: [5, 3, 7, 4, 6, 3],
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        },
+                        {
+                            label: '实施后停机时间 (小时)',
+                            data: [1, 0.5, 2, 1, 0.5, 1],
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '月度非计划停机时间对比'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '停机时间 (小时)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+</script>
+
+<!--=== Modernizr Min Js ===-->
+<script src="static/js/modernizr.js"></script>
+<!--=== jQuery Min Js ===-->
+<script src="static/js/jquery-main.js"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script src="static/js/jquery-migrate.js"></script>
+<!--=== Popper Min Js ===-->
+<script src="static/js/popper.min.js"></script>
+<!--=== Bootstrap Min Js ===-->
+<script src="static/js/bootstrap.min.js"></script>
+<!--=== jquery Swiper Min Js ===-->
+<script src="static/js/swiper.min.js"></script>
+<!--=== jquery Countdown Js ===-->
+<script src="static/js/jquery.countdown.min.js"></script>
+<!--=== Isotope Min Js ===-->
+<script src="static/js/isotope.pkgd.min.js"></script>
+<!-- 3D库和图表库的CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!--=== Custom Js ===-->
+<script src="static/js/custom.js"></script>
+
+</body>
+
+</html>

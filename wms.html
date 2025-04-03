@@ -20,11 +20,11 @@
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
     <!--== Icofont CSS ==-->
     <link href="static/css/icofont.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <!--== Swiper CSS ==-->
     <link href="static/css/swiper.min.css" rel="stylesheet">
     <!--== Main Style CSS ==-->
     <link href="static/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -50,22 +50,14 @@
               <ul class="main-menu nav position-relative">
                 <li><a href="index.html">首页</a></li>
                 <li class="has-submenu active"><a href="wms.html">智能仓储系统WMS</a></li>
-                <li><a href="about.html">设备控制系统WCS</a></li>
-                <li><a href="about.html">数字孪生系统</a></li>
-                <li><a href="about.html">自动化仓储装备</a></li>
+                <li><a href="wcs.html">自动化设备管理系统WCS</a></li>
+                <li><a href="digital.html">数字孪生系统</a></li>
                 <li><a href="about.html">关于我们</a></li>
               </ul>
             </div>
           </div>
           <div class="col-8 col-sm-6 col-lg-1">
             <div class="header-action-area">
-              <!-- <div class="header-lang-dropdown">
-                <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown" aria-expanded="false">EN</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
-                  <li class="dropdown-item active">EN</li>
-                  <li class="dropdown-item">CN</li>
-                </ul>
-              </div> -->
               <div class="header-lang-dropdown">
                 <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown" aria-expanded="false">EN</button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownLang">
@@ -73,9 +65,6 @@
                   <li class="dropdown-item" data-lang="cn">CN</li>
                 </ul>
               </div>
-              <!-- <div class="header-action-btn">
-                <a class="btn-theme" href="contact.html"><span>Get A Quote</span></a>
-              </div> -->
               <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                 <span class="icon-line"></span>
                 <span class="icon-line"></span>
@@ -91,13 +80,14 @@
   
   <main class="main-content">
     <!--== Start Page Title Area ==-->
-    <section class="page-title-area bg-img" data-bg-img="assets/img/photos/bg2.webp">
+    <section class="page-title-area bg-img" data-bg-img="static/picture/bwms-1.jpg">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12 m-auto">
             <div class="page-title-content text-center">
-              <h2 class="title">智能仓储系统WMS</h2>
-              <div class="bread-crumbs"><a href="index.html"> 首页 </a><span class="breadcrumb-sep"> // </span><span class="active"> 智能仓储系统WMS</span></div>
+              <h2 class="title">智能仓储管理软件WMS</h2>
+              <div class="bread-crumbs"><span class="breadcrumb-sep">像大脑一样指挥着整个仓储运作。精准的库存管理、高效的订单处理，让您的仓储管理井井有条。</span></div>
+              <!-- <div class="bread-crumbs"><a href="index.html"> 首页 </a><span class="breadcrumb-sep"> // </span><span class="active"> 智能仓储系统WMS</span></div> -->
             </div>
           </div>
         </div>
@@ -145,7 +135,13 @@
                           <p>通过看板、图形化展示工具等，实现可视化管理。</p>
                           <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252" height="191">
                         </div>
-                        
+                         <div class="rating">
+                            <span class="rating-color icofont-star"></span>
+                            <span class="rating-color icofont-star"></span>
+                            <span class="rating-color icofont-star"></span>
+                            <span class="rating-color icofont-star"></span>
+                            <span class="icofont-star"></span>
+                          </div>
                       </div>
                       <!--== End Testimonial Item ==-->
                     </div>
@@ -172,7 +168,13 @@
                           <p>通过整合自有的历史销售数据、提前预置与定期更新的市场区域、供应链波动等万亿token数据，结合多通道深度学习算法，实现对未来周期的库存需求预测。</p>
                           <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252" height="191">
                         </div>
-                        
+                         <div class="rating">
+                            <span class="rating-color icofont-star"></span>
+                            <span class="rating-color icofont-star"></span>
+                            <span class="rating-color icofont-star"></span>
+                            <span class="rating-color icofont-star"></span>
+                            <span class="icofont-star"></span>
+                          </div>
                       </div>
                       <!--== End Testimonial Item ==-->
                     </div>
@@ -199,6 +201,13 @@
                           <p>各种波次策略、拣货测录、拣货路径优化策略、任务分配策略，皆面向整体作业的高效准确。</p>
                           <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252" height="191">
                         </div>
+                        <div class="rating">
+                            <span class="rating-color icofont-star"></span>
+                            <span class="rating-color icofont-star"></span>
+                            <span class="rating-color icofont-star"></span>
+                            <span class="icofont-star"></span>
+                            <span class="icofont-star"></span>
+                          </div>
                       
                       </div>
                       <!--== End Testimonial Item ==-->
@@ -220,146 +229,193 @@
             <div class="post-details-content">
               <div class="post-details-body">
                 <div class="content-top">
-                  <h4 class="title">系统优势</h4>
-                  <div class="meta">
+                  <h4 class="title">功能模块介绍</h4>
+                  <div class="meta" style="margin-top: 20px;">
                     <!-- <span class="dots"></span> -->
                     <span class="post-date">智能仓储管理软件WMS，像大脑一样指挥着整个仓储运作。精准的库存管理、高效的订单处理，让您的仓储管理井井有条。</span>
                   </div>
                 </div>
                 <div class="thumb">
-                  <img class="w-100" src="static/picture/wms01.jpg" alt="Image" width="1170" height="550">
+                  <img class="w-100" src="static/picture/wms01.png" alt="Image" width="1170" height="550">
                 </div>
                 <div class="content plr-100">
-                  <h4 class="title">产品化、精细化仓储管理系统</h4>
-                  <p>■多个制造业、贸易行业客户业务实践，仓储全业务需求融合与产品中，功能完善。
-                  </p>
-                  <p>■  无论是库位管理、批次管理、供应商管理、处处体现精细化理念。</p>
-                  <p>■  详尽的业务规则，涵盖仓库作业全过程，从容高效处理复杂作业流程。</p>
-                  <p>■  通过看板、图形化展示工具等，实现可视化管理。</p>
-
-                  <h4 class="title">智能化、自动化的仓储设计理念</h4>
-                  <p>■  多个制造业、贸易行业客户业务实践，仓储全业务需求融合与产品中，功能完善。
-                  </p>
-                  <p>■  无论是库位管理、批次管理、供应商管理、处处体现精细化理念。</p>
-                  <p>■  详尽的业务规则，涵盖仓库作业全过程，从容高效处理复杂作业流程。</p>
-                  <p>■  通过看板、图形化展示工具等，实现可视化管理。</p>
-
-                  <h4 class="title">智能化物流仓库的大脑，面向仓库效率提升</h4>
-                  <p>■  WMS系统集成通过集成各类智能物流装备，成为整个仓库内的指挥和协调物流装备的大脑。</p>
-                  <p>■  WMS协同和智慧库内作业设备，获得整体订单处理效率的大幅提升。</p>
-                  <p>■  各种波次策略、拣货测录、拣货路径优化策略、任务分配策略，皆面向整体作业的高效准确。</p>
-                  <div class="list-title">
-                    <h4 class="title">智能化、自动化的仓储设计理念</h4>
+                  <h4 class="title">库存管理模块</h4>
+                  <p>实现库存的实时可视、智能决策和历史追溯，形成闭环管理。</p>
+                  <p><i class="icofont-check-circled"></i>库存查询（实时可视）：提供全仓库存的实时动态查询，支持多维度检索（如SKU、库区、库位、容器等）。</p>
+                    <p><i class="icofont-check-circled"></i>库存分析（决策支持）：通过数据建模挖掘库存规律，优化供应链决策。</p>
+                    <p><i class="icofont-check-circled"></i>库存快照（历史追溯）：定时记录库存状态，形成可追溯的数据档案。</p>
+                  <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms02.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms03.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms04.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
                   </div>
-                  <ul class="list-style">
-                    <li><a href=""><i class="icofont-double-right"></i> It was popularised in the 1960s with the release of Letraset sheets containing</a></li>
-                    <li><a href=""><i class="icofont-double-right"></i> Many desktop publishing packages and web page editors now use</a></li>
-                    <li><a href=""><i class="icofont-double-right"></i> It was popularised in the 1960s with the release of Letraset sheets containing</a></li>
-                    <li><a href=""><i class="icofont-double-right"></i> Many desktop publishing packages and web page editors now use</a></li>
-                    <li><a href=""><i class="icofont-double-right"></i> It was popularised in the 1960s with the release of Letraset sheets containing</a></li>
-                  </ul>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ever since the 1500s, when an unknown printer took a galley of type and scirambled it to make a type specimen book. It has survive only five centuries, but also the leap into electronic typesetting, remaining the essentially unchanged. It was popularised in the 1960 the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing crambled it to make specimen book. It has survived nots only five centuries, but also the leap into.</p>
-                  <h4 class="title">Our company fails the real world test in all kinds of ways.</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been industry standard dummy text ever since the a galley of type and scrambe make type specimen book has survived not only five centuries text of the printing and typesetin indus standard dummy text ever since the 1500s, when an unknown printer.</p>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ever since the 1500s, when an unknown printer took a galley of type and scirambled it to make a type specimen book. It has survive only five centuries, but also the leap into electronic typesetting, remaining the essentially unchanged. It was popularised in the 1960 the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing crambled it to make specimen book. It has survived nots only five centuries, but also the leap into.</p>
+                  
+
+                  <h4 class="title">料箱分拣复核</h4>
+                  <p>确保入库准确性与出库高效性，贯穿物流关键环节。</p>
+                  <p><i class="icofont-check-circled"></i>入库复核： 对到货物料进行二次验证，确保入库数据的准确性，避免错放、漏放。
+                  </p>
+                  <p><i class="icofont-check-circled"></i>出库分拣： 按订单需求快速定位并分拣料箱，确保出库物料与订单100%一致。</p>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms06.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms05.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                  </div>
+
+                  <h4 class="title">盘点管理模块</h4>
+                  <p>盘点管理模块是WMS系统的核心功能之一，主要用于库存实物与系统数据的核对，确保账实一致，及时发现差异并纠偏，保障库存数据的准确性。</p>
+                    <p><i class="icofont-check-circled"></i>盘点任务管理：支持按容器、库区、SKU等多种维度生成盘点任务。支持年度盘点和日常大盘点。</p>
+                    <p><i class="icofont-check-circled"></i>盘点执行：支持PDA扫描， 扫描商品后，系统自动比对库存数据，实时显示差异（多盘/少盘）。</p>
+                    <p><i class="icofont-check-circled"></i>盘点结果处理：自动生成盘点差异报表，支持按SKU、库位、容器等多维度分析。支持人工审核后自动调整系统库存，确保账实一致。</p>
+                  <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms07.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms08.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms09.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-4 col-md-1">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms10.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-4 col-md-1">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms11.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-4 col-md-1">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms12.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                  </div>
+
+                  <h4 class="title">货品管理模块</h4>
+                  <p>货品信息模块是WMS系统的核心主数据中枢，通过七大子模块的协同配置，实现从基础属性到运营规则的全面数字化管理。通过这七大子模块的有机组合，企业可构建适应复杂业务场景的智能化货品主数据体系，为仓储精益化管理奠定坚实基础。
+                  </p>
+                  <p><i class="icofont-check-circled"></i>入库复核： 对到货物料进行二次验证，确保入库数据的准确性，避免错放、漏放。
+                  </p>
+                  <p><i class="icofont-check-circled"></i>出库分拣： 按订单需求快速定位并分拣料箱，确保出库物料与订单100%一致。</p>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms15.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                      <!--== Start Blog Post Item ==-->
+                      <div class="post-item2">
+                        <div class="thumb">
+                          <a href="wms.html"><img src="static/picture/wms14.png" alt="Image" width="370" height="285"></a>
+                        </div>
+                      </div>
+                      <!--== End Blog Post Item ==-->
+                    </div>
+                  </div>
+                  <div class="list-title">
+                    <h4 class="title">仓库布局规划</h4>
+                  </div>
+                  <p>WMS系统不仅可以管理库存和作业流程，还能为仓库布局规划提供强大的数据支持和优化工具。</p>
+                  <p>使用WMS系统进行仓库布局规划是一个数据驱动的科学过程，首先需要从系统中导出货品基础数据（如SKU属性、ABC分类、周转率等）、作业流程数据和设备参数作为规划依据。WMS系统提供的三维建模工具可模拟不同货架排列方式的空间利用率，其智能分区算法能自动划分快慢流区、温控区等特殊存储区域，而动线分析模块则可优化物流路径设计。在实际规划中，需重点考虑将高周转率的A类商品靠近出入口布置，关联性商品就近存储，并合理配置收货区、拣货区和发货区的面积比例。</p>
+                  <p>通过WMS的模拟验证功能，可提前测试布局方案的容量承载、作业效率和扩展灵活性。实施阶段应采取分步策略，先建立框架再填充细节，并将最终布局映射到WMS的库位编码体系。后期还可利用WMS的热力图分析等功能持续优化布局，使仓库空间利用率和作业效率始终保持最佳状态。这种基于WMS的规划方法相比传统经验主义方式更具科学性和可操作性，能有效避免资源浪费。</p>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="thumb-inner">
-                        <img class="w-100" src="static/picture/26.webp" alt="Image" width="970" height="450">
+                        <img class="w-100" src="static/picture/wms16.jpg" alt="Image" width="970" height="450">
                       </div>
                     </div>
                   </div>
-                  <h4 class="title title-style2">Well, that wasn’t the only unconventional thing 37Signals did on their way up.</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ever since the 1500s, when an unknown printer took a galley of type and scirambled it to make a type specimen book. It has survive only five centuries, but also the leap into electronic typesetting, remaining the essentially unchanged. It was popularised in the 1960 the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing crambled it to make specimen book. It has survived nots only five centuries, but also the leap into.</p>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ever since the 1500s, when an unknown printer took a galley of type and scirambled it to make a type specimen book. It has survive only five centuries, but also the leap into electronic typesetting, remaining the essentially unchanged. It was popularised in the 1960 the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing crambled it to make specimen book. It has survived nots only five centuries, but also the leap into.</p>
-                  <blockquote class="blockquote-item">
-                    <div class="content">
-                      <p>2,83k People Receive Our Weekly WordPress Related Newsletter.</p>
-                    </div>
-                  </blockquote>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ever since the 1500s, when an unknown printer took a galley of type and scirambled it to make a type specimen book. It has survive only five centuries, but also the leap into electronic typesetting, remaining the essentially unchanged. It was popularised in the 1960 the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing crambled it to make specimen book. It has survived nots only five centuries, but also the leap into.</p>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy ever since the 1500s, when an unknown printer took a galley of type and scirambled it to make a type specimen book. It has survive only five centuries, but also the leap into electronic typesetting, remaining the essentially unchanged. It was popularised in the 1960 the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing crambled it to make specimen book. It has survived nots only five centuries, but also the leap into.</p>
-                  <div class="widget-social-icons">
-                    <span>Share this article:</span>
-                    <div class="social-icons">
-                      <a class="facebook" href="#/"><i class="icofont-facebook"></i></a>
-                      <a class="twitter" href="#/"><i class="icofont-skype"></i></a>
-                      <a class="dribbble" href="#/"><i class="icofont-twitter"></i></a>
-                      <a class="pinterest" href="#/"><i class="icofont-linkedin"></i></a>
+                  <div class="list-title">
+                    <h4 class="title">与其他系统的集成能力</h4>
+                  </div>
+                  <p>WMS（仓储管理系统）作为企业供应链的智能调度中枢，需要与ERP、MES（制造执行系统）、WCS、PLM、智库、自动化设备（PLC控制/设备协议）等多个系统高效协同，实现从计划层→执行层→设备层的全链路数据贯通，实现数据无缝流转和业务自动化。</p>
+                  <p>通过强大的集成能力，WMS成为企业数字化供应链的“中枢大脑”，助力企业降本增效，提升市场竞争力。</p>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="thumb-inner">
+                        <img class="w-100" src="static/picture/wms13.jpg" alt="Image" width="970" height="450">
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="related-posts-area">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="related-posts">
-                <h2 class="inner-title">You may also like</h2>
-                <div class="swiper-container related-post-slider-container">
-                  <!-- Add Arrows -->
-                  <div class="swiper-button-next"><i class="icofont-long-arrow-right"></i></div>
-                  <div class="swiper-button-prev"><i class="icofont-long-arrow-left"></i></div>
-                  <div class="swiper-wrapper related-post-slider">
-                    <div class="swiper-slide">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href=""><img src="static/picture/15.webp" alt="Image" width="350" height="270"></a>
-                        </div>
-                        <div class="content">
-                          <div class="author">By <a href="blog.html">Michael Becker</a></div>
-                          <h4 class="title"><a href="">Why wild animal welfare in addition to farmed animal...</a></h4>
-                          <div class="meta">
-                            <span class="post-date">03 April, 2022 </span>
-                            <span class="dots"></span>
-                            <span class="post-time"> 10 min read</span>
-                          </div>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="swiper-slide">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href=""><img src="static/picture/16.webp" alt="Image" width="350" height="270"></a>
-                        </div>
-                        <div class="content">
-                          <div class="author">By <a href="blog.html">Michael Becker</a></div>
-                          <h4 class="title"><a href="">Organizations and individual advocates around the world...</a></h4>
-                          <div class="meta">
-                            <span class="post-date">03 April, 2022 </span>
-                            <span class="dots"></span>
-                            <span class="post-time"> 10 min read</span>
-                          </div>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="swiper-slide">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href=""><img src="static/picture/17.webp" alt="Image" width="350" height="270"></a>
-                        </div>
-                        <div class="content">
-                          <div class="author">By <a href="blog.html">Michael Becker</a></div>
-                          <h4 class="title"><a href="">It is not currently possible for us to have a good sense.</a></h4>
-                          <div class="meta">
-                            <span class="post-date">03 April, 2022 </span>
-                            <span class="dots"></span>
-                            <span class="post-time"> 10 min read</span>
-                          </div>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                  </div>
+                  
+                
                 </div>
               </div>
             </div>
@@ -370,66 +426,12 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-10">
-              <div class="comment-view-area">
-                <h2 class="title">Comments (03)</h2>
-                <div class="comment-content">
-                  <div class="single-comment">
-                    <div class="author-info">
-                      <div class="thumb">
-                        <img src="static/picture/a11.webp" alt="Image" width="72" height="72">
-                      </div>
-                      <div class="author-details">
-                        <h4 class="title">Sara Alexander</h4>
-                        <ul>
-                          <li>Product Designer, USA  || <span>  35 minutes ago</span></li>
-                        </ul>
-                        <a class="btn-reply" href="#/"><i class="icofont-reply"></i>Reply</a>
-                      </div>
-                      <p>There are many variations of passages lorem Ipsum available but the majority have suffered alteration dnner some form or randomised words which don't look even slightly believable. If you are goinge to use a passage of orem psum be sure anything embarrassing.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="comment-content comment-content-style2">
-                  <div class="single-comment">
-                    <div class="author-info">
-                      <div class="thumb">
-                        <img src="static/picture/a21.webp" alt="Image" width="72" height="72">
-                      </div>
-                      <div class="author-details">
-                        <h4 class="title">Robert Morgan</h4>
-                        <ul>
-                          <li>Product Designer, USA  || <span>  35 minutes ago</span></li>
-                        </ul>
-                        <a class="btn-reply" href="#/"><i class="icofont-reply"></i>Reply</a>
-                      </div>
-                      <p>There are many variations of passages lorem Ipsum available but the majority have suffered alteration dnner some form or randomised words which don't look even slightly believable. If you are goinge to use a passage of orem psum be sure anything embarrassing.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="comment-content comment-content-style2">
-                  <div class="single-comment">
-                    <div class="author-info">
-                      <div class="thumb">
-                        <img src="static/picture/a3.webp" alt="Image" width="72" height="72">
-                      </div>
-                      <div class="author-details">
-                        <h4 class="title">Rochelle Hunt</h4>
-                        <ul>
-                          <li>Product Designer, USA  || <span>  35 minutes ago</span></li>
-                        </ul>
-                        <a class="btn-reply" href="#/"><i class="icofont-reply"></i>Reply</a>
-                      </div>
-                      <p>There are many variations of passages lorem Ipsum available but the majority have suffered alteration dnner some form or randomised words which don't look even slightly believable. If you are goinge to use a passage of orem psum be sure anything embarrassing.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <div class="comment-form-wrap">
                 <form class="comment-form-wrapper" id="comment-form" action="https://whizthemes.com/mail-php/raju/arden/mail.php" method="post">
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="section-title m-0">
-                        <h2 class="title">Leave a comment</h2>
+                        <h2 class="title">留言板</h2>
                       </div>
                     </div>
                   </div>
@@ -438,24 +440,43 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Name">
+                            <input class="form-control" type="text" placeholder="留言标题">
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input class="form-control" type="email" placeholder="Email">
+                            <input class="form-control" type="email" placeholder="留言邮箱">
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                            <textarea class="form-control" placeholder="Massage"></textarea>
+                            <textarea class="form-control" placeholder="留言内容"></textarea>
                           </div>
                         </div>
-                        <div class="col-md-12">
-                          <div class="form-group text-center mb-0">
-                            <button class="btn btn-theme" type="submit">Submit Now <i class="icofont-double-right"></i></button>
-                          </div>
-                        </div>
+                          <!-- 新增：图片验证码 -->
+  <div class="col-md-12">
+    <div class="form-group">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="captchaInput" placeholder="请输入验证码" required>
+        </div>
+        <div class="col-md-4">
+          <canvas id="captchaCanvas" width="120" height="40" style="border: 1px solid #ddd;margin-right: 10px;"></canvas>
+          <a href="#" onclick="generateCaptcha(); return false;" class="small">刷新验证码</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-md-12">
+    <div class="form-group text-center mb-0">
+      <button class="btn btn-theme" type="submit" id="submit-btn">立即提交<i class="icofont-double-right"></i></button>
+    </div>
+  </div> -->
+  <div class="col-md-12">
+    <div class="form-group mb-0">
+      <button class="btn btn-theme" type="submit">立即提交<i class="icofont-rounded-double-right mr-0"></i></button>
+    </div>
+  </div>
                       </div>
                     </div>
                   </div>
@@ -469,12 +490,12 @@
     <!--== End Blog Area Wrapper ==-->
 
     <!--== Start Divider Area Wrapper ==-->
-    <section class="divider-area divider-default-area">
+    <!-- <section class="divider-area divider-default-area">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-sm-8 col-md-7">
             <div class="content">
-              <h2 class="title">Stay connect with for<br> daily logistic service update.</h2>
+              <h2 class="title">保持联系以便获取最新资讯</h2>
             </div>
           </div>
           <div class="col-sm-4 col-md-5">
@@ -489,7 +510,7 @@
           <img src="static/picture/42.webp" alt="Image" width="560" height="250">
         </div>
       </div>
-    </section>
+    </section> -->
     <!--== End Divider Area Wrapper ==-->
   </main>
 
@@ -498,28 +519,23 @@
     <div class="footer-main">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <div class="widget-item">
-              <h4 class="widget-title">JFindX</h4>
-              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-1">JFindX</h4>
-              <div id="dividerId-1" class="collapse widget-collapse-body">
-                <div class="widget-blog-wrap">
-                  <div class="blog-post-item">
-                    <div class="content">
-                      <h4 class="title"><i class="icon icofont-minus"></i> <a href="">自动化解决方案专家，为您量身定制最适合的自动化方案</a></h4>
-                      <div class="meta-date"><a href="blog.html"><i class="icofont-calendar"></i> 28/05/2022</a></div>
-                    </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+            <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
+               <div class="gt-widget-about">
+                  <div class="about-logo">
+                     <a href=""><img src="static/picture/logo.png" alt="Realar"></a>
                   </div>
-                  <div class="blog-post-item">
-                    <div class="content">
-                      <h4 class="title"><i class="icon icofont-minus"></i> <a href="">涵盖从硬件设备到软件系统的全方位服务</a></h4>
-                      <div class="meta-date"><a href="blog.html"><i class="icofont-calendar"></i> 31/05/2022</a></div>
-                    </div>
+                  <p class="about-text"> JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。
+                  </p>
+                  <div class="gt-social style2">
+                     <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
+                     <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
+                     <a href="https://www.instagram.com/"><i class="icon icofont-linkedin"></i></a>
+                     <a href="https://www.youtube.com/"><i class="icon icofont-skype"></i></a>
                   </div>
-                </div>
-              </div>
+               </div>
             </div>
-          </div>
+         </div>
           <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
             <div class="widget-item">
               <h4 class="widget-title">热门产品</h4>
@@ -527,44 +543,27 @@
               <div id="dividerId-2" class="collapse widget-collapse-body">
                 <nav class="widget-menu-wrap">
                   <ul class="nav-menu nav">
-                    <li><a href="service-details.html"><i class="icofont-minus"></i>JFINDX WMS 智能仓储管理系统</a></li>
-                    <li><a href="service-details.html"><i class="icofont-minus"></i>JFINDX WCS 仓储设备控制系统</a></li>
-                    <li><a href="service-details.html"><i class="icofont-minus"></i> JFINDX DTS 数字孪生系统</a></li>
-                    <li><a href="service-details.html"><i class="icofont-minus"></i>自动化仓储装备</a></li>
+                    <li><a href="wms.html"><i class="icofont-minus"></i>智能仓储系统WMS</a></li>
+                    <li><a href="wcs.html"><i class="icofont-minus"></i>自动化设备管理系统WCS</a></li>
+                    <li><a href="digital.html"><i class="icofont-minus"></i>数字孪生系统</a></li>
+                    <li><a href="about.html"><i class="icofont-minus"></i>关于我们</a></li>
+                     
                   </ul>
                 </nav>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-3 col-xl-3">
-            <div class="widget-item ml-40 ml-lg-20 md-ml-0">
-              <h4 class="widget-title">Important</h4>
-              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-3">Important</h4>
-              <div id="dividerId-3" class="collapse widget-collapse-body">
-                <nav class="widget-menu-wrap">
-                  <ul class="nav-menu nav">
-                    <li><a href="about.html"><i class="icofont-minus"></i>About Maskat</a></li>
-                    <li><a href="index.html"><i class="icofont-minus"></i>Price & Planning</a></li>
-                    <li><a href="contact.html"><i class="icofont-minus"></i>Client Support</a></li>
-                    <li><a href="index.html"><i class="icofont-minus"></i>Privacy & Policy</a></li>
-                    <li><a href="contact.html"><i class="icofont-minus"></i>联系我们</a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2 col-xl-2">
+          <div class="col-md-6 col-lg-2 col-xl-4">
             <div class="widget-item ml-35 lg-ml-0">
-              <h4 class="widget-title">关注我们</h4>
-              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-4">关注我们</h4>
+              <h4 class="widget-title">联系我们</h4>
+              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-4">联系我们</h4>
               <div id="dividerId-4" class="collapse widget-collapse-body">
                 <nav class="widget-menu-wrap">
                   <ul class="nav-menu nav">
-                    <li><a href="index.html"><i class="icofont-minus"></i>Facebook</a></li>
-                    <li><a href="index.html"><i class="icofont-minus"></i>Twitter</a></li>
-                    <li><a href="index.html"><i class="icofont-minus"></i>Instragram</a></li>
-                    <li><a href="index.html"><i class="icofont-minus"></i>Youtube</a></li>
-                    <li><a href="index.html"><i class="icofont-minus"></i>Medium</a></li>
+                    <li><a href=""><i class="icofont-minus"></i>公司邮箱</a></li>
+                    <li><a href=""><i class="icofont-minus"></i>130 5204 4828</a></li>
+                    <li><a href="" style="line-height: 35px;
+    vertical-align: sub;"><i class="icofont-minus"></i>浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</a></li>
                   </ul>
                 </nav>
               </div>
@@ -606,36 +605,10 @@
         <nav id="offcanvasNav" class="offcanvas-menu">
           <ul>
             <li><a href="index.html">首页</a></li>
-            <li><a href="javascript:void(0)">Services</a>
-              <ul>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="service-details.html">Service Details</a></li>
-              </ul>
-            </li>
-            <li><a href="javascript:void(0)">Portfolio</a>
-              <ul>
-                <li><a href="projects.html">Portfolio</a></li>
-                <li><a href="project-details.html">Portfolio Details</a></li>
-              </ul>
-            </li>
-            <li><a href="javascript:void(0)">关于我们</a>
-              <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="coming-soon.html">Coming soon</a></li>
-                <li><a href="page-not-found.html">404</a></li>
-              </ul>
-            </li>
-            <li><a class="color-theme" href="javascript:void(0)">Blog</a>
-              <ul>
-                <li><a href="blog.html">Blog 3 Column</a></li>
-                <li><a href="blog-4-column.html">Blog 4 Column</a></li>
-                <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                <li><a href="blog.html">Blog No Sidebar</a></li>
-                <li><a href="">智能仓储系统WMS</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html">联系我们</a></li>
+            <li><a class="color-theme" href="javascript:void(0)">智能仓储系统WMS</a></li>
+            <li><a href="wcs.html">自动化设备管理系统WCS</a></li>
+            <li><a href="digital.html">数字孪生系统</a></li>
+            <li><a href="about.html">关于我们</a></li>
           </ul>
         </nav>
       </div>
@@ -646,6 +619,46 @@
 </div>
 
 <!--=======================Javascript============================-->
+<script>
+  // 生成随机验证码
+  function generateCaptcha() {
+    const canvas = document.getElementById('captchaCanvas');
+    const ctx = canvas.getContext('2d');
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let captchaText = '';
+
+    // 清空画布
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // 生成4位随机字符
+    for (let i = 0; i < 4; i++) {
+      captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    // 绘制验证码（带干扰线）
+    ctx.font = '24px Arial';
+    ctx.fillStyle = '#333';
+    ctx.fillText(captchaText, 20, 28);
+
+    // 存储验证码（不安全，仅演示用）
+    canvas.dataset.captcha = captchaText;
+  }
+
+  // 初始化验证码
+  generateCaptcha();
+
+  // 表单提交验证
+  document.querySelector('form').addEventListener('submit', function(e) {
+    const userInput = document.getElementById('captchaInput').value;
+    const trueCaptcha = document.getElementById('captchaCanvas').dataset.captcha;
+
+    if (userInput !== trueCaptcha) {
+      e.preventDefault();
+      alert('验证码错误！');
+      generateCaptcha(); // 刷新验证码
+    }
+  });
+</script>
 
 <!--=== Modernizr Min Js ===-->
 <script src="static/js/modernizr.js"></script>
