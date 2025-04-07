@@ -1,10 +1,15 @@
-# 告诉 Netlify 需要扫描 about.html 的表单
+# 1. 显式声明表单扫描（适用于拖拽部署）
 [[forms]]
-  name = "contact"
+  action = "/about.html"  # 表单所在页面路径
+  name = "test"           # 需与表单的 name="test" 完全匹配
   method = "POST"
 
-# 显式声明 about.html 是处理路径
+# 2. 确保 about.html 可访问（非必须，除非有特殊路由）
 [[redirects]]
   from = "/about"
   to = "/about.html"
   status = 200
+
+# 3. 启用表单处理插件（需通过 Git 部署）
+[[plugins]]
+  package = "netlify-plugin-forms"
