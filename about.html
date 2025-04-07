@@ -132,33 +132,33 @@
                   <p>如果您对我们的自动化解决方案感兴趣或有任何疑问，请随时与我们联系。我们期待与您开启合作之旅。</p>
                 </div>
                 <div class="contact-form mb-md-70">
-                  <form class="contact-form-wrapper" id="contact-form" action="http://whizthemes.com/mail-php/raju/arden/mail.php" method="post">
+                  <form class="contact-form-wrapper" id="contact-form" name="contact" method="POST" netlify data-netlify="true">
                     <div class="row">
                       <div class="col-lg-12">
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
-                              <input class="form-control" type="text" name="con_name" placeholder="姓名">
+                              <input class="form-control" type="text" name="name" placeholder="姓名" required>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <input class="form-control" type="text" name="con_com" placeholder="公司名称">
+                              <input class="form-control" type="text" name="company" placeholder="公司名称">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <input class="form-control" type="text" name="con_phone" placeholder="联系方式">
+                              <input class="form-control" type="tel" name="phone" placeholder="联系方式" required>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <input class="form-control" type="text" name="con_main" placeholder="咨询主题">
+                              <input class="form-control" type="text" name="subject" placeholder="咨询主题" required>
                             </div>
                           </div>
                           <div class="col-md-12">
                             <div class="form-group">
-                              <textarea class="form-control" name="con_message" placeholder="详细问题"></textarea>
+                              <textarea class="form-control" name="message" placeholder="详细问题" required></textarea>
                             </div>
                           </div>
                           <div class="col-md-12">
