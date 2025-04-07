@@ -1,0 +1,10 @@
+# 告诉 Netlify 需要扫描 about.html 的表单
+[[forms]]
+  name = "contact"
+  method = "POST"
+
+# 显式声明 about.html 是处理路径
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
