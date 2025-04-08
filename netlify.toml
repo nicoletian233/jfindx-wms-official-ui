@@ -1,7 +1,7 @@
 # 1. 显式声明表单扫描（适用于拖拽部署）
 [[forms]]
   action = "/about.html"  # 表单所在页面路径
-  name = "test"           # 需与表单的 name="test" 完全匹配
+  name = "contact"           # 需与表单的 name="contact" 完全匹配
   method = "POST"
 
 # 2. 确保 about.html 可访问（非必须，除非有特殊路由）
