@@ -9,7 +9,3 @@
   from = "/about"
   to = "/about.html"
   status = 200
-
-# 3. 启用表单处理插件（需通过 Git 部署）
-[[plugins]]
-  package = "netlify-plugin-forms"
