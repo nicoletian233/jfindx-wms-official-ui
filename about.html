@@ -171,14 +171,6 @@
                         </div>
                       </div>
                     </div>
-                    <!-- 成功消息容器 -->
-                    <div id="contact-success-message" style="display: none; color: green; margin-top: 15px; text-align: center;">
-                      <i class="icofont-check-circled"></i> 提交成功！我们会尽快联系您。
-                    </div>
-                    <!-- 错误消息容器 -->
-                    <div id="contact-error-message" style="display: none; color: red; margin-top: 15px; text-align: center;">
-                      <i class="icofont-close-circled"></i> 提交失败，请稍后再试
-                    </div>
                   </form>
                 </div>
                 <!-- Message Notification -->
@@ -496,15 +488,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     });
     
     if(response.ok) {
-      document.getElementById('contact-success-message').style.display = 'block';
-      document.getElementById('contact-error-message').style.display = 'none';
+      alert("提交成功！我们会尽快联系您。");
       form.reset();
     } else {
-      throw new Error('提交失败');
+      alert("提交失败，请稍后重试。");
     }
   } catch(error) {
-    document.getElementById('contact-error-message').style.display = 'block';
-    document.getElementById('contact-success-message').style.display = 'none';
+    alert("提交失败，请稍后重试。");
   }
 });
 </script>

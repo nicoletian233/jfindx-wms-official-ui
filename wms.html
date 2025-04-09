@@ -476,14 +476,6 @@
                       </div>
                     </div>
                   </div>
-                  <!-- 成功消息容器 -->
-                  <div id="comment-success-message" style="display: none; color: green; margin-top: 15px; text-align: center;">
-                    <i class="icofont-check-circled"></i> 留言提交成功！
-                  </div>
-                  <!-- 错误消息容器 -->
-                  <div id="comment-error-message" style="display: none; color: red; margin-top: 15px; text-align: center;">
-                    <i class="icofont-close-circled"></i> 提交失败，请稍后再试
-                  </div>
                 </form>
               </div>
             </div>
@@ -657,15 +649,13 @@
   generateCaptcha();
   
   // 表单提交处理
-  document.getElementById('comment-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
+  document.getElementById("comment-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
     
     // 验证码验证
     const userInput = document.getElementById('captchaInput').value;
     if(userInput.toUpperCase() !== captchaText) {
-      document.getElementById('comment-error-message').textContent = '验证码错误，请重新输入';
-      document.getElementById('comment-error-message').style.display = 'block';
-      document.getElementById('comment-success-message').style.display = 'none';
+      alert("验证码错误，请重新输入");
       generateCaptcha();
       return;
     }
@@ -673,24 +663,27 @@
     const form = e.target;
     const formData = new FormData(form);
     
+      // 确保所有字段已包含
+  if (!formData.has("captcha")) {
+    formData.append("captcha", document.getElementById("captchaInput").value);
+  }
+
     try {
       const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+         method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
       });
       
       if(response.ok) {
-        document.getElementById('comment-success-message').style.display = 'block';
-        document.getElementById('comment-error-message').style.display = 'none';
+        alert("提交成功！");
         form.reset();
         generateCaptcha(); // 提交成功后刷新验证码
       } else {
-        throw new Error('提交失败');
+        alert("提交失败，请稍后重试。");
       }
     } catch(error) {
-      document.getElementById('comment-error-message').style.display = 'block';
-      document.getElementById('comment-success-message').style.display = 'none';
+      alert("提交失败，请稍后重试。");
       generateCaptcha();
     }
   });
