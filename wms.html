@@ -442,45 +442,47 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input class="form-control" type="text" placeholder="留言标题" required>
+                            <input class="form-control" type="text" name="title" placeholder="留言标题" required>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input class="form-control" type="email" placeholder="留言邮箱" required>
+                            <input class="form-control" type="email" name="email" placeholder="留言邮箱" required>
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                            <textarea class="form-control" placeholder="留言内容" required></textarea>
+                            <textarea class="form-control" name="content" placeholder="留言内容" required></textarea>
                           </div>
                         </div>
-                          <!-- 新增：图片验证码 -->
-  <div class="col-md-12">
-    <div class="form-group">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <input type="text" class="form-control" id="captchaInput" placeholder="请输入验证码" required>
-        </div>
-        <div class="col-md-4">
-          <canvas id="captchaCanvas" width="120" height="40" style="border: 1px solid #ddd;margin-right: 10px;"></canvas>
-          <a href="#" onclick="generateCaptcha(); return false;" class="small">刷新验证码</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- <div class="col-md-12">
-    <div class="form-group text-center mb-0">
-      <button class="btn btn-theme" type="submit" id="submit-btn">立即提交<i class="icofont-double-right"></i></button>
-    </div>
-  </div> -->
-  <div class="col-md-12">
-    <div class="form-group mb-0">
-      <button class="btn btn-theme" type="submit">立即提交<i class="icofont-rounded-double-right mr-0"></i></button>
-    </div>
-  </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <div class="row align-items-center">
+                              <div class="col-md-6">
+                                <input type="text" class="form-control" id="captchaInput" name="captcha" placeholder="请输入验证码" required>
+                              </div>
+                              <div class="col-md-4">
+                                <canvas id="captchaCanvas" width="120" height="40" style="border: 1px solid #ddd;margin-right: 10px;"></canvas>
+                                <a href="#" onclick="generateCaptcha(); return false;" class="small">刷新验证码</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group mb-0">
+                            <button class="btn btn-theme" type="submit">立即提交<i class="icofont-rounded-double-right mr-0"></i></button>
+                          </div>
+                        </div>
                       </div>
                     </div>
+                  </div>
+                  <!-- 成功消息容器 -->
+                  <div id="comment-success-message" style="display: none; color: green; margin-top: 15px; text-align: center;">
+                    <i class="icofont-check-circled"></i> 留言提交成功！
+                  </div>
+                  <!-- 错误消息容器 -->
+                  <div id="comment-error-message" style="display: none; color: red; margin-top: 15px; text-align: center;">
+                    <i class="icofont-close-circled"></i> 提交失败，请稍后再试
                   </div>
                 </form>
               </div>
@@ -622,45 +624,77 @@
 
 <!--=======================Javascript============================-->
 <script>
-  // 生成随机验证码
+  // 验证码生成逻辑
+  let captchaText = '';
   function generateCaptcha() {
     const canvas = document.getElementById('captchaCanvas');
     const ctx = canvas.getContext('2d');
-    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    let captchaText = '';
-
-    // 清空画布
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // 生成4位随机字符
-    for (let i = 0; i < 4; i++) {
+    // 生成随机验证码
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    captchaText = '';
+    for(let i = 0; i < 5; i++) {
       captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
     }
-
-    // 绘制验证码（带干扰线）
+    
+    // 绘制验证码
     ctx.font = '24px Arial';
     ctx.fillStyle = '#333';
-    ctx.fillText(captchaText, 20, 28);
-
-    // 存储验证码（不安全，仅演示用）
-    canvas.dataset.captcha = captchaText;
+    ctx.fillText(captchaText, 10, 30);
+    
+    // 添加干扰线
+    for(let i = 0; i < 5; i++) {
+      ctx.strokeStyle = '#ccc';
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+      ctx.stroke();
+    }
   }
-
+  
   // 初始化验证码
   generateCaptcha();
-
-  // 表单提交验证
-  document.querySelector('form').addEventListener('submit', function(e) {
+  
+  // 表单提交处理
+  document.getElementById('comment-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // 验证码验证
     const userInput = document.getElementById('captchaInput').value;
-    const trueCaptcha = document.getElementById('captchaCanvas').dataset.captcha;
-
-    if (userInput !== trueCaptcha) {
-      e.preventDefault();
-      alert('验证码错误！');
-      generateCaptcha(); // 刷新验证码
+    if(userInput.toUpperCase() !== captchaText) {
+      document.getElementById('comment-error-message').textContent = '验证码错误，请重新输入';
+      document.getElementById('comment-error-message').style.display = 'block';
+      document.getElementById('comment-success-message').style.display = 'none';
+      generateCaptcha();
+      return;
+    }
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+      
+      if(response.ok) {
+        document.getElementById('comment-success-message').style.display = 'block';
+        document.getElementById('comment-error-message').style.display = 'none';
+        form.reset();
+        generateCaptcha(); // 提交成功后刷新验证码
+      } else {
+        throw new Error('提交失败');
+      }
+    } catch(error) {
+      document.getElementById('comment-error-message').style.display = 'block';
+      document.getElementById('comment-success-message').style.display = 'none';
+      generateCaptcha();
     }
   });
-</script>
+  </script>  
 
 <!--=== Modernizr Min Js ===-->
 <script src="static/js/modernizr.js"></script>

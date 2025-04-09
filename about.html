@@ -171,6 +171,14 @@
                         </div>
                       </div>
                     </div>
+                    <!-- 成功消息容器 -->
+                    <div id="contact-success-message" style="display: none; color: green; margin-top: 15px; text-align: center;">
+                      <i class="icofont-check-circled"></i> 提交成功！我们会尽快联系您。
+                    </div>
+                    <!-- 错误消息容器 -->
+                    <div id="contact-error-message" style="display: none; color: red; margin-top: 15px; text-align: center;">
+                      <i class="icofont-close-circled"></i> 提交失败，请稍后再试
+                    </div>
                   </form>
                 </div>
                 <!-- Message Notification -->
@@ -473,6 +481,32 @@
     });
     marker.setLabel(label);
   }
+  // 提交表单
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const form = e.target;
+  const formData = new FormData(form);
+  
+  try {
+    const response = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    });
+    
+    if(response.ok) {
+      document.getElementById('contact-success-message').style.display = 'block';
+      document.getElementById('contact-error-message').style.display = 'none';
+      form.reset();
+    } else {
+      throw new Error('提交失败');
+    }
+  } catch(error) {
+    document.getElementById('contact-error-message').style.display = 'block';
+    document.getElementById('contact-success-message').style.display = 'none';
+  }
+});
 </script>
 <script src="https://api.map.baidu.com/api?v=3.0&ak=rIZVF5yTw4RRyKKbxi9fg5ZGaA4v4W8O&callback=initMap"></script> 
 <!--=== Modernizr Min Js ===-->
