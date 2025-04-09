@@ -219,7 +219,7 @@ table p {
 }
 .section-title .subtitle {
   color: #265c9d;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 27px;
   letter-spacing: 1.7px;
@@ -3844,6 +3844,8 @@ table p {
   margin-bottom: 30px;
   padding: 35px 35px 0;
   text-align: center;
+  height: 150px;
+        line-height: 120px;
 }
 @media only screen and (max-width: 1199px) {
   .team-member .thumb {
@@ -3860,6 +3862,8 @@ table p {
 .team-member .thumb img {
   border-radius: 2px;
   width: 100%;
+  object-fit: contain;
+  max-height: 100%;
 }
 .team-member .content {
   background-color: #05103b;
