@@ -452,7 +452,17 @@
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
-                            <textarea class="form-control" name="content" placeholder="留言内容" required></textarea>
+                            <textarea 
+                              class="form-control" 
+                              name="content" 
+                              id="message-content" 
+                              maxlength="500" 
+                              required
+                              oninput="updateCharCounter()"
+                            ></textarea>
+                            <div class="text-right small text-muted mt-1">
+                              <span id="char-counter">0</span>/500
+                            </div>
                           </div>
                         </div>
                         <div class="col-md-12">
@@ -616,6 +626,12 @@
 
 <!--=======================Javascript============================-->
 <script>
+// 字符计数
+function updateCharCounter() {
+  const textarea = document.getElementById("message-content");
+  const counter = document.getElementById("char-counter");
+  counter.textContent = textarea.value.length;
+}
   // 验证码生成逻辑
   let captchaText = '';
   function generateCaptcha() {
@@ -651,6 +667,11 @@
   // 表单提交处理
   document.getElementById("comment-form").addEventListener("submit", async (e) => {
   e.preventDefault();
+    if (document.getElementById("message-content").value.length > 500) {
+    alert("内容不能超过500字！");
+    return;
+  }
+
     
     // 验证码验证
     const userInput = document.getElementById('captchaInput').value;
