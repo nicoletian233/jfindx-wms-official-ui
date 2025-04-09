@@ -427,7 +427,9 @@
           <div class="row justify-content-center">
             <div class="col-lg-10">
               <div class="comment-form-wrap">
-                <form class="comment-form-wrapper" id="comment-form" action="https://whizthemes.com/mail-php/raju/arden/mail.php" method="post">
+                <form class="comment-form-wrapper" id="comment-form" name="comment" method="POST" netlify data-netlify="true">
+                  <!-- 必加：隐藏字段确保 Netlify 识别 -->
+                  <input type="hidden" name="form-name" value="comment">
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="section-title m-0">
