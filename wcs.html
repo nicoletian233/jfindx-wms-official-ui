@@ -2,825 +2,1018 @@
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JFindX ">
-    <meta name="keywords" content="Logistic, Moving Company, Transportation, business, Transport, Cargo Delivery">
-    <meta name="author" content="Codecarnival">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JFindX ">
+  <meta name="keywords" content="Logistic, Moving Company, Transportation, business, Transport, Cargo Delivery">
+  <meta name="author" content="Codecarnival">
 
-    <title>自动化设备管理系统WCS - JFindX </title>
+  <title data-i18n="wcs_page_title">自动化设备管理系统WCS - JFindX </title>
 
-    <!--== Google Fonts ==-->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="static/css/css2.css" rel="stylesheet">
+  <!--== Google Fonts ==-->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="static/css/css2.css" rel="stylesheet">
 
-    <!--== Bootstrap CSS ==-->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-    <!--== Icofont CSS ==-->
-    <link href="static/css/icofont.css" rel="stylesheet">
-    <!--== Swiper CSS ==-->
-    <link href="static/css/swiper.min.css" rel="stylesheet">
-    <!--== Main Style CSS ==-->
-    <link href="static/css/style.css" rel="stylesheet">
-    <style>
-      /* 全局样式 */
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Microsoft YaHei', Arial, sans-serif;
-      }
-      
-      body {
-          background-color: #f5f7fa;
-          color: #333;
-      }
-      
-      .section {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 60px 20px;
-      }
-      
-      .section-title {
-          text-align: center;
-          margin-bottom: 50px;
-          font-size: 32px;
-          color: #1a3e72;
-          position: relative;
-      }
-      
-      .section-title:after {
-          content: "";
-          display: block;
-          width: 80px;
-          height: 3px;
-          background: #2a5caa;
-          margin: 15px auto 0;
-      }
-      
-      /* 主容器 */
+  <!--== Bootstrap CSS ==-->
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  <!--== Icofont CSS ==-->
+  <link href="static/css/icofont.css" rel="stylesheet">
+  <!--== Swiper CSS ==-->
+  <link href="static/css/swiper.min.css" rel="stylesheet">
+  <!--== Main Style CSS ==-->
+  <link href="static/css/style.css" rel="stylesheet">
+  <style>
+    /* 全局样式 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Microsoft YaHei', Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 32px;
+      color: #1a3e72;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #2a5caa;
+      margin: 15px auto 0;
+    }
+
+    /* 主容器 */
+    .main-container {
+      display: flex;
+      gap: 30px;
+    }
+
+    /* 左侧箭头流程区 */
+    .arrow-process {
+      flex: 1;
+      min-width: 400px;
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    /* 垂直箭头轨道 */
+    .arrow-track {
+      position: absolute;
+      left: 60px;
+      top: 80px;
+      bottom: 30px;
+      width: 8px;
+      background: #e0e9f5;
+      z-index: 1;
+    }
+
+    /* 单个箭头步骤 */
+    .arrow-step {
+      position: relative;
+      margin-bottom: 60px;
+      padding-left: 120px;
+      min-height: 80px;
+      z-index: 2;
+    }
+
+    /* 箭头形状 */
+    .arrow-shape {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 60px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      clip-path: polygon(0 0%, 100% 0, 100% 15%, 100% 85%, 50% 100%, 0 85%);
+      writing-mode: vertical-lr;
+      text-orientation: mixed;
+      transform: translateX(-26px);
+      padding: 20px 0;
+    }
+
+    /* 奇数箭头 - 蓝色 */
+    .arrow-step:nth-child(odd) .arrow-shape {
+      background: #2a5caa;
+      left: 30px;
+    }
+
+    /* 偶数箭头 - 浅蓝色 */
+    .arrow-step:nth-child(even) .arrow-shape {
+      background: #4fc3f7;
+      left: 30px;
+    }
+
+    /* 设备展示区 */
+    .step-devices {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .device-card {
+      width: calc(50% - 8px);
+      display: flex;
+      align-items: center;
+      background: #f8fafc;
+      border-radius: 6px;
+      padding: 10px;
+      transition: all 0.3s;
+    }
+
+    .device-card:hover {
+      background: #e1e8f7;
+      transform: translateY(-3px);
+    }
+
+    .device-icon {
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+      background: white;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .device-icon img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+    .device-info {
+      flex: 1;
+    }
+
+    .device-name {
+      font-size: 14px;
+      font-weight: bold;
+      color: #1a3e72;
+      margin-bottom: 3px;
+    }
+
+    .device-type {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* 右侧设备列表区（保持原样） */
+    .devices-list {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .list-title {
+      font-size: 24px;
+      color: #1a3e72;
+      margin-bottom: 25px;
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .device-category {
+      margin-bottom: 25px;
+    }
+
+    .category-title {
+      font-size: 18px;
+      color: #2a5caa;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 4px solid #2a5caa;
+    }
+
+    .device-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .device-item {
+      background: #f8f9fa;
+      padding: 12px 15px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .device-item:hover {
+      background: #e1e8f7;
+      transform: translateY(-2px);
+    }
+
+    .device-item:before {
+      content: "•";
+      color: #2a5caa;
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 992px) {
       .main-container {
-          display: flex;
-          gap: 30px;
+        flex-direction: column;
       }
-      
-      /* 左侧箭头流程区 */
-      .arrow-process {
-          flex: 1;
-          min-width: 400px;
-          background: white;
-          border-radius: 8px;
-          padding: 30px;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-          position: relative;
-      }
-      
-      /* 垂直箭头轨道 */
-      .arrow-track {
-          position: absolute;
-          left: 60px;
-          top: 80px;
-          bottom: 30px;
-          width: 8px;
-          background: #e0e9f5;
-          z-index: 1;
-      }
-      
-      /* 单个箭头步骤 */
-      .arrow-step {
-          position: relative;
-          margin-bottom: 60px;
-          padding-left: 120px;
-          min-height: 80px;
-          z-index: 2;
-      }
-      
-      /* 箭头形状 */
-      .arrow-shape {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 60px;
-          height: 180px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 18px;
-          font-weight: bold;
-          color: white;
-          clip-path: polygon(0 0%, 100% 0, 100% 15%, 100% 85%, 50% 100%, 0 85%);
-          writing-mode: vertical-lr;
-          text-orientation: mixed;
-          transform: translateX(-26px);
-          padding: 20px 0;
-      }
-      
-      /* 奇数箭头 - 蓝色 */
-      .arrow-step:nth-child(odd) .arrow-shape {
-          background: #2a5caa;
-          left: 30px;
-      }
-      
-      /* 偶数箭头 - 浅蓝色 */
-      .arrow-step:nth-child(even) .arrow-shape {
-          background: #4fc3f7;
-          left: 30px;
-      }
-      
-      /* 设备展示区 */
-      .step-devices {
-          margin-top: 15px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 15px;
-      }
-      
-      .device-card {
-          width: calc(50% - 8px);
-          display: flex;
-          align-items: center;
-          background: #f8fafc;
-          border-radius: 6px;
-          padding: 10px;
-          transition: all 0.3s;
-      }
-      
-      .device-card:hover {
-          background: #e1e8f7;
-          transform: translateY(-3px);
-      }
-      
-      .device-icon {
-          width: 80px;
-          height: 80px;
-          margin-right: 10px;
-          background: white;
-          border-radius: 6px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          flex-shrink: 0;
-      }
-      
-      .device-icon img {
-          max-width: 80%;
-          max-height: 80%;
-          object-fit: contain;
-      }
-      
-      .device-info {
-          flex: 1;
-      }
-      
-      .device-name {
-          font-size: 14px;
-          font-weight: bold;
-          color: #1a3e72;
-          margin-bottom: 3px;
-      }
-      
-      .device-type {
-          font-size: 12px;
-          color: #666;
-      }
-      
-      /* 右侧设备列表区（保持原样） */
+
+      .arrow-process,
       .devices-list {
-          flex: 1;
-          min-width: 300px;
-          background: white;
-          border-radius: 8px;
-          padding: 30px;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        min-width: auto;
       }
-      
-      .list-title {
-          font-size: 24px;
-          color: #1a3e72;
-          margin-bottom: 25px;
-          text-align: center;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #eee;
+
+      .arrow-step {
+        padding-left: 100px;
       }
-      
-      .device-category {
-          margin-bottom: 25px;
+
+      .arrow-shape {
+        height: 150px;
       }
-      
-      .category-title {
-          font-size: 18px;
-          color: #2a5caa;
-          margin-bottom: 15px;
-          padding-left: 10px;
-          border-left: 4px solid #2a5caa;
+
+      .device-card {
+        width: 100%;
       }
-      
-      .device-items {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          gap: 12px;
+    }
+
+    @media (max-width: 576px) {
+      .arrow-step {
+        padding-left: 90px;
       }
-      
-      .device-item {
-          background: #f8f9fa;
-          padding: 12px 15px;
-          border-radius: 4px;
-          display: flex;
-          align-items: center;
-          transition: all 0.3s ease;
+
+      .arrow-shape {
+        height: 130px;
+        font-size: 16px;
       }
-      
-      .device-item:hover {
-          background: #e1e8f7;
-          transform: translateY(-2px);
+
+      .arrow-track {
+        left: 50px;
       }
-      
-      .device-item:before {
-          content: "•";
-          color: #2a5caa;
-          margin-right: 8px;
-          font-weight: bold;
-      }
-      
-      /* 响应式调整 */
-      @media (max-width: 992px) {
-          .main-container {
-              flex-direction: column;
-          }
-          
-          .arrow-process, .devices-list {
-              min-width: auto;
-          }
-          
-          .arrow-step {
-              padding-left: 100px;
-          }
-          
-          .arrow-shape {
-              height: 150px;
-          }
-          
-          .device-card {
-              width: 100%;
-          }
-      }
-      
-      @media (max-width: 576px) {
-          .arrow-step {
-              padding-left: 90px;
-          }
-          
-          .arrow-shape {
-              height: 130px;
-              font-size: 16px;
-          }
-          
-          .arrow-track {
-              left: 50px;
-          }
-      }
+    }
   </style>
 </head>
 
 <body>
 
-<!--wrapper start-->
-<div class="wrapper page-blog-details-wrapper">
+  <!--wrapper start-->
+  <div class="wrapper page-blog-details-wrapper">
 
-  <!--== Start Header Wrapper ==-->
-  <header class="header-wrapper">
-    <div class="header-area header-default header-transparent sticky-header">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-4 col-sm-6 col-lg-2">
-            <div class="header-logo-area">
-              <a href="">
-                <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161" height="48">
-                <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161" height="48">
-              </a>
+    <!--== Start Header Wrapper ==-->
+    <header class="header-wrapper">
+      <div class="header-area header-default header-transparent sticky-header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-4 col-sm-6 col-lg-2">
+              <div class="header-logo-area">
+                <a href="">
+                  <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161" height="48">
+                  <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161" height="48">
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-9 d-none d-lg-block">
-            <div class="header-navigation-area">
-              <ul class="main-menu nav position-relative">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="wms.html">智能仓储系统WMS</a></li>
-                <li class="has-submenu active"><a href="wcs.html">自动化设备管理系统WCS</a></li>
-                <li><a href="digital.html">数字孪生系统</a></li>
-                <li><a href="about.html">关于我们</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-8 col-sm-6 col-lg-1">
-            <div class="header-action-area">
-              <div class="header-lang-dropdown">
-                <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown" aria-expanded="false">CN</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
-                  <li class="dropdown-item" data-lang="en">EN</li>
-                  <li class="dropdown-item" data-lang="cn">CN</li>
+            <div class="col-lg-9 d-none d-lg-block">
+              <div class="header-navigation-area">
+                <ul class="main-menu nav position-relative">
+                  <li><a href="index.html" data-i18n="home">首页</a></li>
+                  <li><a href="wms.html" data-i18n="wms">智能仓储系统WMS</a></li>
+                  <li class="has-submenu active"><a href="wcs.html" data-i18n="wcs">自动化设备管理系统WCS</a></li>
+                  <li><a href="digital.html" data-i18n="digital">数字孪生系统</a></li>
+                  <li><a href="about.html" data-i18n="about">关于我们</a></li>
                 </ul>
               </div>
-              <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                <span class="icon-line"></span>
-                <span class="icon-line"></span>
-                <span class="icon-line"></span>
-              </button>
+            </div>
+            <div class="col-8 col-sm-6 col-lg-1">
+              <div class="header-action-area">
+                <div class="header-lang-dropdown">
+                  <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown"
+                    aria-expanded="false">CN</button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownLang">
+                    <li class="dropdown-item" data-lang="en">EN</li>
+                    <li class="dropdown-item" data-lang="cn">CN</li>
+                  </ul>
+                </div>
+                <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                  <span class="icon-line"></span>
+                  <span class="icon-line"></span>
+                  <span class="icon-line"></span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
-  <!--== End Header Wrapper ==-->
-  
-  <main class="main-content">
-    <!--== Start Page Title Area ==-->
-    <section class="page-title-area bg-img" data-bg-img="static/picture/bwms-1.jpg">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-12 m-auto">
-            <div class="page-title-content text-center">
-              <h2 class="title">自动化设备管理系统WCS</h2>
-              <div class="bread-crumbs"><span class="breadcrumb-sep">连接硬件与软件的桥梁，确保每一个自动化设备都能协同工作，发挥最大效能。</span></div>
-              <!-- <div class="bread-crumbs"><a href="index.html"> 首页 </a><span class="breadcrumb-sep"> // </span><span class="active"> 自动化设备管理系统WCS</span></div> -->
+    </header>
+    <!--== End Header Wrapper ==-->
+
+    <main class="main-content">
+      <!--== Start Page Title Area ==-->
+      <section class="page-title-area bg-img" data-bg-img="static/picture/bwms-1.jpg">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12 m-auto">
+              <div class="page-title-content text-center">
+                <h2 class="title" data-i18n="wcs_title">自动化设备管理系统WCS</h2>
+                <div class="bread-crumbs"><span class="breadcrumb-sep"
+                    data-i18n="wcs_subtitle">连接硬件与软件的桥梁，确保每一个自动化设备都能协同工作，发挥最大效能。</span></div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="bg-overlay3"></div>
+      </section>
+      <!--== End Page Title Area ==-->
+      <!--== Start Blog Area Wrapper ==-->
+      <section class="blog-details-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="post-details-content">
+                <div class="post-details-body">
+                  <div class="thumb">
+                    <img class="w-100" src="static/picture/wcs02.png" alt="Image" width="1170" height="550">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <h2 class="section-title" data-i18n="wcs_section_title">JFINDX WCS 可对接设备</h2>
+
+        <div class="main-container">
+          <!-- 左侧 - 箭头流程区 -->
+          <div class="arrow-process">
+            <h3 class="flow-title" data-i18n="wcs_flow_title">仓储作业流程与设备</h3>
+            <div class="arrow-track"></div>
+
+            <!-- 流程1 -->
+            <div class="arrow-step">
+              <div class="arrow-shape" data-i18n="wcs_process1">收货存储</div>
+              <div class="step-devices">
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs13.png" alt="立体仓库">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device1">ASRS立体仓库</div>
+                    <div class="device-type" data-i18n="wcs_device1_desc">自动化存储设备</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/bwms-2.jpg" alt="A型货架">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device2">A型货架</div>
+                    <div class="device-type" data-i18n="wcs_device2_desc">重型存储系统</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/bwms-1.jpg" alt="流利货架">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device3">流利式货架</div>
+                    <div class="device-type" data-i18n="wcs_device3_desc">重力式货架</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs12.jpeg" alt="RFID">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device4">RFID识别</div>
+                    <div class="device-type" data-i18n="wcs_device4_desc">自动识别技术</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 流程2 -->
+            <div class="arrow-step">
+              <div class="arrow-shape" data-i18n="wcs_process2">补货流程</div>
+              <div class="step-devices">
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/agv11.png" alt="穿梭车">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device5">四向穿梭车</div>
+                    <div class="device-type" data-i18n="wcs_device5_desc">智能搬运设备</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs08.jpg" alt="AGV">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device6">AGV机器人</div>
+                    <div class="device-type" data-i18n="wcs_device6_desc">自动导引运输</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs10.jpg" alt="输送线">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device7">箱式输送线</div>
+                    <div class="device-type" data-i18n="wcs_device7_desc">自动化输送系统</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 流程3 -->
+            <div class="arrow-step">
+              <div class="arrow-shape" data-i18n="wcs_process3">分拣发货</div>
+              <div class="step-devices">
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs11.jpg" alt="分拣机">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device8">滑轮分拣机</div>
+                    <div class="device-type" data-i18n="wcs_device8_desc">高效分拣系统</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs14.jpeg" alt="拣货站">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device9">人到货拣选站</div>
+                    <div class="device-type" data-i18n="wcs_device9_desc">人工拣选系统</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs15.png" alt="亮灯">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device10">亮灯拣选系统</div>
+                    <div class="device-type" data-i18n="wcs_device10_desc">电子辅助拣货</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs16.jpeg" alt="语音">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device11">语音识别系统</div>
+                    <div class="device-type" data-i18n="wcs_device11_desc">语音指导拣货</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 流程4 -->
+            <div class="arrow-step">
+              <div class="arrow-shape" data-i18n="wcs_process4">复核包装</div>
+              <div class="step-devices">
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs17.jpeg" alt="包装台">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device12">整箱核送区</div>
+                    <div class="device-type" data-i18n="wcs_device12_desc">包装复核区域</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs18.png" alt="贴标">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device13">自动贴标机</div>
+                    <div class="device-type" data-i18n="wcs_device13_desc">标签贴附设备</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs19.jpeg" alt="封箱">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device14">自动封箱机</div>
+                    <div class="device-type" data-i18n="wcs_device14_desc">纸箱封装系统</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 流程5 -->
+            <div class="arrow-step">
+              <div class="arrow-shape" data-i18n="wcs_process5">订单管理</div>
+              <div class="step-devices">
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wms01.png" alt="WMS">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device15">WMS系统</div>
+                    <div class="device-type" data-i18n="wcs_device15_desc">仓库管理系统</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/wcs09.jpg" alt="机器人">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device16">CTU机器人</div>
+                    <div class="device-type" data-i18n="wcs_device16_desc">料箱搬运机器人</div>
+                  </div>
+                </div>
+                <div class="device-card">
+                  <div class="device-icon">
+                    <img src="static/picture/screen01.png" alt="看板">
+                  </div>
+                  <div class="device-info">
+                    <div class="device-name" data-i18n="wcs_device17">数字看板</div>
+                    <div class="device-type" data-i18n="wcs_device17_desc">实时监控系统</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右侧 - 设备列表区 -->
+          <div class="devices-list">
+            <h3 class="list-title" data-i18n="wcs_device_list_title">支持对接设备列表</h3>
+
+            <div class="device-category">
+              <h4 class="category-title" data-i18n="wcs_category1">自动化存储设备</h4>
+              <div class="device-items">
+                <div class="device-item" data-i18n="wcs_device_item1">ASRS立库</div>
+                <div class="device-item" data-i18n="wcs_device_item2">Miniload</div>
+                <div class="device-item" data-i18n="wcs_device_item3">多层四向穿梭车</div>
+              </div>
+            </div>
+
+            <div class="device-category">
+              <h4 class="category-title" data-i18n="wcs_category2">智能搬运设备</h4>
+              <div class="device-items">
+                <div class="device-item" data-i18n="wcs_device_item4">AGV/AMR搬运机器人</div>
+                <div class="device-item" data-i18n="wcs_device_item5">CTU料箱机器人</div>
+                <div class="device-item" data-i18n="wcs_device_item6">码垛拆垛机器人</div>
+              </div>
+            </div>
+
+            <div class="device-category">
+              <h4 class="category-title" data-i18n="wcs_category3">输送分拣系统</h4>
+              <div class="device-items">
+                <div class="device-item" data-i18n="wcs_device_item7">托盘输送线</div>
+                <div class="device-item" data-i18n="wcs_device_item8">箱式输送线</div>
+                <div class="device-item" data-i18n="wcs_device_item9">滑块分拣线</div>
+                <div class="device-item" data-i18n="wcs_device_item10">交叉带分拣线</div>
+                <div class="device-item" data-i18n="wcs_device_item11">悬挂输送线</div>
+              </div>
+            </div>
+
+            <div class="device-category">
+              <h4 class="category-title" data-i18n="wcs_category4">智能检测设备</h4>
+              <div class="device-items">
+                <div class="device-item" data-i18n="wcs_device_item12">动态称重</div>
+                <div class="device-item" data-i18n="wcs_device_item13">外形检测</div>
+              </div>
+            </div>
+
+            <div class="device-category">
+              <h4 class="category-title" data-i18n="wcs_category5">信息识别系统</h4>
+              <div class="device-items">
+                <div class="device-item" data-i18n="wcs_device_item14">语音识别</div>
+                <div class="device-item" data-i18n="wcs_device_item15">电子标签</div>
+                <div class="device-item" data-i18n="wcs_device_item16">RFID</div>
+              </div>
+            </div>
+
+            <div class="device-category">
+              <h4 class="category-title" data-i18n="wcs_category6">包装设备</h4>
+              <div class="device-items">
+                <div class="device-item" data-i18n="wcs_device_item17">自动贴标机</div>
+                <div class="device-item" data-i18n="wcs_device_item18">自动封箱机</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--== End Blog Area Wrapper ==-->
+
+      <!--== Start Divider Area Wrapper ==-->
+      <section class="divider-area divider-default-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-sm-8 col-md-7">
+              <div class="content">
+                <h2 class="title" data-i18n="contact_title">保持联系以便获取最新资讯</h2>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-5">
+              <div class="divider-btn">
+                <a class="btn-theme btn-white" href="index.html" data-i18n="subscribe_now">Subscribe Now <i
+                    class="icofont-rounded-double-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="shape-group">
+          <div class="shape-style4">
+            <img src="static/picture/42.webp" alt="Image" width="560" height="250">
+          </div>
+        </div>
+      </section>
+      <!--== End Divider Area Wrapper ==-->
+    </main>
+
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="footer-area default-style">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+              <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
+                <div class="gt-widget-about">
+                  <div class="about-logo">
+                    <a href=""><img src="static/picture/logo.png" alt="Realar"></a>
+                  </div>
+                  <p class="about-text" data-i18n="footer_desc"> JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。
+                  </p>
+                  <div class="gt-social style2">
+                    <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
+                    <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
+                    <a href="https://www.instagram.com/"><i class="icon icofont-linkedin"></i></a>
+                    <a href="https://www.youtube.com/"><i class="icon icofont-skype"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
+              <div class="widget-item">
+                <h4 class="widget-title" data-i18n="popular_products">热门产品</h4>
+                <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#dividerId-2" data-i18n="popular_products">热门产品</h4>
+                <div id="dividerId-2" class="collapse widget-collapse-body">
+                  <nav class="widget-menu-wrap">
+                    <ul class="nav-menu nav">
+                      <li><a href="wms.html"><i class="icofont-minus"></i><span data-i18n="wms">智能仓储系统WMS</span></a>
+                      </li>
+                      <li><a href="wcs.html"><i class="icofont-minus"></i><span data-i18n="wcs">自动化设备管理系统WCS</span></a>
+                      </li>
+                      <li><a href="digital.html"><i class="icofont-minus"></i><span
+                            data-i18n="digital">数字孪生系统</span></a></li>
+                      <li><a href="about.html"><i class="icofont-minus"></i><span data-i18n="about">关于我们</span></a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-2 col-xl-4">
+              <div class="widget-item ml-35 lg-ml-0">
+                <h4 class="widget-title" data-i18n="contact_us">联系我们</h4>
+                <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#dividerId-4" data-i18n="contact_us">联系我们</h4>
+                <div id="dividerId-4" class="collapse widget-collapse-body">
+                  <nav class="widget-menu-wrap">
+                    <ul class="nav-menu nav">
+                      <li><a href=""><i class="icofont-minus"></i><span data-i18n="company_email">公司邮箱</span></a></li>
+                      <li><a href=""><i class="icofont-minus"></i><span data-i18n="company_phone">130 5204
+                            4828</span></a></li>
+                      <li><a href="" style="line-height: 35px;vertical-align: sub;"><i class="icofont-minus"></i><span
+                            data-i18n="company_address">浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</span></a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-shape bg-img" data-bg-img="assets/img/photos/footer1.webp"></div>
       </div>
-      <div class="bg-overlay3"></div>
-    </section>
-    <!--== End Page Title Area ==-->
-    <!--== Start Blog Area Wrapper ==-->
-    <section class="blog-details-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="post-details-content">
-              <div class="post-details-body">
-                <div class="thumb">
-                  <img class="w-100" src="static/picture/wcs02.png" alt="Image" width="1170" height="550">
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="widget-copyright">
+                  <p data-i18n="copyright">宁波捷方优制科技有限公司版权所有 -
+                    <a href="http://beian.miit.gov.cn/" target="_blank">浙ICP备2023030316号</a>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section class="section">
-      <h2 class="section-title">JFINDX WCS 可对接设备</h2>
-      
-      <div class="main-container">
-          <!-- 左侧 - 箭头流程区 -->
-          <div class="arrow-process">
-              <h3 class="flow-title">仓储作业流程与设备</h3>
-              <div class="arrow-track"></div>
-              
-              <!-- 流程1 -->
-              <div class="arrow-step">
-                  <div class="arrow-shape">收货存储</div>
-                  <div class="step-devices">
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs13.png" alt="立体仓库">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">ASRS立体仓库</div>
-                              <div class="device-type">自动化存储设备</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/bwms-2.jpg" alt="A型货架">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">A型货架</div>
-                              <div class="device-type">重型存储系统</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/bwms-1.jpg" alt="流利货架">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">流利式货架</div>
-                              <div class="device-type">重力式货架</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs12.jpeg" alt="RFID">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">RFID识别</div>
-                              <div class="device-type">自动识别技术</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <!-- 流程2 -->
-              <div class="arrow-step">
-                  <div class="arrow-shape">补货流程</div>
-                  <div class="step-devices">
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/agv11.png" alt="穿梭车">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">四向穿梭车</div>
-                              <div class="device-type">智能搬运设备</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs08.jpg" alt="AGV">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">AGV机器人</div>
-                              <div class="device-type">自动导引运输</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs10.jpg" alt="输送线">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">箱式输送线</div>
-                              <div class="device-type">自动化输送系统</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <!-- 流程3 -->
-              <div class="arrow-step">
-                  <div class="arrow-shape">分拣发货</div>
-                  <div class="step-devices">
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs11.jpg" alt="分拣机">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">滑轮分拣机</div>
-                              <div class="device-type">高效分拣系统</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs14.jpeg" alt="拣货站">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">人到货拣选站</div>
-                              <div class="device-type">人工拣选系统</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs15.png" alt="亮灯">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">亮灯拣选系统</div>
-                              <div class="device-type">电子辅助拣货</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs16.jpeg" alt="语音">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">语音识别系统</div>
-                              <div class="device-type">语音指导拣货</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <!-- 流程4 -->
-              <div class="arrow-step">
-                  <div class="arrow-shape">复核包装</div>
-                  <div class="step-devices">
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs17.jpeg" alt="包装台">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">整箱核送区</div>
-                              <div class="device-type">包装复核区域</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs18.png" alt="贴标">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">自动贴标机</div>
-                              <div class="device-type">标签贴附设备</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs19.jpeg" alt="封箱">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">自动封箱机</div>
-                              <div class="device-type">纸箱封装系统</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-              <!-- 流程5 -->
-              <div class="arrow-step">
-                  <div class="arrow-shape">订单管理</div>
-                  <div class="step-devices">
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wms01.png" alt="WMS">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">WMS系统</div>
-                              <div class="device-type">仓库管理系统</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/wcs09.jpg" alt="机器人">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">CTU机器人</div>
-                              <div class="device-type">料箱搬运机器人</div>
-                          </div>
-                      </div>
-                      <div class="device-card">
-                          <div class="device-icon">
-                              <img src="static/picture/screen01.png" alt="看板">
-                          </div>
-                          <div class="device-info">
-                              <div class="device-name">数字看板</div>
-                              <div class="device-type">实时监控系统</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          
-          <!-- 右侧 - 设备列表区（保持原样） -->
-          <div class="devices-list">
-              <h3 class="list-title">支持对接设备列表</h3>
-              
-              <div class="device-category">
-                  <h4 class="category-title">自动化存储设备</h4>
-                  <div class="device-items">
-                      <div class="device-item">ASRS立库</div>
-                      <div class="device-item">Miniload</div>
-                      <div class="device-item">多层四向穿梭车</div>
-                  </div>
-              </div>
-              
-              <div class="device-category">
-                  <h4 class="category-title">智能搬运设备</h4>
-                  <div class="device-items">
-                      <div class="device-item">AGV/AMR搬运机器人</div>
-                      <div class="device-item">CTU料箱机器人</div>
-                      <div class="device-item">码垛拆垛机器人</div>
-                  </div>
-              </div>
-              
-              <div class="device-category">
-                  <h4 class="category-title">输送分拣系统</h4>
-                  <div class="device-items">
-                      <div class="device-item">托盘输送线</div>
-                      <div class="device-item">箱式输送线</div>
-                      <div class="device-item">滑块分拣线</div>
-                      <div class="device-item">交叉带分拣线</div>
-                      <div class="device-item">悬挂输送线</div>
-                  </div>
-              </div>
-              
-              <div class="device-category">
-                  <h4 class="category-title">智能检测设备</h4>
-                  <div class="device-items">
-                      <div class="device-item">动态称重</div>
-                      <div class="device-item">外形检测</div>
-                  </div>
-              </div>
-              
-              <div class="device-category">
-                  <h4 class="category-title">信息识别系统</h4>
-                  <div class="device-items">
-                      <div class="device-item">语音识别</div>
-                      <div class="device-item">电子标签</div>
-                      <div class="device-item">RFID</div>
-                  </div>
-              </div>
-              
-              <div class="device-category">
-                  <h4 class="category-title">包装设备</h4>
-                  <div class="device-items">
-                      <div class="device-item">自动贴标机</div>
-                      <div class="device-item">自动封箱机</div>
-                  </div>
-              </div>
-          </div>
+    </footer>
+    <!--== End Footer Area Wrapper ==-->
+
+    <!--== Scroll Top Button ==-->
+    <div class="scroll-to-top"><span class="icofont-rounded-double-left icofont-rotate-90"></span></div>
+
+    <!--== Start Side Menu ==-->
+    <aside class="off-canvas-area offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+      id="offcanvasWithBothOptions">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-  </section>
-
-    <!--== End Blog Area Wrapper ==-->
-
-    <!--== Start Divider Area Wrapper ==-->
-    <section class="divider-area divider-default-area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-sm-8 col-md-7">
-            <div class="content">
-              <h2 class="title">保持联系以便获取最新资讯</h2>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-5">
-            <div class="divider-btn">
-              <a class="btn-theme btn-white" href="index.html">Subscribe Now <i class="icofont-rounded-double-right"></i></a>
-            </div>
-          </div>
+      <div class="offcanvas-body">
+        <!-- Start Mobile Menu Wrapper -->
+        <div class="res-mobile-menu">
+          <nav id="offcanvasNav" class="offcanvas-menu">
+            <ul>
+              <li><a href="index.html" data-i18n="home">首页</a></li>
+              <li><a href="wms.html" data-i18n="wms">智能仓储系统WMS</a></li>
+              <li><a class="color-theme" href="javascript:void(0)" data-i18n="wcs">自动化设备管理系统WCS</a></li>
+              <li><a href="digital.html" data-i18n="digital">数字孪生系统</a></li>
+              <li><a href="about.html" data-i18n="about">关于我们</a></li>
+            </ul>
+          </nav>
         </div>
+        <!-- End Mobile Menu Wrapper -->
       </div>
-      <div class="shape-group">
-        <div class="shape-style4">
-          <img src="static/picture/42.webp" alt="Image" width="560" height="250">
-        </div>
-      </div>
-    </section>
-    <!--== End Divider Area Wrapper ==-->
-  </main>
+    </aside>
+    <!--== End Side Menu ==-->
+  </div>
 
-  <!--== Start Footer Area Wrapper ==-->
-  <footer class="footer-area default-style">
-    <div class="footer-main">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
-               <div class="gt-widget-about">
-                  <div class="about-logo">
-                     <a href=""><img src="static/picture/logo.png" alt="Realar"></a>
-                  </div>
-                  <p class="about-text"> JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。
-                  </p>
-                  <div class="gt-social style2">
-                     <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
-                     <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
-                     <a href="https://www.instagram.com/"><i class="icon icofont-linkedin"></i></a>
-                     <a href="https://www.youtube.com/"><i class="icon icofont-skype"></i></a>
-                  </div>
-               </div>
-            </div>
-         </div>
-          <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
-            <div class="widget-item">
-              <h4 class="widget-title">热门产品</h4>
-              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-2">热门产品</h4>
-              <div id="dividerId-2" class="collapse widget-collapse-body">
-                <nav class="widget-menu-wrap">
-                  <ul class="nav-menu nav">
-                    <li><a href="wms.html"><i class="icofont-minus"></i>智能仓储系统WMS</a></li>
-                    <li><a href="wcs.html"><i class="icofont-minus"></i>自动化设备管理系统WCS</a></li>
-                    <li><a href="digital.html"><i class="icofont-minus"></i>数字孪生系统</a></li>
-                    <li><a href="about.html"><i class="icofont-minus"></i>关于我们</a></li>
-                     
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2 col-xl-4">
-            <div class="widget-item ml-35 lg-ml-0">
-              <h4 class="widget-title">联系我们</h4>
-              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-4">联系我们</h4>
-              <div id="dividerId-4" class="collapse widget-collapse-body">
-                <nav class="widget-menu-wrap">
-                  <ul class="nav-menu nav">
-                    <li><a href=""><i class="icofont-minus"></i>公司邮箱</a></li>
-                    <li><a href=""><i class="icofont-minus"></i>130 5204 4828</a></li>
-                    <li><a href="" style="line-height: 35px;
-    vertical-align: sub;"><i class="icofont-minus"></i>浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-shape bg-img" data-bg-img="assets/img/photos/footer1.webp"></div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="footer-bottom-content">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="widget-copyright">
-                 <p>宁波捷方优制科技有限公司版权所有 -
-        <a href="http://beian.miit.gov.cn/" target="_blank">浙ICP备2023030316号</a>
-      </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!--== End Footer Area Wrapper ==-->
-  
-  <!--== Scroll Top Button ==-->
-  <div class="scroll-to-top"><span class="icofont-rounded-double-left icofont-rotate-90"></span></div>
+  <!--=======================Javascript============================-->
+  <script>
+    // 扩展翻译数据
+    const translations = {
+      "en": {
+        "wcs_page_title": "WCS System - JFindX",
+        "home": "Home",
+        "wms": "WMS System",
+        "wcs": "WCS System",
+        "digital": "Digital Twin",
+        "about": "About Us",
+        "wcs_title": "Warehouse Control System",
+        "wcs_subtitle": "The bridge connecting hardware and software, ensuring every automated device works in harmony for maximum efficiency.",
+        "wcs_section_title": "JFINDX WCS Supported Devices",
+        "wcs_flow_title": "Warehouse Processes & Equipment",
+        "wcs_process1": "Receiving & Storage",
+        "wcs_process2": "Replenishment",
+        "wcs_process3": "Picking & Shipping",
+        "wcs_process4": "Checking & Packaging",
+        "wcs_process5": "Order Management",
+        "wcs_device1": "ASRS System",
+        "wcs_device1_desc": "Automated Storage",
+        "wcs_device2": "A-Frame Rack",
+        "wcs_device2_desc": "Heavy Storage System",
+        "wcs_device3": "Flow Rack",
+        "wcs_device3_desc": "Gravity Rack",
+        "wcs_device4": "RFID System",
+        "wcs_device4_desc": "Auto Identification",
+        "wcs_device5": "4-Way Shuttle",
+        "wcs_device5_desc": "Intelligent Handling",
+        "wcs_device6": "AGV Robot",
+        "wcs_device6_desc": "Automated Transport",
+        "wcs_device7": "Case Conveyor",
+        "wcs_device7_desc": "Conveyor System",
+        "wcs_device8": "Roller Sorter",
+        "wcs_device8_desc": "High-speed Sorting",
+        "wcs_device9": "Pick-to-Light Station",
+        "wcs_device9_desc": "Manual Picking System",
+        "wcs_device10": "Light System",
+        "wcs_device10_desc": "Electronic Picking",
+        "wcs_device11": "Voice System",
+        "wcs_device11_desc": "Voice Picking",
+        "wcs_device12": "Checking Area",
+        "wcs_device12_desc": "Packing & Checking",
+        "wcs_device13": "Labeling Machine",
+        "wcs_device13_desc": "Label Attachment",
+        "wcs_device14": "Box Sealer",
+        "wcs_device14_desc": "Carton Sealing",
+        "wcs_device15": "WMS System",
+        "wcs_device15_desc": "Warehouse Management",
+        "wcs_device16": "CTU Robot",
+        "wcs_device16_desc": "Bin Handling Robot",
+        "wcs_device17": "Digital Board",
+        "wcs_device17_desc": "Real-time Monitoring",
+        "wcs_device_list_title": "Supported Device List",
+        "wcs_category1": "Automated Storage",
+        "wcs_category2": "Intelligent Handling",
+        "wcs_category3": "Conveyor & Sorting",
+        "wcs_category4": "Inspection Devices",
+        "wcs_category5": "Identification Systems",
+        "wcs_category6": "Packaging Equipment",
+        "wcs_device_item1": "ASRS System",
+        "wcs_device_item2": "Miniload",
+        "wcs_device_item3": "Multi-level Shuttle",
+        "wcs_device_item4": "AGV/AMR Robots",
+        "wcs_device_item5": "CTU Robot",
+        "wcs_device_item6": "Palletizing Robot",
+        "wcs_device_item7": "Pallet Conveyor",
+        "wcs_device_item8": "Case Conveyor",
+        "wcs_device_item9": "Slider Sorter",
+        "wcs_device_item10": "Crossbelt Sorter",
+        "wcs_device_item11": "Overhead Conveyor",
+        "wcs_device_item12": "Dynamic Weighing",
+        "wcs_device_item13": "Shape Detection",
+        "wcs_device_item14": "Voice Recognition",
+        "wcs_device_item15": "Electronic Label",
+        "wcs_device_item16": "RFID System",
+        "wcs_device_item17": "Labeling Machine",
+        "wcs_device_item18": "Box Sealer",
+        "contact_title": "Stay Connected for Updates",
+        "subscribe_now": "Subscribe Now",
+        "footer_desc": "JFindX - Automation solution experts, tailor-made automation solutions for you, covering comprehensive services from hardware equipment to software systems.",
+        "popular_products": "Popular Products",
+        "contact_us": "Contact Us",
+        "company_email": "Company Email",
+        "company_phone": "130 5204 4828",
+        "company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo, Zhejiang Province",
+        "copyright": "© Ningbo JFindX Technology Co., Ltd. All Rights Reserved"
+      },
+      "cn": {
+        "wcs_page_title": "自动化设备管理系统WCS - JFindX",
+        "home": "首页",
+        "wms": "智能仓储系统WMS",
+        "wcs": "自动化设备管理系统WCS",
+        "digital": "数字孪生系统",
+        "about": "关于我们",
+        "wcs_title": "自动化设备管理系统WCS",
+        "wcs_subtitle": "连接硬件与软件的桥梁，确保每一个自动化设备都能协同工作，发挥最大效能。",
+        "wcs_section_title": "JFINDX WCS 可对接设备",
+        "wcs_flow_title": "仓储作业流程与设备",
+        "wcs_process1": "收货存储",
+        "wcs_process2": "补货流程",
+        "wcs_process3": "分拣发货",
+        "wcs_process4": "复核包装",
+        "wcs_process5": "订单管理",
+        "wcs_device1": "ASRS立体仓库",
+        "wcs_device1_desc": "自动化存储设备",
+        "wcs_device2": "A型货架",
+        "wcs_device2_desc": "重型存储系统",
+        "wcs_device3": "流利式货架",
+        "wcs_device3_desc": "重力式货架",
+        "wcs_device4": "RFID识别",
+        "wcs_device4_desc": "自动识别技术",
+        "wcs_device5": "四向穿梭车",
+        "wcs_device5_desc": "智能搬运设备",
+        "wcs_device6": "AGV机器人",
+        "wcs_device6_desc": "自动导引运输",
+        "wcs_device7": "箱式输送线",
+        "wcs_device7_desc": "自动化输送系统",
+        "wcs_device8": "滑轮分拣机",
+        "wcs_device8_desc": "高效分拣系统",
+        "wcs_device9": "人到货拣选站",
+        "wcs_device9_desc": "人工拣选系统",
+        "wcs_device10": "亮灯拣选系统",
+        "wcs_device10_desc": "电子辅助拣货",
+        "wcs_device11": "语音识别系统",
+        "wcs_device11_desc": "语音指导拣货",
+        "wcs_device12": "整箱核送区",
+        "wcs_device12_desc": "包装复核区域",
+        "wcs_device13": "自动贴标机",
+        "wcs_device13_desc": "标签贴附设备",
+        "wcs_device14": "自动封箱机",
+        "wcs_device14_desc": "纸箱封装系统",
+        "wcs_device15": "WMS系统",
+        "wcs_device15_desc": "仓库管理系统",
+        "wcs_device16": "CTU机器人",
+        "wcs_device16_desc": "料箱搬运机器人",
+        "wcs_device17": "数字看板",
+        "wcs_device17_desc": "实时监控系统",
+        "wcs_device_list_title": "支持对接设备列表",
+        "wcs_category1": "自动化存储设备",
+        "wcs_category2": "智能搬运设备",
+        "wcs_category3": "输送分拣系统",
+        "wcs_category4": "智能检测设备",
+        "wcs_category5": "信息识别系统",
+        "wcs_category6": "包装设备",
+        "wcs_device_item1": "ASRS立库",
+        "wcs_device_item2": "Miniload",
+        "wcs_device_item3": "多层四向穿梭车",
+        "wcs_device_item4": "AGV/AMR搬运机器人",
+        "wcs_device_item5": "CTU料箱机器人",
+        "wcs_device_item6": "码垛拆垛机器人",
+        "wcs_device_item7": "托盘输送线",
+        "wcs_device_item8": "箱式输送线",
+        "wcs_device_item9": "滑块分拣线",
+        "wcs_device_item10": "交叉带分拣线",
+        "wcs_device_item11": "悬挂输送线",
+        "wcs_device_item12": "动态称重",
+        "wcs_device_item13": "外形检测",
+        "wcs_device_item14": "语音识别",
+        "wcs_device_item15": "电子标签",
+        "wcs_device_item16": "RFID",
+        "wcs_device_item17": "自动贴标机",
+        "wcs_device_item18": "自动封箱机",
+        "contact_title": "保持联系以便获取最新资讯",
+        "subscribe_now": "立即订阅",
+        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+        "popular_products": "热门产品",
+        "contact_us": "联系我们",
+        "company_email": "公司邮箱",
+        "company_phone": "130 5204 4828",
+        "company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+        "copyright": "宁波捷方优制科技有限公司版权所有"
+      }
+    };
 
-  <!--== Start Side Menu ==-->
-  <aside class="off-canvas-area offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
-    <div class="offcanvas-header">
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <!-- Start Mobile Menu Wrapper -->
-      <div class="res-mobile-menu">
-        <nav id="offcanvasNav" class="offcanvas-menu">
-          <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="wms.html">智能仓储系统WMS</a></li>
-            <li><a class="color-theme" href="javascript:void(0)">自动化设备管理系统WCS</a></li>
-            <li><a href="digital.html">数字孪生系统</a></li>
-            <li><a href="about.html">关于我们</a></li>
-          </ul>
-        </nav>
-      </div>
-      <!-- End Mobile Menu Wrapper -->
-    </div>
-  </aside>
-  <!--== End Side Menu ==-->
-</div>
+    let currentLang = localStorage.getItem('language') || 'cn';
 
-<!--=======================Javascript============================-->
-<script>
-  // 生成随机验证码
-  function generateCaptcha() {
-    const canvas = document.getElementById('captchaCanvas');
-    const ctx = canvas.getContext('2d');
-    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    let captchaText = '';
+    // 核心翻译函数
+    function updateLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
 
-    // 清空画布
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // 生成4位随机字符
-    for (let i = 0; i < 4; i++) {
-      captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+      // 更新所有带翻译标记的元素
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.value = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      // 更新按钮显示
+      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+      // 更新页面标题
+      document.title = translations[lang]['wcs_page_title'];
     }
 
-    // 绘制验证码（带干扰线）
-    ctx.font = '24px Arial';
-    ctx.fillStyle = '#333';
-    ctx.fillText(captchaText, 20, 28);
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 初始化语言
+      updateLanguage(currentLang);
 
-    // 存储验证码（不安全，仅演示用）
-    canvas.dataset.captcha = captchaText;
-  }
+      // 绑定语言切换事件
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = e.target.getAttribute('data-lang');
+          updateLanguage(lang);
 
-  // 初始化验证码
-  generateCaptcha();
+          // 手动关闭下拉菜单（Bootstrap5方法）
+          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+          dropdown.hide();
+        });
+      });
 
-  // 表单提交验证
-  document.querySelector('form').addEventListener('submit', function(e) {
-    const userInput = document.getElementById('captchaInput').value;
-    const trueCaptcha = document.getElementById('captchaCanvas').dataset.captcha;
+      // 初始化Bootstrap下拉组件
+      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+    });
+  </script>
 
-    if (userInput !== trueCaptcha) {
-      e.preventDefault();
-      alert('验证码错误！');
-      generateCaptcha(); // 刷新验证码
-    }
-  });
-</script>
+  <!--=== Modernizr Min Js ===-->
+  <script src="static/js/modernizr.js"></script>
+  <!--=== jQuery Min Js ===-->
+  <script src="static/js/jquery-main.js"></script>
+  <!--=== jQuery Migration Min Js ===-->
+  <script src="static/js/jquery-migrate.js"></script>
+  <!--=== Popper Min Js ===-->
+  <script src="static/js/popper.min.js"></script>
+  <!--=== Bootstrap Min Js ===-->
+  <script src="static/js/bootstrap.min.js"></script>
+  <!--=== jquery Swiper Min Js ===-->
+  <script src="static/js/swiper.min.js"></script>
+  <!--=== jquery Countdown Js ===-->
+  <script src="static/js/jquery.countdown.min.js"></script>
+  <!--=== Isotope Min Js ===-->
+  <script src="static/js/isotope.pkgd.min.js"></script>
 
-<!--=== Modernizr Min Js ===-->
-<script src="static/js/modernizr.js"></script>
-<!--=== jQuery Min Js ===-->
-<script src="static/js/jquery-main.js"></script>
-<!--=== jQuery Migration Min Js ===-->
-<script src="static/js/jquery-migrate.js"></script>
-<!--=== Popper Min Js ===-->
-<script src="static/js/popper.min.js"></script>
-<!--=== Bootstrap Min Js ===-->
-<script src="static/js/bootstrap.min.js"></script>
-<!--=== jquery Swiper Min Js ===-->
-<script src="static/js/swiper.min.js"></script>
-<!--=== jquery Countdown Js ===-->
-<script src="static/js/jquery.countdown.min.js"></script>
-<!--=== Isotope Min Js ===-->
-<script src="static/js/isotope.pkgd.min.js"></script>
-
-<!--=== Custom Js ===-->
-<script src="static/js/custom.js"></script>
+  <!--=== Custom Js ===-->
+  <script src="static/js/custom.js"></script>
 
 </body>
 
