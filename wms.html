@@ -2,746 +2,906 @@
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JFindX ">
-    <meta name="keywords" content="Logistic, Moving Company, Transportation, business, Transport, Cargo Delivery">
-    <meta name="author" content="Codecarnival">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JFindX ">
+  <meta name="keywords" content="Logistic, Moving Company, Transportation, business, Transport, Cargo Delivery">
+  <meta name="author" content="Codecarnival">
 
-    <title>智能仓储系统WMS - JFindX </title>
+  <title data-i18n="wms_page_title">智能仓储系统WMS - JFindX </title>
 
-    <!--== Google Fonts ==-->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="static/css/css2.css" rel="stylesheet">
+  <!--== Google Fonts ==-->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="static/css/css2.css" rel="stylesheet">
 
-    <!--== Bootstrap CSS ==-->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-    <!--== Icofont CSS ==-->
-    <link href="static/css/icofont.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <!--== Swiper CSS ==-->
-    <link href="static/css/swiper.min.css" rel="stylesheet">
-    <!--== Main Style CSS ==-->
-    <link href="static/css/style.css" rel="stylesheet">
+  <!--== Bootstrap CSS ==-->
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  <!--== Icofont CSS ==-->
+  <link href="static/css/icofont.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <!--== Swiper CSS ==-->
+  <link href="static/css/swiper.min.css" rel="stylesheet">
+  <!--== Main Style CSS ==-->
+  <link href="static/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!--wrapper start-->
-<div class="wrapper page-blog-details-wrapper">
+  <!--wrapper start-->
+  <div class="wrapper page-blog-details-wrapper">
 
-  <!--== Start Header Wrapper ==-->
-  <header class="header-wrapper">
-    <div class="header-area header-default header-transparent sticky-header">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-4 col-sm-6 col-lg-2">
-            <div class="header-logo-area">
-              <a href="">
-                <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161" height="48">
-                <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161" height="48">
-              </a>
+    <!--== Start Header Wrapper ==-->
+    <header class="header-wrapper">
+      <div class="header-area header-default header-transparent sticky-header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-4 col-sm-6 col-lg-2">
+              <div class="header-logo-area">
+                <a href="">
+                  <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161" height="48">
+                  <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161" height="48">
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-9 d-none d-lg-block">
-            <div class="header-navigation-area">
-              <ul class="main-menu nav position-relative">
-                <li><a href="index.html">首页</a></li>
-                <li class="has-submenu active"><a href="wms.html">智能仓储系统WMS</a></li>
-                <li><a href="wcs.html">自动化设备管理系统WCS</a></li>
-                <li><a href="digital.html">数字孪生系统</a></li>
-                <li><a href="about.html">关于我们</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-8 col-sm-6 col-lg-1">
-            <div class="header-action-area">
-              <div class="header-lang-dropdown">
-                <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown" aria-expanded="false">CN</button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
-                  <li class="dropdown-item" data-lang="en">EN</li>
-                  <li class="dropdown-item" data-lang="cn">CN</li>
+            <div class="col-lg-9 d-none d-lg-block">
+              <div class="header-navigation-area">
+                <ul class="main-menu nav position-relative">
+                  <li><a href="index.html" data-i18n="home">首页</a></li>
+                  <li class="has-submenu active"><a href="wms.html" data-i18n="wms">智能仓储系统WMS</a></li>
+                  <li><a href="wcs.html" data-i18n="wcs">自动化设备管理系统WCS</a></li>
+                  <li><a href="digital.html" data-i18n="digital">数字孪生系统</a></li>
+                  <li><a href="about.html" data-i18n="about">关于我们</a></li>
                 </ul>
               </div>
-              <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                <span class="icon-line"></span>
-                <span class="icon-line"></span>
-                <span class="icon-line"></span>
-              </button>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!--== End Header Wrapper ==-->
-  
-  <main class="main-content">
-    <!--== Start Page Title Area ==-->
-    <section class="page-title-area bg-img" data-bg-img="static/picture/bwms-1.jpg">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-12 m-auto">
-            <div class="page-title-content text-center">
-              <h2 class="title">智能仓储管理软件WMS</h2>
-              <div class="bread-crumbs"><span class="breadcrumb-sep">像大脑一样指挥着整个仓储运作。精准的库存管理、高效的订单处理，让您的仓储管理井井有条。</span></div>
-              <!-- <div class="bread-crumbs"><a href="index.html"> 首页 </a><span class="breadcrumb-sep"> // </span><span class="active"> 智能仓储系统WMS</span></div> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bg-overlay3"></div>
-    </section>
-    <!--== End Page Title Area ==-->
-        <!--== Start 核心优势 Area Wrapper ==-->
-        <section class="blog-details-area">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12 m-auto">
-                <div class="section-title text-center">
-                  <h4 class="subtitle">智能仓储系统WMS</h4>
-                  <h2 class="title">核心优势</h2>
+            <div class="col-8 col-sm-6 col-lg-1">
+              <div class="header-action-area">
+                <div class="header-lang-dropdown">
+                  <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown"
+                    aria-expanded="false">CN</button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownLang">
+                    <li class="dropdown-item" data-lang="en">EN</li>
+                    <li class="dropdown-item" data-lang="cn">CN</li>
+                  </ul>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="swiper-container testimonial-slider-container">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <!--== Start Testimonial Item ==-->
-                      <div class="testimonial-item">
-                        <div class="client-info">
-                          <div class="desc">
-                            
-                            <h4>产品化、精细化仓储管理系统</h4>
-                            <h5>优势1</h5>
-                          </div>
-                          <!-- <div class="rating">
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="icofont-star"></span>
-                            <span class="icofont-star"></span>
-                          </div> -->
-                        </div>
-                        <div class="content">
-                          <p>多个制造业、贸易行业客户业务实践，仓储全业务需求融合与产品中，功能完善。
-                          </p>
-                          <p>无论是库位管理、批次管理、供应商管理、处处体现精细化理念。</p>
-                          <p>详尽的业务规则，涵盖仓库作业全过程，从容高效处理复杂作业流程。</p>
-                          <p>通过看板、图形化展示工具等，实现可视化管理。</p>
-                          <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252" height="191">
-                        </div>
-                         <div class="rating">
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="icofont-star"></span>
-                          </div>
-                      </div>
-                      <!--== End Testimonial Item ==-->
-                    </div>
-                    <div class="swiper-slide">
-                      <!--== Start Testimonial Item ==-->
-                      <div class="testimonial-item">
-                        <div class="client-info">
-                          <div class="desc">
-                            
-                            <h4>智能化、自动化的仓储设计理念</h4>
-                            <h5>优势2</h5>
-                          </div>
-                          <!-- <div class="rating">
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="icofont-star"></span>
-                          </div> -->
-                        </div>
-                        <div class="content">
-                          <p>结合各类自动化硬件设备，始终贯彻省人力、省管理为设计目标。每个项目至少节省</p>
-                          <p>通过接入AI能力，实现多维数据驱动的动态预测，实现智能补货与安全库存动态调整功能。</p>
-                          <p>通过整合自有的历史销售数据、提前预置与定期更新的市场区域、供应链波动等万亿token数据，结合多通道深度学习算法，实现对未来周期的库存需求预测。</p>
-                          <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252" height="191">
-                        </div>
-                         <div class="rating">
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="icofont-star"></span>
-                          </div>
-                      </div>
-                      <!--== End Testimonial Item ==-->
-                    </div>
-                    <div class="swiper-slide">
-                      <!--== Start Testimonial Item ==-->
-                      <div class="testimonial-item">
-                        <div class="client-info">
-                          <div class="desc">
-                            <h4>智能化物流仓库的大脑，面向仓库效率提升</h4>
-                            <h5>优势3</h5>
-
-                          </div>
-                          <!-- <div class="rating">
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="icofont-star"></span>
-                            <span class="icofont-star"></span>
-                          </div> -->
-                        </div>
-                        <div class="content">
-                          <p>WMS系统集成通过集成各类智能物流装备，成为整个仓库内的指挥和协调物流装备的大脑。</p>
-                          <p>WMS协同和智慧库内作业设备，获得整体订单处理效率的大幅提升。</p>
-                          <p>各种波次策略、拣货测录、拣货路径优化策略、任务分配策略，皆面向整体作业的高效准确。</p>
-                          <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252" height="191">
-                        </div>
-                        <div class="rating">
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="rating-color icofont-star"></span>
-                            <span class="icofont-star"></span>
-                            <span class="icofont-star"></span>
-                          </div>
-                      
-                      </div>
-                      <!--== End Testimonial Item ==-->
-                    </div>
-                  </div>
-                  <!-- Add Pagination -->
-                  <div class="swiper-pagination"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--== End 核心优势 Area Wrapper ==-->
-    <!--== Start Blog Area Wrapper ==-->
-    <section class="blog-details-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="post-details-content">
-              <div class="post-details-body">
-                <div class="content-top">
-                  <h4 class="title">功能模块介绍</h4>
-                  <div class="meta" style="margin-top: 20px;">
-                    <!-- <span class="dots"></span> -->
-                    <span class="post-date">智能仓储管理软件WMS，像大脑一样指挥着整个仓储运作。精准的库存管理、高效的订单处理，让您的仓储管理井井有条。</span>
-                  </div>
-                </div>
-                <div class="thumb">
-                  <img class="w-100" src="static/picture/wms01.png" alt="Image" width="1170" height="550">
-                </div>
-                <div class="content plr-100">
-                  <h4 class="title">库存管理模块</h4>
-                  <p>实现库存的实时可视、智能决策和历史追溯，形成闭环管理。</p>
-                  <p><i class="icofont-check-circled"></i>库存查询（实时可视）：提供全仓库存的实时动态查询，支持多维度检索（如SKU、库区、库位、容器等）。</p>
-                    <p><i class="icofont-check-circled"></i>库存分析（决策支持）：通过数据建模挖掘库存规律，优化供应链决策。</p>
-                    <p><i class="icofont-check-circled"></i>库存快照（历史追溯）：定时记录库存状态，形成可追溯的数据档案。</p>
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms02.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms03.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms04.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                  </div>
-                  
-
-                  <h4 class="title">料箱分拣复核</h4>
-                  <p>确保入库准确性与出库高效性，贯穿物流关键环节。</p>
-                  <p><i class="icofont-check-circled"></i>入库复核： 对到货物料进行二次验证，确保入库数据的准确性，避免错放、漏放。
-                  </p>
-                  <p><i class="icofont-check-circled"></i>出库分拣： 按订单需求快速定位并分拣料箱，确保出库物料与订单100%一致。</p>
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms06.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms05.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                  </div>
-
-                  <h4 class="title">盘点管理模块</h4>
-                  <p>盘点管理模块是WMS系统的核心功能之一，主要用于库存实物与系统数据的核对，确保账实一致，及时发现差异并纠偏，保障库存数据的准确性。</p>
-                    <p><i class="icofont-check-circled"></i>盘点任务管理：支持按容器、库区、SKU等多种维度生成盘点任务。支持年度盘点和日常大盘点。</p>
-                    <p><i class="icofont-check-circled"></i>盘点执行：支持PDA扫描， 扫描商品后，系统自动比对库存数据，实时显示差异（多盘/少盘）。</p>
-                    <p><i class="icofont-check-circled"></i>盘点结果处理：自动生成盘点差异报表，支持按SKU、库位、容器等多维度分析。支持人工审核后自动调整系统库存，确保账实一致。</p>
-                  <div class="row">
-                    <div class="col-sm-4 col-md-3">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms07.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-4 col-md-3">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms08.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-4 col-md-3">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms09.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-4 col-md-1">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms10.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-4 col-md-1">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms11.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-4 col-md-1">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms12.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                  </div>
-
-                  <h4 class="title">货品管理模块</h4>
-                  <p>货品信息模块是WMS系统的核心主数据中枢，通过七大子模块的协同配置，实现从基础属性到运营规则的全面数字化管理。通过这七大子模块的有机组合，企业可构建适应复杂业务场景的智能化货品主数据体系，为仓储精益化管理奠定坚实基础。
-                  </p>
-                  <p><i class="icofont-check-circled"></i>入库复核： 对到货物料进行二次验证，确保入库数据的准确性，避免错放、漏放。
-                  </p>
-                  <p><i class="icofont-check-circled"></i>出库分拣： 按订单需求快速定位并分拣料箱，确保出库物料与订单100%一致。</p>
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms15.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms14.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                  </div>
-                  <div class="list-title">
-                    <h4 class="title">仓库布局规划</h4>
-                  </div>
-                  <p>WMS系统不仅可以管理库存和作业流程，还能为仓库布局规划提供强大的数据支持和优化工具。</p>
-                  <p>使用WMS系统进行仓库布局规划是一个数据驱动的科学过程，首先需要从系统中导出货品基础数据（如SKU属性、ABC分类、周转率等）、作业流程数据和设备参数作为规划依据。WMS系统提供的三维建模工具可模拟不同货架排列方式的空间利用率，其智能分区算法能自动划分快慢流区、温控区等特殊存储区域，而动线分析模块则可优化物流路径设计。在实际规划中，需重点考虑将高周转率的A类商品靠近出入口布置，关联性商品就近存储，并合理配置收货区、拣货区和发货区的面积比例。</p>
-                  <p>通过WMS的模拟验证功能，可提前测试布局方案的容量承载、作业效率和扩展灵活性。实施阶段应采取分步策略，先建立框架再填充细节，并将最终布局映射到WMS的库位编码体系。后期还可利用WMS的热力图分析等功能持续优化布局，使仓库空间利用率和作业效率始终保持最佳状态。这种基于WMS的规划方法相比传统经验主义方式更具科学性和可操作性，能有效避免资源浪费。</p>
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/cang01.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                      <!--== Start Blog Post Item ==-->
-                      <div class="post-item2">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/cang02.png" alt="Image" width="370" height="285"></a>
-                        </div>
-                      </div>
-                      <!--== End Blog Post Item ==-->
-                    </div>
-                  </div>
-                  <div class="list-title">
-                    <h4 class="title">与其他系统的集成能力</h4>
-                  </div>
-                  <p>WMS（仓储管理系统）作为企业供应链的智能调度中枢，需要与ERP、MES（制造执行系统）、WCS、PLM、智库、自动化设备（PLC控制/设备协议）等多个系统高效协同，实现从计划层→执行层→设备层的全链路数据贯通，实现数据无缝流转和业务自动化。</p>
-                  <p>通过强大的集成能力，WMS成为企业数字化供应链的“中枢大脑”，助力企业降本增效，提升市场竞争力。</p>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="thumb-inner">
-                        <img class="w-100" src="static/picture/wms13.jpg" alt="Image" width="970" height="450">
-                      </div>
-                    </div>
-                  </div>
-                  
-                
-                </div>
+                <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                  <span class="icon-line"></span>
+                  <span class="icon-line"></span>
+                  <span class="icon-line"></span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="comment-area">
+    </header>
+    <!--== End Header Wrapper ==-->
+
+    <main class="main-content">
+      <!--== Start Page Title Area ==-->
+      <section class="page-title-area bg-img" data-bg-img="static/picture/bwms-1.jpg">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="comment-form-wrap">
-                <form class="comment-form-wrapper" id="comment-form" name="comment" method="POST" netlify data-netlify="true">
-                  <!-- 必加：隐藏字段确保 Netlify 识别 -->
-                  <input type="hidden" name="form-name" value="comment">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="section-title m-0">
-                        <h2 class="title">留言板</h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <input class="form-control" type="text" name="title" placeholder="留言标题" required>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <input class="form-control" type="email" name="email" placeholder="留言邮箱" required>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <textarea 
-                              class="form-control" 
-                              name="content" 
-                              id="message-content" 
-                              maxlength="500" 
-                              required
-                              oninput="updateCharCounter()"
-                            ></textarea>
-                            <div class="text-right small text-muted mt-1">
-                              <span id="char-counter">0</span>/500
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <div class="row align-items-center">
-                              <div class="col-md-6">
-                                <input type="text" class="form-control" id="captchaInput" name="captcha" placeholder="请输入验证码" required>
-                              </div>
-                              <div class="col-md-4">
-                                <canvas id="captchaCanvas" width="120" height="40" style="border: 1px solid #ddd;margin-right: 10px;"></canvas>
-                                <a href="#" onclick="generateCaptcha(); return false;" class="small">刷新验证码</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <div class="form-group mb-0">
-                            <button class="btn btn-theme" type="submit">立即提交<i class="icofont-rounded-double-right mr-0"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+          <div class="row align-items-center">
+            <div class="col-lg-12 m-auto">
+              <div class="page-title-content text-center">
+                <h2 class="title" data-i18n="wms_title">智能仓储管理软件WMS</h2>
+                <div class="bread-crumbs"><span class="breadcrumb-sep"
+                    data-i18n="wms_subtitle">像大脑一样指挥着整个仓储运作。精准的库存管理、高效的订单处理，让您的仓储管理井井有条。</span></div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!--== End Blog Area Wrapper ==-->
-
-    <!--== Start Divider Area Wrapper ==-->
-    <!-- <section class="divider-area divider-default-area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-sm-8 col-md-7">
-            <div class="content">
-              <h2 class="title">保持联系以便获取最新资讯</h2>
+        <div class="bg-overlay3"></div>
+      </section>
+      <!--== End Page Title Area ==-->
+      <!--== Start 核心优势 Area Wrapper ==-->
+      <section class="blog-details-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 m-auto">
+              <div class="section-title text-center">
+                <h4 class="subtitle" data-i18n="wms_section">智能仓储系统WMS</h4>
+                <h2 class="title" data-i18n="core_advantages">核心优势</h2>
+              </div>
             </div>
           </div>
-          <div class="col-sm-4 col-md-5">
-            <div class="divider-btn">
-              <a class="btn-theme btn-white" href="index.html">Subscribe Now <i class="icofont-rounded-double-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="shape-group">
-        <div class="shape-style4">
-          <img src="static/picture/42.webp" alt="Image" width="560" height="250">
-        </div>
-      </div>
-    </section> -->
-    <!--== End Divider Area Wrapper ==-->
-  </main>
-
-  <!--== Start Footer Area Wrapper ==-->
-  <footer class="footer-area default-style">
-    <div class="footer-main">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
-               <div class="gt-widget-about">
-                  <div class="about-logo">
-                     <a href=""><img src="static/picture/logo.png" alt="Realar"></a>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="swiper-container testimonial-slider-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <!--== Start Testimonial Item ==-->
+                    <div class="testimonial-item">
+                      <div class="client-info">
+                        <div class="desc">
+                          <h4 data-i18n="advantage1_title">产品化、精细化仓储管理系统</h4>
+                          <h5 data-i18n="advantage1">优势1</h5>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p data-i18n="advantage1_text1">多个制造业、贸易行业客户业务实践，仓储全业务需求融合与产品中，功能完善。</p>
+                        <p data-i18n="advantage1_text2">无论是库位管理、批次管理、供应商管理、处处体现精细化理念。</p>
+                        <p data-i18n="advantage1_text3">详尽的业务规则，涵盖仓库作业全过程，从容高效处理复杂作业流程。</p>
+                        <p data-i18n="advantage1_text4">通过看板、图形化展示工具等，实现可视化管理。</p>
+                        <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252"
+                          height="191">
+                      </div>
+                      <div class="rating">
+                        <span class="rating-color icofont-star"></span>
+                        <span class="rating-color icofont-star"></span>
+                        <span class="rating-color icofont-star"></span>
+                        <span class="rating-color icofont-star"></span>
+                        <span class="icofont-star"></span>
+                      </div>
+                    </div>
+                    <!--== End Testimonial Item ==-->
                   </div>
-                  <p class="about-text"> JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。
+                  <div class="swiper-slide">
+                    <!--== Start Testimonial Item ==-->
+                    <div class="testimonial-item">
+                      <div class="client-info">
+                        <div class="desc">
+                          <h4 data-i18n="advantage2_title">智能化、自动化的仓储设计理念</h4>
+                          <h5 data-i18n="advantage2">优势2</h5>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p data-i18n="advantage2_text1">结合各类自动化硬件设备，始终贯彻省人力、省管理为设计目标。每个项目至少节省</p>
+                        <p data-i18n="advantage2_text2">通过接入AI能力，实现多维数据驱动的动态预测，实现智能补货与安全库存动态调整功能。</p>
+                        <p data-i18n="advantage2_text3">
+                          通过整合自有的历史销售数据、提前预置与定期更新的市场区域、供应链波动等万亿token数据，结合多通道深度学习算法，实现对未来周期的库存需求预测。</p>
+                        <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252"
+                          height="191">
+                      </div>
+                      <div class="rating">
+                        <span class="rating-color icofont-star"></span>
+                        <span class="rating-color icofont-star"></span>
+                        <span class="rating-color icofont-star"></span>
+                        <span class="rating-color icofont-star"></span>
+                        <span class="icofont-star"></span>
+                      </div>
+                    </div>
+                    <!--== End Testimonial Item ==-->
+                  </div>
+                  <div class="swiper-slide">
+                    <!--== Start Testimonial Item ==-->
+                    <div class="testimonial-item">
+                      <div class="client-info">
+                        <div class="desc">
+                          <h4 data-i18n="advantage3_title">智能化物流仓库的大脑，面向仓库效率提升</h4>
+                          <h5 data-i18n="advantage3">优势3</h5>
+                        </div>
+                      </div>
+                      <div class="content">
+                        <p data-i18n="advantage3_text1">WMS系统集成通过集成各类智能物流装备，成为整个仓库内的指挥和协调物流装备的大脑。</p>
+                        <p data-i18n="advantage3_text2">WMS协同和智慧库内作业设备，获得整体订单处理效率的大幅提升。</p>
+                        <p data-i18n="advantage3_text3">各种波次策略、拣货测录、拣货路径优化策略、任务分配策略，皆面向整体作业的高效准确。</p>
+                        <img class="quote-icon" src="static/picture/quote-icon.webp" alt="Icon" width="252"
+                          height="191">
+                      </div>
+                      <div class="rating">
+                        <span class="rating-color icofont-star"></span>
+                        <span class="rating-color icofont-star"></span>
+                        <span class="rating-color icofont-star"></span>
+                        <span class="icofont-star"></span>
+                        <span class="icofont-star"></span>
+                      </div>
+                    </div>
+                    <!--== End Testimonial Item ==-->
+                  </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End 核心优势 Area Wrapper ==-->
+      <!--== Start Blog Area Wrapper ==-->
+      <section class="blog-details-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="post-details-content">
+                <div class="post-details-body">
+                  <div class="content-top">
+                    <h4 class="title" data-i18n="feature_intro">功能模块介绍</h4>
+                    <div class="meta" style="margin-top: 20px;">
+                      <span class="post-date"
+                        data-i18n="wms_description">智能仓储管理软件WMS，像大脑一样指挥着整个仓储运作。精准的库存管理、高效的订单处理，让您的仓储管理井井有条。</span>
+                    </div>
+                  </div>
+                  <div class="thumb">
+                    <img class="w-100" src="static/picture/wms01.png" alt="Image" width="1170" height="550">
+                  </div>
+                  <div class="content plr-100">
+                    <h4 class="title" data-i18n="inventory_module">库存管理模块</h4>
+                    <p data-i18n="inventory_desc">实现库存的实时可视、智能决策和历史追溯，形成闭环管理。</p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="inventory_feature1">库存查询（实时可视）：提供全仓库存的实时动态查询，支持多维度检索（如SKU、库区、库位、容器等）。</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="inventory_feature2">库存分析（决策支持）：通过数据建模挖掘库存规律，优化供应链决策。</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="inventory_feature3">库存快照（历史追溯）：定时记录库存状态，形成可追溯的数据档案。</span></p>
+                    <div class="row">
+                      <div class="col-sm-6 col-md-4">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms02.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms03.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms04.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <h4 class="title" data-i18n="sorting_module">料箱分拣复核</h4>
+                    <p data-i18n="sorting_desc">确保入库准确性与出库高效性，贯穿物流关键环节。</p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="sorting_feature1">入库复核：对到货物料进行二次验证，确保入库数据的准确性，避免错放、漏放。</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="sorting_feature2">出库分拣：按订单需求快速定位并分拣料箱，确保出库物料与订单100%一致。</span></p>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms06.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms05.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h4 class="title" data-i18n="inventory_check">盘点管理模块</h4>
+                    <p data-i18n="inventory_check_desc">
+                      盘点管理模块是WMS系统的核心功能之一，主要用于库存实物与系统数据的核对，确保账实一致，及时发现差异并纠偏，保障库存数据的准确性。</p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="inventory_check_feature1">盘点任务管理：支持按容器、库区、SKU等多种维度生成盘点任务。支持年度盘点和日常大盘点。</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="inventory_check_feature2">盘点执行：支持PDA扫描，扫描商品后，系统自动比对库存数据，实时显示差异（多盘/少盘）。</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="inventory_check_feature3">盘点结果处理：自动生成盘点差异报表，支持按SKU、库位、容器等多维度分析。支持人工审核后自动调整系统库存，确保账实一致。</span>
+                    </p>
+                    <div class="row">
+                      <div class="col-sm-4 col-md-3">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms07.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 col-md-3">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms08.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 col-md-3">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms09.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 col-md-1">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms10.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 col-md-1">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms11.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 col-md-1">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms12.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h4 class="title" data-i18n="product_module">货品管理模块</h4>
+                    <p data-i18n="product_desc">
+                      货品信息模块是WMS系统的核心主数据中枢，通过七大子模块的协同配置，实现从基础属性到运营规则的全面数字化管理。通过这七大子模块的有机组合，企业可构建适应复杂业务场景的智能化货品主数据体系，为仓储精益化管理奠定坚实基础。
+                    </p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="product_feature1">入库复核：对到货物料进行二次验证，确保入库数据的准确性，避免错放、漏放。</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="product_feature2">出库分拣：按订单需求快速定位并分拣料箱，确保出库物料与订单100%一致。</span></p>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms15.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/wms14.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-title">
+                      <h4 class="title" data-i18n="layout_planning">仓库布局规划</h4>
+                    </div>
+                    <p data-i18n="layout_desc1">WMS系统不仅可以管理库存和作业流程，还能为仓库布局规划提供强大的数据支持和优化工具。</p>
+                    <p data-i18n="layout_desc2">
+                      使用WMS系统进行仓库布局规划是一个数据驱动的科学过程，首先需要从系统中导出货品基础数据（如SKU属性、ABC分类、周转率等）、作业流程数据和设备参数作为规划依据。WMS系统提供的三维建模工具可模拟不同货架排列方式的空间利用率，其智能分区算法能自动划分快慢流区、温控区等特殊存储区域，而动线分析模块则可优化物流路径设计。在实际规划中，需重点考虑将高周转率的A类商品靠近出入口布置，关联性商品就近存储，并合理配置收货区、拣货区和发货区的面积比例。
+                    </p>
+                    <p data-i18n="layout_desc3">
+                      通过WMS的模拟验证功能，可提前测试布局方案的容量承载、作业效率和扩展灵活性。实施阶段应采取分步策略，先建立框架再填充细节，并将最终布局映射到WMS的库位编码体系。后期还可利用WMS的热力图分析等功能持续优化布局，使仓库空间利用率和作业效率始终保持最佳状态。这种基于WMS的规划方法相比传统经验主义方式更具科学性和可操作性，能有效避免资源浪费。
+                    </p>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/cang01.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <div class="post-item2">
+                          <div class="thumb">
+                            <a href="wms.html"><img src="static/picture/cang02.png" alt="Image" width="370"
+                                height="285"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-title">
+                      <h4 class="title" data-i18n="integration">与其他系统的集成能力</h4>
+                    </div>
+                    <p data-i18n="integration_desc1">
+                      WMS（仓储管理系统）作为企业供应链的智能调度中枢，需要与ERP、MES（制造执行系统）、WCS、PLM、智库、自动化设备（PLC控制/设备协议）等多个系统高效协同，实现从计划层→执行层→设备层的全链路数据贯通，实现数据无缝流转和业务自动化。
+                    </p>
+                    <p data-i18n="integration_desc2">通过强大的集成能力，WMS成为企业数字化供应链的"中枢大脑"，助力企业降本增效，提升市场竞争力。</p>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="thumb-inner">
+                          <img class="w-100" src="static/picture/wms13.jpg" alt="Image" width="970" height="450">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comment-area">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <div class="comment-form-wrap">
+                  <form class="comment-form-wrapper" id="comment-form" name="comment" method="POST" netlify
+                    data-netlify="true">
+                    <input type="hidden" name="form-name" value="comment">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="section-title m-0">
+                          <h2 class="title" data-i18n="message_board">留言板</h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <input class="form-control" type="text" name="title" placeholder="留言标题"
+                                data-i18n-placeholder="message_title" required>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <input class="form-control" type="email" name="email" placeholder="留言邮箱"
+                                data-i18n-placeholder="message_email" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <textarea class="form-control" name="content" id="message-content" maxlength="500"
+                                required oninput="updateCharCounter()"
+                                data-i18n-placeholder="message_content"></textarea>
+                              <div class="text-right small text-muted mt-1">
+                                <span id="char-counter">0</span>/500
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <div class="row align-items-center">
+                                <div class="col-md-6">
+                                  <input type="text" class="form-control" id="captchaInput" name="captcha"
+                                    placeholder="请输入验证码" data-i18n-placeholder="captcha_placeholder" required>
+                                </div>
+                                <div class="col-md-4">
+                                  <canvas id="captchaCanvas" width="120" height="40"
+                                    style="border: 1px solid #ddd;margin-right: 10px;"></canvas>
+                                  <a href="#" onclick="generateCaptcha(); return false;" class="small"
+                                    data-i18n="refresh_captcha">刷新验证码</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group mb-0">
+                              <button class="btn btn-theme" type="submit" data-i18n="submit_now">立即提交<i
+                                  class="icofont-rounded-double-right mr-0"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End Blog Area Wrapper ==-->
+    </main>
+
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="footer-area default-style">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+              <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
+                <div class="gt-widget-about">
+                  <div class="about-logo">
+                    <a href=""><img src="static/picture/logo.png" alt="Realar"></a>
+                  </div>
+                  <p class="about-text" data-i18n="footer_desc"> JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。
                   </p>
                   <div class="gt-social style2">
-                     <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
-                     <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
-                     <a href="https://www.instagram.com/"><i class="icon icofont-linkedin"></i></a>
-                     <a href="https://www.youtube.com/"><i class="icon icofont-skype"></i></a>
+                    <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
+                    <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
+                    <a href="https://www.instagram.com/"><i class="icon icofont-linkedin"></i></a>
+                    <a href="https://www.youtube.com/"><i class="icon icofont-skype"></i></a>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
-         </div>
-          <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
-            <div class="widget-item">
-              <h4 class="widget-title">热门产品</h4>
-              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-2">热门产品</h4>
-              <div id="dividerId-2" class="collapse widget-collapse-body">
-                <nav class="widget-menu-wrap">
-                  <ul class="nav-menu nav">
-                    <li><a href="wms.html"><i class="icofont-minus"></i>智能仓储系统WMS</a></li>
-                    <li><a href="wcs.html"><i class="icofont-minus"></i>自动化设备管理系统WCS</a></li>
-                    <li><a href="digital.html"><i class="icofont-minus"></i>数字孪生系统</a></li>
-                    <li><a href="about.html"><i class="icofont-minus"></i>关于我们</a></li>
-                     
-                  </ul>
-                </nav>
+            <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
+              <div class="widget-item">
+                <h4 class="widget-title" data-i18n="popular_products">热门产品</h4>
+                <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#dividerId-2" data-i18n="popular_products">热门产品</h4>
+                <div id="dividerId-2" class="collapse widget-collapse-body">
+                  <nav class="widget-menu-wrap">
+                    <ul class="nav-menu nav">
+                      <li><a href="wms.html"><i class="icofont-minus"></i><span data-i18n="wms">智能仓储系统WMS</span></a>
+                      </li>
+                      <li><a href="wcs.html"><i class="icofont-minus"></i><span data-i18n="wcs">自动化设备管理系统WCS</span></a>
+                      </li>
+                      <li><a href="digital.html"><i class="icofont-minus"></i><span
+                            data-i18n="digital">数字孪生系统</span></a></li>
+                      <li><a href="about.html"><i class="icofont-minus"></i><span data-i18n="about">关于我们</span></a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-2 col-xl-4">
+              <div class="widget-item ml-35 lg-ml-0">
+                <h4 class="widget-title" data-i18n="contact_us">联系我们</h4>
+                <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#dividerId-4" data-i18n="contact_us">联系我们</h4>
+                <div id="dividerId-4" class="collapse widget-collapse-body">
+                  <nav class="widget-menu-wrap">
+                    <ul class="nav-menu nav">
+                      <li><a href=""><i class="icofont-minus"></i><span data-i18n="company_email">公司邮箱</span></a></li>
+                      <li><a href=""><i class="icofont-minus"></i><span data-i18n="company_phone">130 5204
+                            4828</span></a></li>
+                      <li><a href="" style="line-height: 35px;vertical-align: sub;"><i class="icofont-minus"></i><span
+                            data-i18n="company_address">浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</span></a></li>
+                    </ul>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-2 col-xl-4">
-            <div class="widget-item ml-35 lg-ml-0">
-              <h4 class="widget-title">联系我们</h4>
-              <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-4">联系我们</h4>
-              <div id="dividerId-4" class="collapse widget-collapse-body">
-                <nav class="widget-menu-wrap">
-                  <ul class="nav-menu nav">
-                    <li><a href=""><i class="icofont-minus"></i>公司邮箱</a></li>
-                    <li><a href=""><i class="icofont-minus"></i>130 5204 4828</a></li>
-                    <li><a href="" style="line-height: 35px;
-    vertical-align: sub;"><i class="icofont-minus"></i>浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</a></li>
-                  </ul>
-                </nav>
+        </div>
+        <div class="footer-shape bg-img" data-bg-img="assets/img/photos/footer1.webp"></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="widget-copyright">
+                  <p data-i18n="copyright">宁波捷方优制科技有限公司版权所有 - <a href="http://beian.miit.gov.cn/"
+                      target="_blank">浙ICP备2023030316号</a></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="footer-shape bg-img" data-bg-img="assets/img/photos/footer1.webp"></div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="footer-bottom-content">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="widget-copyright">
-                 <p>宁波捷方优制科技有限公司版权所有 -
-        <a href="http://beian.miit.gov.cn/" target="_blank">浙ICP备2023030316号</a>
-      </p>
-              </div>
-            </div>
-          </div>
+    </footer>
+    <!--== End Footer Area Wrapper ==-->
+
+    <!--== Scroll Top Button ==-->
+    <div class="scroll-to-top"><span class="icofont-rounded-double-left icofont-rotate-90"></span></div>
+
+    <!--== Start Side Menu ==-->
+    <aside class="off-canvas-area offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+      id="offcanvasWithBothOptions">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <!-- Start Mobile Menu Wrapper -->
+        <div class="res-mobile-menu">
+          <nav id="offcanvasNav" class="offcanvas-menu">
+            <ul>
+              <li><a href="index.html" data-i18n="home">首页</a></li>
+              <li><a class="color-theme" href="wms.html" data-i18n="wms">智能仓储系统WMS</a></li>
+              <li><a href="wcs.html" data-i18n="wcs">自动化设备管理系统WCS</a></li>
+              <li><a href="digital.html" data-i18n="digital">数字孪生系统</a></li>
+              <li><a href="about.html" data-i18n="about">关于我们</a></li>
+            </ul>
+          </nav>
         </div>
+        <!-- End Mobile Menu Wrapper -->
       </div>
-    </div>
-  </footer>
-  <!--== End Footer Area Wrapper ==-->
-  
-  <!--== Scroll Top Button ==-->
-  <div class="scroll-to-top"><span class="icofont-rounded-double-left icofont-rotate-90"></span></div>
+    </aside>
+    <!--== End Side Menu ==-->
+  </div>
 
-  <!--== Start Side Menu ==-->
-  <aside class="off-canvas-area offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
-    <div class="offcanvas-header">
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <!-- Start Mobile Menu Wrapper -->
-      <div class="res-mobile-menu">
-        <nav id="offcanvasNav" class="offcanvas-menu">
-          <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a class="color-theme" href="javascript:void(0)">智能仓储系统WMS</a></li>
-            <li><a href="wcs.html">自动化设备管理系统WCS</a></li>
-            <li><a href="digital.html">数字孪生系统</a></li>
-            <li><a href="about.html">关于我们</a></li>
-          </ul>
-        </nav>
-      </div>
-      <!-- End Mobile Menu Wrapper -->
-    </div>
-  </aside>
-  <!--== End Side Menu ==-->
-</div>
-
-<!--=======================Javascript============================-->
-<script>
-// 字符计数
-function updateCharCounter() {
-  const textarea = document.getElementById("message-content");
-  const counter = document.getElementById("char-counter");
-  counter.textContent = textarea.value.length;
-}
-  // 验证码生成逻辑
-  let captchaText = '';
-  function generateCaptcha() {
-    const canvas = document.getElementById('captchaCanvas');
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // 生成随机验证码
-    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    captchaText = '';
-    for(let i = 0; i < 5; i++) {
-      captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    
-    // 绘制验证码
-    ctx.font = '24px Arial';
-    ctx.fillStyle = '#333';
-    ctx.fillText(captchaText, 10, 30);
-    
-    // 添加干扰线
-    for(let i = 0; i < 5; i++) {
-      ctx.strokeStyle = '#ccc';
-      ctx.beginPath();
-      ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
-      ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
-      ctx.stroke();
-    }
-  }
-  
-  // 初始化验证码
-  generateCaptcha();
-  
-  // 表单提交处理
-  document.getElementById("comment-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-    if (document.getElementById("message-content").value.length > 500) {
-    alert("内容不能超过500字！");
-    return;
-  }
-
-    
-    // 验证码验证
-    const userInput = document.getElementById('captchaInput').value;
-    if(userInput.toUpperCase() !== captchaText) {
-      alert("验证码错误，请重新输入");
-      generateCaptcha();
-      return;
-    }
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    
-      // 确保所有字段已包含
-  if (!formData.has("captcha")) {
-    formData.append("captcha", document.getElementById("captchaInput").value);
-  }
-
-    try {
-      const response = await fetch('/', {
-         method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-      });
-      
-      if(response.ok) {
-        alert("提交成功！");
-        form.reset();
-        generateCaptcha(); // 提交成功后刷新验证码
-      } else {
-        alert("提交失败，请稍后重试。");
+  <!--=======================Javascript============================-->
+  <script>
+    // 初始化语言系统
+    const translations = {
+      "en": {
+        "wms_page_title": "WMS System - JFindX",
+        "home": "Home",
+        "wms": "WMS System",
+        "wcs": "WCS System",
+        "digital": "Digital Twin",
+        "about": "About Us",
+        "wms_title": "Warehouse Management System",
+        "wms_subtitle": "Like a brain commanding the entire warehouse operation. Precise inventory management and efficient order processing keep your warehouse management in perfect order.",
+        "wms_section": "Warehouse Management System WMS",
+        "core_advantages": "Core Advantages",
+        "advantage1_title": "Productized, Refined Warehouse Management System",
+        "advantage1": "Advantage 1",
+        "advantage1_text1": "Business practices from multiple manufacturing and trade industry clients, integrating all warehouse business requirements into the product with complete functionality.",
+        "advantage1_text2": "Whether it's location management, batch management, or supplier management, the concept of refinement is reflected everywhere.",
+        "advantage1_text3": "Detailed business rules cover the entire warehouse operation process, efficiently handling complex workflows with ease.",
+        "advantage1_text4": "Achieve visual management through dashboards and graphical display tools.",
+        "advantage2_title": "Intelligent, Automated Warehouse Design Concept",
+        "advantage2": "Advantage 2",
+        "advantage2_text1": "Integrated with various automated hardware equipment, consistently aiming to save manpower and management costs as design goals. Each project saves at least",
+        "advantage2_text2": "By incorporating AI capabilities, achieve dynamic predictions driven by multi-dimensional data, enabling intelligent replenishment and dynamic adjustment of safety stock.",
+        "advantage2_text3": "By integrating historical sales data, pre-set and regularly updated market regions, supply chain fluctuations, and other trillion-token data, combined with multi-channel deep learning algorithms, achieve inventory demand forecasting for future cycles.",
+        "advantage3_title": "The Brain of Intelligent Logistics Warehouse, Focused on Warehouse Efficiency Improvement",
+        "advantage3": "Advantage 3",
+        "advantage3_text1": "The WMS system integrates various intelligent logistics equipment, becoming the brain that commands and coordinates logistics equipment throughout the warehouse.",
+        "advantage3_text2": "WMS collaborates with intelligent in-warehouse operation equipment, achieving significant improvements in overall order processing efficiency.",
+        "advantage3_text3": "Various wave strategies, picking strategies, picking path optimization strategies, and task allocation strategies are all focused on the efficiency and accuracy of overall operations.",
+        "feature_intro": "Feature Module Introduction",
+        "wms_description": "The WMS software, like a brain, commands the entire warehouse operation. Precise inventory management and efficient order processing keep your warehouse management in perfect order.",
+        "inventory_module": "Inventory Management Module",
+        "inventory_desc": "Achieve real-time visibility, intelligent decision-making, and historical traceability of inventory, forming a closed-loop management system.",
+        "inventory_feature1": "Inventory Query (Real-time Visibility): Provides real-time dynamic queries of all warehouse inventory, supporting multi-dimensional searches (such as SKU, warehouse area, location, container, etc.).",
+        "inventory_feature2": "Inventory Analysis (Decision Support): Uses data modeling to uncover inventory patterns and optimize supply chain decisions.",
+        "inventory_feature3": "Inventory Snapshot (Historical Traceability): Records inventory status at regular intervals, forming traceable data archives.",
+        "sorting_module": "Bin Sorting and Verification",
+        "sorting_desc": "Ensures accuracy in inbound and efficiency in outbound, covering key logistics processes.",
+        "sorting_feature1": "Inbound Verification: Conducts secondary verification of arrived goods to ensure accuracy of inbound data and prevent misplacement or omission.",
+        "sorting_feature2": "Outbound Sorting: Quickly locates and sorts bins according to order requirements, ensuring 100% consistency between outbound materials and orders.",
+        "inventory_check": "Inventory Check Module",
+        "inventory_check_desc": "The inventory check module is one of the core functions of the WMS system, primarily used to verify physical inventory against system data, ensuring consistency between records and actual stock, promptly identifying discrepancies, and correcting deviations to maintain accurate inventory data.",
+        "inventory_check_feature1": "Inventory Task Management: Supports generating inventory tasks by container, warehouse area, SKU, and other dimensions. Supports annual and daily large-scale inventory checks.",
+        "inventory_check_feature2": "Inventory Execution: Supports PDA scanning. After scanning items, the system automatically compares inventory data and displays discrepancies (over-counted/under-counted) in real-time.",
+        "inventory_check_feature3": "Inventory Result Processing: Automatically generates inventory discrepancy reports, supporting analysis by SKU, location, container, and other dimensions. Supports automatic adjustment of system inventory after manual review to ensure consistency between records and actual stock.",
+        "product_module": "Product Management Module",
+        "product_desc": "The product information module is the core master data hub of the WMS system. Through the coordinated configuration of seven sub-modules, it achieves comprehensive digital management from basic attributes to operational rules. Through the organic combination of these seven sub-modules, enterprises can build an intelligent product master data system that adapts to complex business scenarios, laying a solid foundation for lean warehouse management.",
+        "product_feature1": "Inbound Verification: Conducts secondary verification of arrived goods to ensure accuracy of inbound data and prevent misplacement or omission.",
+        "product_feature2": "Outbound Sorting: Quickly locates and sorts bins according to order requirements, ensuring 100% consistency between outbound materials and orders.",
+        "layout_planning": "Warehouse Layout Planning",
+        "layout_desc1": "The WMS system not only manages inventory and workflows but also provides powerful data support and optimization tools for warehouse layout planning.",
+        "layout_desc2": "Using the WMS system for warehouse layout planning is a data-driven scientific process. First, export basic product data (such as SKU attributes, ABC classification, turnover rate, etc.), workflow data, and equipment parameters from the system as planning references. The 3D modeling tools provided by the WMS system can simulate the space utilization of different shelf arrangements. Its intelligent zoning algorithm can automatically divide special storage areas such as fast/slow-moving zones and temperature-controlled zones, while the path analysis module can optimize logistics route design. In actual planning, special attention should be paid to placing high-turnover Class A goods near entrances and exits, storing related goods nearby, and reasonably configuring the area ratios of receiving, picking, and shipping zones.",
+        "layout_desc3": "Through the WMS system's simulation verification function, the capacity, operational efficiency, and scalability of layout plans can be tested in advance. The implementation phase should adopt a step-by-step strategy, first establishing the framework and then filling in the details, while mapping the final layout to the WMS system's location coding system. Later, functions such as heat map analysis in the WMS system can be used to continuously optimize the layout, keeping warehouse space utilization and operational efficiency at their best. This WMS-based planning method is more scientific and practical compared to traditional empirical approaches, effectively avoiding resource waste.",
+        "integration": "Integration Capabilities with Other Systems",
+        "integration_desc1": "As the intelligent scheduling hub of the enterprise supply chain, the WMS (Warehouse Management System) needs to efficiently collaborate with multiple systems such as ERP, MES (Manufacturing Execution System), WCS, PLM, knowledge base, and automated equipment (PLC control/equipment protocols) to achieve end-to-end data integration from the planning layer → execution layer → equipment layer, enabling seamless data flow and business automation.",
+        "integration_desc2": "With powerful integration capabilities, the WMS becomes the 'central brain' of the enterprise's digital supply chain, helping companies reduce costs, improve efficiency, and enhance market competitiveness.",
+        "message_board": "Message Board",
+        "message_title": "Message Title",
+        "message_email": "Message Email",
+        "message_content": "Message Content",
+        "captcha_placeholder": "Please enter the captcha",
+        "refresh_captcha": "Refresh Captcha",
+        "submit_now": "Submit Now",
+        "footer_desc": "JFindX - Automation solution experts, tailor-made automation solutions for you, covering comprehensive services from hardware equipment to software systems.",
+        "popular_products": "Popular Products",
+        "contact_us": "Contact Us",
+        "company_email": "Company Email",
+        "company_phone": "130 5204 4828",
+        "company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo, Zhejiang Province",
+        "copyright": "© Ningbo JFindX Technology Co., Ltd. All Rights Reserved"
+      },
+      "cn": {
+        "wms_page_title": "智能仓储系统WMS - JFindX",
+        "home": "首页",
+        "wms": "智能仓储系统WMS",
+        "wcs": "自动化设备管理系统WCS",
+        "digital": "数字孪生系统",
+        "about": "关于我们",
+        "wms_title": "智能仓储管理软件WMS",
+        "wms_subtitle": "像大脑一样指挥着整个仓储运作。精准的库存管理、高效的订单处理，让您的仓储管理井井有条。",
+        "wms_section": "智能仓储系统WMS",
+        "core_advantages": "核心优势",
+        "advantage1_title": "产品化、精细化仓储管理系统",
+        "advantage1": "优势1",
+        "advantage1_text1": "多个制造业、贸易行业客户业务实践，仓储全业务需求融合与产品中，功能完善。",
+        "advantage1_text2": "无论是库位管理、批次管理、供应商管理、处处体现精细化理念。",
+        "advantage1_text3": "详尽的业务规则，涵盖仓库作业全过程，从容高效处理复杂作业流程。",
+        "advantage1_text4": "通过看板、图形化展示工具等，实现可视化管理。",
+        "advantage2_title": "智能化、自动化的仓储设计理念",
+        "advantage2": "优势2",
+        "advantage2_text1": "结合各类自动化硬件设备，始终贯彻省人力、省管理为设计目标。每个项目至少节省",
+        "advantage2_text2": "通过接入AI能力，实现多维数据驱动的动态预测，实现智能补货与安全库存动态调整功能。",
+        "advantage2_text3": "通过整合自有的历史销售数据、提前预置与定期更新的市场区域、供应链波动等万亿token数据，结合多通道深度学习算法，实现对未来周期的库存需求预测。",
+        "advantage3_title": "智能化物流仓库的大脑，面向仓库效率提升",
+        "advantage3": "优势3",
+        "advantage3_text1": "WMS系统集成通过集成各类智能物流装备，成为整个仓库内的指挥和协调物流装备的大脑。",
+        "advantage3_text2": "WMS协同和智慧库内作业设备，获得整体订单处理效率的大幅提升。",
+        "advantage3_text3": "各种波次策略、拣货测录、拣货路径优化策略、任务分配策略，皆面向整体作业的高效准确。",
+        "feature_intro": "功能模块介绍",
+        "wms_description": "智能仓储管理软件WMS，像大脑一样指挥着整个仓储运作。精准的库存管理、高效的订单处理，让您的仓储管理井井有条。",
+        "inventory_module": "库存管理模块",
+        "inventory_desc": "实现库存的实时可视、智能决策和历史追溯，形成闭环管理。",
+        "inventory_feature1": "库存查询（实时可视）：提供全仓库存的实时动态查询，支持多维度检索（如SKU、库区、库位、容器等）。",
+        "inventory_feature2": "库存分析（决策支持）：通过数据建模挖掘库存规律，优化供应链决策。",
+        "inventory_feature3": "库存快照（历史追溯）：定时记录库存状态，形成可追溯的数据档案。",
+        "sorting_module": "料箱分拣复核",
+        "sorting_desc": "确保入库准确性与出库高效性，贯穿物流关键环节。",
+        "sorting_feature1": "入库复核：对到货物料进行二次验证，确保入库数据的准确性，避免错放、漏放。",
+        "sorting_feature2": "出库分拣：按订单需求快速定位并分拣料箱，确保出库物料与订单100%一致。",
+        "inventory_check": "盘点管理模块",
+        "inventory_check_desc": "盘点管理模块是WMS系统的核心功能之一，主要用于库存实物与系统数据的核对，确保账实一致，及时发现差异并纠偏，保障库存数据的准确性。",
+        "inventory_check_feature1": "盘点任务管理：支持按容器、库区、SKU等多种维度生成盘点任务。支持年度盘点和日常大盘点。",
+        "inventory_check_feature2": "盘点执行：支持PDA扫描，扫描商品后，系统自动比对库存数据，实时显示差异（多盘/少盘）。",
+        "inventory_check_feature3": "盘点结果处理：自动生成盘点差异报表，支持按SKU、库位、容器等多维度分析。支持人工审核后自动调整系统库存，确保账实一致。",
+        "product_module": "货品管理模块",
+        "product_desc": "货品信息模块是WMS系统的核心主数据中枢，通过七大子模块的协同配置，实现从基础属性到运营规则的全面数字化管理。通过这七大子模块的有机组合，企业可构建适应复杂业务场景的智能化货品主数据体系，为仓储精益化管理奠定坚实基础。",
+        "product_feature1": "入库复核：对到货物料进行二次验证，确保入库数据的准确性，避免错放、漏放。",
+        "product_feature2": "出库分拣：按订单需求快速定位并分拣料箱，确保出库物料与订单100%一致。",
+        "layout_planning": "仓库布局规划",
+        "layout_desc1": "WMS系统不仅可以管理库存和作业流程，还能为仓库布局规划提供强大的数据支持和优化工具。",
+        "layout_desc2": "使用WMS系统进行仓库布局规划是一个数据驱动的科学过程，首先需要从系统中导出货品基础数据（如SKU属性、ABC分类、周转率等）、作业流程数据和设备参数作为规划依据。WMS系统提供的三维建模工具可模拟不同货架排列方式的空间利用率，其智能分区算法能自动划分快慢流区、温控区等特殊存储区域，而动线分析模块则可优化物流路径设计。在实际规划中，需重点考虑将高周转率的A类商品靠近出入口布置，关联性商品就近存储，并合理配置收货区、拣货区和发货区的面积比例。",
+        "layout_desc3": "通过WMS的模拟验证功能，可提前测试布局方案的容量承载、作业效率和扩展灵活性。实施阶段应采取分步策略，先建立框架再填充细节，并将最终布局映射到WMS的库位编码体系。后期还可利用WMS的热力图分析等功能持续优化布局，使仓库空间利用率和作业效率始终保持最佳状态。这种基于WMS的规划方法相比传统经验主义方式更具科学性和可操作性，能有效避免资源浪费。",
+        "integration": "与其他系统的集成能力",
+        "integration_desc1": "WMS（仓储管理系统）作为企业供应链的智能调度中枢，需要与ERP、MES（制造执行系统）、WCS、PLM、智库、自动化设备（PLC控制/设备协议）等多个系统高效协同，实现从计划层→执行层→设备层的全链路数据贯通，实现数据无缝流转和业务自动化。",
+        "integration_desc2": "通过强大的集成能力，WMS成为企业数字化供应链的'中枢大脑'，助力企业降本增效，提升市场竞争力。",
+        "message_board": "留言板",
+        "message_title": "留言标题",
+        "message_email": "留言邮箱",
+        "message_content": "留言内容",
+        "captcha_placeholder": "请输入验证码",
+        "refresh_captcha": "刷新验证码",
+        "submit_now": "立即提交",
+        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+        "popular_products": "热门产品",
+        "contact_us": "联系我们",
+        "company_email": "公司邮箱",
+        "company_phone": "130 5204 4828",
+        "company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+        "copyright": "宁波捷方优制科技有限公司版权所有"
       }
-    } catch(error) {
-      alert("提交失败，请稍后重试。");
-      generateCaptcha();
+    };
+
+    let currentLang = localStorage.getItem('language') || 'cn';
+
+    // 核心翻译函数
+    function updateLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
+
+      // 更新所有带翻译标记的元素
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.value = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      // 更新placeholder
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+          element.setAttribute('placeholder', translations[lang][key]);
+        }
+      });
+
+      // 更新按钮显示
+      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+      // 更新页面标题
+      document.title = translations[lang]['wms_page_title'];
     }
-  });
-  </script>  
 
-<!--=== Modernizr Min Js ===-->
-<script src="static/js/modernizr.js"></script>
-<!--=== jQuery Min Js ===-->
-<script src="static/js/jquery-main.js"></script>
-<!--=== jQuery Migration Min Js ===-->
-<script src="static/js/jquery-migrate.js"></script>
-<!--=== Popper Min Js ===-->
-<script src="static/js/popper.min.js"></script>
-<!--=== Bootstrap Min Js ===-->
-<script src="static/js/bootstrap.min.js"></script>
-<!--=== jquery Swiper Min Js ===-->
-<script src="static/js/swiper.min.js"></script>
-<!--=== jquery Countdown Js ===-->
-<script src="static/js/jquery.countdown.min.js"></script>
-<!--=== Isotope Min Js ===-->
-<script src="static/js/isotope.pkgd.min.js"></script>
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 初始化语言
+      updateLanguage(currentLang);
 
-<!--=== Custom Js ===-->
-<script src="static/js/custom.js"></script>
+      // 绑定语言切换事件
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = e.target.getAttribute('data-lang');
+          updateLanguage(lang);
+
+          // 手动关闭下拉菜单（Bootstrap5方法）
+          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+          dropdown.hide();
+        });
+      });
+
+      // 初始化Bootstrap下拉组件
+      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+    });
+
+    // 字符计数
+    function updateCharCounter() {
+      const textarea = document.getElementById("message-content");
+      const counter = document.getElementById("char-counter");
+      counter.textContent = textarea.value.length;
+    }
+
+    // 验证码生成逻辑
+    let captchaText = '';
+    function generateCaptcha() {
+      const canvas = document.getElementById('captchaCanvas');
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // 生成随机验证码
+      const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      captchaText = '';
+      for (let i = 0; i < 5; i++) {
+        captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+
+      // 绘制验证码
+      ctx.font = '24px Arial';
+      ctx.fillStyle = '#333';
+      ctx.fillText(captchaText, 10, 30);
+
+      // 添加干扰线
+      for (let i = 0; i < 5; i++) {
+        ctx.strokeStyle = '#ccc';
+        ctx.beginPath();
+        ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+        ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+        ctx.stroke();
+      }
+    }
+
+    // 初始化验证码
+    generateCaptcha();
+
+    // 表单提交处理
+    document.getElementById("comment-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (document.getElementById("message-content").value.length > 500) {
+        alert(currentLang === 'cn' ? "内容不能超过500字！" : "Content cannot exceed 500 characters!");
+        return;
+      }
+
+      // 验证码验证
+      const userInput = document.getElementById('captchaInput').value;
+      if (userInput.toUpperCase() !== captchaText) {
+        alert(currentLang === 'cn' ? "验证码错误，请重新输入" : "Incorrect captcha, please try again");
+        generateCaptcha();
+        return;
+      }
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      // 确保所有字段已包含
+      if (!formData.has("captcha")) {
+        formData.append("captcha", document.getElementById("captchaInput").value);
+      }
+
+      try {
+        const response = await fetch('/', {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        });
+
+        if (response.ok) {
+          alert(currentLang === 'cn' ? "提交成功！" : "Submission successful!");
+          form.reset();
+          generateCaptcha(); // 提交成功后刷新验证码
+        } else {
+          alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
+        }
+      } catch (error) {
+        alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
+        generateCaptcha();
+      }
+    });
+  </script>
+
+  <!--=== Modernizr Min Js ===-->
+  <script src="static/js/modernizr.js"></script>
+  <!--=== jQuery Min Js ===-->
+  <script src="static/js/jquery-main.js"></script>
+  <!--=== jQuery Migration Min Js ===-->
+  <script src="static/js/jquery-migrate.js"></script>
+  <!--=== Popper Min Js ===-->
+  <script src="static/js/popper.min.js"></script>
+  <!--=== Bootstrap Min Js ===-->
+  <script src="static/js/bootstrap.min.js"></script>
+  <!--=== jquery Swiper Min Js ===-->
+  <script src="static/js/swiper.min.js"></script>
+  <!--=== jquery Countdown Js ===-->
+  <script src="static/js/jquery.countdown.min.js"></script>
+  <!--=== Isotope Min Js ===-->
+  <script src="static/js/isotope.pkgd.min.js"></script>
+
+  <!--=== Custom Js ===-->
+  <script src="static/js/custom.js"></script>
 
 </body>
 
