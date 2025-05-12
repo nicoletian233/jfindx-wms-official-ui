@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JFindX ">
+    <meta name="keywords" content="Logistic, Moving Company, Transportation, business, Transport, Cargo Delivery">
+    <meta name="author" content="Codecarnival">
+
+    <title data-i18n="page_title">智能仓储硬件设备 - JFindX</title>
+    <!-- Favcion -->
+    <link rel="shortcut icon" href="assets/img//slider/favicon.ico">
+
+    <!--== Google Fonts ==-->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="static/css/css2.css" rel="stylesheet">
+
+    <!--== Bootstrap CSS ==-->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <!--== Icofont CSS ==-->
+    <link href="static/css/icofont.css" rel="stylesheet">
+    <!--== Swiper CSS ==-->
+    <link href="static/css/swiper.min.css" rel="stylesheet">
+    <!--== Main Style CSS ==-->
+    <link href="static/css/style.css" rel="stylesheet">
+
+
+    <style>
+        :root {
+            --primary-color: #2A5298;
+            --secondary-color: #6C757D;
+        }
+
+        .hardware-card {
+            border: 1px solid #E9ECEF;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .hardware-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(42, 82, 152, 0.1);
+        }
+
+        .spec-badge {
+            background: #F8F9FA;
+            border: 1px solid #DEE2E6;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .operation-steps {
+            counter-reset: step;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .operation-steps li {
+            position: relative;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #F8F9FA;
+            border-radius: 8px;
+        }
+
+        .operation-steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: -2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .tech-table th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .operation-steps li {
+                padding: 1rem;
+            }
+
+            .operation-steps li::before {
+                left: -1.5rem;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        /* 卡片基础样式 */
+        .device-card {
+            border-radius: 12px;
+            padding: 1.5rem;
+            height: 100%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header h6 {
+            margin-bottom: 0;
+        }
+
+        .badge {
+            font-size: 0.75em;
+            padding: 0.35em 0.75em;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* 设备颜色系统 */
+        .pallet-card .badge {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .mini-card .badge {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .shuttle-card .badge {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        /* 交互动效 */
+        .device-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 阶段标题样式 */
+        .phase-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding-left: 1rem;
+            border-left: 4px solid #265c9d;
+            color: #2d3748;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .device-card {
+                padding: 1.25rem;
+            }
+
+            .phase-title {
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+            }
+
+            .badge {
+                font-size: 0.7em;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .row-cols-lg-3>* {
+                flex: 0 0 auto;
+                width: 33.3333%;
+            }
+        }
+
+        /* 硬件展示模块 */
+        .hardware-showcase {
+            background: linear-gradient(to bottom, #f8f9fa 0%, #fff 100%);
+        }
+
+        /* 卡片悬停效果 */
+        .card-hover {
+            margin: 10px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 1rem;
+            background: #fff;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.12);
+        }
+
+        /* 图标容器 */
+        .icon-box {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 3D模型容器 */
+        .hardware-model {
+            position: relative;
+            background: #f8f9fa;
+            min-height: 300px;
+            line-height: 300px;
+            width: auto;
+            max-width: max-content;
+            margin: auto;
+        }
+
+        .zoom-effect {
+            transition: transform 0.3s ease;
+        }
+
+        .hardware-model:hover .zoom-effect {
+            transform: scale(1.03);
+        }
+
+        .model-overlay {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        /* 参数指示器 */
+        .spec-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .spec-card:hover {
+            background: #fff;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+        }
+
+        /* 应用场景徽章 */
+        .app-badge {
+            padding: 0.5rem 1rem;
+            background: #f8f9fa;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hardware-model {
+                min-height: 200px;
+                line-height: 200px;
+            }
+
+            .icon-box {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+
+        /* 新增颜色系统 */
+        .bg-purple {
+            background: #6f42c1 !important;
+        }
+
+        .text-purple {
+            color: #6f42c1 !important;
+        }
+
+        /* 设备特色指示器 */
+        .spec-badge {
+            background: rgba(108, 117, 125, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        /* 渐变文字效果 */
+        .gradient-text {
+            background: linear-gradient(45deg, #265c9d, #4f6798);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .order-lg-1 {
+                order: -1;
+            }
+
+            .hardware-card {
+                margin-bottom: 2rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--wrapper start-->
+    <div class="wrapper page-blog-details-wrapper">
+
+        <!--== Start Header Wrapper ==-->
+        <header class="header-wrapper">
+            <div class="header-area header-default header-transparent sticky-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-4 col-sm-6 col-lg-2">
+                            <div class="header-logo-area">
+                                <a href="index.html">
+                                    <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161"
+                                        height="48" data-i18n="alt_logo">
+                                    <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161"
+                                        height="48" data-i18n="alt_logo_light">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 d-none d-lg-block">
+                            <div class="header-navigation-area">
+                                <ul class="main-menu nav position-relative">
+                                    <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+                                    <li><a href="solution.html" data-i18n="nav_solution">整体解决方案</a></li>
+                                    <li class="has-submenu "><a href="wms.html" data-i18n="nav_software">AI柔性供应链软件</a>
+                                        <ul class="submenu-nav">
+                                            <li><a href="wms.html" data-i18n="submenu_wms">智能仓储管理系统WMS</a></li>
+                                            <li><a href="wcs.html" data-i18n="submenu_wcs">自动化设备管理系统WCS</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu active"><a href="warehouse.html"
+                                            data-i18n="nav_hardware">智能仓储物流硬件</a>
+                                        <ul class="submenu-nav">
+                                            <li class="active"><a href="warehouse.html"
+                                                    data-i18n="submenu_warehouse">智能仓储</a></li>
+                                            <li><a href="logistics.html" data-i18n="submenu_logistics">智能物流</a></li>
+                                            <li><a href="rfid.html" data-i18n="submenu_rfid">RFID电子标签</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="digital.html" data-i18n="nav_digital">数字孪生系统</a></li>
+                                    <li><a href="cases.html" data-i18n="nav_cases">成功案例</a></li>
+                                    <li class="has-submenu"><a href="about.html" data-i18n="nav_about">关于我们</a>
+                                        <ul class="submenu-nav">
+                                            <li><a href="about.html" data-i18n="submenu_about">团队介绍</a></li>
+                                            <li><a href="honor.html" data-i18n="submenu_honor">公司荣誉</a></li>
+                                            <li><a href="contact.html" data-i18n="submenu_contact">联系我们</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-8 col-sm-6 col-lg-1">
+                            <div class="header-action-area">
+                                <div class="header-lang-dropdown">
+                                    <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang"
+                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                        data-i18n="current_lang">CN</button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownLang">
+                                        <li class="dropdown-item" data-lang="en">EN</li>
+                                        <li class="dropdown-item" data-lang="cn">CN</li>
+                                    </ul>
+                                </div>
+                                <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                                    <span class="icon-line"></span>
+                                    <span class="icon-line"></span>
+                                    <span class="icon-line"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--== End Header Wrapper ==-->
+
+        <main class="main-content">
+            <!--== 页面标题区 ==-->
+            <section class="page-title-area bg-img" data-bg-img="static/picture/bwms-1.jpg">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12 m-auto">
+                            <div class="page-title-content text-center">
+                                <h2 class="title" data-i18n="page_heading">智能仓储</h2>
+                                <div class="bread-crumbs">
+                                    <span data-i18n="page_subheading">自动化设备｜智能控制｜柔性配置</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-overlay3"></div>
+            </section>
+
+            <!-- 核心硬件展示 -->
+            <section class="section-padding bg-light hardware-showcase">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 data-i18n="core_hardware">核心硬件设备</h2>
+                        <p class="text-muted" data-i18n="hardware_desc">模块化设计 | 智能物联 | 毫米级精度</p>
+                    </div>
+
+                    <!-- 托盘堆垛机 -->
+                    <div class="hardware-card card-hover mb-7">
+                        <div class="row g-5 align-items-stretch">
+                            <div class="col-lg-6">
+                                <div class="p-4 h-100">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="icon-box bg-primary me-3">
+                                            <i class="bi bi-pallet fs-2 text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="mb-0" data-i18n="equipment1.title">托盘堆垛机</h3>
+                                            <span class="spec-badge" data-i18n="equipment1.type">AS/RS系统核心</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3D模型容器 -->
+                                    <div class="hardware-model rounded-4 overflow-hidden">
+                                        <img src="static/picture/duiduoji.png" class="img-fluid zoom-effect"
+                                            data-i18n="equipment1.img_alt" alt="智能托盘堆垛机三维示意图">
+                                        <div class="model-overlay">
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip"
+                                                title="360°查看">
+                                                <i class="bi bi-arrows-fullscreen"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="p-4 h-100">
+                                    <!-- 功能特性 -->
+                                    <h4 class="mb-4 gradient-text" data-i18n="features">卓越性能</h4>
+                                    <ul class="list-unstyled feature-list">
+                                        <li class="mb-3 d-flex">
+                                            <i class="bi bi-gear-fill text-primary me-2 mt-1"></i>
+                                            <div>
+                                                <h6 data-i18n="equipment1.feature1">双深位存取技术</h6>
+                                                <p class="text-muted mb-0">货叉行程1200mm，存储密度提升40%</p>
+                                            </div>
+                                        </li>
+                                        <li class="mb-3 d-flex">
+                                            <i class="bi bi-speedometer2 text-primary me-2 mt-1"></i>
+                                            <div>
+                                                <h6 data-i18n="equipment1.feature2">高速平稳运行</h6>
+                                                <p class="text-muted mb-0">水平速度1.5m/s ±0.05，升降速度0.8m/s</p>
+                                            </div>
+                                        </li>
+                                        <!-- 更多特性 -->
+                                    </ul>
+
+                                    <!-- 技术参数 -->
+                                    <div class="specs-dashboard bg-light p-4 mt-4 rounded-4">
+                                        <h5 class="mb-4" data-i18n="technical_specs">技术指标</h5>
+                                        <div class="row g-3">
+                                            <div class="col-6 col-md-4">
+                                                <div class="spec-card text-center p-3">
+                                                    <div class="text-primary mb-2">
+                                                        <i class="bi bi-lightning-charge fs-4"></i>
+                                                    </div>
+                                                    <div class="text-muted small" data-i18n="spec.max_load">额定载荷</div>
+                                                    <strong class="d-block mt-1">2000kg</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-4">
+                                                <div class="spec-card text-center p-3">
+                                                    <div class="text-primary mb-2">
+                                                        <i class="bi bi-crosshair fs-4"></i>
+                                                    </div>
+                                                    <div class="text-muted small">定位精度</div>
+                                                    <strong class="d-block mt-1">±3mm</strong>
+                                                </div>
+                                            </div>
+                                            <!-- 更多参数 -->
+                                        </div>
+                                    </div>
+
+                                    <!-- 应用场景 -->
+                                    <h4 class="mt-5 mb-3 gradient-text" data-i18n="applications">典型应用</h4>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="app-badge">
+                                            <i class="bi bi-car-front me-2"></i>
+                                            <span data-i18n="application.manufacturing">汽车制造</span>
+                                        </div>
+                                        <div class="app-badge">
+                                            <i class="bi bi-box-seam me-2"></i>
+                                            <span data-i18n="application.bulk_storage">大宗仓储</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 迷你料箱堆垛机 -->
+                    <div class="hardware-card card-hover mb-7">
+                        <div class="row g-5 align-items-stretch">
+                            <div class="col-lg-6 order-lg-2">
+                                <div class="p-4 h-100">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="icon-box bg-success me-3">
+                                            <i class="bi bi-box-seam fs-2 text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="mb-0" data-i18n="equipment2.title">迷你料箱堆垛机</h3>
+                                            <span class="spec-badge" data-i18n="equipment2.type">密集仓储专家</span>
+                                        </div>
+                                    </div>
+                                    <div class="hardware-model rounded-4 overflow-hidden">
+                                        <img src="static/picture/miniduiduoji.png" class="img-fluid zoom-effect"
+                                            alt="迷你料箱堆垛机三维示意图">
+                                        <div class="model-overlay">
+                                            <button class="btn btn-light btn-sm" data-bs-toggle="tooltip" title="查看细节">
+                                                <i class="bi bi-zoom-in"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 order-lg-1">
+                                <div class="p-4 h-100">
+                                    <h4 class="mb-4 gradient-text" data-i18n="features">精准高效</h4>
+                                    <ul class="list-unstyled feature-list">
+                                        <li class="mb-3 d-flex">
+                                            <i class="bi bi-bounding-box text-success me-2 mt-1"></i>
+                                            <div>
+                                                <h6 data-i18n="equipment2.feature1">动态倾斜补偿</h6>
+                                                <p class="text-muted mb-0">±45°巷道自适应，定位精度±2mm</p>
+                                            </div>
+                                        </li>
+                                        <li class="mb-3 d-flex">
+                                            <i class="bi bi-lightning-charge text-success me-2 mt-1"></i>
+                                            <div>
+                                                <h6 data-i18n="equipment2.feature2">高速拣选系统</h6>
+                                                <p class="text-muted mb-0">最高速度2.5m/s，峰值效率300箱/小时</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <div class="specs-dashboard bg-light p-4 mt-4 rounded-4">
+                                        <h5 class="mb-4">技术指标</h5>
+                                        <div class="row g-3">
+                                            <div class="col-6 col-md-4">
+                                                <div class="spec-card text-center p-3">
+                                                    <div class="text-success mb-2">
+                                                        <i class="bi bi-speedometer2 fs-4"></i>
+                                                    </div>
+                                                    <div class="text-muted small">水平速度</div>
+                                                    <strong class="d-block mt-1">2.5m/s</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-4">
+                                                <div class="spec-card text-center p-3">
+                                                    <div class="text-success mb-2">
+                                                        <i class="bi bi-eye fs-4"></i>
+                                                    </div>
+                                                    <div class="text-muted small">视觉精度</div>
+                                                    <strong class="d-block mt-1">±0.5mm</strong>
+                                                </div>
+                                            </div>
+                                            <!-- 料箱机运动参数 -->
+                                            <div class="col-6 col-md-4">
+                                                <div class="spec-card text-center p-3">
+                                                    <div class="text-success mb-2">
+                                                        <i class="bi bi-eye fs-4"></i>
+                                                    </div>
+                                                    <div class="text-muted small">加速度</div>
+                                                    <strong class="d-block mt-1">2m/s²</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="mt-5 mb-3 gradient-text">典型应用</h4>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="app-badge">
+                                            <i class="bi bi-prescription2 me-2"></i>
+                                            <span>医药仓储</span>
+                                        </div>
+                                        <div class="app-badge">
+                                            <i class="bi bi-cart me-2"></i>
+                                            <span>电商分拣</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 四向穿梭车 -->
+                    <div class="hardware-card card-hover mb-7">
+                        <div class="row g-5 align-items-stretch">
+                            <div class="col-lg-6">
+                                <div class="p-4 h-100">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div class="icon-box bg-purple me-3">
+                                            <i class="bi bi-arrow-repeat fs-2 text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="mb-0" data-i18n="equipment3.title">四向穿梭车</h3>
+                                            <span class="spec-badge" data-i18n="equipment3.type">柔性搬运专家</span>
+                                        </div>
+                                    </div>
+                                    <div class="hardware-model rounded-4 overflow-hidden">
+                                        <img src="static/picture/agv11.png" class="img-fluid zoom-effect"
+                                            alt="四向穿梭车三维示意图">
+                                        <div class="model-overlay">
+                                            <button class="btn btn-light btn-sm">
+                                                <i class="bi bi-play-btn"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="p-4 h-100">
+                                    <h4 class="mb-4 gradient-text">智能调度</h4>
+                                    <ul class="list-unstyled feature-list">
+                                        <li class="mb-3 d-flex">
+                                            <i class="bi bi-diagram-3 text-purple me-2 mt-1"></i>
+                                            <div>
+                                                <h6>多车协同系统</h6>
+                                                <p class="text-muted mb-0">支持50+设备集群调度，任务响应＜100ms</p>
+                                            </div>
+                                        </li>
+                                        <li class="mb-3 d-flex">
+                                            <i class="bi bi-cpu text-purple me-2 mt-1"></i>
+                                            <div>
+                                                <h6>智能路径规划</h6>
+                                                <p class="text-muted mb-0">A*算法动态避障，效率提升35%</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <div class="specs-dashboard bg-light p-4 mt-4 rounded-4">
+                                        <h5 class="mb-4">性能参数</h5>
+                                        <div class="row g-3">
+                                            <div class="col-6 col-md-4">
+                                                <div class="spec-card text-center p-3">
+                                                    <div class="text-purple mb-2">
+                                                        <i class="bi bi-ev-station fs-4"></i>
+                                                    </div>
+                                                    <div class="text-muted small">续航时间</div>
+                                                    <strong class="d-block mt-1">8h</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-4">
+                                                <div class="spec-card text-center p-3">
+                                                    <div class="text-purple mb-2">
+                                                        <i class="bi bi-wifi fs-4"></i>
+                                                    </div>
+                                                    <div class="text-muted small">通信延迟</div>
+                                                    <strong class="d-block mt-1">＜50ms</strong>
+                                                </div>
+                                            </div>
+                                            <!-- 穿梭车专属参数 -->
+                                            <div class="col-6 col-md-4">
+                                                <div class="spec-card text-center p-3">
+                                                    <div class="text-purple mb-2">
+                                                        <i class="bi bi-wifi fs-4"></i>
+                                                    </div>
+                                                    <div class="text-muted small">充电效率</div>
+                                                    <strong class="d-block mt-1">30min快充</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="mt-5 mb-3 gradient-text">适用场景</h4>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="app-badge">
+                                            <i class="bi bi-basket me-2"></i>
+                                            <span>冷链物流</span>
+                                        </div>
+                                        <div class="app-badge">
+                                            <i class="bi bi-pc-display me-2"></i>
+                                            <span>3C制造</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 技术参数对比 -->
+            <section class="section-padding bg-light">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 data-i18n="tech_comparison">技术参数对比</h2>
+                        <p class="text-muted" data-i18n="comparison_desc">智能仓储设备综合性能对比</p>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table tech-table table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="parameter">技术参数</th>
+                                    <th data-i18n="equipment1.title">托盘堆垛机</th>
+                                    <th data-i18n="equipment2.title">迷你料箱堆垛机</th>
+                                    <th data-i18n="equipment3.title">四向穿梭车</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 基础性能 -->
+                                <tr class="table-primary">
+                                    <td colspan="4"><strong>基础性能</strong></td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.max_speed">水平最大速度</td>
+                                    <td>1.5m/s</td>
+                                    <td>2.0m/s</td>
+                                    <td>2.5m/s（可变速）</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.lifting_speed">垂直升降速度</td>
+                                    <td>0.8m/s</td>
+                                    <td>1.2m/s</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.load_capacity">额定载荷</td>
+                                    <td>1000-2000kg</td>
+                                    <td>30-50kg</td>
+                                    <td>100-500kg</td>
+                                </tr>
+
+                                <!-- 空间参数 -->
+                                <tr class="table-primary">
+                                    <td colspan="4"><strong>空间参数</strong></td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.operating_height">最大作业高度</td>
+                                    <td>24m</td>
+                                    <td>12m</td>
+                                    <td>无限制（轨道延伸）</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.channel_width">巷道宽度要求</td>
+                                    <td>1600mm</td>
+                                    <td>800mm</td>
+                                    <td>轨道宽度+200mm</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.storage_density">存储密度</td>
+                                    <td>★★★</td>
+                                    <td>★★★★</td>
+                                    <td>★★★★★</td>
+                                </tr>
+
+                                <!-- 控制参数 -->
+                                <tr class="table-primary">
+                                    <td colspan="4"><strong>控制参数</strong></td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.positioning_accuracy">定位精度</td>
+                                    <td>±5mm</td>
+                                    <td>±3mm</td>
+                                    <td>±2mm</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.control_mode">导航方式</td>
+                                    <td>激光导引</td>
+                                    <td>二维码定位</td>
+                                    <td>惯性导航+RFID</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.communication">通信协议</td>
+                                    <td>ProfiNET</td>
+                                    <td>Wi-Fi 6</td>
+                                    <td>5G+MESH网络</td>
+                                </tr>
+
+                                <!-- 扩展参数 -->
+                                <tr class="table-primary">
+                                    <td colspan="4"><strong>扩展参数</strong></td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.expansion">系统扩展性</td>
+                                    <td>固定轨道扩展</td>
+                                    <td>模块化扩展</td>
+                                    <td>动态拓扑扩展</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.efficiency">峰值出入库效率</td>
+                                    <td>40托/小时</td>
+                                    <td>200箱/小时</td>
+                                    <td>150箱/小时</td>
+                                </tr>
+                                <tr>
+                                    <td data-i18n="spec.environment">环境适应性</td>
+                                    <td>常温仓库</td>
+                                    <td>恒温恒湿</td>
+                                    <td>-30℃~50℃</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-4 text-muted">
+                        <small>* 四向穿梭车支持多车协同作业，可通过增加车辆提升整体系统效率<br>
+                            * 迷你料箱堆垛机支持±45°倾斜巷道设计<br>
+                            * 托盘堆垛机可选配双深位货叉提升存储密度</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workflow -->
+            <section class="section-padding">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 data-i18n="workflow_title">标准作业流程</h2>
+                        <p class="text-muted" data-i18n="workflow_desc">多设备协同作业流程管理</p>
+                    </div>
+
+                    <!-- 流程阶段容器 -->
+                    <div class="row g-4">
+
+                        <!-- 阶段1: 系统初始化 -->
+                        <div class="col-12">
+                            <h5 class="phase-title mb-4" data-i18n="phase_system_init">系统初始化</h5>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                                <!-- 托盘堆垛机 -->
+                                <div class="col">
+                                    <div class="device-card pallet-card">
+                                        <div class="card-header">
+                                            <h6 data-i18n="pallet_title">托盘堆垛机</h6>
+                                            <span class="badge">载荷2000kg</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1" data-i18n="pallet_init1">激光定位校准 ±3mm</p>
+                                            <p class="text-muted mb-1" data-i18n="pallet_init2">货叉水平度检测</p>
+                                            <p class="text-muted mb-0" data-i18n="pallet_init3">安全光幕自检</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 迷你料箱机 -->
+                                <div class="col">
+                                    <div class="device-card mini-card">
+                                        <div class="card-header">
+                                            <h6 data-i18n="mini_title">迷你料箱堆垛机</h6>
+                                            <span class="badge">200箱/小时</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1" data-i18n="mini_init1">视觉定位系统启动</p>
+                                            <p class="text-muted mb-1" data-i18n="mini_init2">倾斜角度归零校准</p>
+                                            <p class="text-muted mb-0" data-i18n="mini_init3">二维码扫描器测试</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 四向穿梭车 -->
+                                <div class="col">
+                                    <div class="device-card shuttle-card">
+                                        <div class="card-header">
+                                            <h6 data-i18n="shuttle_title">四向穿梭车</h6>
+                                            <span class="badge">5G通讯</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1" data-i18n="shuttle_init1">网络拓扑同步</p>
+                                            <p class="text-muted mb-1" data-i18n="shuttle_init2">电池健康度检测</p>
+                                            <p class="text-muted mb-0" data-i18n="shuttle_init3">惯性导航校准</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 阶段2: 指令接收 -->
+                        <div class="col-12 mt-5">
+                            <h5 class="phase-title mb-4" data-i18n="phase_order_receive">指令接收</h5>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                                <!-- 托盘堆垛机 -->
+                                <div class="col">
+                                    <div class="device-card pallet-card">
+                                        <div class="card-header">
+                                            <h6>托盘堆垛机</h6>
+                                            <span class="badge">ProfiNET</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">WMS指令直连</p>
+                                            <p class="text-muted mb-1">任务优先级排序</p>
+                                            <p class="text-muted mb-0">货位分配验证</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 迷你料箱机 -->
+                                <div class="col">
+                                    <div class="device-card mini-card">
+                                        <div class="card-header">
+                                            <h6>迷你料箱机</h6>
+                                            <span class="badge">Wi-Fi 6</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">动态任务分配</p>
+                                            <p class="text-muted mb-1">箱号预读取</p>
+                                            <p class="text-muted mb-0">巷道选择优化</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 四向穿梭车 -->
+                                <div class="col">
+                                    <div class="device-card shuttle-card">
+                                        <div class="card-header">
+                                            <h6>四向穿梭车</h6>
+                                            <span class="badge">Mesh网络</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">多车任务分配</p>
+                                            <p class="text-muted mb-1">实时路径预计算</p>
+                                            <p class="text-muted mb-0">充电策略优化</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 阶段3: 作业执行 -->
+                        <div class="col-12 mt-5">
+                            <h5 class="phase-title mb-4" data-i18n="phase_execution">作业执行</h5>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                                <!-- 托盘堆垛机 -->
+                                <div class="col">
+                                    <div class="device-card pallet-card">
+                                        <div class="card-header">
+                                            <h6>托盘堆垛机</h6>
+                                            <span class="badge">1.5m/s</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">货叉双深位伸出</p>
+                                            <p class="text-muted mb-1">激光实时纠偏</p>
+                                            <p class="text-muted mb-0">过载保护监测</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 迷你料箱机 -->
+                                <div class="col">
+                                    <div class="device-card mini-card">
+                                        <div class="card-header">
+                                            <h6>迷你料箱机</h6>
+                                            <span class="badge">2.0m/s</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">Z型连杆提升</p>
+                                            <p class="text-muted mb-1">动态倾斜补偿</p>
+                                            <p class="text-muted mb-0">滑触式供电</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 四向穿梭车 -->
+                                <div class="col">
+                                    <div class="device-card shuttle-card">
+                                        <div class="card-header">
+                                            <h6>四向穿梭车</h6>
+                                            <span class="badge">2.5m/s</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">A*动态路径规划</p>
+                                            <p class="text-muted mb-1">双向存取操作</p>
+                                            <p class="text-muted mb-0">防撞系统激活</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 阶段4: 完成反馈 -->
+                        <div class="col-12 mt-5">
+                            <h5 class="phase-title mb-4" data-i18n="phase_feedback">完成反馈</h5>
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                                <!-- 托盘堆垛机 -->
+                                <div class="col">
+                                    <div class="device-card pallet-card">
+                                        <div class="card-header">
+                                            <h6>托盘堆垛机</h6>
+                                            <span class="badge">0xFA01</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">位置校验码回传</p>
+                                            <p class="text-muted mb-1">机械锁止确认</p>
+                                            <p class="text-muted mb-0">能耗数据记录</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 迷你料箱机 -->
+                                <div class="col">
+                                    <div class="device-card mini-card">
+                                        <div class="card-header">
+                                            <h6>迷你料箱机</h6>
+                                            <span class="badge">OCR_OK</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">图像抓拍存档</p>
+                                            <p class="text-muted mb-1">重量偏差检测</p>
+                                            <p class="text-muted mb-0">操作日志生成</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 四向穿梭车 -->
+                                <div class="col">
+                                    <div class="device-card shuttle-card">
+                                        <div class="card-header">
+                                            <h6>四向穿梭车</h6>
+                                            <span class="badge">5G_ACK</span>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="text-muted mb-1">路径轨迹回传</p>
+                                            <p class="text-muted mb-1">轮胎磨损监测</p>
+                                            <p class="text-muted mb-0">电池循环计数</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--== 底部CTA ==-->
+            <section class="divider-area divider-default-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-sm-8 col-md-7">
+                            <div class="content">
+                                <h2 class="title" data-i18n="cta_title">开启智能仓储转型</h2>
+                                <p style="margin: 10px 0; color: #ccc;" data-i18n="cta_subtitle">专业团队为您定制解决方案</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-5">
+                            <div class="divider-btn">
+                                <a class="btn-theme btn-white" href="contact.html" data-i18n="book_demo">立即咨询 <i
+                                        class="icofont-rounded-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shape-group">
+                    <div class="shape-style4">
+                        <img src="static/picture/42.webp" alt="Image" width="560" height="250">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--== Start Footer Area Wrapper ==-->
+        <footer class="footer-area default-style">
+            <div class="footer-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
+                                <div class="gt-widget-about">
+                                    <div class="about-logo">
+                                        <a href=""><img src="static/picture/logo.png" alt="Logo"
+                                                data-i18n="alt_footer_logo"></a>
+                                    </div>
+                                    <p class="about-text" data-i18n="footer_desc">JFindX - 自动化解决方案专家...</p>
+                                    <div class="gt-social style2">
+                                        <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
+                                        <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
+                                        <a href="https://www.instagram.com/"><i class="icon icofont-linkedin"></i></a>
+                                        <a href="https://www.youtube.com/"><i class="icon icofont-skype"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 页脚其他区块保持原样 -->
+                        <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
+                            <div class="widget-item">
+                                <h4 class="widget-title" data-i18n="footer_services">所有服务</h4>
+                                <nav class="widget-menu-wrap">
+                                    <ul class="nav-menu nav">
+
+                                        <li><a href="solution.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="nav_solution">解决方案</span></a>
+                                        </li>
+                                        <li><a href="wms.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="submenu_wms">wms</span></a>
+                                        </li>
+                                        <li><a href="wcs.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="submenu_wcs">wcs</span></a>
+                                        </li>
+                                        <li><a href="warehouse.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="submenu_warehouse">智能仓储</span></a>
+                                        </li>
+                                        <li><a href="logistics.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="submenu_logistics">智能物流</span></a>
+                                        </li>
+                                        <li><a href="rfid.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="submenu_rfid">rfid电子标签</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-2 col-xl-2">
+                            <div class="widget-item">
+                                <h4 class="widget-title" data-i18n="nav_about">关于我们</h4>
+                                <nav class="widget-menu-wrap">
+                                    <ul class="nav-menu nav">
+                                        <li><a href="index.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="nav_home">首页</span></a></li>
+                                        <li><a href="digital.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="nav_digital">工业数字孪生系统</span></a>
+                                        </li>
+                                        <li><a href="cases.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="nav_cases">成功案例</span></a>
+                                        </li>
+                                        <li><a href="about.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="submenu_about">团队介绍</span></a>
+                                        </li>
+                                        <li><a href="honor.html"><i class="icofont-minus"></i><span
+                                                    data-i18n="submenu_honor">公司荣誉</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 col-xl-3">
+                            <div class="widget-item ml-35 lg-ml-0">
+                                <h4 class="widget-title" data-i18n="submenu_contact">联系我们</h4>
+                                <nav class="widget-menu-wrap">
+                                    <ul class="nav-menu nav">
+                                        <li><a href=""><i class="icofont-minus"></i><span
+                                                    data-i18n="footer_company_email">公司邮箱</span></a>
+                                        </li>
+                                        <li><a href=""><i class="icofont-minus"></i><span
+                                                    data-i18n="footer_company_phone">130 5204
+                                                    4828</span></a>
+                                        </li>
+                                        <li><a href="" style="line-height:35px;vertical-align:sub;"><i
+                                                    class="icofont-minus"></i><span
+                                                    data-i18n="footer_company_address">浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-shape bg-img" data-bg-img="assets/img/photos/footer1.webp"></div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-bottom-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="widget-copyright">
+                                    <p><span data-i18n="footer_copyright">宁波捷方优制科技有限公司版权所有</span> -
+                                        <a href="http://beian.miit.gov.cn/" target="_blank"
+                                            data-i18n="footer_icp">浙ICP备2023030316号-1</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--== End Footer Area Wrapper ==-->
+
+        <!--== Scroll Top Button ==-->
+        <div class="scroll-to-top"><span class="icofont-rounded-double-left icofont-rotate-90"></span></div>
+
+        <!--== Start Side Menu ==-->
+        <aside class="off-canvas-area offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+            id="offcanvasWithBothOptions">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- Start Mobile Menu Wrapper -->
+                <div class="res-mobile-menu">
+                    <nav id="offcanvasNav" class="offcanvas-menu">
+                        <ul>
+                            <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+                            <li><a href="solution.html" data-i18n="nav_solution">整体解决方案</a></li>
+                            <li><a href="javascript:void(0)" data-i18n="nav_software">AI柔性供应链软件</a>
+                                <ul>
+                                    <li><a href="wms.html" data-i18n="submenu_wms">智能仓储管理系统WMS</a></li>
+                                    <li><a href="wcs.html" data-i18n="submenu_wcs">自动化设备管理系统WCS</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0)" data-i18n="nav_hardware" class="color-theme">智能仓储物流硬件</a>
+                                <ul>
+                                    <li><a href="warehouse.html" data-i18n="submenu_warehouse"
+                                            class="color-theme">智能仓储</a></li>
+                                    <li><a href="logistics.html" data-i18n="submenu_logistics">智能物流</a></li>
+                                    <li><a href="rfid.html" data-i18n="submenu_rfid">RFID电子标签</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="digital.html" data-i18n="nav_digital">数字孪生系统</a></li>
+                            <li><a href="cases.html"" data-i18n=" nav_cases">成功案例</a></li>
+                            <li><a href=" javascript:void(0)" data-i18n="nav_about">关于我们</a>
+                                <ul>
+                                    <li><a href="about.html" data-i18n="submenu_about">团队介绍</a></li>
+                                    <li><a href="honor.html" data-i18n="submenu_honor">公司荣誉</a></li>
+                                    <li><a href="contact.html" data-i18n="submenu_contact">联系我们</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- End Mobile Menu Wrapper -->
+            </div>
+        </aside>
+        <!--== End Side Menu ==-->
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        const translations = {
+            "en": {
+                "page_title": "Intelligent Warehouse Hardware - JFindX",
+                "current_lang": "EN",
+                "alt_logo": "Main Logo of JFINDX",
+                "alt_logo_light": "Light Logo of JFINDX",
+                "alt_prev": "Previous Slide",
+                "alt_next": "Next Slide",
+                "alt_about1": "Illustration of Intelligent Warehouse Solution",
+                "alt_about2": "Illustration of System Architecture",
+                "alt_footer_logo": "Footer Logo",
+                // Navigation Menu
+                "nav_home": "Home",
+                "nav_solution": "OvrSolution",
+                "nav_software": "AI-FlexSC Software",
+                "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+                "submenu_wcs": "Automated Equipment Management System (WCS)",
+                "nav_hardware": "Logistics",
+                "submenu_warehouse": "Intelligent Warehouse",
+                "submenu_logistics": "Intelligent Logistics",
+                "submenu_rfid": "RFID Electronic Tags",
+                "nav_digital": "Digital-Twin",
+                "nav_cases": "Success Cases",
+                "nav_about": "About Us",
+                "submenu_about": "Team Introduction",
+                "submenu_honor": "Company Honors",
+                "submenu_contact": "Contact Us",
+                // Footer
+                "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+                "footer_services": "All Services",
+                "footer_company_email": "Company Email",
+                "footer_company_phone": "130 5204 4828",
+                "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+                "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+                "footer_icp": "Zhejiang ICP No. 2023030316-1",
+
+                "hero_title": "Smart Warehouse Solutions",
+                "hero_subtitle": "Automation | Intelligence | Modular Design",
+                "core_hardware": "Core Equipment",
+                "hardware_desc": "Modular Design · Flexible Configuration · Rapid Deployment",
+                "technical_specs": "Technical Specifications",
+                "features": "Key Features",
+                "applications": "Applications",
+                "equipment1.title": "Pallet Stacker Crane",
+                "equipment1.type": "Heavy-duty Storage",
+                "equipment1.feature1": "Double-deep fork design increases storage density by 40%",
+                "application.manufacturing": "Automotive Manufacturing",
+                "application.bulk_storage": "Bulk Storage",
+                "tech_comparison": "Technical Comparison",
+                "comparison_desc": "Performance Comparison",
+                "parameter": "Parameter",
+                "spec.max_speed": "Max Speed",
+                "spec.max_load": "Max Load",
+                "workflow_title": "Standard Workflow",
+                "workflow_desc": "Intelligent Operation Process",
+                "step1_title": "Command Receiving",
+                "step1_desc": "WMS system issues operation commands",
+                "cta_title": "Start Smart Transformation",
+                "cta_desc": "Get Customized Solution Consultation",
+                "contact_us": "Contact Now",
+                // 新增设备相关翻译
+                "equipment2.title": "Mini Load Stacker",
+                "equipment2.type": "Dense Storage Expert",
+                "equipment2.feature1": "Dynamic Tilt Compensation",
+                "equipment2.feature2": "High-speed Picking System",
+                "equipment3.title": "Four-way Shuttle",
+                "equipment3.type": "Flexible Handling Expert",
+                "equipment3.feature1": "Multi-vehicle Coordination",
+                "equipment3.feature2": "Intelligent Path Planning",
+
+                // 工作流程阶段
+                "phase_system_init": "System Initialization",
+                "phase_order_receive": "Order Receiving",
+                "phase_execution": "Operation Execution",
+                "phase_feedback": "Completion Feedback",
+
+                // 技术参数表
+                "spec.lifting_speed": "Lifting Speed",
+                "spec.load_capacity": "Load Capacity",
+                "spec.operating_height": "Max Operating Height",
+                "spec.channel_width": "Aisle Width",
+                "spec.storage_density": "Storage Density",
+                "spec.positioning_accuracy": "Positioning Accuracy",
+                "spec.control_mode": "Navigation Mode",
+                "spec.expansion": "System Scalability",
+                "spec.efficiency": "Peak Efficiency",
+                "spec.environment": "Environment Adaptability",
+
+                // 设备状态
+                "pallet_title": "Pallet Stacker",
+                "mini_title": "Mini Load Stacker",
+                "shuttle_title": "Four-way Shuttle",
+
+                // CTA部分
+                "cta_subtitle": "Professional team for customized solutions"
+            },
+            "cn": {
+                "page_title": "智能仓储硬件设备 - 捷方优制",
+                // 通用
+                "current_lang": "CN",
+                "alt_logo": "捷方优制主Logo",
+                "alt_logo_light": "捷方优制浅色Logo",
+                "alt_prev": "上一张幻灯片",
+                "alt_next": "下一张幻灯片",
+                "alt_about1": "智能仓储解决方案图示",
+                "alt_about2": "系统架构图示",
+                "alt_footer_logo": "页脚Logo",
+                // 导航菜单
+                "nav_home": "首页",
+                "nav_solution": "整体解决方案",
+                "nav_software": "AI柔性供应链软件",
+                "submenu_wms": "智能仓储管理系统WMS",
+                "submenu_wcs": "自动化设备管理系统WCS",
+                "nav_hardware": "智能仓储物流硬件",
+                "submenu_warehouse": "智能仓储",
+                "submenu_logistics": "智能物流",
+                "submenu_rfid": "RFID电子标签",
+                "nav_digital": "数字孪生系统",
+                "nav_cases": "成功案例",
+                "nav_about": "关于我们",
+                "submenu_about": "团队介绍",
+                "submenu_honor": "公司荣誉",
+                "submenu_contact": "联系我们",
+                // 页脚
+                "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+                "footer_services": "所有服务",
+                "footer_company_email": "公司邮箱",
+                "footer_company_phone": "130 5204 4828",
+                "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+                "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+                "footer_icp": "浙ICP备2023030316号-1",
+
+                "hero_title": "智能仓储解决方案",
+                "hero_subtitle": "自动化｜智能化｜模块化设计",
+                "core_hardware": "核心设备",
+                "hardware_desc": "模块化设计·灵活配置·快速部署",
+                "technical_specs": "技术参数",
+                "features": "功能特性",
+                "applications": "应用场景",
+                "equipment1.title": "托盘堆垛机",
+                "equipment1.type": "重型存储",
+                "equipment1.feature1": "双深位货叉设计提升40%存储密度",
+                "application.manufacturing": "汽车制造",
+                "application.bulk_storage": "大宗仓储",
+                "tech_comparison": "技术参数对比",
+                "comparison_desc": "多设备性能横向对比",
+                "parameter": "参数",
+                "spec.max_speed": "最大速度",
+                "spec.max_load": "最大载荷",
+                "workflow_title": "标准作业流程",
+                "workflow_desc": "智能化操作流程管理",
+                "step1_title": "指令接收",
+                "step1_desc": "WMS系统下发作业指令",
+                "cta_title": "开启智能仓储转型",
+                "cta_desc": "获取定制化解决方案咨询",
+                "contact_us": "立即咨询",
+                // 新增设备相关翻译  
+                "equipment2.title": "迷你料箱堆垛机",
+                "equipment2.type": "密集仓储专家",
+                "equipment2.feature1": "动态倾斜补偿",
+                "equipment2.feature2": "高速拣选系统",
+                "equipment3.title": "四向穿梭车",
+                "equipment3.type": "柔性搬运专家",
+                "equipment3.feature1": "多车协同系统",
+                "equipment3.feature2": "智能路径规划",
+
+                // 工作流程阶段
+                "phase_system_init": "系统初始化",
+                "phase_order_receive": "指令接收",
+                "phase_execution": "作业执行",
+                "phase_feedback": "完成反馈",
+
+                // 技术参数表
+                "spec.lifting_speed": "垂直升降速度",
+                "spec.load_capacity": "额定载荷",
+                "spec.operating_height": "最大作业高度",
+                "spec.channel_width": "巷道宽度要求",
+                "spec.storage_density": "存储密度",
+                "spec.positioning_accuracy": "定位精度",
+                "spec.control_mode": "导航方式",
+                "spec.expansion": "系统扩展性",
+                "spec.efficiency": "峰值效率",
+                "spec.environment": "环境适应性",
+
+                // 设备状态
+                "pallet_title": "托盘堆垛机",
+                "mini_title": "迷你料箱机",
+                "shuttle_title": "四向穿梭车",
+
+                // CTA部分
+                "cta_subtitle": "专业团队为您定制解决方案"
+            }
+        };
+
+        let currentLang = localStorage.getItem('language') || 'cn';
+
+        // 核心翻译函数
+        function updateLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            // 更新所有带翻译标记的元素
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // 更新placeholder
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    element.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+
+            // 更新按钮显示
+            document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+            // 更新页面标题
+            document.title = translations[lang]['page_title'];
+        }
+
+        // 页面加载时设置语言
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 初始化语言
+            updateLanguage(currentLang);
+
+            // 绑定语言切换事件
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.getAttribute('data-lang');
+                    updateLanguage(lang);
+
+                    // 手动关闭下拉菜单（Bootstrap5方法）
+                    const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+                    dropdown.hide();
+                });
+            });
+
+            // 初始化Bootstrap下拉组件
+            new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+        });
+
+    </script>
+
+    <!--=== Modernizr Min Js ===-->
+    <script src="static/js/modernizr.js"></script>
+    <!--=== jQuery Min Js ===-->
+    <script src="static/js/jquery-main.js"></script>
+    <!--=== jQuery Migration Min Js ===-->
+    <script src="static/js/jquery-migrate.js"></script>
+    <!--=== Popper Min Js ===-->
+    <script src="static/js/popper.min.js"></script>
+    <!--=== Bootstrap Min Js ===-->
+    <script src="static/js/bootstrap.min.js"></script>
+    <!--=== jquery Swiper Min Js ===-->
+    <script src="static/js/swiper.min.js"></script>
+    <!--=== jquery Countdown Js ===-->
+    <script src="static/js/jquery.countdown.min.js"></script>
+    <!--=== Isotope Min Js ===-->
+    <script src="static/js/isotope.pkgd.min.js"></script>
+    <!-- 3D库和图表库的CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--=== Custom Js ===-->
+    <script src="static/js/custom.js"></script>
+</body>
+
+</html>

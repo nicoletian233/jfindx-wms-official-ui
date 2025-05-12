@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JFindX ">
+  <meta name="keywords" content="Logistic, Moving Company, Transportation, business, Transport, Cargo Delivery">
+  <meta name="author" content="Codecarnival">
+
+  <title data-i18n="page_title">RFID电子标签 - JFindX </title>
+  <!-- Favcion -->
+  <link rel="shortcut icon" href="assets/img//slider/favicon.ico">
+
+    <!--== Google Fonts ==-->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="static/css/css2.css" rel="stylesheet">
+  
+    <!--== Bootstrap CSS ==-->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <!--== Icofont CSS ==-->
+    <link href="static/css/icofont.css" rel="stylesheet">
+    <!--== Swiper CSS ==-->
+    <link href="static/css/swiper.min.css" rel="stylesheet">
+    <!--== Main Style CSS ==-->
+    <link href="static/css/style.css" rel="stylesheet">
+
+  
+    <style>
+        :root {
+            --primary-color: #2A5298;
+            --secondary-color: #6C757D;
+        }
+
+        .hardware-card {
+            border: 1px solid #E9ECEF;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .hardware-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(42, 82, 152, 0.1);
+        }
+
+        .spec-badge {
+            background: #F8F9FA;
+            border: 1px solid #DEE2E6;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .operation-steps {
+            counter-reset: step;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .operation-steps li {
+            position: relative;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #F8F9FA;
+            border-radius: 8px;
+        }
+
+        .operation-steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: -2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .tech-table th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .operation-steps li {
+                padding: 1rem;
+            }
+
+            .operation-steps li::before {
+                left: -1.5rem;
+                width: 30px;
+                height: 30px;
+            }
+        }
+      /* 卡片基础样式 */
+.device-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.card-header h6 {
+    margin-bottom: 0;
+}
+
+.badge {
+    font-size: 0.75em;
+    padding: 0.35em 0.75em;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* 设备颜色系统 */
+.pallet-card .badge { background: #f8d7da; color: #721c24; }
+.mini-card .badge { background: #d1ecf1; color: #0c5460; }
+.shuttle-card .badge { background: #d4edda; color: #155724; }
+
+/* 交互动效 */
+.device-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* 阶段标题样式 */
+.phase-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding-left: 1rem;
+    border-left: 4px solid #265c9d;
+    color: #2d3748;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .device-card {
+        padding: 1.25rem;
+    }
+    
+    .phase-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .badge {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 992px) {
+    .row-cols-lg-3 > * {
+        flex: 0 0 auto;
+        width: 33.3333%;
+    }
+}
+/* 硬件展示模块 */
+.hardware-showcase {
+    background: linear-gradient(to bottom, #f8f9fa 0%, #fff 100%);
+}
+
+/* 卡片悬停效果 */
+.card-hover {
+    margin: 10px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08);
+}
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.12);
+}
+
+/* 图标容器 */
+.icon-box {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3D模型容器 */
+.hardware-model {
+    position: relative;
+    background: #f8f9fa;
+    min-height: 300px;
+    line-height: 300px;
+    width: auto;
+    max-width: max-content;
+    margin: auto;
+}
+.zoom-effect {
+    transition: transform 0.3s ease;
+}
+.hardware-model:hover .zoom-effect {
+    transform: scale(1.03);
+}
+.model-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* 参数指示器 */
+.spec-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+.spec-card:hover {
+    background: #fff;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
+}
+
+/* 应用场景徽章 */
+.app-badge {
+    padding: 0.5rem 1rem;
+    background: #f8f9fa;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hardware-model {
+        min-height: 200px;
+        line-height: 200px;
+    }
+    .icon-box {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+/* 新增颜色系统 */
+.bg-purple {
+    background: #6f42c1 !important;
+}
+.text-purple {
+    color: #6f42c1 !important;
+}
+
+/* 设备特色指示器 */
+.spec-badge {
+    background: rgba(108,117,125,0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85em;
+}
+
+/* 渐变文字效果 */
+.gradient-text {
+    background: linear-gradient(45deg, #265c9d, #4f6798);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .order-lg-1 {
+        order: -1;
+    }
+    .hardware-card {
+        margin-bottom: 2rem !important;
+    }
+}
+ /* 新增RFID设备专属样式 */
+ .sorter-card .badge { background: #cfe2ff; color: #052c65; }
+        .asset-card .badge { background: #fff3cd; color: #664d03; }
+        .rfid-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(42,82,152,0.1);
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+  <!--wrapper start-->
+  <div class="wrapper page-blog-details-wrapper">
+
+    <!--== Start Header Wrapper ==-->
+    <header class="header-wrapper">
+        <div class="header-area header-default header-transparent sticky-header">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-4 col-sm-6 col-lg-2">
+                <div class="header-logo-area">
+                  <a href="index.html">
+                    <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161" height="48"
+                      data-i18n="alt_logo">
+                    <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161" height="48"
+                      data-i18n="alt_logo_light">
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-9 d-none d-lg-block">
+                <div class="header-navigation-area">
+                  <ul class="main-menu nav position-relative">
+                    <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+                    <li><a href="solution.html" data-i18n="nav_solution">整体解决方案</a></li>
+                    <li class="has-submenu "><a href="wms.html" data-i18n="nav_software">AI柔性供应链软件</a>
+                      <ul class="submenu-nav">
+                        <li ><a href="wms.html" data-i18n="submenu_wms">智能仓储管理系统WMS</a></li>
+                        <li><a href="wcs.html" data-i18n="submenu_wcs">自动化设备管理系统WCS</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-submenu active"><a href="warehouse.html" data-i18n="nav_hardware">智能仓储物流硬件</a>
+                      <ul class="submenu-nav">
+                        <li><a href="warehouse.html" data-i18n="submenu_warehouse">智能仓储</a></li>
+                        <li><a href="logistics.html" data-i18n="submenu_logistics">智能物流</a></li>
+                        <li class="active"><a href="rfid.html" data-i18n="submenu_rfid">RFID电子标签</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="digital.html" data-i18n="nav_digital">数字孪生系统</a></li>
+                    <li><a href="cases.html" data-i18n="nav_cases">成功案例</a></li>
+                    <li class="has-submenu"><a href="about.html" data-i18n="nav_about">关于我们</a>
+                      <ul class="submenu-nav">
+                        <li><a href="about.html" data-i18n="submenu_about">团队介绍</a></li>
+                        <li><a href="honor.html" data-i18n="submenu_honor">公司荣誉</a></li>
+                        <li><a href="contact.html" data-i18n="submenu_contact">联系我们</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-8 col-sm-6 col-lg-1">
+                <div class="header-action-area">
+                  <div class="header-lang-dropdown">
+                    <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown"
+                      aria-expanded="false" data-i18n="current_lang">CN</button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownLang">
+                      <li class="dropdown-item" data-lang="en">EN</li>
+                      <li class="dropdown-item" data-lang="cn">CN</li>
+                    </ul>
+                  </div>
+                  <button class="btn-menu d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    <span class="icon-line"></span>
+                    <span class="icon-line"></span>
+                    <span class="icon-line"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    <!--== End Header Wrapper ==-->
+    <main class="main-content">
+  <!--== 页面标题区 ==-->
+  <section class="page-title-area bg-img" data-bg-img="static/picture/bwms-1.jpg">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 m-auto">
+                <div class="page-title-content text-center">
+                    <h2 class="title" data-i18n="page_heading">RFID电子标签</h2>
+                    <div class="bread-crumbs">
+                        <span data-i18n="page_subheading">无接触识别｜批量读取｜智能物联</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-overlay3"></div>
+</section>
+ <!-- 核心设备展示 -->
+ <section class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-i18n="core_equipment">核心RFID设备</h2>
+            <p class="text-muted" data-i18n="equipment_desc">超高频技术｜工业级防护｜智能组网</p>
+        </div>
+
+        <!-- 电子标签分拣站 -->
+        <div class="hardware-card card-hover mb-7">
+            <div class="row g-5 align-items-stretch">
+                <div class="col-lg-6">
+                    <div class="p-4 h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-box bg-primary me-3">
+                                <i class="bi bi-tag fs-2 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 data-i18n="sorter.title">电子标签分拣站</h3>
+                                <span class="spec-badge" data-i18n="sorter.type">DAS系统核心</span>
+                            </div>
+                        </div>
+                        <div class="hardware-model rounded-4 overflow-hidden">
+                            <img src="static/picture/wcs20.jpg" 
+                                 class="img-fluid zoom-effect" 
+                                 alt="电子标签分拣站">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 h-100">
+                        <h4 class="gradient-text mb-4" data-i18n="sorter.features">技术优势</h4>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <div class="rfid-feature-icon me-3 d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-lightning-charge text-primary fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h6 data-i18n="sorter.feature1">批量识别</h6>
+                                        <p class="text-muted mb-0">同时读取200+标签，速度3000件/小时</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <div class="rfid-feature-icon me-3 d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-crosshair text-primary fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h6 data-i18n="sorter.feature2">精准定位</h6>
+                                        <p class="text-muted mb-0">±5cm空间定位精度，误读率＜0.01%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="specs-dashboard bg-light p-4 mt-4 rounded-4">
+                            <h5 data-i18n="technical_specs">技术参数</h5>
+                            <div class="row g-3">
+                                <div class="col-6 col-md-4">
+                                    <div class="spec-card text-center p-3">
+                                        <i class="bi bi-wifi fs-4 text-primary"></i>
+                                        <div class="text-muted small">工作频率</div>
+                                        <strong>920-925MHz</strong>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="spec-card text-center p-3">
+                                        <i class="bi bi-rulers fs-4 text-primary"></i>
+                                        <div class="text-muted small">读取距离</div>
+                                        <strong>0.1-8m可调</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-5 gradient-text" data-i18n="applications">应用场景</h4>
+                        <div class="d-flex flex-wrap gap-3 mt-3">
+                            <div class="app-badge">
+                                <i class="bi bi-box-seam me-2"></i>
+                                <span data-i18n="sorter.app1">包裹分拣</span>
+                            </div>
+                            <div class="app-badge">
+                                <i class="bi bi-clipboard-data me-2"></i>
+                                <span data-i18n="sorter.app2">产线溯源</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RFID物资管理 -->
+        <div class="hardware-card card-hover mb-7">
+            <div class="row g-5 align-items-stretch">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-4 h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-box bg-warning me-3">
+                                <i class="bi bi-server fs-2 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 data-i18n="asset.title">RFID物资管理</h3>
+                                <span class="spec-badge" data-i18n="asset.type">智能资产管理</span>
+                            </div>
+                        </div>
+                        <div class="hardware-model rounded-4 overflow-hidden">
+                            <img src="static/picture/wcs12.jpeg" 
+                                 class="img-fluid zoom-effect" 
+                                 alt="RFID物资管理">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-4 h-100">
+                        <h4 class="gradient-text mb-4" data-i18n="asset.features">系统特性</h4>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <div class="rfid-feature-icon me-3 d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-database text-warning fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h6 data-i18n="asset.feature1">数据存储</h6>
+                                        <p class="text-muted mb-0">标签容量512bit，可扩展至8K</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <div class="rfid-feature-icon me-3 d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-shield-lock text-warning fs-5"></i>
+                                    </div>
+                                    <div>
+                                        <h6 data-i18n="asset.feature2">安全加密</h6>
+                                        <p class="text-muted mb-0">AES-128数据加密，防克隆设计</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="specs-dashboard bg-light p-4 mt-4 rounded-4">
+                            <h5>技术参数</h5>
+                            <div class="row g-3">
+                                <div class="col-6 col-md-4">
+                                    <div class="spec-card text-center p-3">
+                                        <i class="bi bi-cpu fs-4 text-warning"></i>
+                                        <div class="text-muted small">读取速度</div>
+                                        <strong>200标签/秒</strong>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="spec-card text-center p-3">
+                                        <i class="bi bi-thermometer-sun fs-4 text-warning"></i>
+                                        <div class="text-muted small">工作温度</div>
+                                        <strong>-40℃~85℃</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-5 gradient-text">应用场景</h4>
+                        <div class="d-flex flex-wrap gap-3 mt-3">
+                            <div class="app-badge">
+                                <i class="bi bi-building-gear me-2"></i>
+                                <span data-i18n="asset.app1">固定资产管理</span>
+                            </div>
+                            <div class="app-badge">
+                                <i class="bi bi-truck-front me-2"></i>
+                                <span data-i18n="asset.app2">智能货架</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 技术参数对比 -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-i18n="tech_compare">技术参数对比</h2>
+            <p class="text-muted" data-i18n="compare_desc">RFID设备性能对比</p>
+        </div>
+        
+        <div class="table-responsive">
+            <table class="table tech-table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th data-i18n="parameter">参数项</th>
+                        <th data-i18n="sorter.title">电子标签分拣站</th>
+                        <th data-i18n="asset.title">物资管理</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-primary">
+                        <td colspan="3"><strong data-i18n="basic_spec">基础参数</strong></td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="spec.frequency">工作频率</td>
+                        <td>920-925MHz</td>
+                        <td>860-960MHz</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="spec.read_range">读取距离</td>
+                        <td>0.1-8m（可调）</td>
+                        <td>1-12m（定向）</td>
+                    </tr>
+                    
+                    <tr class="table-primary">
+                        <td colspan="3"><strong data-i18n="performance">性能指标</strong></td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="spec.read_speed">读取速度</td>
+                        <td>3000件/小时</td>
+                        <td>200标签/秒</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="spec.temp">工作温度</td>
+                        <td>-20℃~65℃</td>
+                        <td>-40℃~85℃</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- 工作流程 -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 data-i18n="workflow">智能作业流程</h2>
+            <p class="text-muted" data-i18n="workflow_desc">RFID系统操作流程</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- 标签初始化 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="phase-card card-hover text-center p-4">
+                    <div class="phase-number bg-primary">1</div>
+                    <h5 class="my-3" data-i18n="phase1">标签初始化</h5>
+                    <ul class="text-start text-muted small mt-3">
+                        <li data-i18n="phase1_sorter">电子标签分拣站：EPC编码写入</li>
+                        <li data-i18n="phase1_asset">RFID物资管理：绑定资产信息</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 数据采集 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="phase-card card-hover text-center p-4">
+                    <div class="phase-number bg-primary">2</div>
+                    <h5 class="my-3" data-i18n="phase2">数据采集</h5>
+                    <ul class="text-start text-muted small mt-3">
+                        <li data-i18n="phase2_sorter">电子标签分拣站：批量读取标签</li>
+                        <li data-i18n="phase2_asset">RFID物资管理：实时数据同步</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 分拣操作 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="phase-card card-hover text-center p-4">
+                    <div class="phase-number bg-primary">3</div>
+                    <h5 class="my-3" data-i18n="phase3">分拣操作</h5>
+                    <ul class="text-start text-muted small mt-3">
+                        <li data-i18n="phase3_sorter">电子标签分拣站：LED灯光指引</li>
+                        <li data-i18n="phase3_asset">RFID物资管理：路径优化计算</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 数据同步 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="phase-card card-hover text-center p-4">
+                    <div class="phase-number bg-primary">4</div>
+                    <h5 class="my-3" data-i18n="phase4">数据同步</h5>
+                    <ul class="text-start text-muted small mt-3">
+                        <li data-i18n="phase4_sorter">电子标签分拣站：操作日志生成</li>
+                        <li data-i18n="phase4_asset">RFID物资管理：资产状态更新</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   <!--== 底部CTA ==-->
+   <section class="divider-area divider-default-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm-8 col-md-7">
+                <div class="content">
+                    <h2 class="title" data-i18n="cta_title">开启智能仓储转型</h2>
+                    <p style="margin: 10px 0; color: #ccc;" data-i18n="cta_subtitle">专业团队为您定制解决方案</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-5">
+                <div class="divider-btn">
+                    <a class="btn-theme btn-white" href="contact.html" data-i18n="book_demo">立即咨询 <i
+                            class="icofont-rounded-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape-group">
+        <div class="shape-style4">
+            <img src="static/picture/42.webp" alt="Image" width="560" height="250">
+        </div>
+    </div>
+</section>
+</main>
+
+ <!--== Start Footer Area Wrapper ==-->
+ <footer class="footer-area default-style">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
+              <div class="gt-widget-about">
+                <div class="about-logo">
+                  <a href=""><img src="static/picture/logo.png" alt="Logo" data-i18n="alt_footer_logo"></a>
+                </div>
+                <p class="about-text" data-i18n="footer_desc">JFindX - 自动化解决方案专家...</p>
+                <div class="gt-social style2">
+                  <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
+                  <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
+                  <a href="https://www.instagram.com/"><i class="icon icofont-linkedin"></i></a>
+                  <a href="https://www.youtube.com/"><i class="icon icofont-skype"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 页脚其他区块保持原样 -->
+          <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
+            <div class="widget-item">
+              <h4 class="widget-title" data-i18n="footer_services">所有服务</h4>
+              <nav class="widget-menu-wrap">
+                <ul class="nav-menu nav">
+
+                  <li><a href="solution.html"><i class="icofont-minus"></i><span
+                        data-i18n="nav_solution">解决方案</span></a>
+                  </li>
+                  <li><a href="wms.html"><i class="icofont-minus"></i><span data-i18n="submenu_wms">wms</span></a>
+                  </li>
+                  <li><a href="wcs.html"><i class="icofont-minus"></i><span data-i18n="submenu_wcs">wcs</span></a>
+                  </li>
+                  <li><a href="warehouse.html"><i class="icofont-minus"></i><span
+                        data-i18n="submenu_warehouse">智能仓储</span></a>
+                  </li>
+                  <li><a href="logistics.html"><i class="icofont-minus"></i><span
+                        data-i18n="submenu_logistics">智能物流</span></a>
+                  </li>
+                  <li><a href="rfid.html"><i class="icofont-minus"></i><span
+                        data-i18n="submenu_rfid">rfid电子标签</span></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2 col-xl-2">
+            <div class="widget-item">
+              <h4 class="widget-title" data-i18n="nav_about">关于我们</h4>
+              <nav class="widget-menu-wrap">
+                <ul class="nav-menu nav">
+                  <li><a href="index.html"><i class="icofont-minus"></i><span data-i18n="nav_home">首页</span></a></li>
+                  <li><a href="digital.html"><i class="icofont-minus"></i><span
+                        data-i18n="nav_digital">工业数字孪生系统</span></a>
+                  </li>
+                  <li><a href="cases.html"><i class="icofont-minus"></i><span data-i18n="nav_cases">成功案例</span></a>
+                  </li>
+                  <li><a href="about.html"><i class="icofont-minus"></i><span
+                        data-i18n="submenu_about">团队介绍</span></a>
+                  </li>
+                  <li><a href="honor.html"><i class="icofont-minus"></i><span
+                        data-i18n="submenu_honor">公司荣誉</span></a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 col-xl-3">
+            <div class="widget-item ml-35 lg-ml-0">
+              <h4 class="widget-title" data-i18n="submenu_contact">联系我们</h4>
+              <nav class="widget-menu-wrap">
+                <ul class="nav-menu nav">
+                  <li><a href=""><i class="icofont-minus"></i><span data-i18n="footer_company_email">公司邮箱</span></a>
+                  </li>
+                  <li><a href=""><i class="icofont-minus"></i><span data-i18n="footer_company_phone">130 5204
+                        4828</span></a>
+                  </li>
+                  <li><a href="" style="line-height:35px;vertical-align:sub;"><i class="icofont-minus"></i><span
+                        data-i18n="footer_company_address">浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-shape bg-img" data-bg-img="assets/img/photos/footer1.webp"></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="widget-copyright">
+                <p><span data-i18n="footer_copyright">宁波捷方优制科技有限公司版权所有</span> -
+                  <a href="http://beian.miit.gov.cn/" target="_blank" data-i18n="footer_icp">浙ICP备2023030316号-1</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--== End Footer Area Wrapper ==-->
+
+  <!--== Scroll Top Button ==-->
+  <div class="scroll-to-top"><span class="icofont-rounded-double-left icofont-rotate-90"></span></div>
+
+  <!--== Start Side Menu ==-->
+  <aside class="off-canvas-area offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+    id="offcanvasWithBothOptions">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- Start Mobile Menu Wrapper -->
+      <div class="res-mobile-menu">
+        <nav id="offcanvasNav" class="offcanvas-menu">
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+            <li><a href="solution.html" data-i18n="nav_solution">整体解决方案</a></li>
+            <li><a href="javascript:void(0)" data-i18n="nav_software" >AI柔性供应链软件</a>
+              <ul>
+                <li><a href="wms.html" data-i18n="submenu_wms" >智能仓储管理系统WMS</a></li>
+                <li><a href="wcs.html" data-i18n="submenu_wcs">自动化设备管理系统WCS</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:void(0)" data-i18n="nav_hardware" class="color-theme">智能仓储物流硬件</a>
+              <ul>
+                <li><a href="warehouse.html" data-i18n="submenu_warehouse">智能仓储</a></li>
+                <li><a href="logistics.html" data-i18n="submenu_logistics">智能物流</a></li>
+                <li><a href="rfid.html" data-i18n="submenu_rfid" class="color-theme">RFID电子标签</a></li>
+              </ul>
+            </li>
+            <li><a href="digital.html" data-i18n="nav_digital">数字孪生系统</a></li>
+            <li><a href="cases.html"" data-i18n=" nav_cases">成功案例</a></li>
+            <li><a href=" javascript:void(0)" data-i18n="nav_about">关于我们</a>
+              <ul>
+                <li><a href="about.html" data-i18n="submenu_about">团队介绍</a></li>
+                <li><a href="honor.html" data-i18n="submenu_honor">公司荣誉</a></li>
+                <li><a href="contact.html" data-i18n="submenu_contact">联系我们</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- End Mobile Menu Wrapper -->
+    </div>
+  </aside>
+<!--== End Side Menu ==-->
+</div>
+
+  <!-- Scripts -->
+  <script>
+    const translations = {
+        "en": {
+            "page_heading": "RFID Intelligent Tag",
+                "sorter.title": "RFID Sorting Station",
+                "asset.title": "Asset Management System",
+            "page_title": "Intelligent Warehouse Hardware - JFindX",
+            "current_lang": "EN",
+        "alt_logo": "Main Logo of JFINDX",
+        "alt_logo_light": "Light Logo of JFINDX",
+        "alt_prev": "Previous Slide",
+        "alt_next": "Next Slide",
+        "alt_about1": "Illustration of Intelligent Warehouse Solution",
+        "alt_about2": "Illustration of System Architecture",
+        "alt_footer_logo": "Footer Logo",
+        // Navigation Menu
+        "nav_home": "Home",
+        "nav_solution": "OvrSolution",
+        "nav_software": "AI-FlexSC Software",
+        "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+        "submenu_wcs": "Automated Equipment Management System (WCS)",
+        "nav_hardware": "Logistics",
+        "submenu_warehouse": "Intelligent Warehouse",
+        "submenu_logistics": "Intelligent Logistics",
+        "submenu_rfid": "RFID Electronic Tags",
+        "nav_digital": "Digital-Twin",
+        "nav_cases": "Success Cases",
+        "nav_about": "About Us",
+        "submenu_about": "Team Introduction",
+        "submenu_honor": "Company Honors",
+        "submenu_contact": "Contact Us",
+        // Footer
+        "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+        "footer_services": "All Services",
+        "footer_company_email": "Company Email",
+        "footer_company_phone": "130 5204 4828",
+        "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+        "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+        "footer_icp": "Zhejiang ICP No. 2023030316-1",
+
+            "hero_title": "Smart Warehouse Solutions",
+            "hero_subtitle": "Automation | Intelligence | Modular Design",
+            "core_hardware": "Core Equipment",
+            "hardware_desc": "Modular Design · Flexible Configuration · Rapid Deployment",
+            "technical_specs": "Technical Specifications",
+            "features": "Key Features",
+            "applications": "Applications",
+            "equipment1.title": "Pallet Stacker Crane",
+            "equipment1.type": "Heavy-duty Storage",
+            "equipment1.feature1": "Double-deep fork design increases storage density by 40%",
+            "application.manufacturing": "Automotive Manufacturing",
+            "application.bulk_storage": "Bulk Storage",
+            "tech_comparison": "Technical Comparison",
+            "comparison_desc": "Performance Comparison",
+            "parameter": "Parameter",
+            "spec.max_speed": "Max Speed",
+            "spec.max_load": "Max Load",
+            "workflow_title": "Standard Workflow",
+            "workflow_desc": "Intelligent Operation Process",
+            "step1_title": "Command Receiving",
+            "step1_desc": "WMS system issues operation commands",
+            "cta_title": "Start Smart Transformation",
+            "cta_desc": "Get Customized Solution Consultation",
+            "contact_us": "Contact Now"
+        },
+        "cn": {
+            "page_heading": "RFID电子标签",
+                "sorter.title": "电子标签分拣站",
+                "asset.title": "RFID物资管理",
+            "page_title": "智能仓储硬件设备 - 捷方优制",
+             // 通用
+        "current_lang": "CN",
+        "alt_logo": "捷方优制主Logo",
+        "alt_logo_light": "捷方优制浅色Logo",
+        "alt_prev": "上一张幻灯片",
+        "alt_next": "下一张幻灯片",
+        "alt_about1": "智能仓储解决方案图示",
+        "alt_about2": "系统架构图示",
+        "alt_footer_logo": "页脚Logo",
+        // 导航菜单
+        "nav_home": "首页",
+        "nav_solution": "整体解决方案",
+        "nav_software": "AI柔性供应链软件",
+        "submenu_wms": "智能仓储管理系统WMS",
+        "submenu_wcs": "自动化设备管理系统WCS",
+        "nav_hardware": "智能仓储物流硬件",
+        "submenu_warehouse": "智能仓储",
+        "submenu_logistics": "智能物流",
+        "submenu_rfid": "RFID电子标签",
+        "nav_digital": "数字孪生系统",
+        "nav_cases": "成功案例",
+        "nav_about": "关于我们",
+        "submenu_about": "团队介绍",
+        "submenu_honor": "公司荣誉",
+        "submenu_contact": "联系我们",
+        // 页脚
+        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+        "footer_services": "所有服务",
+        "footer_company_email": "公司邮箱",
+        "footer_company_phone": "130 5204 4828",
+        "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+        "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+        "footer_icp": "浙ICP备2023030316号-1",
+
+            "hero_title": "智能仓储解决方案",
+            "hero_subtitle": "自动化｜智能化｜模块化设计",
+            "core_hardware": "核心设备",
+            "hardware_desc": "模块化设计·灵活配置·快速部署",
+            "technical_specs": "技术参数",
+            "features": "功能特性",
+            "applications": "应用场景",
+            "equipment1.title": "托盘堆垛机",
+            "equipment1.type": "重型存储",
+            "equipment1.feature1": "双深位货叉设计提升40%存储密度",
+            "application.manufacturing": "汽车制造",
+            "application.bulk_storage": "大宗仓储",
+            "tech_comparison": "技术参数对比",
+            "comparison_desc": "多设备性能横向对比",
+            "parameter": "参数",
+            "spec.max_speed": "最大速度",
+            "spec.max_load": "最大载荷",
+            "workflow_title": "标准作业流程",
+            "workflow_desc": "智能化操作流程管理",
+            "step1_title": "指令接收",
+            "step1_desc": "WMS系统下发作业指令",
+            "cta_title": "开启智能仓储转型",
+            "cta_desc": "获取定制化解决方案咨询",
+            "contact_us": "立即咨询"
+        }
+    };
+    let currentLang = localStorage.getItem('language') || 'cn';
+
+// 核心翻译函数
+function updateLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('language', lang);
+
+  // 更新所有带翻译标记的元素
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[lang][key]) {
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+        element.value = translations[lang][key];
+      } else {
+        element.textContent = translations[lang][key];
+      }
+    }
+  });
+
+  // 更新placeholder
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const key = element.getAttribute('data-i18n-placeholder');
+    if (translations[lang][key]) {
+      element.setAttribute('placeholder', translations[lang][key]);
+    }
+  });
+
+  // 更新按钮显示
+  document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+  // 更新页面标题
+  document.title = translations[lang]['page_title'];
+}
+
+
+
+      // 初始化
+      document.addEventListener('DOMContentLoaded', () => {
+      // 初始化语言
+      updateLanguage(currentLang);
+
+      // 绑定语言切换事件
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = e.target.getAttribute('data-lang');
+          updateLanguage(lang);
+
+          // 手动关闭下拉菜单（Bootstrap5方法）
+          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+          dropdown.hide();
+        });
+      });
+
+      // 初始化Bootstrap下拉组件
+      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+    });
+</script>
+
+<!--=== Modernizr Min Js ===-->
+<script src="static/js/modernizr.js"></script>
+<!--=== jQuery Min Js ===-->
+<script src="static/js/jquery-main.js"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script src="static/js/jquery-migrate.js"></script>
+<!--=== Popper Min Js ===-->
+<script src="static/js/popper.min.js"></script>
+<!--=== Bootstrap Min Js ===-->
+<script src="static/js/bootstrap.min.js"></script>
+<!--=== jquery Swiper Min Js ===-->
+<script src="static/js/swiper.min.js"></script>
+<!--=== jquery Countdown Js ===-->
+<script src="static/js/jquery.countdown.min.js"></script>
+<!--=== Isotope Min Js ===-->
+<script src="static/js/isotope.pkgd.min.js"></script>
+<!-- 3D库和图表库的CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!--=== Custom Js ===-->
+<script src="static/js/custom.js"></script>
+</body>
+
+</html>

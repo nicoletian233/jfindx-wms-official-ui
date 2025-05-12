@@ -2546,13 +2546,13 @@ table p {
 }
 @media only screen and (max-width: 1399px) {
   .header-area.header-default .header-navigation-area .main-menu > li > a {
-    margin: 0 18px;
+    margin: 0 13px;
   }
 }
 @media only screen and (max-width: 1199px) {
   .header-area.header-default .header-navigation-area .main-menu > li > a {
     font-size: 15px;
-    margin: 0 17px;
+    margin: 0 8px;
   }
 }
 .header-area.header-default .header-navigation-area .main-menu > li > a:hover {
@@ -3842,7 +3842,7 @@ table p {
 }
 .team-member .thumb {
   margin-bottom: 30px;
-  padding: 35px 35px 0;
+  padding: 15px 15px 0;
   text-align: center;
   height: 150px;
         line-height: 120px;
@@ -3850,13 +3850,13 @@ table p {
 @media only screen and (max-width: 1199px) {
   .team-member .thumb {
     margin-bottom: 25px;
-    padding: 25px 25px 0;
+    padding: 10px 10px 0;
   }
 }
 @media only screen and (max-width: 991px) {
   .team-member .thumb {
     margin-bottom: 15px;
-    padding: 15px 15px 0;
+    padding: 5px 5px 0;
   }
 }
 .team-member .thumb img {
@@ -7394,10 +7394,10 @@ table p {
   text-align: center;
 }
 .widget-copyright p span {
-  color: #265c9d;
+  /* color: #265c9d; */
 }
 .widget-copyright p i {
-  color: #265c9d;
+  /* color: #265c9d; */
   font-size: 15px;
   margin: 0 2px 0 1px;
 }
@@ -7477,4 +7477,211 @@ table p {
   display: block;
   margin-top: 5px;
   color: #6c757d;
+}
+
+
+/* Porfolio area slider */
+.project-wrap.style1 .project-slider1 .gt-slider {
+  margin-right: -775px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  /* Small devices */
+}
+.project-wrap.style1 .project-slider1 .gt-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .project-wrap.style1 .project-slider1 .gt-slider {
+    margin-right: 0px;
+  }
+}
+.project-wrap.style2 {
+  margin-top: -230px;
+}
+.project-wrap.style2 .project-slider2 .gt-slider {
+  overflow: visible !important;
+  margin-right: -775px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  /* Small devices */
+}
+.project-wrap.style2 .project-slider2 .gt-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .project-wrap.style2 .project-slider2 .gt-slider {
+    margin-right: 0px;
+  }
+}
+/* 首页成功案例 */
+.project-section .container-fluid {
+  padding: 0 75px;
+}
+@media (max-width: 1399px) {
+  .project-section .container-fluid {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 1199px) {
+  .project-section .container-fluid {
+    padding: 0 20px;
+  }
+}
+.project-section .swiper-slide.swiper-slide-active .project-thumb::before {
+  opacity: 1;
+  visibility: visible;
+}
+.project-section .swiper-slide.swiper-slide-active .project-thumb .project-content {
+  opacity: 1;
+  visibility: visible;
+  bottom: 30px;
+}
+.project-section .project-dot {
+  text-align: center;
+  margin-top: 50px;
+}
+.project-section .project-dot .swiper-pagination-bullet {
+  width: 250px;
+  height: 3px;
+  border-radius: 0;
+  background: var(--header);
+  opacity: 1;
+  transition: 0.6s;
+  margin: 0 !important;
+}
+.project-section .project-dot .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--theme);
+}
+@media (max-width: 767px) {
+  .project-section .project-dot {
+    display: none;
+  }
+}
+.section-padding {
+  padding: 120px 0;
+}
+@media (max-width: 1199px) {
+  .section-padding {
+    padding: 100px 0;
+  }
+}
+@media (max-width: 991px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+.fix {
+  overflow: hidden;
+}
+/* 首页统一图片比例和卡片样式  */
+  .hardware-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .hardware-item:hover {
+    transform: translateY(-5px);
+  }
+  .thumb-container {
+    position: relative;
+    padding-top: 75%; /* 4:3 比例 */
+    background: #f8f9fa;
+  }
+  .thumb-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .hardware-content {
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+  }
+  .subsection-title {
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
+    margin: 2rem 0;
+  }
+
+  /* 成功案例 */
+.case-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.case-img {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+.case-overlay {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.case-card:hover .case-overlay { opacity: 1; }
+
+/* 荣誉时间线 */
+.honor-timeline {
+  position: relative;
+  padding-left: 50px;
+}
+.timeline-item {
+  margin: 40px 0;
+  position: relative;
+}
+.timeline-year {
+  position: absolute;
+  left: -70px;
+  top: 15px;
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  color: #2a5298;
+}
+
+/* 产品对比表 */
+.product-comparison table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.product-comparison th {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+/* RFID解决方案 */
+.solution-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+}
+.application-scenes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 15px 0;
 }

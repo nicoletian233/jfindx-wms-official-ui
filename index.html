@@ -26,7 +26,54 @@
   <link href="static/css/swiper.min.css" rel="stylesheet">
   <!--== Main Style CSS ==-->
   <link href="static/css/style.css" rel="stylesheet">
+  <style>
+    .logo-container {
+      width: 100%;
+      max-width: 1200px;
+      /* 根据5个Logo的总宽度调整 */
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      padding: 100px 0 0;
+    }
 
+    .logo-slider {
+      display: flex;
+      animation: slide 20s linear infinite;
+      gap: 40px;
+      /* Logo之间的间距 */
+    }
+
+    /* Logo统一样式 */
+    .logo-slider img {
+      height: 80px;
+      /* 统一高度 */
+      width: auto;
+      object-fit: contain;
+      /* 保持图片比例 */
+      flex-shrink: 0;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-100% - 40px));
+        /* 根据gap值调整 */
+      }
+    }
+
+    /* 悬停暂停动画 */
+    .logo-container:hover .logo-slider {
+      animation-play-state: paused;
+    }
+
+    .service-area img {
+      height: 100%;
+    }
+  </style>
 </head>
 
 <body>
@@ -42,19 +89,40 @@
             <div class="col-4 col-sm-6 col-lg-2">
               <div class="header-logo-area">
                 <a href="index.html">
-                  <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161" height="48">
-                  <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161" height="48">
+                  <img class="logo-main" src="static/picture/logo.png" alt="Logo" width="161" height="48"
+                    data-i18n="alt_logo">
+                  <img class="logo-light" src="static/picture/logo1.jpg" alt="Logo" width="161" height="48"
+                    data-i18n="alt_logo_light">
                 </a>
               </div>
             </div>
             <div class="col-lg-9 d-none d-lg-block">
               <div class="header-navigation-area">
                 <ul class="main-menu nav position-relative">
-                  <li><a href="" data-i18n="home">首页</a></li>
-                  <li><a href="wms.html" data-i18n="wms">智能仓储系统WMS</a></li>
-                  <li><a href="wcs.html" data-i18n="wcs">自动化设备管理系统WCS</a></li>
-                  <li><a href="digital.html" data-i18n="digital">数字孪生系统</a></li>
-                  <li><a href="about.html" data-i18n="about">关于我们</a></li>
+                  <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+                  <li><a href="solution.html" data-i18n="nav_solution">整体解决方案</a></li>
+                  <li class="has-submenu"><a href="wms.html" data-i18n="nav_software">AI柔性供应链软件</a>
+                    <ul class="submenu-nav">
+                      <li><a href="wms.html" data-i18n="submenu_wms">智能仓储管理系统WMS</a></li>
+                      <li><a href="wcs.html" data-i18n="submenu_wcs">自动化设备管理系统WCS</a></li>
+                    </ul>
+                  </li>
+                  <li class="has-submenu"><a href="warehouse.html" data-i18n="nav_hardware">智能仓储物流硬件</a>
+                    <ul class="submenu-nav">
+                      <li><a href="warehouse.html" data-i18n="submenu_warehouse">智能仓储</a></li>
+                      <li><a href="logistics.html" data-i18n="submenu_logistics">智能物流</a></li>
+                      <li><a href="rfid.html" data-i18n="submenu_rfid">RFID电子标签</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="digital.html" data-i18n="nav_digital">数字孪生系统</a></li>
+                  <li><a href="cases.html" data-i18n="nav_cases">成功案例</a></li>
+                  <li class="has-submenu"><a href="about.html" data-i18n="nav_about">关于我们</a>
+                    <ul class="submenu-nav">
+                      <li><a href="about.html" data-i18n="submenu_about">团队介绍</a></li>
+                      <li><a href="honor.html" data-i18n="submenu_honor">公司荣誉</a></li>
+                      <li><a href="contact.html" data-i18n="submenu_contact">联系我们</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -62,7 +130,7 @@
               <div class="header-action-area">
                 <div class="header-lang-dropdown">
                   <button type="button" class="btn-lang dropdown-toggle" id="dropdownLang" data-bs-toggle="dropdown"
-                    aria-expanded="false">CN</button>
+                    aria-expanded="false" data-i18n="current_lang">CN</button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownLang">
                     <li class="dropdown-item" data-lang="en">EN</li>
                     <li class="dropdown-item" data-lang="cn">CN</li>
@@ -82,15 +150,16 @@
     </header>
     <!--== End Header Wrapper ==-->
 
+    <!--== Main Content ==-->
     <main class="main-content">
       <!--== Start Hero Area Wrapper ==-->
-      <section class="home-slider-area slider-default">
+      <section id="home" class="home-slider-area slider-default">
         <div class="home-slider-content">
           <div class="swiper-container home-slider-container" id="heroSlide2"
-            data-slider-options='{"effect":"fade", "autoHeight": "true"}'>
+            data-slider-options='{"effect":"fade", "autoHeight":"true"}'>
             <div class="swiper-wrapper">
+              <!-- Slide 1 -->
               <div class="swiper-slide">
-                <!-- Start Slide Item -->
                 <div class="home-slider-item">
                   <div class="slider-content-area bg-img" data-bg-img="assets/img/slider/zhu08.jpg">
                     <div class="container">
@@ -99,13 +168,13 @@
                           <div class="content">
                             <div class="inner-content">
                               <div class="wrap-one">
-                                <h2 data-i18n="hero_title">探索FindX自动化解决方案.</h2>
+                                <h2 data-i18n="hero_title">探索JFindX自动化解决方案.</h2>
                               </div>
                               <div class="wrap-two">
                                 <p data-i18n="hero_text">敏捷的智慧空间解决方案，提供工广数智化转型。</p>
                               </div>
                               <div class="wrap-three">
-                                <a href="about.html" class="btn-theme" data-i18n="explore_more">探索更多</a>
+                                <a href="#solution" class="btn-theme" data-i18n="hero_cta">探索更多</a>
                               </div>
                             </div>
                           </div>
@@ -115,10 +184,10 @@
                     </div>
                   </div>
                 </div>
-                <!-- End Slide Item -->
               </div>
+
+              <!-- Slide 2 -->
               <div class="swiper-slide">
-                <!-- Start Slide Item -->
                 <div class="home-slider-item">
                   <div class="slider-content-area bg-img" data-bg-img="assets/img/slider/main-bg2_4.jpg">
                     <div class="container">
@@ -133,7 +202,7 @@
                                 <p data-i18n="hero_text2">敏捷的智慧空间解决方案，提供工广数智化转型</p>
                               </div>
                               <div class="wrap-three">
-                                <a href="about.html" class="btn-theme" data-i18n="explore_more">探索更多</a>
+                                <a href="#solution" class="btn-theme" data-i18n="hero_cta">探索更多</a>
                               </div>
                             </div>
                           </div>
@@ -143,53 +212,59 @@
                     </div>
                   </div>
                 </div>
-                <!-- End Slide Item -->
               </div>
             </div>
-            <!-- Add Arrows -->
-            <button data-slider-prev="#heroSlide2" class="swiper-btn-prev slider-arrow style2"><img
-                src="assets/img/slider/arrowLeft.png" alt="img"></button>
-            <button data-slider-next="#heroSlide2" class="swiper-btn-next slider-arrow style2 slider-next"><img
-                src="assets/img/slider/arrowRight.png" alt="img"></button>
+
+            <!-- Navigation Arrows -->
+            <button data-slider-prev="#heroSlide2" class="swiper-btn-prev slider-arrow style2">
+              <img src="assets/img/slider/arrowLeft.png" alt="Previous" data-i18n="alt_prev">
+            </button>
+            <button data-slider-next="#heroSlide2" class="swiper-btn-next slider-arrow style2 slider-next">
+              <img src="assets/img/slider/arrowRight.png" alt="Next" data-i18n="alt_next">
+            </button>
           </div>
         </div>
       </section>
-      <!--== End Hero Area Wrapper ==-->
 
-      <!--== Start About Area Wrapper ==-->
+      <!--== 保持原有所有区块结构 ==-->
+      <!-- About Area -->
       <section class="about-area about-default-area">
         <div class="container">
           <div class="row row-gutter-0">
             <div class="col-md-6 col-lg-4">
               <div class="about-content">
                 <div class="section-title">
-                  <h4 class="subtitle" data-i18n="about_us">关于我们</h4>
-                  <h2 class="title" data-i18n="company_name">宁波捷方优制科技有限公司</h2>
-                  <p data-i18n="company_desc1">宁波捷方优制科技有限公司是一家专注于自动化解决方案的高科技企业，致力于为全球客户提供智能化、高效化的工业自动化与仓储物流解决方案.</p>
-                  <p data-i18n="company_desc2">公司以技术创新为核心驱动力，凭借丰富的行业经验和专业的技术团队，为客户量身定制高效、可靠的自动化系统，助力企业实现智能化转型升级.</p>
-                  <a href="about.html" class="btn-theme" data-i18n="learn_more">了解更多</a>
+                  <h4 class="subtitle" data-i18n="about_subtitle">关于我们</h4>
+                  <h2 class="title" data-i18n="about_title">宁波捷方优制科技有限公司</h2>
+                  <p data-i18n="about_text1">宁波捷方优制科技有限公司（JFINDX，捷方优制），专注于智能制造领域...</p>
+                  <p data-i18n="about_text2">公司核心技术团队主要来自海内外名校及世界500强企业...</p>
+                  <a href="about.html" class="btn-theme" data-i18n="about_cta">了解更多</a>
                 </div>
               </div>
             </div>
+            <!-- 保持原有图片布局 -->
             <div class="col-md-6 col-lg-4">
               <div class="about-thumb">
-                <img src="assets/img/slider/zhu07.png" alt="Image" width="350" height="570">
+                <img src="static/picture/home-about1.png" alt="About" data-i18n="alt_about1">
+              </div>
+              <div class="about-thumb" style="margin-top:20px;">
+                <img src="static/picture/home-about2.png" alt="About" data-i18n="alt_about2">
               </div>
             </div>
+            <!-- 保持原有特性区块 -->
             <div class="col-md-12 col-lg-4">
               <div class="featured-wrp">
                 <div class="featured-item">
-                  <h4 class="title"><a href="about.html" data-i18n="professionalism">专业性</a></h4>
-                  <p data-i18n="professionalism_desc">捷方优制科技拥有一支由资深工程师和技术专家组成的研发团队，深耕自动化领域多年，精通各类自动化设备的研发、集成与应用。</p>
+                  <h4 class="title"><a href="about.html" data-i18n="feature1_title">技术基因</a></h4>
+                  <p data-i18n="feature1_text">核心成员来自阿里巴巴、腾讯、Intel英特尔...</p>
                 </div>
                 <div class="featured-item">
-                  <h4 class="title"><a href="about.html" data-i18n="innovation">创新性</a></h4>
-                  <p data-i18n="innovation_desc">
-                    创新是捷方优制科技发展的灵魂。公司持续投入研发，紧跟工业4.0和智能制造的发展趋势，将人工智能、物联网、大数据等前沿技术与自动化设备深度融合，打造智能化、数字化的解决方案。</p>
+                  <h4 class="title"><a href="about.html" data-i18n="feature2_title">核心优势</a></h4>
+                  <p data-i18n="feature2_text">专注于人工智能算法驱动的柔性供应链解决方案，结合云平台、物联网和软硬件集成技术，为制造业提供智能化转型支持。</p>
                 </div>
                 <div class="featured-item">
-                  <h4 class="title"><a href="about.html" data-i18n="experience">丰富经验</a></h4>
-                  <p data-i18n="experience_desc">捷方优制科技在自动化领域积累了丰富的项目经验，已成功为多家知名企业提供了定制化的自动化解决方案。</p>
+                  <h4 class="title"><a href="about.html" data-i18n="feature3_title">行业定位</a></h4>
+                  <p data-i18n="feature3_text">敏捷智慧制造空间解决方案专家，致力于推动国内产业向高端制造发展。</p>
                 </div>
               </div>
             </div>
@@ -197,211 +272,285 @@
         </div>
       </section>
       <!--== End About Area Wrapper ==-->
-
-      <!--== Start Project Area ==-->
-      <section class="project-area project-default-area">
-        <div class="container-fluid">
+      <!--== Start 解决方案 ==-->
+      <section class="service-area service-default-area">
+        <div class="container">
           <div class="row">
             <div class="col-lg-12 m-auto">
               <div class="section-title text-center">
-                <h4 class="subtitle" data-i18n="solution_recommend">解决方案推荐</h4>
-                <h2 class="title" data-i18n="popular_products">热门产品</h2>
+                <h4 class="subtitle" data-i18n="solution_subtitle">解决方案推荐</h4>
+                <h2 class="title" data-i18n="solution_title">智能仓储整体解决方案</h2>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-12">
-              <div class="projects-slider-content">
-                <div class="swiper-container projects-slider-container">
-                  <div class="swiper-wrapper projects-slider-wrapper">
-                    <div class="swiper-slide">
-                      <div class="project-item">
-                        <div class="thumb">
-                          <a href="wms.html"><img src="static/picture/wms01.png" alt="Image" width="564"
-                              height="347"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="title"><a href="wms.html" data-i18n="wms_title">JFINDX WMS 智能仓储管理系统</a></h4>
-                          <h6 class="category"><a href="wms.html" data-i18n="wms_feature1">集成多种行业领先企业业务实践</a></h6>
-                          <h6 class="category"><a href="wms.html" data-i18n="wms_feature2">高度产品化，涵盖仓库全业务需求</a></h6>
-                          <h6 class="category"><a href="wms.html" data-i18n="wms_feature3">智能化作业指导，优化的业务流程和策略</a></h6>
-                          <h6 class="category"><a href="wms.html" data-i18n="wms_feature4">全渠道业务支持，无纸化作业管理</a></h6>
-                          <h6 class="category"><a href="wms.html" data-i18n="wms_feature5">协同各类智能设备，提升仓储智能化</a></h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="project-item">
-                        <div class="thumb">
-                          <a href="wcs.html"><img src="static/picture/wcs01.png" alt="Image" width="564"
-                              height="347"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="title"><a href="wcs.html" data-i18n="wcs_title">JFINDX WCS 仓储设备控制系统</a></h4>
-                          <h6 class="category"><a href="wcs.html" data-i18n="wcs_feature1">协同多种物流设备并采用统一控制平台</a></h6>
-                          <h6 class="category"><a href="wcs.html" data-i18n="wcs_feature2">完美支持各类WMS、ERP等系统对接</a></h6>
-                          <h6 class="category"><a href="wcs.html" data-i18n="wcs_feature3">对接各类智能设备</a></h6>
-                          <h6 class="category"><a href="wcs.html" data-i18n="wcs_feature4">整体考虑设备的控制优化</a></h6>
-                          <h6 class="category"><a href="wcs.html" data-i18n="wcs_feature5">便于未来设备调整与扩展</a></h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="project-item">
-                        <div class="thumb">
-                          <a href="digital.html"><img src="static/picture/screen01.png" alt="Image" width="564"
-                              height="347"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="title"><a href="digital.html" data-i18n="dts_title">JFINDX DTS 数字孪生系统</a></h4>
-                          <h6 class="category"><a href="digital.html" data-i18n="dts_feature1">通过仿真优化减少物理试错成本，缩短调试周期</a>
-                          </h6>
-                          <h6 class="category"><a href="digital.html" data-i18n="dts_feature2">优化布局、库存及设备维护，减少资源浪费</a>
-                          </h6>
-                          <h6 class="category"><a href="digital.html" data-i18n="dts_feature3">实时监控与预测性维护降低故障停机风险</a>
-                          </h6>
-                          <h6 class="category"><a href="digital.html"
-                              data-i18n="dts_feature4">数据驱动的仿真支持管理者从"上帝视角"全局优化</a></h6>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="project-item">
-                        <div class="thumb">
-                          <a href="wcs.html"><img src="static/picture/zhu02.jpg" alt="Image" width="564"
-                              height="347"></a>
-                        </div>
-                        <div class="content">
-                          <h4 class="title"><a href="wcs.html" data-i18n="equipment_title">自动化仓储装备</a></h4>
-                          <h6 class="category"><a href="wcs.html"
-                              data-i18n="equipment_feature1">堆垛机系统，立体仓库核心设备，垂直方向存取货物</a></h6>
-                          <h6 class="category"><a href="wcs.html"
-                              data-i18n="equipment_feature2">四向穿梭车系统，可在货架轨道内自由移动，配合提升机实现多层存储，支持多品种小批量管理</a></h6>
-                          <h6 class="category"><a href="wcs.html"
-                              data-i18n="equipment_feature3">分拣机器人，基于视觉识别和机械臂技术，实现高速分拣（600件/小时），误差率<0.1%< /a>
-                          </h6>
-                          <h6 class="category"><a href="wcs.html"
-                              data-i18n="equipment_feature4">智能AGV，自主导航搬运货物，支持激光SLAM/二维码导航，载重500-2000kg</a></h6>
-                        </div>
-                      </div>
+            <div class="col-lg-12">
+              <div class="thumb">
+                <img class="w-100" src="static/picture/home-so3.png" alt="Image">
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <p class="get-started" style="margin-top:20px;"><span data-i18n="solution_desc">We are ready to give 24/7
+                  support for your cutomer. </span><a href="contact.html" data-i18n="about_cta">Get Started</a></p>
+            </div>
+          </div>
+          <div class="shape-group">
+            <div class="shape-style2">
+              <img src="static/picture/21.webp" alt="Image" width="353" height="918">
+            </div>
+            <div class="shape-style3">
+              <img src="static/picture/31.webp" alt="Image" width="353" height="918">
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End 解决方案 ==-->
+
+
+      <!--== Start Software Area ==-->
+      <section id="software" class="software-area bg-gray section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 m-auto">
+              <div class="section-title text-center">
+                <h4 class="subtitle" data-i18n="software_subtitle">AI柔性供应链软件</h4>
+                <h2 class="title" data-i18n="software_title">智能软件系统</h2>
+                <p data-i18n="software_desc">我们的软件系统结合人工智能技术，实现供应链的智能化管理和优化</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- WMS Section -->
+          <div id="wms" class="row mt-50 align-items-center">
+            <div class="col-md-6">
+              <div class="software-thumb">
+                <img src="static/picture/wms01.png" alt="WMS系统" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="software-content">
+                <h3 data-i18n="wms_title">JFINDX WMS 智能仓储管理系统</h3>
+                <ul class="feature-list">
+                  <li><i class="icofont-check"></i> <span data-i18n="wms_feature1">集成多种行业领先企业业务实践</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="wms_feature2">高度产品化，涵盖仓库全业务需求</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="wms_feature3">智能化作业指导，优化的业务流程和策略</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="wms_feature4">全渠道业务支持，无纸化作业管理</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="wms_feature5">协同各类智能设备，提升仓储智能化</span></li>
+                </ul>
+                <a href="wms.html" class="btn-theme" data-i18n="about_cta">了解更多</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- WCS Section -->
+          <div id="wcs" class="row mt-100 align-items-center">
+            <div class="col-md-6 order-md-2">
+              <div class="software-thumb">
+                <img src="static/picture/wcs01.png" alt="WCS系统" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-md-6 order-md-1">
+              <div class="software-content">
+                <h3 data-i18n="wcs_title">JFINDX WCS 仓储自动化设备管理系统</h3>
+                <ul class="feature-list">
+                  <li><i class="icofont-check"></i> <span data-i18n="wcs_feature1">协同多种物流设备并采用统一控制平台</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="wcs_feature2">完美支持各类WMS、ERP等系统对接</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="wcs_feature3">对接各类智能设备</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="wcs_feature4">整体考虑设备的控制优化</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="wcs_feature5">便于未来设备调整与扩展</span></li>
+                </ul>
+                <a href="wcs.html" class="btn-theme" data-i18n="about_cta">了解更多</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End Software Area ==-->
+
+      <!--== Start Hardware Area ==-->
+      <section class="service-area service-default-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 m-auto">
+              <div class="section-title text-center">
+                <h4 class="subtitle text-uppercase" data-i18n="hardware_subtitle">智能仓储物流硬件体系</h4>
+                <h2 class="title display-5 fw-bold mb-3" data-i18n="hardware_title">智能仓储物流硬件解决方案</h2>
+                <p class="text-muted" data-i18n="hardware_desc">集成AIoT技术的工业级设备，支持-40℃~85℃全场景应用</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- 智能仓储 -->
+            <div class="col-md-4 mb-4">
+              <div class="case-card h-100 shadow-hover">
+                <div class="case-img position-relative overflow-hidden">
+                  <img src="static/picture/ware1.png" alt="智能仓储" data-i18n="submenu_warehouse"
+                    class="w-100 scale-effect">
+                  <div class="case-overlay d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                      <a href="warehouse.html" class="btn btn-primary btn-sm" data-i18n="view_details">
+                        <i class="bi bi-info-circle me-2"></i><span data-i18n="warehouse_detail">查看详情</span>
+                      </a>
+                      <p class="text-white-50 mt-2 mb-0 small" data-i18n="warehouse_desc">MTBF ≥10000小时</p>
                     </div>
                   </div>
-                  <!-- Add Arrows -->
-                  <div class="swiper-btn-next"><i class="icofont-long-arrow-right"></i></div>
-                  <div class="swiper-btn-prev"><i class="icofont-long-arrow-left"></i></div>
-                  <!-- Add Pagination -->
-                  <div class="swiper-pagination"></div>
+                </div>
+                <div class="case-body p-3">
+                  <h4 class="mb-3" data-i18n="submenu_warehouse">智能仓储</h4>
+                  <p class="text-muted small" data-i18n="case1_desc">
+                    <i class="bi bi-check2 text-success me-1"></i>
+                    <span data-i18n="warehouse_desc1">包含四向穿梭车、堆垛机、提升机，支持双深位存储和激光导航</span>
+                  </p>
+                  <div class="applications d-flex gap-2 mt-2">
+                    <span class="badge bg-primary bg-opacity-10 text-primary" data-i18n="warehouse_desc2">新能源汽车电池</span>
+                    <span class="badge bg-primary bg-opacity-10 text-primary" data-i18n="warehouse_desc3">自行车配件</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 智能物流 -->
+            <div class="col-md-4 mb-4">
+              <div class="case-card h-100 shadow-hover">
+                <div class="case-img position-relative overflow-hidden">
+                  <img src="static/picture/w2.png" alt="智能物流" class="w-100 scale-effect" data-i18n="submenu_logistics">
+                  <div class="case-overlay d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                      <a href="logistics.html" class="btn btn-success btn-sm" data-i18n="view_details">
+                        <i class="bi bi-box-arrow-up-right me-2"></i><span data-i18n="warehouse_detail">查看详情</span>
+                      </a>
+                      <p class="text-white-50 mt-2 mb-0 small" data-i18n="logistics_desc">4500件/小时分拣效率</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="case-body p-3">
+                  <h4 class="mb-3" data-i18n="submenu_logistics">智能物流</h4>
+                  <p class="text-muted small" data-i18n="case2_desc">
+                    <i class="bi bi-check2 text-success me-1"></i>
+                    <span data-i18n="logistics_desc1">集成AMR机器人、动态称重和体积测量，支持自动路径规划</span>
+                  </p>
+                  <div class="applications d-flex gap-2 mt-2">
+                    <span class="badge bg-success bg-opacity-10 text-success"
+                      data-i18n="logistics_desc2">汽车主机及零部件</span>
+                    <span class="badge bg-success bg-opacity-10 text-success" data-i18n="logistics_desc3">电子半导体</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RFID电子标签 -->
+            <div class="col-md-4 mb-4">
+              <div class="case-card h-100 shadow-hover">
+                <div class="case-img position-relative overflow-hidden">
+                  <img src="static/picture/rfid.jpg" alt="RFID电子标签" class="w-100 scale-effect" data-i18n="submenu_rfid">
+                  <div class="case-overlay d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                      <a href="rfid.html" class="btn btn-warning btn-sm" data-i18n="view_details">
+                        <i class="bi bi-file-earmark-text me-2"></i><span data-i18n="warehouse_detail">查看详情</span>
+                      </a>
+                      <p class="text-white-50 mt-2 mb-0 small" data-i18n="rfid_desc">99.99%识别准确率</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="case-body p-3">
+                  <h4 class="mb-3" data-i18n="submenu_rfid">RFID电子标签</h4>
+                  <p class="text-muted small" data-i18n="case3_desc">
+                    <i class="bi bi-check2 text-success me-1"></i>
+                    <span data-i18n="rfid_desc1">支持EPC C1G2协议，每秒识别200+标签，抗金属干扰设计</span>
+                  </p>
+                  <div class="applications d-flex gap-2 mt-2">
+                    <span class="badge bg-warning bg-opacity-10 text-warning" data-i18n="rfid_desc2">智慧零售</span>
+                    <span class="badge bg-warning bg-opacity-10 text-warning" data-i18n="rfid_desc3">资产管理</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="bg-shape-style" data-bg-img="assets/img/shape/5.webp"></div>
       </section>
-      <!--== End Project Area ==-->
+      <!--== End Hardware Area ==-->
 
-      <!--== Start Team Area ==-->
-      <section class="team-area team-default-area">
+      <!--== Start Digital Twin Area ==-->
+      <section id="digital" class="digital-area bg-gray section-padding">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="digital-thumb">
+                <img src="static/picture/screen01.png" alt="数字孪生系统" class="img-fluid" data-i18n="digital_subtitle">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="digital-content">
+                <h4 class="subtitle" data-i18n="digital_subtitle">工业数字孪生</h4>
+                <h2 class="title" data-i18n="dts_title">JFINDX DTS 工业数字孪生系统</h2>
+                <ul class="feature-list">
+                  <li><i class="icofont-check"></i> <span data-i18n="dts_feature1">通过仿真优化减少物理试错成本，缩短调试周期</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="dts_feature2">优化布局、库存及设备维护，减少资源浪费</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="dts_feature3">实时监控与预测性维护降低故障停机风险</span></li>
+                  <li><i class="icofont-check"></i> <span data-i18n="dts_feature4">数据驱动的仿真支持管理者从"上帝视角"全局优化</span></li>
+                </ul>
+                <a href="digital.html" class="btn-theme" data-i18n="about_cta">了解更多</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End Digital Twin Area ==-->
+
+      <!--== Start Cases Area ==-->
+      <section id="cases" class="service-area service-default-area cases-area">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 m-auto">
               <div class="section-title text-center">
-                <h4 class="subtitle" data-i18n="equipment_desc">
-                  我们的自动化仓储硬件设备，为高效仓储提供坚实的物理基础。从先进的堆垛机到精准的输送机，每一款设备都经过精心设计和严格测试。</h4>
-                <h2 class="title" data-i18n="equipment_title2">自动化仓储硬件设备</h2>
+                <h4 class="subtitle" data-i18n="cases_subtitle">成功案例</h4>
+                <h2 class="title" data-i18n="cases_title">我们的客户案例</h2>
+                <p data-i18n="cases_desc">我们已为多个行业的领先企业提供了自动化解决方案</p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="team-slider-content">
-                <div class="swiper-container team-slider-container">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="team-member">
-                        <div class="thumb">
-                          <img src="static/picture/duiduoji.png" alt="Image" width="161" height="199">
-                        </div>
-                        <div class="content">
-                          <div class="member-info">
-                            <h4 class="name" data-i18n="equipment1">托盘堆垛机</h4>
-                            <h6 class="designation" data-i18n="delivery_manager">Delivery Manager</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="team-member">
-                        <div class="thumb">
-                          <img src="static/picture/miniduiduoji.png" alt="Image" width="161" height="199">
-                        </div>
-                        <div class="content">
-                          <div class="member-info">
-                            <h4 class="name" data-i18n="equipment2">迷你料箱堆垛机</h4>
-                            <h6 class="designation" data-i18n="cargo_supervisor">Cargo Supervisor</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="team-member">
-                        <div class="thumb">
-                          <img src="static/picture/agv11.png" alt="Image" width="161" height="199">
-                        </div>
-                        <div class="content">
-                          <div class="member-info">
-                            <h4 class="name" data-i18n="equipment3">四向穿梭车</h4>
-                            <h6 class="designation" data-i18n="cargo_supervisor">Cargo Supervisor</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="team-member">
-                        <div class="thumb">
-                          <img src="static/picture/agv01.png" alt="Image" width="161" height="199">
-                        </div>
-                        <div class="content">
-                          <div class="member-info">
-                            <h4 class="name" data-i18n="equipment4">潜伏式搬运AGV</h4>
-                            <h6 class="designation" data-i18n="delivery_manager">Delivery Manager</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="team-member">
-                        <div class="thumb">
-                          <img src="static/picture/wcs20.jpg" alt="Image" width="161" height="199">
-                        </div>
-                        <div class="content">
-                          <div class="member-info">
-                            <h4 class="name" data-i18n="equipment5">电子标签分拣站</h4>
-                            <h6 class="designation" data-i18n="cargo_supervisor">Cargo Supervisor</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="team-member">
-                        <div class="thumb">
-                          <img src="static/picture/wcs12.jpeg" alt="Image" width="161" height="199">
-                        </div>
-                        <div class="content">
-                          <div class="member-info">
-                            <h4 class="name" data-i18n="equipment6">RFID物资管理</h4>
-                            <h6 class="designation" data-i18n="delivery_manager">Delivery Manager</h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="thumb">
+                <a href="cases.html">
+                  <img src="static/picture/case01.png" alt="">
+                </a>
               </div>
             </div>
           </div>
+          <div class="logo-container">
+            <div class="logo-slider">
+              <!-- 原始Logo组 -->
+              <img src="static/picture/ma-logo.png" alt="COMPANY 1">
+              <img src="static/picture/b-logo.png" alt="COMPANY 2">
+              <!-- <img src="static/picture/ban-logo.png" alt="COMPANY 3"> -->
+              <img src="static/picture/guo-logo.png" alt="COMPANY 4">
+              <img src="static/picture/hao-logo.png" alt="COMPANY 5">
+              <img src="static/picture/feng-logo.png" alt="COMPANY 6">
+              <img src="static/picture/sheng-logo.png" alt="COMPANY 7">
+              <img src="static/picture/hongqi-logo.png" alt="COMPANY 8">
+              <!-- 复制Logo组实现无缝滚动 -->
+              <img src="static/picture/ma-logo.png" alt="COMPANY 1">
+              <img src="static/picture/b-logo.png" alt="COMPANY 2">
+              <!-- <img src="static/picture/ban-logo.png" alt="COMPANY 3"> -->
+              <img src="static/picture/guo-logo.png" alt="COMPANY 4">
+              <img src="static/picture/hao-logo.png" alt="COMPANY 5">
+              <img src="static/picture/feng-logo.png" alt="COMPANY 6">
+              <img src="static/picture/sheng-logo.png" alt="COMPANY 7">
+              <img src="static/picture/hongqi-logo.png" alt="COMPANY 8">
+            </div>
+          </div>
+        </div>
       </section>
-      <!--== End Team Area ==-->
+      <!--== End Cases Area ==-->
+
+
+
+
 
     </main>
 
@@ -410,14 +559,13 @@
       <div class="footer-main">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+            <div class="col-md-6 col-lg-4 col-xl-3">
               <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
                 <div class="gt-widget-about">
                   <div class="about-logo">
-                    <a href=""><img src="static/picture/logo.png" alt="Realar"></a>
+                    <a href=""><img src="static/picture/logo.png" alt="Logo" data-i18n="alt_footer_logo"></a>
                   </div>
-                  <p class="about-text" data-i18n="footer_desc"> JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。
-                  </p>
+                  <p class="about-text" data-i18n="footer_desc">JFindX - 自动化解决方案专家...</p>
                   <div class="gt-social style2">
                     <a href="https://www.facebook.com/"><i class="icon icofont-facebook"></i></a>
                     <a href="https://www.twitter.com/"><i class="icon icofont-twitter"></i></a>
@@ -427,42 +575,68 @@
                 </div>
               </div>
             </div>
+            <!-- 页脚其他区块保持原样 -->
             <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
               <div class="widget-item">
-                <h4 class="widget-title" data-i18n="popular_products">热门产品</h4>
-                <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
-                  data-bs-target="#dividerId-2" data-i18n="popular_products">热门产品</h4>
-                <div id="dividerId-2" class="collapse widget-collapse-body">
-                  <nav class="widget-menu-wrap">
-                    <ul class="nav-menu nav">
-                      <li><a href="wms.html"><i class="icofont-minus"></i><span data-i18n="wms">智能仓储系统WMS</span></a>
-                      </li>
-                      <li><a href="wcs.html"><i class="icofont-minus"></i><span data-i18n="wcs">自动化设备管理系统WCS</span></a>
-                      </li>
-                      <li><a href="digital.html"><i class="icofont-minus"></i><span
-                            data-i18n="digital">数字孪生系统</span></a></li>
-                      <li><a href="about.html"><i class="icofont-minus"></i><span data-i18n="about">关于我们</span></a></li>
-                    </ul>
-                  </nav>
-                </div>
+                <h4 class="widget-title" data-i18n="footer_services">所有服务</h4>
+                <nav class="widget-menu-wrap">
+                  <ul class="nav-menu nav">
+
+                    <li><a href="solution.html"><i class="icofont-minus"></i><span
+                          data-i18n="nav_solution">解决方案</span></a>
+                    </li>
+                    <li><a href="wms.html"><i class="icofont-minus"></i><span data-i18n="submenu_wms">wms</span></a>
+                    </li>
+                    <li><a href="wcs.html"><i class="icofont-minus"></i><span data-i18n="submenu_wcs">wcs</span></a>
+                    </li>
+                    <li><a href="warehouse.html"><i class="icofont-minus"></i><span
+                          data-i18n="submenu_warehouse">智能仓储</span></a>
+                    </li>
+                    <li><a href="logistics.html"><i class="icofont-minus"></i><span
+                          data-i18n="submenu_logistics">智能物流</span></a>
+                    </li>
+                    <li><a href="rfid.html"><i class="icofont-minus"></i><span
+                          data-i18n="submenu_rfid">rfid电子标签</span></a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
-            <div class="col-md-6 col-lg-2 col-xl-4">
+            <div class="col-md-6 col-lg-2 col-xl-2">
+              <div class="widget-item">
+                <h4 class="widget-title" data-i18n="nav_about">关于我们</h4>
+                <nav class="widget-menu-wrap">
+                  <ul class="nav-menu nav">
+                    <li><a href="index.html"><i class="icofont-minus"></i><span data-i18n="nav_home">首页</span></a></li>
+                    <li><a href="digital.html"><i class="icofont-minus"></i><span
+                          data-i18n="nav_digital">工业数字孪生系统</span></a>
+                    </li>
+                    <li><a href="cases.html"><i class="icofont-minus"></i><span data-i18n="nav_cases">成功案例</span></a>
+                    </li>
+                    <li><a href="about.html"><i class="icofont-minus"></i><span
+                          data-i18n="submenu_about">团队介绍</span></a>
+                    </li>
+                    <li><a href="honor.html"><i class="icofont-minus"></i><span
+                          data-i18n="submenu_honor">公司荣誉</span></a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 col-xl-3">
               <div class="widget-item ml-35 lg-ml-0">
-                <h4 class="widget-title" data-i18n="contact_us">联系我们</h4>
-                <h4 class="widget-title widget-collapsed-title collapsed" data-bs-toggle="collapse"
-                  data-bs-target="#dividerId-4" data-i18n="contact_us">联系我们</h4>
-                <div id="dividerId-4" class="collapse widget-collapse-body">
-                  <nav class="widget-menu-wrap">
-                    <ul class="nav-menu nav">
-                      <li><a href=""><i class="icofont-minus"></i><span data-i18n="company_email">公司邮箱</span></a></li>
-                      <li><a href=""><i class="icofont-minus"></i><span data-i18n="company_phone">130 5204
-                            4828</span></a></li>
-                      <li><a href="" style="line-height: 35px;vertical-align: sub;"><i class="icofont-minus"></i><span
-                            data-i18n="company_address">浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</span></a></li>
-                    </ul>
-                  </nav>
-                </div>
+                <h4 class="widget-title" data-i18n="submenu_contact">联系我们</h4>
+                <nav class="widget-menu-wrap">
+                  <ul class="nav-menu nav">
+                    <li><a href=""><i class="icofont-minus"></i><span data-i18n="footer_company_email">公司邮箱</span></a>
+                    </li>
+                    <li><a href=""><i class="icofont-minus"></i><span data-i18n="footer_company_phone">130 5204
+                          4828</span></a>
+                    </li>
+                    <li><a href="" style="line-height:35px;vertical-align:sub;"><i class="icofont-minus"></i><span
+                          data-i18n="footer_company_address">浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层</span></a></li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
@@ -475,8 +649,8 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="widget-copyright">
-                  <p data-i18n="copyright">宁波捷方优制科技有限公司版权所有 -
-                    <a href="http://beian.miit.gov.cn/" target="_blank">浙ICP备2023030316号</a>
+                  <p><span data-i18n="footer_copyright">宁波捷方优制科技有限公司版权所有</span> -
+                    <a href="http://beian.miit.gov.cn/" target="_blank" data-i18n="footer_icp">浙ICP备2023030316号-1</a>
                   </p>
                 </div>
               </div>
@@ -501,11 +675,30 @@
         <div class="res-mobile-menu">
           <nav id="offcanvasNav" class="offcanvas-menu">
             <ul>
-              <li><a class="color-theme" href="" data-i18n="home">首页</a></li>
-              <li><a href="wms.html" data-i18n="wms">智能仓储系统WMS</a></li>
-              <li><a href="wcs.html" data-i18n="wcs">自动化设备管理系统WCS</a></li>
-              <li><a href="digital.html" data-i18n="digital">数字孪生系统</a></li>
-              <li><a href="about.html" data-i18n="about">关于我们</a></li>
+              <li><a class="color-theme" href="index.html" data-i18n="nav_home">首页</a></li>
+              <li><a href="solution.html" data-i18n="nav_solution">整体解决方案</a></li>
+              <li><a href="javascript:void(0)" data-i18n="nav_software">AI柔性供应链软件</a>
+                <ul>
+                  <li><a href="wms.html" data-i18n="submenu_wms">智能仓储管理系统WMS</a></li>
+                  <li><a href="wcs.html" data-i18n="submenu_wcs">自动化设备管理系统WCS</a></li>
+                </ul>
+              </li>
+              <li><a href="javascript:void(0)" data-i18n="nav_hardware">智能仓储物流硬件</a>
+                <ul>
+                  <li><a href="warehouse.html" data-i18n="submenu_warehouse">智能仓储</a></li>
+                  <li><a href="logistics.html" data-i18n="submenu_logistics">智能物流</a></li>
+                  <li><a href="rfid.html" data-i18n="submenu_rfid">RFID电子标签</a></li>
+                </ul>
+              </li>
+              <li><a href="digital.html" data-i18n="nav_digital">数字孪生系统</a></li>
+              <li><a href="cases.html"" data-i18n=" nav_cases">成功案例</a></li>
+              <li><a href=" javascript:void(0)" data-i18n="nav_about">关于我们</a>
+                <ul>
+                  <li><a href="about.html" data-i18n="submenu_about">团队介绍</a></li>
+                  <li><a href="honor.html" data-i18n="submenu_honor">公司荣誉</a></li>
+                  <li><a href="contact.html" data-i18n="submenu_contact">联系我们</a></li>
+                </ul>
+              </li>
             </ul>
           </nav>
         </div>
@@ -514,210 +707,297 @@
     </aside>
     <!--== End Side Menu ==-->
   </div>
-
-  <!--=======================Javascript============================-->
-
-  <!--=== Modernizr Min Js ===-->
+  <!--======================= 原始JS保持不变 ========================-->
   <script src="static/js/modernizr.js"></script>
-  <!--=== jQuery Min Js ===-->
   <script src="static/js/jquery-main.js"></script>
-  <!--=== jQuery Migration Min Js ===-->
   <script src="static/js/jquery-migrate.js"></script>
-  <!--=== Popper Min Js ===-->
   <script src="static/js/popper.min.js"></script>
-  <!--=== Bootstrap Min Js ===-->
   <script src="static/js/bootstrap.min.js"></script>
-  <!--=== jquery Swiper Min Js ===-->
   <script src="static/js/swiper.min.js"></script>
-  <!--=== jquery Countdown Js ===-->
   <script src="static/js/jquery.countdown.min.js"></script>
-  <!--=== Isotope Min Js ===-->
   <script src="static/js/isotope.pkgd.min.js"></script>
-
-  <!--=== Custom Js ===-->
   <script src="static/js/custom.js"></script>
 
+  <script>
+    // 初始化语言系统
+    const translations = {
+      "en": {
+        "page_title": "Home - Jiefang Youzhi Intelligent Solutions",
+        "current_lang": "EN",
+        "alt_logo": "Main Logo of JFINDX",
+        "alt_logo_light": "Light Logo of JFINDX",
+        "alt_prev": "Previous Slide",
+        "alt_next": "Next Slide",
+        "alt_about1": "Illustration of Intelligent Warehouse Solution",
+        "alt_about2": "Illustration of System Architecture",
+        "alt_footer_logo": "Footer Logo",
+        // Navigation Menu
+        "nav_home": "Home",
+        "nav_solution": "OvrSolution",
+        "nav_software": "AI-FlexSC Software",
+        "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+        "submenu_wcs": "Automated Equipment Management System (WCS)",
+        "nav_hardware": "Logistics",
+        "submenu_warehouse": "Intelligent Warehouse",
+        "submenu_logistics": "Intelligent Logistics",
+        "submenu_rfid": "RFID Electronic Tags",
+        "nav_digital": "Digital-Twin",
+        "nav_cases": "Success Cases",
+        "nav_about": "About Us",
+        "submenu_about": "Team Introduction",
+        "submenu_honor": "Company Honors",
+        "submenu_contact": "Contact Us",
+        // Footer
+        "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+        "footer_services": "All Services",
+        "footer_company_email": "Company Email",
+        "footer_company_phone": "130 5204 4828",
+        "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+        "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+        "footer_icp": "Zhejiang ICP No. 2023030316-1",
+        // Home Carousel
+        "hero_title": "Explore JFINDX's Automation Solutions",
+        "hero_text": "Agile and intelligent space solutions for industrial digital transformation",
+        "hero_cta": "Explore More",
+        "hero_title2": "Enter the New Era of Efficient Warehousing",
+        "hero_text2": "Innovative solutions for intelligent manufacturing spaces",
+        // About Us
+        "about_subtitle": "About Us",
+        "about_title": "Ningbo JFINDX Technology Co., Ltd.",
+        "about_text1": "Ningbo JFINDX Technology Co., Ltd. (JFINDX) specializes in the research and development of artificial intelligence algorithms in the field of intelligent manufacturing, providing flexible supply chain software and hardware solutions for manufacturing enterprises at home and abroad. The core products are the flexible supply chain management platform and intelligent warehouse solutions.",
+        "about_text2": "The core technical team of the company mainly comes from prestigious universities at home and abroad as well as world-class enterprises such as Alibaba and Intel. They have achieved numerous innovative results in key technologies like artificial intelligence algorithms, cloud platform software architecture, Internet of Things technology, and the integration of software and hardware control, driving the development of high-end manufacturing in domestic industries.",
+        "about_cta": "Learn More",
+        // Core Advantages
+        "feature1_title": "Technical DNA",
+        "feature1_text": "Core members come from well-known domestic and international enterprises such as Alibaba, Tencent, Intel, Atos, Compal Electronics, and Coretronic, possessing outstanding scientists and rich industrial experience, as well as years of practical experience in the industry.",
+        "feature2_title": "Core Advantages",
+        "feature2_text": "Focusing on AI algorithm-driven flexible supply chain solutions, integrating cloud platforms, Internet of Things, and software and hardware integration technologies, we provide intelligent transformation support for the manufacturing industry.",
+        "feature3_title": "Industry Positioning",
+        "feature3_text": "Expert in agile and intelligent manufacturing space solutions, dedicated to promoting the development of domestic industries towards high-end manufacturing.",
+        "solution_subtitle": "Recommended Solutions",
+        "solution_title": "Comprehensive Intelligent Warehouse Solution",
+        "solution_desc": "We are always ready to provide 7*24 support for your customers.",
+        "software_subtitle": "AI Flexible Supply Chain Software",
+        "software_title": "Intelligent Software System",
+        "software_desc": "Our software system integrates artificial intelligence technology to achieve intelligent management and optimization of the supply chain",
+        "wms_title": "JFINDX WMS Intelligent Warehouse Management System",
+        "wms_feature1": "Integrates business practices from multiple industry-leading enterprises",
+        "wms_feature2": "Highly productized, covering all warehouse business needs",
+        "wms_feature3": "Intelligent operation guidance, optimized business processes and strategies",
+        "wms_feature4": "Supports all-channel business and paperless operation management",
+        "wms_feature5": "Collaborates with various intelligent devices to enhance warehouse intelligence",
+        "wcs_title": "JFINDX WCS Warehouse Automation Equipment Management System",
+        "wcs_feature1": "Collaborates with multiple logistics equipment and adopts a unified control platform",
+        "wcs_feature2": "Perfectly supports integration with various WMS, ERP and other systems",
+        "wcs_feature3": "Connects with various intelligent devices",
+        "wcs_feature4": "Overall consideration of equipment control optimization",
+        "wcs_feature5": "Convenient for future equipment adjustment and expansion",
+        // Hardware Devices
+        "hardware_subtitle": "Intelligent Warehouse Logistics Hardware System",
+        "hardware_title": "Intelligent Warehouse Logistics Hardware Solution",
+        "hardware_desc": "Industrial-grade equipment integrating AIoT technology, supporting full-scenario applications from -40°C to 85°C",
+        "view_details": "View Details",
+        "warehouse_desc": "MTBF ≥ 10,000 hours",
+        "warehouse_desc1": "Includes four-way shuttle vehicles, stackers, and elevators, supporting double-deep storage and laser navigation",
+        "warehouse_desc2": "New energy vehicle batteries",
+        "warehouse_desc3": "Bicycle parts",
+        "logistics_desc": "Sorting efficiency of 4,500 items per hour",
+        "logistics_desc1": "Integrates AMR robots, dynamic weighing and volume measurement, supporting automatic path planning",
+        "logistics_desc2": "Automobiles and parts",
+        "logistics_desc3": "Electronic semiconductors",
+        "rfid_desc": "99.99% recognition accuracy",
+        "rfid_desc1": "Supports EPC C1G2 protocol, capable of recognizing over 200 tags per second, with anti-metal interference design",
+        "rfid_desc2": "Smart retail",
+        "rfid_desc3": "Asset management",
+        // Digital Twin System
+        "digital_subtitle": "Industrial Digital Twin",
+        "dts_title": "JFINDX DTS Industrial Digital Twin System",
+        "dts_feature1": "Reduce physical trial-and-error costs and shorten debugging cycles through simulation optimization",
+        "dts_feature2": "Optimize layout, inventory, and equipment maintenance to reduce resource waste",
+        "dts_feature3": "Real-time monitoring and predictive maintenance reduce the risk of failure and downtime",
+        "dts_feature4": "Data-driven simulation supports managers to optimize from a 'God's-eye view' perspective",
+        // Success Stories
+        "cases_subtitle": "Success Stories",
+        "cases_title": "Our Customer Cases",
+        "cases_desc": "We have provided automation solutions for leading enterprises in multiple industries",
+
+      },
+      "cn": {
+        // 通用
+        "page_title": "首页 - 捷方优制智能解决方案",
+        "current_lang": "CN",
+        "alt_logo": "捷方优制主Logo",
+        "alt_logo_light": "捷方优制浅色Logo",
+        "alt_prev": "上一张幻灯片",
+        "alt_next": "下一张幻灯片",
+        "alt_about1": "智能仓储解决方案图示",
+        "alt_about2": "系统架构图示",
+        "alt_footer_logo": "页脚Logo",
+        // 导航菜单
+        "nav_home": "首页",
+        "nav_solution": "整体解决方案",
+        "nav_software": "AI柔性供应链软件",
+        "submenu_wms": "智能仓储管理系统WMS",
+        "submenu_wcs": "自动化设备管理系统WCS",
+        "nav_hardware": "智能仓储物流硬件",
+        "submenu_warehouse": "智能仓储",
+        "submenu_logistics": "智能物流",
+        "submenu_rfid": "RFID电子标签",
+        "nav_digital": "数字孪生系统",
+        "nav_cases": "成功案例",
+        "nav_about": "关于我们",
+        "submenu_about": "团队介绍",
+        "submenu_honor": "公司荣誉",
+        "submenu_contact": "联系我们",
+        // 页脚
+        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+        "footer_services": "所有服务",
+        "footer_company_email": "公司邮箱",
+        "footer_company_phone": "130 5204 4828",
+        "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+        "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+        "footer_icp": "浙ICP备2023030316号-1",
+        // 首页轮播
+        "hero_title": "探索捷方优制自动化解决方案",
+        "hero_text": "面向工业数智化转型的敏捷智慧空间解决方案",
+        "hero_cta": "探索更多",
+        "hero_title2": "开启高效仓储新时代",
+        "hero_text2": "智能制造空间的创新解决方案",
+        // 关于我们
+        "about_subtitle": "关于我们",
+        "about_title": "宁波捷方优制科技有限公司",
+        "about_text1": "宁波捷方优制科技有限公司（JFINDX，捷方优制），专注于智能制造领域的人工智能算法研发，为海内外制造型企业提供柔性供应链的软硬件解决方案。核心产品为柔性供应链管理平台及智能仓储解决方案。",
+        "about_text2": "公司核心技术团队主要来自海内外名校及世界500强企业，如：阿里巴巴、Intel等，在人工智能算法、云平台软件架构、物联网技术、软硬件控制集成等关键技术上，取得多项创新成果，带动国内产业高端制造的发展。",
+        "about_cta": "了解更多",
+        // 核心优势
+        "feature1_title": "技术基因",
+        "feature1_text": "核心成员来自阿里巴巴、腾讯、Intel英特尔、AtoS源讯、仁宝电脑、中强光电等国内外知名企业，拥有优秀的科学家和丰富的产业经验，并有多年工业界落地经验。",
+        "feature2_title": "核心优势",
+        "feature2_text": "专注于人工智能算法驱动的柔性供应链解决方案，结合云平台、物联网和软硬件集成技术，为制造业提供智能化转型支持。",
+        "feature3_title": "行业定位",
+        "feature3_text": "敏捷智慧制造空间解决方案专家，致力于推动国内产业向高端制造发展。",
+        // 解决方案
+        "solution_subtitle": "解决方案推荐",
+        "solution_title": "智能仓储整体解决方案",
+        "solution_desc": "我们随时准备为您的客户提供7*24的支持。",
+        // 软件系统
+        "software_subtitle": "AI柔性供应链软件",
+        "software_title": "智能软件系统",
+        "software_desc": "我们的软件系统结合人工智能技术，实现供应链的智能化管理和优化",
+        "wms_title": "JFINDX WMS 智能仓储管理系统",
+        "wms_feature1": "集成多种行业领先企业业务实践",
+        "wms_feature2": "高度产品化，涵盖仓库全业务需求",
+        "wms_feature3": "智能化作业指导，优化的业务流程和策略",
+        "wms_feature4": "全渠道业务支持，无纸化作业管理",
+        "wms_feature5": "协同各类智能设备，提升仓储智能化",
+        "wcs_title": "JFINDX WCS 仓储自动化设备管理系统",
+        "wcs_feature1": "协同多种物流设备并采用统一控制平台",
+        "wcs_feature2": "完美支持各类WMS、ERP等系统对接",
+        "wcs_feature3": "对接各类智能设备",
+        "wcs_feature4": "整体考虑设备的控制优化",
+        "wcs_feature5": "便于未来设备调整与扩展",
+        // 硬件设备
+        "hardware_subtitle": "智能仓储物流硬件体系",
+        "hardware_title": "智能仓储物流硬件解决方案",
+        "hardware_desc": "集成AIoT技术的工业级设备，支持-40℃~85℃全场景应用",
+        "view_details": "查看详情",
+        "warehouse_desc": "MTBF ≥10000小时",
+        "warehouse_desc1": "包含四向穿梭车、堆垛机、提升机，支持双深位存储和激光导航",
+        "warehouse_desc2": "新能源汽车电池",
+        "warehouse_desc3": "自行车配件",
+        "logistics_desc": "4500件/小时分拣效率",
+        "logistics_desc1": "集成AMR机器人、动态称重和体积测量，支持自动路径规划",
+        "logistics_desc2": "汽车主机及零部件",
+        "logistics_desc3": "电子半导体",
+
+        "rfid_desc": "99.99%识别准确率",
+        "rfid_desc1": "支持EPC C1G2协议，每秒识别200+标签，抗金属干扰设计",
+        "rfid_desc2": "智慧零售",
+        "rfid_desc3": "资产管理",
+        // 数字孪生系统
+        "digital_subtitle": "工业数字孪生",
+        "dts_title": "JFINDX DTS 工业数字孪生系统",
+        "dts_feature1": "通过仿真优化减少物理试错成本，缩短调试周期",
+        "dts_feature2": "优化布局、库存及设备维护，减少资源浪费",
+        "dts_feature3": "实时监控与预测性维护降低故障停机风险",
+        "dts_feature4": "数据驱动的仿真支持管理者从'上帝视角'全局优化",
+        // 成功案例
+        "cases_subtitle": "成功案例",
+        "cases_title": "我们的客户案例",
+        "cases_desc": "我们已为多个行业的领先企业提供了自动化解决方案",
+
+
+
+
+      }
+    };
+
+    let currentLang = localStorage.getItem('language') || 'cn';
+
+    // 核心翻译函数
+    function updateLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
+
+      // 更新所有带翻译标记的元素
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      // 更新按钮显示
+      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+      // 更新页面标题
+      document.title = translations[lang]['page_title'];
+    }
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 初始化语言
+      updateLanguage(currentLang);
+
+      // 绑定语言切换事件
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = e.target.getAttribute('data-lang');
+          updateLanguage(lang);
+
+          // 手动关闭下拉菜单（Bootstrap5方法）
+          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+          dropdown.hide();
+        });
+      });
+
+
+      // 初始化Bootstrap下拉组件
+      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+
+      // 初始化轮播组件
+      new Swiper('.cases-slider .swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 3,
+          }
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
-<script>
-  // 初始化语言系统
-  const translations = {
-    "en": {
-      "page_title": "Home - JFindX",
-      "home": "Home",
-      "wms": "WMS System",
-      "wcs": "WCS System",
-      "digital": "Digital Twin",
-      "about": "About Us",
-      "hero_title": "Explore FindX Automation Solutions",
-      "hero_text": "Agile intelligent space solutions for industrial digital transformation",
-      "hero_title2": "A New Era of Efficient Warehousing",
-      "hero_text2": "Smart space solutions for industrial digital transformation",
-      "explore_more": "Explore More",
-      "about_us": "About Us",
-      "company_name": "Ningbo JFindX Technology Co., Ltd",
-      "company_desc1": "Ningbo JFindX Technology Co., Ltd is a high-tech company specializing in automation solutions, dedicated to providing intelligent and efficient industrial automation and warehousing logistics solutions for global customers.",
-      "company_desc2": "With technological innovation as the core driving force, the company leverages rich industry experience and a professional technical team to tailor efficient and reliable automation systems for customers, helping enterprises achieve intelligent transformation and upgrading.",
-      "learn_more": "Learn More",
-      "professionalism": "Professionalism",
-      "professionalism_desc": "JFindX Technology has a R&D team composed of senior engineers and technical experts, with years of experience in the automation field, proficient in the development, integration and application of various automation equipment.",
-      "innovation": "Innovation",
-      "innovation_desc": "Innovation is the soul of JFindX Technology's development. The company continues to invest in R&D, keeping pace with the development trends of Industry 4.0 and intelligent manufacturing, deeply integrating cutting-edge technologies such as artificial intelligence, IoT, and big data with automation equipment to create intelligent and digital solutions.",
-      "experience": "Experience",
-      "experience_desc": "JFindX Technology has accumulated rich project experience in the automation field and has successfully provided customized automation solutions for many well-known enterprises.",
-      "solution_recommend": "Recommended Solutions",
-      "popular_products": "Popular Products",
-      "wms_title": "JFINDX WMS System",
-      "wms_feature1": "Integrates business practices from leading enterprises in various industries",
-      "wms_feature2": "Highly productized, covering all warehouse business needs",
-      "wms_feature3": "Intelligent operation guidance, optimized business processes and strategies",
-      "wms_feature4": "Omni-channel business support, paperless operation management",
-      "wms_feature5": "Collaborates with various intelligent devices to enhance warehouse intelligence",
-      "wcs_title": "JFINDX WCS System",
-      "wcs_feature1": "Coordinates multiple logistics devices with a unified control platform",
-      "wcs_feature2": "Perfectly supports integration with various WMS, ERP and other systems",
-      "wcs_feature3": "Connects with various intelligent devices",
-      "wcs_feature4": "Considers overall device control optimization",
-      "wcs_feature5": "Facilitates future device adjustments and expansions",
-      "dts_title": "JFINDX DTS System",
-      "dts_feature1": "Reduces physical trial-and-error costs through simulation optimization, shortening debugging cycles",
-      "dts_feature2": "Optimizes layout, inventory and equipment maintenance, reducing resource waste",
-      "dts_feature3": "Real-time monitoring and predictive maintenance reduce the risk of downtime",
-      "dts_feature4": "Data-driven simulation supports managers in global optimization from a 'God's perspective'",
-      "equipment_title": "Automated Storage Equipment",
-      "equipment_feature1": "Stacker system, the core equipment of three-dimensional warehouses, stores and retrieves goods in the vertical direction",
-      "equipment_feature2": "Four-way shuttle system, can move freely in the rack track, cooperates with the elevator to achieve multi-layer storage, supports multi-variety small-batch management",
-      "equipment_feature3": "Sorting robot, based on visual recognition and robotic arm technology, achieves high-speed sorting (600 pieces/hour), error rate <0.1%",
-      "equipment_feature4": "Intelligent AGV, autonomously navigates and transports goods, supports laser SLAM/QR code navigation, load capacity 500-2000kg",
-      "equipment_desc": "Our automated storage hardware equipment provides a solid physical foundation for efficient warehousing. From advanced stackers to precise conveyors, each piece of equipment is carefully designed and rigorously tested.",
-      "equipment_title2": "Automated Storage Hardware Equipment",
-      "equipment1": "Pallet Stacker",
-      "equipment2": "Mini Bin Stacker",
-      "equipment3": "Four-way Shuttle",
-      "equipment4": "Underride AGV",
-      "equipment5": "Electronic Label Sorting Station",
-      "equipment6": "RFID Material Management",
-      "delivery_manager": "Delivery Manager",
-      "cargo_supervisor": "Cargo Supervisor",
-      "footer_desc": "JFindX - Automation solution experts, tailor-made automation solutions for you, covering comprehensive services from hardware equipment to software systems.",
-      "contact_us": "Contact Us",
-      "company_email": "Company Email",
-      "company_phone": "130 5204 4828",
-      "company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo, Zhejiang Province",
-      "copyright": "© Ningbo JFindX Technology Co., Ltd. All Rights Reserved"
-    },
-    "cn": {
-      "page_title": "首页 - JFindX",
-      "home": "首页",
-      "wms": "智能仓储系统WMS",
-      "wcs": "自动化设备管理系统WCS",
-      "digital": "数字孪生系统",
-      "about": "关于我们",
-      "hero_title": "探索FindX自动化解决方案",
-      "hero_text": "敏捷的智慧空间解决方案，提供工广数智化转型",
-      "hero_title2": "开启高效仓储新时代",
-      "hero_text2": "敏捷的智慧空间解决方案，提供工广数智化转型",
-      "explore_more": "探索更多",
-      "about_us": "关于我们",
-      "company_name": "宁波捷方优制科技有限公司",
-      "company_desc1": "宁波捷方优制科技有限公司是一家专注于自动化解决方案的高科技企业，致力于为全球客户提供智能化、高效化的工业自动化与仓储物流解决方案。",
-      "company_desc2": "公司以技术创新为核心驱动力，凭借丰富的行业经验和专业的技术团队，为客户量身定制高效、可靠的自动化系统，助力企业实现智能化转型升级。",
-      "learn_more": "了解更多",
-      "professionalism": "专业性",
-      "professionalism_desc": "捷方优制科技拥有一支由资深工程师和技术专家组成的研发团队，深耕自动化领域多年，精通各类自动化设备的研发、集成与应用。",
-      "innovation": "创新性",
-      "innovation_desc": "创新是捷方优制科技发展的灵魂。公司持续投入研发，紧跟工业4.0和智能制造的发展趋势，将人工智能、物联网、大数据等前沿技术与自动化设备深度融合，打造智能化、数字化的解决方案。",
-      "experience": "丰富经验",
-      "experience_desc": "捷方优制科技在自动化领域积累了丰富的项目经验，已成功为多家知名企业提供了定制化的自动化解决方案。",
-      "solution_recommend": "解决方案推荐",
-      "popular_products": "热门产品",
-      "wms_title": "JFINDX WMS 智能仓储管理系统",
-      "wms_feature1": "集成多种行业领先企业业务实践",
-      "wms_feature2": "高度产品化，涵盖仓库全业务需求",
-      "wms_feature3": "智能化作业指导，优化的业务流程和策略",
-      "wms_feature4": "全渠道业务支持，无纸化作业管理",
-      "wms_feature5": "协同各类智能设备，提升仓储智能化",
-      "wcs_title": "JFINDX WCS 仓储设备控制系统",
-      "wcs_feature1": "协同多种物流设备并采用统一控制平台",
-      "wcs_feature2": "完美支持各类WMS、ERP等系统对接",
-      "wcs_feature3": "对接各类智能设备",
-      "wcs_feature4": "整体考虑设备的控制优化",
-      "wcs_feature5": "便于未来设备调整与扩展",
-      "dts_title": "JFINDX DTS 数字孪生系统",
-      "dts_feature1": "通过仿真优化减少物理试错成本，缩短调试周期",
-      "dts_feature2": "优化布局、库存及设备维护，减少资源浪费",
-      "dts_feature3": "实时监控与预测性维护降低故障停机风险",
-      "dts_feature4": "数据驱动的仿真支持管理者从'上帝视角'全局优化",
-      "equipment_title": "自动化仓储装备",
-      "equipment_feature1": "堆垛机系统，立体仓库核心设备，垂直方向存取货物",
-      "equipment_feature2": "四向穿梭车系统，可在货架轨道内自由移动，配合提升机实现多层存储，支持多品种小批量管理",
-      "equipment_feature3": "分拣机器人，基于视觉识别和机械臂技术，实现高速分拣（600件/小时），误差率<0.1%",
-      "equipment_feature4": "智能AGV，自主导航搬运货物，支持激光SLAM/二维码导航，载重500-2000kg",
-      "equipment_desc": "我们的自动化仓储硬件设备，为高效仓储提供坚实的物理基础。从先进的堆垛机到精准的输送机，每一款设备都经过精心设计和严格测试。",
-      "equipment_title2": "自动化仓储硬件设备",
-      "equipment1": "托盘堆垛机",
-      "equipment2": "迷你料箱堆垛机",
-      "equipment3": "四向穿梭车",
-      "equipment4": "潜伏式搬运AGV",
-      "equipment5": "电子标签分拣站",
-      "equipment6": "RFID物资管理",
-      "delivery_manager": "Delivery Manager",
-      "cargo_supervisor": "Cargo Supervisor",
-      "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-      "contact_us": "联系我们",
-      "company_email": "公司邮箱",
-      "company_phone": "130 5204 4828",
-      "company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-      "copyright": "宁波捷方优制科技有限公司版权所有"
-    }
-  };
-
-  let currentLang = localStorage.getItem('language') || 'cn';
-
-  // 核心翻译函数
-  function updateLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('language', lang);
-
-    // 更新所有带翻译标记的元素
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-      const key = element.getAttribute('data-i18n');
-      if (translations[lang][key]) {
-        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-          element.value = translations[lang][key];
-        } else {
-          element.textContent = translations[lang][key];
-        }
-      }
-    });
-
-    // 更新按钮显示
-    document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
-
-    // 更新页面标题
-    document.title = translations[lang]['page_title'];
-  }
-
-  // 初始化
-  document.addEventListener('DOMContentLoaded', () => {
-    // 初始化语言
-    updateLanguage(currentLang);
-
-    // 绑定语言切换事件
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = e.target.getAttribute('data-lang');
-        updateLanguage(lang);
-
-        // 手动关闭下拉菜单（Bootstrap5方法）
-        const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
-        dropdown.hide();
-      });
-    });
-
-    // 初始化Bootstrap下拉组件
-    new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
-  });
-</script>
