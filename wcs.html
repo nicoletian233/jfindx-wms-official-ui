@@ -287,6 +287,277 @@
       }
     }
   </style>
+    <!--=======================Javascript============================-->
+    <script>
+      // 扩展翻译数据
+      const translations = {
+        "en": {
+          "page_title": "WCS System - JFindX",
+          "current_lang": "EN",
+          "alt_logo": "Main Logo of JFINDX",
+          "alt_logo_light": "Light Logo of JFINDX",
+          "alt_prev": "Previous Slide",
+          "alt_next": "Next Slide",
+          "alt_about1": "Illustration of Intelligent Warehouse Solution",
+          "alt_about2": "Illustration of System Architecture",
+          "alt_footer_logo": "Footer Logo",
+          // Navigation Menu
+          "nav_home": "Home",
+          "nav_solution": "OvrSolution",
+          "nav_software": "AI-FlexSC Software",
+          "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+          "submenu_wcs": "Automated Equipment Management System (WCS)",
+          "nav_hardware": "Logistics",
+          "submenu_warehouse": "Intelligent Warehouse",
+          "submenu_logistics": "Intelligent Logistics",
+          "submenu_rfid": "RFID Electronic Tags",
+          "nav_digital": "Digital-Twin",
+          "nav_cases": "Success Cases",
+          "nav_about": "About Us",
+          "submenu_about": "Team Introduction",
+          "submenu_honor": "Company Honors",
+          "submenu_contact": "Contact Us",
+          // Footer
+          "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+          "footer_services": "All Services",
+          "footer_company_email": "Company Email",
+          "footer_company_phone": "130 5204 4828",
+          "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+          "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+          "footer_icp": "Zhejiang ICP No. 2023030316-1",
+  
+  
+          "wcs_title": "Warehouse Control System",
+          "wcs_subtitle": "The bridge connecting hardware and software, ensuring every automated device works in harmony for maximum efficiency.",
+          "wcs_section_title": "JFINDX WCS Supported Devices",
+          "wcs_flow_title": "Warehouse Processes & Equipment",
+          "wcs_process1": "Receiving & Storage",
+          "wcs_process2": "Replenishment",
+          "wcs_process3": "Picking & Shipping",
+          "wcs_process4": "Checking & Packaging",
+          "wcs_process5": "Order Management",
+          "wcs_device1": "ASRS System",
+          "wcs_device1_desc": "Automated Storage",
+          "wcs_device2": "A-Frame Rack",
+          "wcs_device2_desc": "Heavy Storage System",
+          "wcs_device3": "Flow Rack",
+          "wcs_device3_desc": "Gravity Rack",
+          "wcs_device4": "RFID System",
+          "wcs_device4_desc": "Auto Identification",
+          "wcs_device5": "4-Way Shuttle",
+          "wcs_device5_desc": "Intelligent Handling",
+          "wcs_device6": "AGV Robot",
+          "wcs_device6_desc": "Automated Transport",
+          "wcs_device7": "Case Conveyor",
+          "wcs_device7_desc": "Conveyor System",
+          "wcs_device8": "Roller Sorter",
+          "wcs_device8_desc": "High-speed Sorting",
+          "wcs_device9": "Pick-to-Light Station",
+          "wcs_device9_desc": "Manual Picking System",
+          "wcs_device10": "Light System",
+          "wcs_device10_desc": "Electronic Picking",
+          "wcs_device11": "Voice System",
+          "wcs_device11_desc": "Voice Picking",
+          "wcs_device12": "Checking Area",
+          "wcs_device12_desc": "Packing & Checking",
+          "wcs_device13": "Labeling Machine",
+          "wcs_device13_desc": "Label Attachment",
+          "wcs_device14": "Box Sealer",
+          "wcs_device14_desc": "Carton Sealing",
+          "wcs_device15": "WMS System",
+          "wcs_device15_desc": "Warehouse Management",
+          "wcs_device16": "CTU Robot",
+          "wcs_device16_desc": "Bin Handling Robot",
+          "wcs_device17": "Digital Board",
+          "wcs_device17_desc": "Real-time Monitoring",
+          "wcs_device_list_title": "Supported Device List",
+          "wcs_category1": "Automated Storage",
+          "wcs_category2": "Intelligent Handling",
+          "wcs_category3": "Conveyor & Sorting",
+          "wcs_category4": "Inspection Devices",
+          "wcs_category5": "Identification Systems",
+          "wcs_category6": "Packaging Equipment",
+          "wcs_device_item1": "ASRS System",
+          "wcs_device_item2": "Miniload",
+          "wcs_device_item3": "Multi-level Shuttle",
+          "wcs_device_item4": "AGV/AMR Robots",
+          "wcs_device_item5": "CTU Robot",
+          "wcs_device_item6": "Palletizing Robot",
+          "wcs_device_item7": "Pallet Conveyor",
+          "wcs_device_item8": "Case Conveyor",
+          "wcs_device_item9": "Slider Sorter",
+          "wcs_device_item10": "Crossbelt Sorter",
+          "wcs_device_item11": "Overhead Conveyor",
+          "wcs_device_item12": "Dynamic Weighing",
+          "wcs_device_item13": "Shape Detection",
+          "wcs_device_item14": "Voice Recognition",
+          "wcs_device_item15": "Electronic Label",
+          "wcs_device_item16": "RFID System",
+          "wcs_device_item17": "Labeling Machine",
+          "wcs_device_item18": "Box Sealer",
+          "contact_title": "Stay Connected for Updates",
+          "subscribe_now": "Subscribe Now",
+  
+        },
+        "cn": {
+          "page_title": "自动化设备管理系统WCS - JFindX",
+          // 通用
+          "current_lang": "CN",
+          "alt_logo": "捷方优制主Logo",
+          "alt_logo_light": "捷方优制浅色Logo",
+          "alt_prev": "上一张幻灯片",
+          "alt_next": "下一张幻灯片",
+          "alt_about1": "智能仓储解决方案图示",
+          "alt_about2": "系统架构图示",
+          "alt_footer_logo": "页脚Logo",
+          // 导航菜单
+          "nav_home": "首页",
+          "nav_solution": "整体解决方案",
+          "nav_software": "AI柔性供应链软件",
+          "submenu_wms": "智能仓储管理系统WMS",
+          "submenu_wcs": "自动化设备管理系统WCS",
+          "nav_hardware": "智能仓储物流硬件",
+          "submenu_warehouse": "智能仓储",
+          "submenu_logistics": "智能物流",
+          "submenu_rfid": "RFID电子标签",
+          "nav_digital": "数字孪生系统",
+          "nav_cases": "成功案例",
+          "nav_about": "关于我们",
+          "submenu_about": "团队介绍",
+          "submenu_honor": "公司荣誉",
+          "submenu_contact": "联系我们",
+          // 页脚
+          "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+          "footer_services": "所有服务",
+          "footer_company_email": "公司邮箱",
+          "footer_company_phone": "130 5204 4828",
+          "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+          "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+          "footer_icp": "浙ICP备2023030316号-1",
+  
+          "wcs_title": "自动化设备管理系统WCS",
+          "wcs_subtitle": "连接硬件与软件的桥梁，确保每一个自动化设备都能协同工作，发挥最大效能。",
+          "wcs_section_title": "JFINDX WCS 可对接设备",
+          "wcs_flow_title": "仓储作业流程与设备",
+          "wcs_process1": "收货存储",
+          "wcs_process2": "补货流程",
+          "wcs_process3": "分拣发货",
+          "wcs_process4": "复核包装",
+          "wcs_process5": "订单管理",
+          "wcs_device1": "ASRS立体仓库",
+          "wcs_device1_desc": "自动化存储设备",
+          "wcs_device2": "A型货架",
+          "wcs_device2_desc": "重型存储系统",
+          "wcs_device3": "流利式货架",
+          "wcs_device3_desc": "重力式货架",
+          "wcs_device4": "RFID识别",
+          "wcs_device4_desc": "自动识别技术",
+          "wcs_device5": "四向穿梭车",
+          "wcs_device5_desc": "智能搬运设备",
+          "wcs_device6": "AGV机器人",
+          "wcs_device6_desc": "自动导引运输",
+          "wcs_device7": "箱式输送线",
+          "wcs_device7_desc": "自动化输送系统",
+          "wcs_device8": "滑轮分拣机",
+          "wcs_device8_desc": "高效分拣系统",
+          "wcs_device9": "人到货拣选站",
+          "wcs_device9_desc": "人工拣选系统",
+          "wcs_device10": "亮灯拣选系统",
+          "wcs_device10_desc": "电子辅助拣货",
+          "wcs_device11": "语音识别系统",
+          "wcs_device11_desc": "语音指导拣货",
+          "wcs_device12": "整箱核送区",
+          "wcs_device12_desc": "包装复核区域",
+          "wcs_device13": "自动贴标机",
+          "wcs_device13_desc": "标签贴附设备",
+          "wcs_device14": "自动封箱机",
+          "wcs_device14_desc": "纸箱封装系统",
+          "wcs_device15": "WMS系统",
+          "wcs_device15_desc": "仓库管理系统",
+          "wcs_device16": "CTU机器人",
+          "wcs_device16_desc": "料箱搬运机器人",
+          "wcs_device17": "数字看板",
+          "wcs_device17_desc": "实时监控系统",
+          "wcs_device_list_title": "支持对接设备列表",
+          "wcs_category1": "自动化存储设备",
+          "wcs_category2": "智能搬运设备",
+          "wcs_category3": "输送分拣系统",
+          "wcs_category4": "智能检测设备",
+          "wcs_category5": "信息识别系统",
+          "wcs_category6": "包装设备",
+          "wcs_device_item1": "ASRS立库",
+          "wcs_device_item2": "Miniload",
+          "wcs_device_item3": "多层四向穿梭车",
+          "wcs_device_item4": "AGV/AMR搬运机器人",
+          "wcs_device_item5": "CTU料箱机器人",
+          "wcs_device_item6": "码垛拆垛机器人",
+          "wcs_device_item7": "托盘输送线",
+          "wcs_device_item8": "箱式输送线",
+          "wcs_device_item9": "滑块分拣线",
+          "wcs_device_item10": "交叉带分拣线",
+          "wcs_device_item11": "悬挂输送线",
+          "wcs_device_item12": "动态称重",
+          "wcs_device_item13": "外形检测",
+          "wcs_device_item14": "语音识别",
+          "wcs_device_item15": "电子标签",
+          "wcs_device_item16": "RFID",
+          "wcs_device_item17": "自动贴标机",
+          "wcs_device_item18": "自动封箱机",
+          "contact_title": "保持联系以便获取最新资讯",
+          "subscribe_now": "立即订阅",
+        }
+      };
+  
+      let currentLang = localStorage.getItem('language') || 'cn';
+  
+      // 核心翻译函数
+      function updateLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+  
+        // 更新所有带翻译标记的元素
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.value = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
+          }
+        });
+  
+        // 更新按钮显示
+        document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+  
+        // 更新页面标题
+        document.title = translations[lang]['page_title'];
+      }
+  
+      // 初始化
+      document.addEventListener('DOMContentLoaded', () => {
+        // 初始化语言
+        updateLanguage(currentLang);
+        // 显示页面内容
+        document.body.style.visibility = 'visible';
+  
+        // 绑定语言切换事件
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = e.target.getAttribute('data-lang');
+            updateLanguage(lang);
+  
+            // 手动关闭下拉菜单（Bootstrap5方法）
+            const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+            dropdown.hide();
+          });
+        });
+  
+        // 初始化Bootstrap下拉组件
+        new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+      });
+    </script>
 </head>
 
 <body>
@@ -837,275 +1108,7 @@
     <!--== End Side Menu ==-->
   </div>
 
-  <!--=======================Javascript============================-->
-  <script>
-    // 扩展翻译数据
-    const translations = {
-      "en": {
-        "page_title": "WCS System - JFindX",
-        "current_lang": "EN",
-        "alt_logo": "Main Logo of JFINDX",
-        "alt_logo_light": "Light Logo of JFINDX",
-        "alt_prev": "Previous Slide",
-        "alt_next": "Next Slide",
-        "alt_about1": "Illustration of Intelligent Warehouse Solution",
-        "alt_about2": "Illustration of System Architecture",
-        "alt_footer_logo": "Footer Logo",
-        // Navigation Menu
-        "nav_home": "Home",
-        "nav_solution": "OvrSolution",
-        "nav_software": "AI-FlexSC Software",
-        "submenu_wms": "Intelligent Warehouse Management System (WMS)",
-        "submenu_wcs": "Automated Equipment Management System (WCS)",
-        "nav_hardware": "Logistics",
-        "submenu_warehouse": "Intelligent Warehouse",
-        "submenu_logistics": "Intelligent Logistics",
-        "submenu_rfid": "RFID Electronic Tags",
-        "nav_digital": "Digital-Twin",
-        "nav_cases": "Success Cases",
-        "nav_about": "About Us",
-        "submenu_about": "Team Introduction",
-        "submenu_honor": "Company Honors",
-        "submenu_contact": "Contact Us",
-        // Footer
-        "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
-        "footer_services": "All Services",
-        "footer_company_email": "Company Email",
-        "footer_company_phone": "130 5204 4828",
-        "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
-        "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
-        "footer_icp": "Zhejiang ICP No. 2023030316-1",
 
-
-        "wcs_title": "Warehouse Control System",
-        "wcs_subtitle": "The bridge connecting hardware and software, ensuring every automated device works in harmony for maximum efficiency.",
-        "wcs_section_title": "JFINDX WCS Supported Devices",
-        "wcs_flow_title": "Warehouse Processes & Equipment",
-        "wcs_process1": "Receiving & Storage",
-        "wcs_process2": "Replenishment",
-        "wcs_process3": "Picking & Shipping",
-        "wcs_process4": "Checking & Packaging",
-        "wcs_process5": "Order Management",
-        "wcs_device1": "ASRS System",
-        "wcs_device1_desc": "Automated Storage",
-        "wcs_device2": "A-Frame Rack",
-        "wcs_device2_desc": "Heavy Storage System",
-        "wcs_device3": "Flow Rack",
-        "wcs_device3_desc": "Gravity Rack",
-        "wcs_device4": "RFID System",
-        "wcs_device4_desc": "Auto Identification",
-        "wcs_device5": "4-Way Shuttle",
-        "wcs_device5_desc": "Intelligent Handling",
-        "wcs_device6": "AGV Robot",
-        "wcs_device6_desc": "Automated Transport",
-        "wcs_device7": "Case Conveyor",
-        "wcs_device7_desc": "Conveyor System",
-        "wcs_device8": "Roller Sorter",
-        "wcs_device8_desc": "High-speed Sorting",
-        "wcs_device9": "Pick-to-Light Station",
-        "wcs_device9_desc": "Manual Picking System",
-        "wcs_device10": "Light System",
-        "wcs_device10_desc": "Electronic Picking",
-        "wcs_device11": "Voice System",
-        "wcs_device11_desc": "Voice Picking",
-        "wcs_device12": "Checking Area",
-        "wcs_device12_desc": "Packing & Checking",
-        "wcs_device13": "Labeling Machine",
-        "wcs_device13_desc": "Label Attachment",
-        "wcs_device14": "Box Sealer",
-        "wcs_device14_desc": "Carton Sealing",
-        "wcs_device15": "WMS System",
-        "wcs_device15_desc": "Warehouse Management",
-        "wcs_device16": "CTU Robot",
-        "wcs_device16_desc": "Bin Handling Robot",
-        "wcs_device17": "Digital Board",
-        "wcs_device17_desc": "Real-time Monitoring",
-        "wcs_device_list_title": "Supported Device List",
-        "wcs_category1": "Automated Storage",
-        "wcs_category2": "Intelligent Handling",
-        "wcs_category3": "Conveyor & Sorting",
-        "wcs_category4": "Inspection Devices",
-        "wcs_category5": "Identification Systems",
-        "wcs_category6": "Packaging Equipment",
-        "wcs_device_item1": "ASRS System",
-        "wcs_device_item2": "Miniload",
-        "wcs_device_item3": "Multi-level Shuttle",
-        "wcs_device_item4": "AGV/AMR Robots",
-        "wcs_device_item5": "CTU Robot",
-        "wcs_device_item6": "Palletizing Robot",
-        "wcs_device_item7": "Pallet Conveyor",
-        "wcs_device_item8": "Case Conveyor",
-        "wcs_device_item9": "Slider Sorter",
-        "wcs_device_item10": "Crossbelt Sorter",
-        "wcs_device_item11": "Overhead Conveyor",
-        "wcs_device_item12": "Dynamic Weighing",
-        "wcs_device_item13": "Shape Detection",
-        "wcs_device_item14": "Voice Recognition",
-        "wcs_device_item15": "Electronic Label",
-        "wcs_device_item16": "RFID System",
-        "wcs_device_item17": "Labeling Machine",
-        "wcs_device_item18": "Box Sealer",
-        "contact_title": "Stay Connected for Updates",
-        "subscribe_now": "Subscribe Now",
-
-      },
-      "cn": {
-        "page_title": "自动化设备管理系统WCS - JFindX",
-        // 通用
-        "current_lang": "CN",
-        "alt_logo": "捷方优制主Logo",
-        "alt_logo_light": "捷方优制浅色Logo",
-        "alt_prev": "上一张幻灯片",
-        "alt_next": "下一张幻灯片",
-        "alt_about1": "智能仓储解决方案图示",
-        "alt_about2": "系统架构图示",
-        "alt_footer_logo": "页脚Logo",
-        // 导航菜单
-        "nav_home": "首页",
-        "nav_solution": "整体解决方案",
-        "nav_software": "AI柔性供应链软件",
-        "submenu_wms": "智能仓储管理系统WMS",
-        "submenu_wcs": "自动化设备管理系统WCS",
-        "nav_hardware": "智能仓储物流硬件",
-        "submenu_warehouse": "智能仓储",
-        "submenu_logistics": "智能物流",
-        "submenu_rfid": "RFID电子标签",
-        "nav_digital": "数字孪生系统",
-        "nav_cases": "成功案例",
-        "nav_about": "关于我们",
-        "submenu_about": "团队介绍",
-        "submenu_honor": "公司荣誉",
-        "submenu_contact": "联系我们",
-        // 页脚
-        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-        "footer_services": "所有服务",
-        "footer_company_email": "公司邮箱",
-        "footer_company_phone": "130 5204 4828",
-        "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-        "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
-        "footer_icp": "浙ICP备2023030316号-1",
-
-        "wcs_title": "自动化设备管理系统WCS",
-        "wcs_subtitle": "连接硬件与软件的桥梁，确保每一个自动化设备都能协同工作，发挥最大效能。",
-        "wcs_section_title": "JFINDX WCS 可对接设备",
-        "wcs_flow_title": "仓储作业流程与设备",
-        "wcs_process1": "收货存储",
-        "wcs_process2": "补货流程",
-        "wcs_process3": "分拣发货",
-        "wcs_process4": "复核包装",
-        "wcs_process5": "订单管理",
-        "wcs_device1": "ASRS立体仓库",
-        "wcs_device1_desc": "自动化存储设备",
-        "wcs_device2": "A型货架",
-        "wcs_device2_desc": "重型存储系统",
-        "wcs_device3": "流利式货架",
-        "wcs_device3_desc": "重力式货架",
-        "wcs_device4": "RFID识别",
-        "wcs_device4_desc": "自动识别技术",
-        "wcs_device5": "四向穿梭车",
-        "wcs_device5_desc": "智能搬运设备",
-        "wcs_device6": "AGV机器人",
-        "wcs_device6_desc": "自动导引运输",
-        "wcs_device7": "箱式输送线",
-        "wcs_device7_desc": "自动化输送系统",
-        "wcs_device8": "滑轮分拣机",
-        "wcs_device8_desc": "高效分拣系统",
-        "wcs_device9": "人到货拣选站",
-        "wcs_device9_desc": "人工拣选系统",
-        "wcs_device10": "亮灯拣选系统",
-        "wcs_device10_desc": "电子辅助拣货",
-        "wcs_device11": "语音识别系统",
-        "wcs_device11_desc": "语音指导拣货",
-        "wcs_device12": "整箱核送区",
-        "wcs_device12_desc": "包装复核区域",
-        "wcs_device13": "自动贴标机",
-        "wcs_device13_desc": "标签贴附设备",
-        "wcs_device14": "自动封箱机",
-        "wcs_device14_desc": "纸箱封装系统",
-        "wcs_device15": "WMS系统",
-        "wcs_device15_desc": "仓库管理系统",
-        "wcs_device16": "CTU机器人",
-        "wcs_device16_desc": "料箱搬运机器人",
-        "wcs_device17": "数字看板",
-        "wcs_device17_desc": "实时监控系统",
-        "wcs_device_list_title": "支持对接设备列表",
-        "wcs_category1": "自动化存储设备",
-        "wcs_category2": "智能搬运设备",
-        "wcs_category3": "输送分拣系统",
-        "wcs_category4": "智能检测设备",
-        "wcs_category5": "信息识别系统",
-        "wcs_category6": "包装设备",
-        "wcs_device_item1": "ASRS立库",
-        "wcs_device_item2": "Miniload",
-        "wcs_device_item3": "多层四向穿梭车",
-        "wcs_device_item4": "AGV/AMR搬运机器人",
-        "wcs_device_item5": "CTU料箱机器人",
-        "wcs_device_item6": "码垛拆垛机器人",
-        "wcs_device_item7": "托盘输送线",
-        "wcs_device_item8": "箱式输送线",
-        "wcs_device_item9": "滑块分拣线",
-        "wcs_device_item10": "交叉带分拣线",
-        "wcs_device_item11": "悬挂输送线",
-        "wcs_device_item12": "动态称重",
-        "wcs_device_item13": "外形检测",
-        "wcs_device_item14": "语音识别",
-        "wcs_device_item15": "电子标签",
-        "wcs_device_item16": "RFID",
-        "wcs_device_item17": "自动贴标机",
-        "wcs_device_item18": "自动封箱机",
-        "contact_title": "保持联系以便获取最新资讯",
-        "subscribe_now": "立即订阅",
-      }
-    };
-
-    let currentLang = localStorage.getItem('language') || 'cn';
-
-    // 核心翻译函数
-    function updateLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('language', lang);
-
-      // 更新所有带翻译标记的元素
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-            element.value = translations[lang][key];
-          } else {
-            element.textContent = translations[lang][key];
-          }
-        }
-      });
-
-      // 更新按钮显示
-      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
-
-      // 更新页面标题
-      document.title = translations[lang]['page_title'];
-    }
-
-    // 初始化
-    document.addEventListener('DOMContentLoaded', () => {
-      // 初始化语言
-      updateLanguage(currentLang);
-
-      // 绑定语言切换事件
-      document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-          e.preventDefault();
-          const lang = e.target.getAttribute('data-lang');
-          updateLanguage(lang);
-
-          // 手动关闭下拉菜单（Bootstrap5方法）
-          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
-          dropdown.hide();
-        });
-      });
-
-      // 初始化Bootstrap下拉组件
-      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
-    });
-  </script>
 
   <!--=== Modernizr Min Js ===-->
   <script src="static/js/modernizr.js"></script>

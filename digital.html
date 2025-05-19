@@ -81,6 +81,397 @@
       font-weight: bold;
     }
   </style>
+    <!--=======================Javascript============================-->
+    <script>
+      // 扩展翻译数据
+      const translations = {
+        "en": {
+          "page_title": "Digital Twin System - JFindX",
+          "current_lang": "EN",
+          "alt_logo": "Main Logo of JFINDX",
+          "alt_logo_light": "Light Logo of JFINDX",
+          "alt_prev": "Previous Slide",
+          "alt_next": "Next Slide",
+          "alt_about1": "Illustration of Intelligent Warehouse Solution",
+          "alt_about2": "Illustration of System Architecture",
+          "alt_footer_logo": "Footer Logo",
+          // Navigation Menu
+          "nav_home": "Home",
+          "nav_solution": "OvrSolution",
+          "nav_software": "AI-FlexSC Software",
+          "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+          "submenu_wcs": "Automated Equipment Management System (WCS)",
+          "nav_hardware": "Logistics",
+          "submenu_warehouse": "Intelligent Warehouse",
+          "submenu_logistics": "Intelligent Logistics",
+          "submenu_rfid": "RFID Electronic Tags",
+          "nav_digital": "Digital-Twin",
+          "nav_cases": "Success Cases",
+          "nav_about": "About Us",
+          "submenu_about": "Team Introduction",
+          "submenu_honor": "Company Honors",
+          "submenu_contact": "Contact Us",
+          // Footer
+          "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+          "footer_services": "All Services",
+          "footer_company_email": "Company Email",
+          "footer_company_phone": "130 5204 4828",
+          "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+          "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+          "footer_icp": "Zhejiang ICP No. 2023030316-1",
+  
+          "home": "Home",
+          "wms": "WMS System",
+          "wcs": "WCS System",
+          "digital": "Digital Twin",
+          "about": "About Us",
+          "digital_title": "Digital Twin System",
+          "digital_subtitle": "Create a virtual mirror of your warehouse facility. Anticipate problems in advance, optimize operational decisions, and open a new realm of intelligent warehousing.",
+          "digital_model_title": "3D Digital Twin Model Showcase",
+          "loading": "Loading...",
+          "loading_model": "Loading 3D model...",
+          "rotate_view": "Rotate View",
+          "zoom_in": "Zoom In",
+          "zoom_out": "Zoom Out",
+          "creation_process_title": "Digital Twin Creation Process",
+          "step1_title": "Data Collection",
+          "step1_desc": "Obtain comprehensive facility data through IoT sensors, laser scanning, and CAD drawings",
+          "step2_title": "Model Construction",
+          "step2_desc": "Use professional software to build high-precision 3D models that restore physical world details",
+          "step3_title": "Data Integration",
+          "step3_desc": "Correlate real-time operational data with the model to achieve dynamic mapping",
+          "step4_title": "System Deployment",
+          "step4_desc": "Deploy on cloud or local servers, supporting multi-terminal access",
+          "predictive_maintenance_title": "Predictive Maintenance Features",
+          "feature1_title": "Equipment Failure Warning",
+          "feature1_desc": "Use machine learning to analyze equipment operation data, detect abnormal patterns in advance, and issue warnings before failures occur, reducing unplanned downtime.",
+          "feature2_title": "Performance Optimization Suggestions",
+          "feature2_desc": "Simulate different operational scenarios based on digital twins, automatically generate equipment parameter adjustment suggestions, and improve overall operating efficiency by 15-30%.",
+          "feature3_title": "Lifespan Prediction",
+          "feature3_desc": "Predict the remaining lifespan of key components by combining equipment usage frequency, maintenance records, and environmental factors, scientifically planning spare parts procurement and replacement plans.",
+          "monitor_panel_title": "Real-time Monitoring Panel Example",
+          "equipment_health": "Equipment Health: <strong>92%</strong>",
+          "failure_probability": "Predicted Failure Probability: <strong>8%</strong>",
+          "energy_efficiency": "Energy Efficiency: <strong>88%</strong>",
+          "optimization_potential": "Optimization Potential: <strong>15%</strong>",
+          "case_studies_title": "Practical Application Cases",
+          "case1_title": "Guiyang S1 Line 3D Warehouse Twin System",
+          "case1_desc": "Simulate the real 3D storage situation through the digital twin system, monitor daily inbound and outbound data and storage occupancy in real time, and optimize the collaborative working mode of stackers, conveyor lines and different equipment.",
+          "before_optimization": "Before Optimization",
+          "energy_before": "Monthly Energy Consumption: 85,000 kWh",
+          "efficiency_before": "Overall Equipment Efficiency: 72%",
+          "peak_load_before": "Peak Load: 450 kW",
+          "after_optimization": "After Optimization",
+          "energy_after": "Monthly Energy Consumption: 68,000 kWh <span class='badge bg-success rounded-pill'>-20%</span>",
+          "efficiency_after": "Overall Equipment Efficiency: 86% <span class='badge bg-success rounded-pill'>+14%</span>",
+          "peak_load_after": "Peak Load: 380 kW <span class='badge bg-success rounded-pill'>-15.5%</span>",
+          "case2_title": "High-performance Sintered NdFeB Smart System",
+          "case2_desc": "The factory digital twin platform in the High-performance Sintered NdFeB Smart System of Haituo Intelligent Innovation Park. By extracting core equipment data, connecting with the production workshop management system, and connecting with the on-site autonomous navigation intelligent forklift dispatching system, it achieves a true mapping of the physical environment in the virtual environment, effectively promoting the intelligent operation of the borax forming press factory, improving efficiency and strengthening quality and process monitoring, solving past problems. Create real-time information flow to drive production and management activities, turning the factory into a transparent factory and smart factory.",
+          "before_implementation": "Before Implementation",
+          "downtime_before": "Annual Average Unplanned Downtime: 42 hours",
+          "accuracy_before": "Failure Prediction Accuracy: N/A",
+          "cost_before": "Maintenance Cost: ¥380,000/year",
+          "after_implementation": "After Implementation",
+          "downtime_after": "Annual Average Unplanned Downtime: 9 hours <span class='badge bg-success rounded-pill'>-78.6%</span>",
+          "accuracy_after": "Failure Prediction Accuracy: 92%",
+          "cost_after": "Maintenance Cost: ¥260,000/year <span class='badge bg-success rounded-pill'>-31.6%</span>",
+          "cta_title": "Ready to experience the power of digital twins?",
+          "cta_subtitle": "Our expert team will customize a dedicated digital twin solution for you",
+          "book_demo": "Book Demo",
+          "footer_desc": "JFindX - Automation solution experts, tailor-made automation solutions for you, covering comprehensive services from hardware equipment to software systems.",
+          "popular_products": "Popular Products",
+          "contact_us": "Contact Us",
+          "company_email": "Company Email",
+          "company_phone": "130 5204 4828",
+          "company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo, Zhejiang Province",
+          "copyright": "© Ningbo JFindX Technology Co., Ltd. All Rights Reserved"
+        },
+        "cn": {
+          "page_title": "工业数字孪生系统 - JFindX",
+          // 通用
+          "current_lang": "CN",
+          "alt_logo": "捷方优制主Logo",
+          "alt_logo_light": "捷方优制浅色Logo",
+          "alt_prev": "上一张幻灯片",
+          "alt_next": "下一张幻灯片",
+          "alt_about1": "智能仓储解决方案图示",
+          "alt_about2": "系统架构图示",
+          "alt_footer_logo": "页脚Logo",
+          // 导航菜单
+          "nav_home": "首页",
+          "nav_solution": "整体解决方案",
+          "nav_software": "AI柔性供应链软件",
+          "submenu_wms": "智能仓储管理系统WMS",
+          "submenu_wcs": "自动化设备管理系统WCS",
+          "nav_hardware": "智能仓储物流硬件",
+          "submenu_warehouse": "智能仓储",
+          "submenu_logistics": "智能物流",
+          "submenu_rfid": "RFID电子标签",
+          "nav_digital": "数字孪生系统",
+          "nav_cases": "成功案例",
+          "nav_about": "关于我们",
+          "submenu_about": "团队介绍",
+          "submenu_honor": "公司荣誉",
+          "submenu_contact": "联系我们",
+          // 页脚
+          "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+          "footer_services": "所有服务",
+          "footer_company_email": "公司邮箱",
+          "footer_company_phone": "130 5204 4828",
+          "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+          "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+          "footer_icp": "浙ICP备2023030316号-1",
+  
+          "home": "首页",
+          "wms": "智能仓储管理系统WMS",
+          "wcs": "自动化设备管理系统WCS",
+          "digital": "工业数字孪生系统",
+          "about": "关于我们",
+          "digital_title": "工业数字孪生系统",
+          "digital_subtitle": "为您的仓储设施打造虚拟镜像。提前预见问题，优化运营决策，开启智能化仓储新境界。",
+          "digital_model_title": "3D数字孪生模型展示",
+          "loading": "加载中...",
+          "loading_model": "正在加载3D模型...",
+          "rotate_view": "旋转视图",
+          "zoom_in": "放大",
+          "zoom_out": "缩小",
+          "creation_process_title": "数字孪生创建过程",
+          "step1_title": "数据采集",
+          "step1_desc": "通过IoT传感器、激光扫描和CAD图纸获取设施全维度数据",
+          "step2_title": "模型构建",
+          "step2_desc": "利用专业软件构建高精度3D模型，还原物理世界细节",
+          "step3_title": "数据集成",
+          "step3_desc": "将实时运营数据与模型关联，实现动态映射",
+          "step4_title": "系统部署",
+          "step4_desc": "在云端或本地服务器部署，支持多终端访问",
+          "predictive_maintenance_title": "预测性维护功能",
+          "feature1_title": "设备故障预警",
+          "feature1_desc": "通过机器学习分析设备运行数据，提前发现异常模式，在故障发生前发出预警，减少非计划停机时间。",
+          "feature2_title": "性能优化建议",
+          "feature2_desc": "基于数字孪生模拟不同运营场景，自动生成设备参数调整建议，提升整体运行效率15-30%。",
+          "feature3_title": "寿命预测",
+          "feature3_desc": "结合设备使用频率、维护记录和环境因素，预测关键部件剩余寿命，科学规划备件采购和更换计划。",
+          "monitor_panel_title": "实时监控面板示例",
+          "equipment_health": "设备健康度: <strong>92%</strong>",
+          "failure_probability": "预测故障概率: <strong>8%</strong>",
+          "energy_efficiency": "能耗效率: <strong>88%</strong>",
+          "optimization_potential": "优化潜力: <strong>15%</strong>",
+          "case_studies_title": "实际应用案例",
+          "case1_title": "贵阳S1号线立体仓储孪生系统",
+          "case1_desc": "通过工业数字孪生系统模拟真实立体的仓储情况，对每天的出入库数据以及库位占用情况进行实时监控，优化了堆垛机、输送线和不同设备的协同工作模式。",
+          "before_optimization": "优化前",
+          "energy_before": "月均能耗: 85,000 kWh",
+          "efficiency_before": "设备综合效率: 72%",
+          "peak_load_before": "峰值负载: 450 kW",
+          "after_optimization": "优化后",
+          "energy_after": "月均能耗: 68,000 kWh <span class='badge bg-success rounded-pill'>-20%</span>",
+          "efficiency_after": "设备综合效率: 86% <span class='badge bg-success rounded-pill'>+14%</span>",
+          "peak_load_after": "峰值负载: 380 kW <span class='badge bg-success rounded-pill'>-15.5%</span>",
+          "case2_title": "高性能烧结钕铁硼智慧系统",
+          "case2_desc": "海拓智创园高性能烧结钕铁硼智慧系统中的工厂数字孪生平台。通过对核心设备数据提取，对接生产车间管理系统，对接现场自主导航智能叉车调度系统，实现物理环境在虚拟环境下的真实映射，有效的推动硼砂成型压机工厂实现智能化运营，提升效率和加强质量、工艺监控，解决过去存在的问题。打造实时信息流驱动生产和管理活动，将工厂变成透明工厂、智能工厂。",
+          "before_implementation": "实施前",
+          "downtime_before": "年平均非计划停机: 42小时",
+          "accuracy_before": "故障预测准确率: N/A",
+          "cost_before": "维护成本: ¥380,000/年",
+          "after_implementation": "实施后",
+          "downtime_after": "年平均非计划停机: 9小时 <span class='badge bg-success rounded-pill'>-78.6%</span>",
+          "accuracy_after": "故障预测准确率: 92%",
+          "cost_after": "维护成本: ¥260,000/年 <span class='badge bg-success rounded-pill'>-31.6%</span>",
+          "cta_title": "准备好体验数字孪生的力量了吗？",
+          "cta_subtitle": "我们的专家团队将为您定制专属的数字孪生解决方案",
+          "book_demo": "预约演示",
+          "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+          "popular_products": "热门产品",
+          "contact_us": "联系我们",
+          "company_email": "公司邮箱",
+          "company_phone": "130 5204 4828",
+          "company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+          "copyright": "宁波捷方优制科技有限公司版权所有"
+        }
+      };
+  
+      let currentLang = localStorage.getItem('language') || 'cn';
+  
+      // 核心翻译函数
+      function updateLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+  
+        // 更新所有带翻译标记的元素
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.value = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
+          }
+        });
+  
+        // 更新placeholder
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+          const key = element.getAttribute('data-i18n-placeholder');
+          if (translations[lang][key]) {
+            element.setAttribute('placeholder', translations[lang][key]);
+          }
+        });
+  
+        // 更新按钮显示
+        document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+  
+        // 更新页面标题
+        document.title = translations[lang]['page_title'];
+      }
+  
+  
+  
+      // 初始化
+      document.addEventListener('DOMContentLoaded', () => {
+        // 这里添加3D模型加载和交互的JavaScript代码
+        init3DModel();
+        initCharts();
+        // 初始化语言
+        updateLanguage(currentLang);
+        // 显示页面内容
+        document.body.style.visibility = 'visible';
+  
+        // 绑定语言切换事件
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = e.target.getAttribute('data-lang');
+            updateLanguage(lang);
+  
+            // 手动关闭下拉菜单（Bootstrap5方法）
+            const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+            dropdown.hide();
+          });
+        });
+  
+        // 初始化Bootstrap下拉组件
+        new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+  
+        // 按钮事件
+        document.getElementById('rotateModel').addEventListener('click', function () {
+          // 旋转模型的代码
+          console.log('旋转模型');
+        });
+  
+        document.getElementById('zoomIn').addEventListener('click', function () {
+          // 放大模型的代码
+          console.log('放大模型');
+        });
+  
+        document.getElementById('zoomOut').addEventListener('click', function () {
+          // 缩小模型的代码
+          console.log('缩小模型');
+        });
+      });
+  
+      function init3DModel() {
+        // 实际项目中这里会使用Three.js或其他3D库加载和渲染模型
+        console.log('初始化3D模型');
+  
+        // 示例代码 - 实际项目需要更复杂的实现
+        const container = document.getElementById('digitalTwinModel');
+  
+        // 创建场景、相机、渲染器等
+        // const scene = new THREE.Scene();
+        // const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        // const renderer = new THREE.WebGLRenderer();
+        // renderer.setSize(container.clientWidth, container.clientHeight);
+        // container.appendChild(renderer.domElement);
+  
+        // 加载模型等操作...
+      }
+  
+      function initCharts() {
+        // 能耗对比图表
+        const energyCtx = document.getElementById('energyComparisonChart').getContext('2d');
+        new Chart(energyCtx, {
+          type: 'bar',
+          data: {
+            labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+            datasets: [
+              {
+                label: currentLang === 'cn' ? '优化前能耗 (kWh)' : 'Energy Before (kWh)',
+                data: [85000, 82000, 87000, 84000, 86000, 88000],
+                backgroundColor: 'rgba(255, 99, 132, 0.7)',
+              },
+              {
+                label: currentLang === 'cn' ? '优化后能耗 (kWh)' : 'Energy After (kWh)',
+                data: [68000, 67000, 69000, 66000, 68000, 67000],
+                backgroundColor: 'rgba(54, 162, 235, 0.7)',
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              title: {
+                display: true,
+                text: currentLang === 'cn' ? '月度能耗对比' : 'Monthly Energy Comparison'
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: false,
+                title: {
+                  display: true,
+                  text: currentLang === 'cn' ? '能耗 (kWh)' : 'Energy (kWh)'
+                }
+              }
+            }
+          }
+        });
+  
+        // 故障率对比图表
+        const downtimeCtx = document.getElementById('downtimeComparisonChart').getContext('2d');
+        new Chart(downtimeCtx, {
+          type: 'line',
+          data: {
+            labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
+            datasets: [
+              {
+                label: currentLang === 'cn' ? '实施前停机时间 (小时)' : 'Downtime Before (hours)',
+                data: [5, 3, 7, 4, 6, 3],
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                fill: true,
+                tension: 0.3
+              },
+              {
+                label: currentLang === 'cn' ? '实施后停机时间 (小时)' : 'Downtime After (hours)',
+                data: [1, 0.5, 2, 1, 0.5, 1],
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                fill: true,
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              title: {
+                display: true,
+                text: currentLang === 'cn' ? '月度非计划停机时间对比' : 'Monthly Unplanned Downtime Comparison'
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: currentLang === 'cn' ? '停机时间 (小时)' : 'Downtime (hours)'
+                }
+              }
+            }
+          }
+        });
+      }
+    </script>
 </head>
 
 <body>
@@ -594,395 +985,7 @@
     <!--== End Side Menu ==-->
   </div>
 
-  <!--=======================Javascript============================-->
-  <script>
-    // 扩展翻译数据
-    const translations = {
-      "en": {
-        "page_title": "Digital Twin System - JFindX",
-        "current_lang": "EN",
-        "alt_logo": "Main Logo of JFINDX",
-        "alt_logo_light": "Light Logo of JFINDX",
-        "alt_prev": "Previous Slide",
-        "alt_next": "Next Slide",
-        "alt_about1": "Illustration of Intelligent Warehouse Solution",
-        "alt_about2": "Illustration of System Architecture",
-        "alt_footer_logo": "Footer Logo",
-        // Navigation Menu
-        "nav_home": "Home",
-        "nav_solution": "OvrSolution",
-        "nav_software": "AI-FlexSC Software",
-        "submenu_wms": "Intelligent Warehouse Management System (WMS)",
-        "submenu_wcs": "Automated Equipment Management System (WCS)",
-        "nav_hardware": "Logistics",
-        "submenu_warehouse": "Intelligent Warehouse",
-        "submenu_logistics": "Intelligent Logistics",
-        "submenu_rfid": "RFID Electronic Tags",
-        "nav_digital": "Digital-Twin",
-        "nav_cases": "Success Cases",
-        "nav_about": "About Us",
-        "submenu_about": "Team Introduction",
-        "submenu_honor": "Company Honors",
-        "submenu_contact": "Contact Us",
-        // Footer
-        "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
-        "footer_services": "All Services",
-        "footer_company_email": "Company Email",
-        "footer_company_phone": "130 5204 4828",
-        "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
-        "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
-        "footer_icp": "Zhejiang ICP No. 2023030316-1",
 
-        "home": "Home",
-        "wms": "WMS System",
-        "wcs": "WCS System",
-        "digital": "Digital Twin",
-        "about": "About Us",
-        "digital_title": "Digital Twin System",
-        "digital_subtitle": "Create a virtual mirror of your warehouse facility. Anticipate problems in advance, optimize operational decisions, and open a new realm of intelligent warehousing.",
-        "digital_model_title": "3D Digital Twin Model Showcase",
-        "loading": "Loading...",
-        "loading_model": "Loading 3D model...",
-        "rotate_view": "Rotate View",
-        "zoom_in": "Zoom In",
-        "zoom_out": "Zoom Out",
-        "creation_process_title": "Digital Twin Creation Process",
-        "step1_title": "Data Collection",
-        "step1_desc": "Obtain comprehensive facility data through IoT sensors, laser scanning, and CAD drawings",
-        "step2_title": "Model Construction",
-        "step2_desc": "Use professional software to build high-precision 3D models that restore physical world details",
-        "step3_title": "Data Integration",
-        "step3_desc": "Correlate real-time operational data with the model to achieve dynamic mapping",
-        "step4_title": "System Deployment",
-        "step4_desc": "Deploy on cloud or local servers, supporting multi-terminal access",
-        "predictive_maintenance_title": "Predictive Maintenance Features",
-        "feature1_title": "Equipment Failure Warning",
-        "feature1_desc": "Use machine learning to analyze equipment operation data, detect abnormal patterns in advance, and issue warnings before failures occur, reducing unplanned downtime.",
-        "feature2_title": "Performance Optimization Suggestions",
-        "feature2_desc": "Simulate different operational scenarios based on digital twins, automatically generate equipment parameter adjustment suggestions, and improve overall operating efficiency by 15-30%.",
-        "feature3_title": "Lifespan Prediction",
-        "feature3_desc": "Predict the remaining lifespan of key components by combining equipment usage frequency, maintenance records, and environmental factors, scientifically planning spare parts procurement and replacement plans.",
-        "monitor_panel_title": "Real-time Monitoring Panel Example",
-        "equipment_health": "Equipment Health: <strong>92%</strong>",
-        "failure_probability": "Predicted Failure Probability: <strong>8%</strong>",
-        "energy_efficiency": "Energy Efficiency: <strong>88%</strong>",
-        "optimization_potential": "Optimization Potential: <strong>15%</strong>",
-        "case_studies_title": "Practical Application Cases",
-        "case1_title": "Guiyang S1 Line 3D Warehouse Twin System",
-        "case1_desc": "Simulate the real 3D storage situation through the digital twin system, monitor daily inbound and outbound data and storage occupancy in real time, and optimize the collaborative working mode of stackers, conveyor lines and different equipment.",
-        "before_optimization": "Before Optimization",
-        "energy_before": "Monthly Energy Consumption: 85,000 kWh",
-        "efficiency_before": "Overall Equipment Efficiency: 72%",
-        "peak_load_before": "Peak Load: 450 kW",
-        "after_optimization": "After Optimization",
-        "energy_after": "Monthly Energy Consumption: 68,000 kWh <span class='badge bg-success rounded-pill'>-20%</span>",
-        "efficiency_after": "Overall Equipment Efficiency: 86% <span class='badge bg-success rounded-pill'>+14%</span>",
-        "peak_load_after": "Peak Load: 380 kW <span class='badge bg-success rounded-pill'>-15.5%</span>",
-        "case2_title": "High-performance Sintered NdFeB Smart System",
-        "case2_desc": "The factory digital twin platform in the High-performance Sintered NdFeB Smart System of Haituo Intelligent Innovation Park. By extracting core equipment data, connecting with the production workshop management system, and connecting with the on-site autonomous navigation intelligent forklift dispatching system, it achieves a true mapping of the physical environment in the virtual environment, effectively promoting the intelligent operation of the borax forming press factory, improving efficiency and strengthening quality and process monitoring, solving past problems. Create real-time information flow to drive production and management activities, turning the factory into a transparent factory and smart factory.",
-        "before_implementation": "Before Implementation",
-        "downtime_before": "Annual Average Unplanned Downtime: 42 hours",
-        "accuracy_before": "Failure Prediction Accuracy: N/A",
-        "cost_before": "Maintenance Cost: ¥380,000/year",
-        "after_implementation": "After Implementation",
-        "downtime_after": "Annual Average Unplanned Downtime: 9 hours <span class='badge bg-success rounded-pill'>-78.6%</span>",
-        "accuracy_after": "Failure Prediction Accuracy: 92%",
-        "cost_after": "Maintenance Cost: ¥260,000/year <span class='badge bg-success rounded-pill'>-31.6%</span>",
-        "cta_title": "Ready to experience the power of digital twins?",
-        "cta_subtitle": "Our expert team will customize a dedicated digital twin solution for you",
-        "book_demo": "Book Demo",
-        "footer_desc": "JFindX - Automation solution experts, tailor-made automation solutions for you, covering comprehensive services from hardware equipment to software systems.",
-        "popular_products": "Popular Products",
-        "contact_us": "Contact Us",
-        "company_email": "Company Email",
-        "company_phone": "130 5204 4828",
-        "company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo, Zhejiang Province",
-        "copyright": "© Ningbo JFindX Technology Co., Ltd. All Rights Reserved"
-      },
-      "cn": {
-        "page_title": "工业数字孪生系统 - JFindX",
-        // 通用
-        "current_lang": "CN",
-        "alt_logo": "捷方优制主Logo",
-        "alt_logo_light": "捷方优制浅色Logo",
-        "alt_prev": "上一张幻灯片",
-        "alt_next": "下一张幻灯片",
-        "alt_about1": "智能仓储解决方案图示",
-        "alt_about2": "系统架构图示",
-        "alt_footer_logo": "页脚Logo",
-        // 导航菜单
-        "nav_home": "首页",
-        "nav_solution": "整体解决方案",
-        "nav_software": "AI柔性供应链软件",
-        "submenu_wms": "智能仓储管理系统WMS",
-        "submenu_wcs": "自动化设备管理系统WCS",
-        "nav_hardware": "智能仓储物流硬件",
-        "submenu_warehouse": "智能仓储",
-        "submenu_logistics": "智能物流",
-        "submenu_rfid": "RFID电子标签",
-        "nav_digital": "数字孪生系统",
-        "nav_cases": "成功案例",
-        "nav_about": "关于我们",
-        "submenu_about": "团队介绍",
-        "submenu_honor": "公司荣誉",
-        "submenu_contact": "联系我们",
-        // 页脚
-        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-        "footer_services": "所有服务",
-        "footer_company_email": "公司邮箱",
-        "footer_company_phone": "130 5204 4828",
-        "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-        "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
-        "footer_icp": "浙ICP备2023030316号-1",
-
-        "home": "首页",
-        "wms": "智能仓储管理系统WMS",
-        "wcs": "自动化设备管理系统WCS",
-        "digital": "工业数字孪生系统",
-        "about": "关于我们",
-        "digital_title": "工业数字孪生系统",
-        "digital_subtitle": "为您的仓储设施打造虚拟镜像。提前预见问题，优化运营决策，开启智能化仓储新境界。",
-        "digital_model_title": "3D数字孪生模型展示",
-        "loading": "加载中...",
-        "loading_model": "正在加载3D模型...",
-        "rotate_view": "旋转视图",
-        "zoom_in": "放大",
-        "zoom_out": "缩小",
-        "creation_process_title": "数字孪生创建过程",
-        "step1_title": "数据采集",
-        "step1_desc": "通过IoT传感器、激光扫描和CAD图纸获取设施全维度数据",
-        "step2_title": "模型构建",
-        "step2_desc": "利用专业软件构建高精度3D模型，还原物理世界细节",
-        "step3_title": "数据集成",
-        "step3_desc": "将实时运营数据与模型关联，实现动态映射",
-        "step4_title": "系统部署",
-        "step4_desc": "在云端或本地服务器部署，支持多终端访问",
-        "predictive_maintenance_title": "预测性维护功能",
-        "feature1_title": "设备故障预警",
-        "feature1_desc": "通过机器学习分析设备运行数据，提前发现异常模式，在故障发生前发出预警，减少非计划停机时间。",
-        "feature2_title": "性能优化建议",
-        "feature2_desc": "基于数字孪生模拟不同运营场景，自动生成设备参数调整建议，提升整体运行效率15-30%。",
-        "feature3_title": "寿命预测",
-        "feature3_desc": "结合设备使用频率、维护记录和环境因素，预测关键部件剩余寿命，科学规划备件采购和更换计划。",
-        "monitor_panel_title": "实时监控面板示例",
-        "equipment_health": "设备健康度: <strong>92%</strong>",
-        "failure_probability": "预测故障概率: <strong>8%</strong>",
-        "energy_efficiency": "能耗效率: <strong>88%</strong>",
-        "optimization_potential": "优化潜力: <strong>15%</strong>",
-        "case_studies_title": "实际应用案例",
-        "case1_title": "贵阳S1号线立体仓储孪生系统",
-        "case1_desc": "通过工业数字孪生系统模拟真实立体的仓储情况，对每天的出入库数据以及库位占用情况进行实时监控，优化了堆垛机、输送线和不同设备的协同工作模式。",
-        "before_optimization": "优化前",
-        "energy_before": "月均能耗: 85,000 kWh",
-        "efficiency_before": "设备综合效率: 72%",
-        "peak_load_before": "峰值负载: 450 kW",
-        "after_optimization": "优化后",
-        "energy_after": "月均能耗: 68,000 kWh <span class='badge bg-success rounded-pill'>-20%</span>",
-        "efficiency_after": "设备综合效率: 86% <span class='badge bg-success rounded-pill'>+14%</span>",
-        "peak_load_after": "峰值负载: 380 kW <span class='badge bg-success rounded-pill'>-15.5%</span>",
-        "case2_title": "高性能烧结钕铁硼智慧系统",
-        "case2_desc": "海拓智创园高性能烧结钕铁硼智慧系统中的工厂数字孪生平台。通过对核心设备数据提取，对接生产车间管理系统，对接现场自主导航智能叉车调度系统，实现物理环境在虚拟环境下的真实映射，有效的推动硼砂成型压机工厂实现智能化运营，提升效率和加强质量、工艺监控，解决过去存在的问题。打造实时信息流驱动生产和管理活动，将工厂变成透明工厂、智能工厂。",
-        "before_implementation": "实施前",
-        "downtime_before": "年平均非计划停机: 42小时",
-        "accuracy_before": "故障预测准确率: N/A",
-        "cost_before": "维护成本: ¥380,000/年",
-        "after_implementation": "实施后",
-        "downtime_after": "年平均非计划停机: 9小时 <span class='badge bg-success rounded-pill'>-78.6%</span>",
-        "accuracy_after": "故障预测准确率: 92%",
-        "cost_after": "维护成本: ¥260,000/年 <span class='badge bg-success rounded-pill'>-31.6%</span>",
-        "cta_title": "准备好体验数字孪生的力量了吗？",
-        "cta_subtitle": "我们的专家团队将为您定制专属的数字孪生解决方案",
-        "book_demo": "预约演示",
-        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-        "popular_products": "热门产品",
-        "contact_us": "联系我们",
-        "company_email": "公司邮箱",
-        "company_phone": "130 5204 4828",
-        "company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-        "copyright": "宁波捷方优制科技有限公司版权所有"
-      }
-    };
-
-    let currentLang = localStorage.getItem('language') || 'cn';
-
-    // 核心翻译函数
-    function updateLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('language', lang);
-
-      // 更新所有带翻译标记的元素
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-            element.value = translations[lang][key];
-          } else {
-            element.textContent = translations[lang][key];
-          }
-        }
-      });
-
-      // 更新placeholder
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-        const key = element.getAttribute('data-i18n-placeholder');
-        if (translations[lang][key]) {
-          element.setAttribute('placeholder', translations[lang][key]);
-        }
-      });
-
-      // 更新按钮显示
-      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
-
-      // 更新页面标题
-      document.title = translations[lang]['page_title'];
-    }
-
-
-
-    // 初始化
-    document.addEventListener('DOMContentLoaded', () => {
-      // 这里添加3D模型加载和交互的JavaScript代码
-      init3DModel();
-      initCharts();
-      // 初始化语言
-      updateLanguage(currentLang);
-
-      // 绑定语言切换事件
-      document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-          e.preventDefault();
-          const lang = e.target.getAttribute('data-lang');
-          updateLanguage(lang);
-
-          // 手动关闭下拉菜单（Bootstrap5方法）
-          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
-          dropdown.hide();
-        });
-      });
-
-      // 初始化Bootstrap下拉组件
-      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
-
-      // 按钮事件
-      document.getElementById('rotateModel').addEventListener('click', function () {
-        // 旋转模型的代码
-        console.log('旋转模型');
-      });
-
-      document.getElementById('zoomIn').addEventListener('click', function () {
-        // 放大模型的代码
-        console.log('放大模型');
-      });
-
-      document.getElementById('zoomOut').addEventListener('click', function () {
-        // 缩小模型的代码
-        console.log('缩小模型');
-      });
-    });
-
-    function init3DModel() {
-      // 实际项目中这里会使用Three.js或其他3D库加载和渲染模型
-      console.log('初始化3D模型');
-
-      // 示例代码 - 实际项目需要更复杂的实现
-      const container = document.getElementById('digitalTwinModel');
-
-      // 创建场景、相机、渲染器等
-      // const scene = new THREE.Scene();
-      // const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-      // const renderer = new THREE.WebGLRenderer();
-      // renderer.setSize(container.clientWidth, container.clientHeight);
-      // container.appendChild(renderer.domElement);
-
-      // 加载模型等操作...
-    }
-
-    function initCharts() {
-      // 能耗对比图表
-      const energyCtx = document.getElementById('energyComparisonChart').getContext('2d');
-      new Chart(energyCtx, {
-        type: 'bar',
-        data: {
-          labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
-          datasets: [
-            {
-              label: currentLang === 'cn' ? '优化前能耗 (kWh)' : 'Energy Before (kWh)',
-              data: [85000, 82000, 87000, 84000, 86000, 88000],
-              backgroundColor: 'rgba(255, 99, 132, 0.7)',
-            },
-            {
-              label: currentLang === 'cn' ? '优化后能耗 (kWh)' : 'Energy After (kWh)',
-              data: [68000, 67000, 69000, 66000, 68000, 67000],
-              backgroundColor: 'rgba(54, 162, 235, 0.7)',
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            title: {
-              display: true,
-              text: currentLang === 'cn' ? '月度能耗对比' : 'Monthly Energy Comparison'
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: false,
-              title: {
-                display: true,
-                text: currentLang === 'cn' ? '能耗 (kWh)' : 'Energy (kWh)'
-              }
-            }
-          }
-        }
-      });
-
-      // 故障率对比图表
-      const downtimeCtx = document.getElementById('downtimeComparisonChart').getContext('2d');
-      new Chart(downtimeCtx, {
-        type: 'line',
-        data: {
-          labels: ['1月', '2月', '3月', '4月', '5月', '6月'],
-          datasets: [
-            {
-              label: currentLang === 'cn' ? '实施前停机时间 (小时)' : 'Downtime Before (hours)',
-              data: [5, 3, 7, 4, 6, 3],
-              borderColor: 'rgba(255, 99, 132, 1)',
-              backgroundColor: 'rgba(255, 99, 132, 0.1)',
-              fill: true,
-              tension: 0.3
-            },
-            {
-              label: currentLang === 'cn' ? '实施后停机时间 (小时)' : 'Downtime After (hours)',
-              data: [1, 0.5, 2, 1, 0.5, 1],
-              borderColor: 'rgba(54, 162, 235, 1)',
-              backgroundColor: 'rgba(54, 162, 235, 0.1)',
-              fill: true,
-              tension: 0.3
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            title: {
-              display: true,
-              text: currentLang === 'cn' ? '月度非计划停机时间对比' : 'Monthly Unplanned Downtime Comparison'
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              title: {
-                display: true,
-                text: currentLang === 'cn' ? '停机时间 (小时)' : 'Downtime (hours)'
-              }
-            }
-          }
-        }
-      });
-    }
-  </script>
 
   <!--=== Modernizr Min Js ===-->
   <script src="static/js/modernizr.js"></script>
