@@ -70,10 +70,293 @@
       animation-play-state: paused;
     }
 
-    .service-area img {
+    .service-area .container .row img {
       height: 100%;
     }
   </style>
+  <script>
+    // 初始化语言系统
+    const translations = {
+      "en": {
+        "page_title": "Home - Jiefang Youzhi Intelligent Solutions",
+        "current_lang": "EN",
+        "alt_logo": "Main Logo of JFINDX",
+        "alt_logo_light": "Light Logo of JFINDX",
+        "alt_prev": "Previous Slide",
+        "alt_next": "Next Slide",
+        "alt_about1": "Illustration of Intelligent Warehouse Solution",
+        "alt_about2": "Illustration of System Architecture",
+        "alt_footer_logo": "Footer Logo",
+        // Navigation Menu
+        "nav_home": "Home",
+        "nav_solution": "OvrSolution",
+        "nav_software": "AI-FlexSC Software",
+        "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+        "submenu_wcs": "Automated Equipment Management System (WCS)",
+        "nav_hardware": "Logistics",
+        "submenu_warehouse": "Intelligent Warehouse",
+        "submenu_logistics": "Intelligent Logistics",
+        "submenu_rfid": "RFID Electronic Tags",
+        "nav_digital": "Digital-Twin",
+        "nav_cases": "Success Cases",
+        "nav_about": "About Us",
+        "submenu_about": "Team Introduction",
+        "submenu_honor": "Company Honors",
+        "submenu_contact": "Contact Us",
+        // Footer
+        "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+        "footer_services": "All Services",
+        "footer_company_email": "Company Email",
+        "footer_company_phone": "130 5204 4828",
+        "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+        "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+        "footer_icp": "Zhejiang ICP No. 2023030316-1",
+        // Home Carousel
+        "hero_title": "Explore JFINDX's Automation Solutions",
+        "hero_text": "Agile and intelligent space solutions for industrial digital transformation",
+        "hero_cta": "Explore More",
+        "hero_title2": "Enter the New Era of Efficient Warehousing",
+        "hero_text2": "Innovative solutions for intelligent manufacturing spaces",
+        // About Us
+        "about_subtitle": "About Us",
+        "about_title": "Ningbo JFINDX Technology Co., Ltd.",
+        "about_text1": "Ningbo JFINDX Technology Co., Ltd. (JFINDX) specializes in the research and development of artificial intelligence algorithms in the field of intelligent manufacturing, providing flexible supply chain software and hardware solutions for manufacturing enterprises at home and abroad. The core products are the flexible supply chain management platform and intelligent warehouse solutions.",
+        "about_text2": "The core technical team of the company mainly comes from prestigious universities at home and abroad as well as world-class enterprises such as Alibaba and Intel. They have achieved numerous innovative results in key technologies like artificial intelligence algorithms, cloud platform software architecture, Internet of Things technology, and the integration of software and hardware control, driving the development of high-end manufacturing in domestic industries.",
+        "about_cta": "Learn More",
+        // Core Advantages
+        "feature1_title": "Technical DNA",
+        "feature1_text": "Core members come from well-known domestic and international enterprises such as Alibaba, Tencent, Intel, Atos, Compal Electronics, and Coretronic, possessing outstanding scientists and rich industrial experience, as well as years of practical experience in the industry.",
+        "feature2_title": "Core Advantages",
+        "feature2_text": "Focusing on AI algorithm-driven flexible supply chain solutions, integrating cloud platforms, Internet of Things, and software and hardware integration technologies, we provide intelligent transformation support for the manufacturing industry.",
+        "feature3_title": "Industry Positioning",
+        "feature3_text": "Expert in agile and intelligent manufacturing space solutions, dedicated to promoting the development of domestic industries towards high-end manufacturing.",
+        "solution_subtitle": "Recommended Solutions",
+        "solution_title": "Comprehensive Intelligent Warehouse Solution",
+        "solution_desc": "We are always ready to provide 7*24 support for your customers.",
+        "software_subtitle": "AI Flexible Supply Chain Software",
+        "software_title": "Intelligent Software System",
+        "software_desc": "Our software system integrates artificial intelligence technology to achieve intelligent management and optimization of the supply chain",
+        "wms_title": "JFINDX WMS Intelligent Warehouse Management System",
+        "wms_feature1": "Integrates business practices from multiple industry-leading enterprises",
+        "wms_feature2": "Highly productized, covering all warehouse business needs",
+        "wms_feature3": "Intelligent operation guidance, optimized business processes and strategies",
+        "wms_feature4": "Supports all-channel business and paperless operation management",
+        "wms_feature5": "Collaborates with various intelligent devices to enhance warehouse intelligence",
+        "wcs_title": "JFINDX WCS Warehouse Automation Equipment Management System",
+        "wcs_feature1": "Collaborates with multiple logistics equipment and adopts a unified control platform",
+        "wcs_feature2": "Perfectly supports integration with various WMS, ERP and other systems",
+        "wcs_feature3": "Connects with various intelligent devices",
+        "wcs_feature4": "Overall consideration of equipment control optimization",
+        "wcs_feature5": "Convenient for future equipment adjustment and expansion",
+        // Hardware Devices
+        "hardware_subtitle": "Intelligent Warehouse Logistics Hardware System",
+        "hardware_title": "Intelligent Warehouse Logistics Hardware Solution",
+        "hardware_desc": "Industrial-grade equipment integrating AIoT technology, supporting full-scenario applications from -40°C to 85°C",
+        "view_details": "View Details",
+        "warehouse_desc": "MTBF ≥ 10,000 hours",
+        "warehouse_desc1": "Includes four-way shuttle vehicles, stackers, and elevators, supporting double-deep storage and laser navigation",
+        "warehouse_desc2": "New energy vehicle batteries",
+        "warehouse_desc3": "Bicycle parts",
+        "logistics_desc": "Sorting efficiency of 4,500 items per hour",
+        "logistics_desc1": "Integrates AMR robots, dynamic weighing and volume measurement, supporting automatic path planning",
+        "logistics_desc2": "Automobiles and parts",
+        "logistics_desc3": "Electronic semiconductors",
+        "rfid_desc": "99.99% recognition accuracy",
+        "rfid_desc1": "Supports EPC C1G2 protocol, capable of recognizing over 200 tags per second, with anti-metal interference design",
+        "rfid_desc2": "Smart retail",
+        "rfid_desc3": "Asset management",
+        // Digital Twin System
+        "digital_subtitle": "Industrial Digital Twin",
+        "dts_title": "JFINDX DTS Industrial Digital Twin System",
+        "dts_feature1": "Reduce physical trial-and-error costs and shorten debugging cycles through simulation optimization",
+        "dts_feature2": "Optimize layout, inventory, and equipment maintenance to reduce resource waste",
+        "dts_feature3": "Real-time monitoring and predictive maintenance reduce the risk of failure and downtime",
+        "dts_feature4": "Data-driven simulation supports managers to optimize from a 'God's-eye view' perspective",
+        // Success Stories
+        "cases_subtitle": "Success Stories",
+        "cases_title": "Our Customer Cases",
+        "cases_desc": "We have provided automation solutions for leading enterprises in multiple industries",
+
+      },
+      "cn": {
+        // 通用
+        "page_title": "首页 - 捷方优制智能解决方案",
+        "current_lang": "CN",
+        "alt_logo": "捷方优制主Logo",
+        "alt_logo_light": "捷方优制浅色Logo",
+        "alt_prev": "上一张幻灯片",
+        "alt_next": "下一张幻灯片",
+        "alt_about1": "智能仓储解决方案图示",
+        "alt_about2": "系统架构图示",
+        "alt_footer_logo": "页脚Logo",
+        // 导航菜单
+        "nav_home": "首页",
+        "nav_solution": "整体解决方案",
+        "nav_software": "AI柔性供应链软件",
+        "submenu_wms": "智能仓储管理系统WMS",
+        "submenu_wcs": "自动化设备管理系统WCS",
+        "nav_hardware": "智能仓储物流硬件",
+        "submenu_warehouse": "智能仓储",
+        "submenu_logistics": "智能物流",
+        "submenu_rfid": "RFID电子标签",
+        "nav_digital": "数字孪生系统",
+        "nav_cases": "成功案例",
+        "nav_about": "关于我们",
+        "submenu_about": "团队介绍",
+        "submenu_honor": "公司荣誉",
+        "submenu_contact": "联系我们",
+        // 页脚
+        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+        "footer_services": "所有服务",
+        "footer_company_email": "公司邮箱",
+        "footer_company_phone": "130 5204 4828",
+        "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+        "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+        "footer_icp": "浙ICP备2023030316号-1",
+        // 首页轮播
+        "hero_title": "探索捷方优制自动化解决方案",
+        "hero_text": "面向工业数智化转型的敏捷智慧空间解决方案",
+        "hero_cta": "探索更多",
+        "hero_title2": "开启高效仓储新时代",
+        "hero_text2": "智能制造空间的创新解决方案",
+        // 关于我们
+        "about_subtitle": "关于我们",
+        "about_title": "宁波捷方优制科技有限公司",
+        "about_text1": "宁波捷方优制科技有限公司（JFINDX，捷方优制），专注于智能制造领域的人工智能算法研发，为海内外制造型企业提供柔性供应链的软硬件解决方案。核心产品为柔性供应链管理平台及智能仓储解决方案。",
+        "about_text2": "公司核心技术团队主要来自海内外名校及世界500强企业，如：阿里巴巴、Intel等，在人工智能算法、云平台软件架构、物联网技术、软硬件控制集成等关键技术上，取得多项创新成果，带动国内产业高端制造的发展。",
+        "about_cta": "了解更多",
+        // 核心优势
+        "feature1_title": "技术基因",
+        "feature1_text": "核心成员来自阿里巴巴、腾讯、Intel英特尔、AtoS源讯、仁宝电脑、中强光电等国内外知名企业，拥有优秀的科学家和丰富的产业经验，并有多年工业界落地经验。",
+        "feature2_title": "核心优势",
+        "feature2_text": "专注于人工智能算法驱动的柔性供应链解决方案，结合云平台、物联网和软硬件集成技术，为制造业提供智能化转型支持。",
+        "feature3_title": "行业定位",
+        "feature3_text": "敏捷智慧制造空间解决方案专家，致力于推动国内产业向高端制造发展。",
+        // 解决方案
+        "solution_subtitle": "解决方案推荐",
+        "solution_title": "智能仓储整体解决方案",
+        "solution_desc": "我们随时准备为您的客户提供7*24的支持。",
+        // 软件系统
+        "software_subtitle": "AI柔性供应链软件",
+        "software_title": "智能软件系统",
+        "software_desc": "我们的软件系统结合人工智能技术，实现供应链的智能化管理和优化",
+        "wms_title": "JFINDX WMS 智能仓储管理系统",
+        "wms_feature1": "集成多种行业领先企业业务实践",
+        "wms_feature2": "高度产品化，涵盖仓库全业务需求",
+        "wms_feature3": "智能化作业指导，优化的业务流程和策略",
+        "wms_feature4": "全渠道业务支持，无纸化作业管理",
+        "wms_feature5": "协同各类智能设备，提升仓储智能化",
+        "wcs_title": "JFINDX WCS 仓储自动化设备管理系统",
+        "wcs_feature1": "协同多种物流设备并采用统一控制平台",
+        "wcs_feature2": "完美支持各类WMS、ERP等系统对接",
+        "wcs_feature3": "对接各类智能设备",
+        "wcs_feature4": "整体考虑设备的控制优化",
+        "wcs_feature5": "便于未来设备调整与扩展",
+        // 硬件设备
+        "hardware_subtitle": "智能仓储物流硬件体系",
+        "hardware_title": "智能仓储物流硬件解决方案",
+        "hardware_desc": "集成AIoT技术的工业级设备，支持-40℃~85℃全场景应用",
+        "view_details": "查看详情",
+        "warehouse_desc": "MTBF ≥10000小时",
+        "warehouse_desc1": "包含四向穿梭车、堆垛机、提升机，支持双深位存储和激光导航",
+        "warehouse_desc2": "新能源汽车电池",
+        "warehouse_desc3": "自行车配件",
+        "logistics_desc": "4500件/小时分拣效率",
+        "logistics_desc1": "集成AMR机器人、动态称重和体积测量，支持自动路径规划",
+        "logistics_desc2": "汽车主机及零部件",
+        "logistics_desc3": "电子半导体",
+
+        "rfid_desc": "99.99%识别准确率",
+        "rfid_desc1": "支持EPC C1G2协议，每秒识别200+标签，抗金属干扰设计",
+        "rfid_desc2": "智慧零售",
+        "rfid_desc3": "资产管理",
+        // 数字孪生系统
+        "digital_subtitle": "工业数字孪生",
+        "dts_title": "JFINDX DTS 工业数字孪生系统",
+        "dts_feature1": "通过仿真优化减少物理试错成本，缩短调试周期",
+        "dts_feature2": "优化布局、库存及设备维护，减少资源浪费",
+        "dts_feature3": "实时监控与预测性维护降低故障停机风险",
+        "dts_feature4": "数据驱动的仿真支持管理者从'上帝视角'全局优化",
+        // 成功案例
+        "cases_subtitle": "成功案例",
+        "cases_title": "我们的客户案例",
+        "cases_desc": "我们已为多个行业的领先企业提供了自动化解决方案",
+
+
+
+
+      }
+    };
+
+    let currentLang = localStorage.getItem('language') || 'cn';
+
+    // 核心翻译函数
+    function updateLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
+
+      // 更新所有带翻译标记的元素
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      // 更新按钮显示
+      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+      // 更新页面标题
+      document.title = translations[lang]['page_title'];
+    }
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 初始化语言
+      updateLanguage(currentLang);
+
+      // 显示页面内容
+      document.body.style.visibility = 'visible';
+
+      // 绑定语言切换事件
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = e.target.getAttribute('data-lang');
+          updateLanguage(lang);
+
+          // 手动关闭下拉菜单（Bootstrap5方法）
+          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+          dropdown.hide();
+        });
+      });
+
+
+      // 初始化Bootstrap下拉组件
+      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+
+      // 初始化轮播组件
+      new Swiper('.cases-slider .swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 3,
+          }
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -718,286 +1001,7 @@
   <script src="static/js/isotope.pkgd.min.js"></script>
   <script src="static/js/custom.js"></script>
 
-  <script>
-    // 初始化语言系统
-    const translations = {
-      "en": {
-        "page_title": "Home - Jiefang Youzhi Intelligent Solutions",
-        "current_lang": "EN",
-        "alt_logo": "Main Logo of JFINDX",
-        "alt_logo_light": "Light Logo of JFINDX",
-        "alt_prev": "Previous Slide",
-        "alt_next": "Next Slide",
-        "alt_about1": "Illustration of Intelligent Warehouse Solution",
-        "alt_about2": "Illustration of System Architecture",
-        "alt_footer_logo": "Footer Logo",
-        // Navigation Menu
-        "nav_home": "Home",
-        "nav_solution": "OvrSolution",
-        "nav_software": "AI-FlexSC Software",
-        "submenu_wms": "Intelligent Warehouse Management System (WMS)",
-        "submenu_wcs": "Automated Equipment Management System (WCS)",
-        "nav_hardware": "Logistics",
-        "submenu_warehouse": "Intelligent Warehouse",
-        "submenu_logistics": "Intelligent Logistics",
-        "submenu_rfid": "RFID Electronic Tags",
-        "nav_digital": "Digital-Twin",
-        "nav_cases": "Success Cases",
-        "nav_about": "About Us",
-        "submenu_about": "Team Introduction",
-        "submenu_honor": "Company Honors",
-        "submenu_contact": "Contact Us",
-        // Footer
-        "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
-        "footer_services": "All Services",
-        "footer_company_email": "Company Email",
-        "footer_company_phone": "130 5204 4828",
-        "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
-        "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
-        "footer_icp": "Zhejiang ICP No. 2023030316-1",
-        // Home Carousel
-        "hero_title": "Explore JFINDX's Automation Solutions",
-        "hero_text": "Agile and intelligent space solutions for industrial digital transformation",
-        "hero_cta": "Explore More",
-        "hero_title2": "Enter the New Era of Efficient Warehousing",
-        "hero_text2": "Innovative solutions for intelligent manufacturing spaces",
-        // About Us
-        "about_subtitle": "About Us",
-        "about_title": "Ningbo JFINDX Technology Co., Ltd.",
-        "about_text1": "Ningbo JFINDX Technology Co., Ltd. (JFINDX) specializes in the research and development of artificial intelligence algorithms in the field of intelligent manufacturing, providing flexible supply chain software and hardware solutions for manufacturing enterprises at home and abroad. The core products are the flexible supply chain management platform and intelligent warehouse solutions.",
-        "about_text2": "The core technical team of the company mainly comes from prestigious universities at home and abroad as well as world-class enterprises such as Alibaba and Intel. They have achieved numerous innovative results in key technologies like artificial intelligence algorithms, cloud platform software architecture, Internet of Things technology, and the integration of software and hardware control, driving the development of high-end manufacturing in domestic industries.",
-        "about_cta": "Learn More",
-        // Core Advantages
-        "feature1_title": "Technical DNA",
-        "feature1_text": "Core members come from well-known domestic and international enterprises such as Alibaba, Tencent, Intel, Atos, Compal Electronics, and Coretronic, possessing outstanding scientists and rich industrial experience, as well as years of practical experience in the industry.",
-        "feature2_title": "Core Advantages",
-        "feature2_text": "Focusing on AI algorithm-driven flexible supply chain solutions, integrating cloud platforms, Internet of Things, and software and hardware integration technologies, we provide intelligent transformation support for the manufacturing industry.",
-        "feature3_title": "Industry Positioning",
-        "feature3_text": "Expert in agile and intelligent manufacturing space solutions, dedicated to promoting the development of domestic industries towards high-end manufacturing.",
-        "solution_subtitle": "Recommended Solutions",
-        "solution_title": "Comprehensive Intelligent Warehouse Solution",
-        "solution_desc": "We are always ready to provide 7*24 support for your customers.",
-        "software_subtitle": "AI Flexible Supply Chain Software",
-        "software_title": "Intelligent Software System",
-        "software_desc": "Our software system integrates artificial intelligence technology to achieve intelligent management and optimization of the supply chain",
-        "wms_title": "JFINDX WMS Intelligent Warehouse Management System",
-        "wms_feature1": "Integrates business practices from multiple industry-leading enterprises",
-        "wms_feature2": "Highly productized, covering all warehouse business needs",
-        "wms_feature3": "Intelligent operation guidance, optimized business processes and strategies",
-        "wms_feature4": "Supports all-channel business and paperless operation management",
-        "wms_feature5": "Collaborates with various intelligent devices to enhance warehouse intelligence",
-        "wcs_title": "JFINDX WCS Warehouse Automation Equipment Management System",
-        "wcs_feature1": "Collaborates with multiple logistics equipment and adopts a unified control platform",
-        "wcs_feature2": "Perfectly supports integration with various WMS, ERP and other systems",
-        "wcs_feature3": "Connects with various intelligent devices",
-        "wcs_feature4": "Overall consideration of equipment control optimization",
-        "wcs_feature5": "Convenient for future equipment adjustment and expansion",
-        // Hardware Devices
-        "hardware_subtitle": "Intelligent Warehouse Logistics Hardware System",
-        "hardware_title": "Intelligent Warehouse Logistics Hardware Solution",
-        "hardware_desc": "Industrial-grade equipment integrating AIoT technology, supporting full-scenario applications from -40°C to 85°C",
-        "view_details": "View Details",
-        "warehouse_desc": "MTBF ≥ 10,000 hours",
-        "warehouse_desc1": "Includes four-way shuttle vehicles, stackers, and elevators, supporting double-deep storage and laser navigation",
-        "warehouse_desc2": "New energy vehicle batteries",
-        "warehouse_desc3": "Bicycle parts",
-        "logistics_desc": "Sorting efficiency of 4,500 items per hour",
-        "logistics_desc1": "Integrates AMR robots, dynamic weighing and volume measurement, supporting automatic path planning",
-        "logistics_desc2": "Automobiles and parts",
-        "logistics_desc3": "Electronic semiconductors",
-        "rfid_desc": "99.99% recognition accuracy",
-        "rfid_desc1": "Supports EPC C1G2 protocol, capable of recognizing over 200 tags per second, with anti-metal interference design",
-        "rfid_desc2": "Smart retail",
-        "rfid_desc3": "Asset management",
-        // Digital Twin System
-        "digital_subtitle": "Industrial Digital Twin",
-        "dts_title": "JFINDX DTS Industrial Digital Twin System",
-        "dts_feature1": "Reduce physical trial-and-error costs and shorten debugging cycles through simulation optimization",
-        "dts_feature2": "Optimize layout, inventory, and equipment maintenance to reduce resource waste",
-        "dts_feature3": "Real-time monitoring and predictive maintenance reduce the risk of failure and downtime",
-        "dts_feature4": "Data-driven simulation supports managers to optimize from a 'God's-eye view' perspective",
-        // Success Stories
-        "cases_subtitle": "Success Stories",
-        "cases_title": "Our Customer Cases",
-        "cases_desc": "We have provided automation solutions for leading enterprises in multiple industries",
 
-      },
-      "cn": {
-        // 通用
-        "page_title": "首页 - 捷方优制智能解决方案",
-        "current_lang": "CN",
-        "alt_logo": "捷方优制主Logo",
-        "alt_logo_light": "捷方优制浅色Logo",
-        "alt_prev": "上一张幻灯片",
-        "alt_next": "下一张幻灯片",
-        "alt_about1": "智能仓储解决方案图示",
-        "alt_about2": "系统架构图示",
-        "alt_footer_logo": "页脚Logo",
-        // 导航菜单
-        "nav_home": "首页",
-        "nav_solution": "整体解决方案",
-        "nav_software": "AI柔性供应链软件",
-        "submenu_wms": "智能仓储管理系统WMS",
-        "submenu_wcs": "自动化设备管理系统WCS",
-        "nav_hardware": "智能仓储物流硬件",
-        "submenu_warehouse": "智能仓储",
-        "submenu_logistics": "智能物流",
-        "submenu_rfid": "RFID电子标签",
-        "nav_digital": "数字孪生系统",
-        "nav_cases": "成功案例",
-        "nav_about": "关于我们",
-        "submenu_about": "团队介绍",
-        "submenu_honor": "公司荣誉",
-        "submenu_contact": "联系我们",
-        // 页脚
-        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-        "footer_services": "所有服务",
-        "footer_company_email": "公司邮箱",
-        "footer_company_phone": "130 5204 4828",
-        "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-        "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
-        "footer_icp": "浙ICP备2023030316号-1",
-        // 首页轮播
-        "hero_title": "探索捷方优制自动化解决方案",
-        "hero_text": "面向工业数智化转型的敏捷智慧空间解决方案",
-        "hero_cta": "探索更多",
-        "hero_title2": "开启高效仓储新时代",
-        "hero_text2": "智能制造空间的创新解决方案",
-        // 关于我们
-        "about_subtitle": "关于我们",
-        "about_title": "宁波捷方优制科技有限公司",
-        "about_text1": "宁波捷方优制科技有限公司（JFINDX，捷方优制），专注于智能制造领域的人工智能算法研发，为海内外制造型企业提供柔性供应链的软硬件解决方案。核心产品为柔性供应链管理平台及智能仓储解决方案。",
-        "about_text2": "公司核心技术团队主要来自海内外名校及世界500强企业，如：阿里巴巴、Intel等，在人工智能算法、云平台软件架构、物联网技术、软硬件控制集成等关键技术上，取得多项创新成果，带动国内产业高端制造的发展。",
-        "about_cta": "了解更多",
-        // 核心优势
-        "feature1_title": "技术基因",
-        "feature1_text": "核心成员来自阿里巴巴、腾讯、Intel英特尔、AtoS源讯、仁宝电脑、中强光电等国内外知名企业，拥有优秀的科学家和丰富的产业经验，并有多年工业界落地经验。",
-        "feature2_title": "核心优势",
-        "feature2_text": "专注于人工智能算法驱动的柔性供应链解决方案，结合云平台、物联网和软硬件集成技术，为制造业提供智能化转型支持。",
-        "feature3_title": "行业定位",
-        "feature3_text": "敏捷智慧制造空间解决方案专家，致力于推动国内产业向高端制造发展。",
-        // 解决方案
-        "solution_subtitle": "解决方案推荐",
-        "solution_title": "智能仓储整体解决方案",
-        "solution_desc": "我们随时准备为您的客户提供7*24的支持。",
-        // 软件系统
-        "software_subtitle": "AI柔性供应链软件",
-        "software_title": "智能软件系统",
-        "software_desc": "我们的软件系统结合人工智能技术，实现供应链的智能化管理和优化",
-        "wms_title": "JFINDX WMS 智能仓储管理系统",
-        "wms_feature1": "集成多种行业领先企业业务实践",
-        "wms_feature2": "高度产品化，涵盖仓库全业务需求",
-        "wms_feature3": "智能化作业指导，优化的业务流程和策略",
-        "wms_feature4": "全渠道业务支持，无纸化作业管理",
-        "wms_feature5": "协同各类智能设备，提升仓储智能化",
-        "wcs_title": "JFINDX WCS 仓储自动化设备管理系统",
-        "wcs_feature1": "协同多种物流设备并采用统一控制平台",
-        "wcs_feature2": "完美支持各类WMS、ERP等系统对接",
-        "wcs_feature3": "对接各类智能设备",
-        "wcs_feature4": "整体考虑设备的控制优化",
-        "wcs_feature5": "便于未来设备调整与扩展",
-        // 硬件设备
-        "hardware_subtitle": "智能仓储物流硬件体系",
-        "hardware_title": "智能仓储物流硬件解决方案",
-        "hardware_desc": "集成AIoT技术的工业级设备，支持-40℃~85℃全场景应用",
-        "view_details": "查看详情",
-        "warehouse_desc": "MTBF ≥10000小时",
-        "warehouse_desc1": "包含四向穿梭车、堆垛机、提升机，支持双深位存储和激光导航",
-        "warehouse_desc2": "新能源汽车电池",
-        "warehouse_desc3": "自行车配件",
-        "logistics_desc": "4500件/小时分拣效率",
-        "logistics_desc1": "集成AMR机器人、动态称重和体积测量，支持自动路径规划",
-        "logistics_desc2": "汽车主机及零部件",
-        "logistics_desc3": "电子半导体",
-
-        "rfid_desc": "99.99%识别准确率",
-        "rfid_desc1": "支持EPC C1G2协议，每秒识别200+标签，抗金属干扰设计",
-        "rfid_desc2": "智慧零售",
-        "rfid_desc3": "资产管理",
-        // 数字孪生系统
-        "digital_subtitle": "工业数字孪生",
-        "dts_title": "JFINDX DTS 工业数字孪生系统",
-        "dts_feature1": "通过仿真优化减少物理试错成本，缩短调试周期",
-        "dts_feature2": "优化布局、库存及设备维护，减少资源浪费",
-        "dts_feature3": "实时监控与预测性维护降低故障停机风险",
-        "dts_feature4": "数据驱动的仿真支持管理者从'上帝视角'全局优化",
-        // 成功案例
-        "cases_subtitle": "成功案例",
-        "cases_title": "我们的客户案例",
-        "cases_desc": "我们已为多个行业的领先企业提供了自动化解决方案",
-
-
-
-
-      }
-    };
-
-    let currentLang = localStorage.getItem('language') || 'cn';
-
-    // 核心翻译函数
-    function updateLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('language', lang);
-
-      // 更新所有带翻译标记的元素
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-            element.placeholder = translations[lang][key];
-          } else {
-            element.textContent = translations[lang][key];
-          }
-        }
-      });
-
-      // 更新按钮显示
-      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
-
-      // 更新页面标题
-      document.title = translations[lang]['page_title'];
-    }
-    // 初始化
-    document.addEventListener('DOMContentLoaded', () => {
-      // 初始化语言
-      updateLanguage(currentLang);
-
-      // 绑定语言切换事件
-      document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-          e.preventDefault();
-          const lang = e.target.getAttribute('data-lang');
-          updateLanguage(lang);
-
-          // 手动关闭下拉菜单（Bootstrap5方法）
-          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
-          dropdown.hide();
-        });
-      });
-
-
-      // 初始化Bootstrap下拉组件
-      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
-
-      // 初始化轮播组件
-      new Swiper('.cases-slider .swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-          },
-          992: {
-            slidesPerView: 3,
-          }
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>
