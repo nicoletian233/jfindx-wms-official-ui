@@ -90,6 +90,11 @@
     loop: true,
     spaceBetween : 30,
     autoplay: false,
+    navigation: {
+      nextEl: '.swiper-btn-next', // 下一页按钮
+      prevEl: '.swiper-btn-prev' // 上一页按钮
+    },
+  
     pagination: {
       el: '.swiper-pagination',
       clickable: true
