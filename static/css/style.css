@@ -2551,8 +2551,8 @@ table p {
 }
 @media only screen and (max-width: 1199px) {
   .header-area.header-default .header-navigation-area .main-menu > li > a {
-    font-size: 15px;
-    margin: 0 8px;
+    font-size: 14px;
+    margin: 0 6px;
   }
 }
 .header-area.header-default .header-navigation-area .main-menu > li > a:hover {
