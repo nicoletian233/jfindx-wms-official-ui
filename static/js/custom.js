@@ -158,20 +158,20 @@
   });
 
   var teamSlider = new Swiper('.team-slider-container', {
-    slidesPerView : 4, // 默认显示6个幻灯片
+    slidesPerView : 3, // 默认显示6个幻灯片
     speed: 1000, // 切换速度
     loop: true, // 开启循环模式
     spaceBetween: 30, // 幻灯片之间的间距
     autoplay: false, // 是否自动播放
     breakpoints: {
       1200: {
-          slidesPerView: 4 // 在1200px宽度下显示5个
+          slidesPerView: 3 // 在1200px宽度下显示5个
       },
       992: {
-          slidesPerView: 4 // 在992px宽度下显示4个
+          slidesPerView: 3 // 在992px宽度下显示4个
       },
       769: {
-          slidesPerView: 4 // 在769px宽度下显示3个
+          slidesPerView: 3 // 在769px宽度下显示3个
       },
       576: {
           slidesPerView: 3 // 在576px宽度下显示2个

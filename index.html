@@ -73,6 +73,14 @@
     .service-area .container .row img {
       height: 100%;
     }
+
+    .news-item {
+      transition: transform 0.3s ease;
+    }
+
+    .news-item:hover {
+      transform: translateY(-5px);
+    }
   </style>
   <script>
     // 初始化语言系统
@@ -179,6 +187,15 @@
         "cases_subtitle": "Success Stories",
         "cases_title": "Our Customer Cases",
         "cases_desc": "We have provided automation solutions for leading enterprises in multiple industries",
+        // Latest news
+        "news_subtitle": "Latest News",
+        "news_title": "Our Latest News",
+        "news_category1": "Company News",
+        "news_date1": "November 2024",
+        "news_excerpt1": "Thanks to Tianjin Satellite TV for the interview, Jiefang Youzhi won the third prize in Tianjin 'Haihe Talent' Overseas Talent Innovation and Entrepreneurship Competition. The company stood out in the competition with its innovative model of entering industrial scenarios with scenario-based AI and promoting the development of warehousing and logistics with omnidirectional logistics robots, demonstrating its strong innovative capabilities. ",
+        "news_category3": "Project Breakthrough",
+        "news_date3": "May 2025",
+        "news_excerpt3": " Congratulations! Jiefang Youzhi has achieved another outstanding success in the field of scientific research. Its industrial metaverse scenarios have been included in the social science application research project of Kunshan City. The project 'Kunshan Metaverse: Research on Key Elements for Promoting the Integration of Digital and Real Industries in the Cultural Industry' has successfully passed the appraisal and been approved for completion, demonstrating the company's profound strength and outstanding achievements in the research of the integration of the metaverse and industries. ",
 
       },
       "cn": {
@@ -287,7 +304,15 @@
         "cases_subtitle": "成功案例",
         "cases_title": "我们的客户案例",
         "cases_desc": "我们已为多个行业的领先企业提供了自动化解决方案",
-
+        // 最新消息
+        "news_subtitle": "最新消息",
+        "news_title": "我们的最新动态",
+        "news_category1": "公司新闻",
+        "news_date1": "2024年11月",
+        "news_excerpt1": "感谢天津卫视采访，捷方优制斩获天津市 “海河英才” 海外人才创新创业大赛三等奖。公司凭借以场景式AI切入工业场景、以全向物流机器人推动仓储物流发展的创新模式，在大赛中脱颖而出，彰显强劲创新实力。",
+        "news_category3": "项目突破",
+        "news_date3": "2025年5月",
+        "news_excerpt3": "恭贺！捷方优制在科研领域再获佳绩。其工业元宇宙场景纳入昆山市社科应用研究课题 ，“昆山元宇宙：推动文化产业数实融合的关键要素研究” 项目顺利通过鉴定并准予结项，展现公司在元宇宙与产业融合研究的深厚实力与卓越成果。",
 
 
 
@@ -709,7 +734,7 @@
             <div class="col-md-4 mb-4">
               <div class="case-card h-100 shadow-hover">
                 <div class="case-img position-relative overflow-hidden">
-                  <img src="static/picture/w2.png" alt="智能物流" class="w-100 scale-effect" data-i18n="submenu_logistics">
+                  <img src="static/picture/w2.jpg" alt="智能物流" class="w-100 scale-effect" data-i18n="submenu_logistics">
                   <div class="case-overlay d-flex align-items-center justify-content-center">
                     <div class="text-center">
                       <a href="logistics.html" class="btn btn-success btn-sm" data-i18n="view_details">
@@ -738,7 +763,8 @@
             <div class="col-md-4 mb-4">
               <div class="case-card h-100 shadow-hover">
                 <div class="case-img position-relative overflow-hidden">
-                  <img src="static/picture/rfid.jpg" alt="RFID电子标签" class="w-100 scale-effect" data-i18n="submenu_rfid">
+                  <img src="static/picture/rfid.webp" alt="RFID电子标签" class="w-100 scale-effect"
+                    data-i18n="submenu_rfid">
                   <div class="case-overlay d-flex align-items-center justify-content-center">
                     <div class="text-center">
                       <a href="rfid.html" class="btn btn-warning btn-sm" data-i18n="view_details">
@@ -783,9 +809,9 @@
               </div>
             </div>
           </div>
-            <div class="digital-thumb">
-              <img src="static/picture/screen01.png" alt="数字孪生系统" class="img-fluid" data-i18n="digital_subtitle">
-            </div>
+          <div class="digital-thumb">
+            <img src="static/picture/screen01.png" alt="数字孪生系统" class="img-fluid" data-i18n="digital_subtitle">
+          </div>
         </div>
       </section>
       <!--== End Digital Twin Area ==-->
@@ -814,23 +840,24 @@
           <div class="logo-container">
             <div class="logo-slider">
               <!-- 原始Logo组 -->
-              <img src="static/picture/ma-logo.png" alt="COMPANY 1">
-              <img src="static/picture/b-logo.png" alt="COMPANY 2">
-              <!-- <img src="static/picture/ban-logo.png" alt="COMPANY 3"> -->
-              <img src="static/picture/guo-logo.png" alt="COMPANY 4">
-              <img src="static/picture/hao-logo.png" alt="COMPANY 5">
-              <img src="static/picture/feng-logo.png" alt="COMPANY 6">
               <img src="static/picture/sheng-logo.png" alt="COMPANY 7">
               <img src="static/picture/hongqi-logo.png" alt="COMPANY 8">
+              <img src="static/picture/gui-logo.png" alt="COMPANY 9">
+              <img src="static/picture/tai-logo.png" alt="COMPANY 10">
+              <img src="static/picture/ma-logo.png" alt="COMPANY 1">
+              <img src="static/picture/b-logo.png" alt="COMPANY 2">
+              <img src="static/picture/guo-logo.png" alt="COMPANY 4">
+              <img src="static/picture/hao-logo.png" alt="COMPANY 5">
+
               <!-- 复制Logo组实现无缝滚动 -->
-              <img src="static/picture/ma-logo.png" alt="COMPANY 1">
-              <img src="static/picture/b-logo.png" alt="COMPANY 2">
-              <!-- <img src="static/picture/ban-logo.png" alt="COMPANY 3"> -->
-              <img src="static/picture/guo-logo.png" alt="COMPANY 4">
-              <img src="static/picture/hao-logo.png" alt="COMPANY 5">
-              <img src="static/picture/feng-logo.png" alt="COMPANY 6">
               <img src="static/picture/sheng-logo.png" alt="COMPANY 7">
               <img src="static/picture/hongqi-logo.png" alt="COMPANY 8">
+              <img src="static/picture/gui-logo.png" alt="COMPANY 9">
+              <img src="static/picture/tai-logo.png" alt="COMPANY 10">
+              <img src="static/picture/ma-logo.png" alt="COMPANY 1">
+              <img src="static/picture/b-logo.png" alt="COMPANY 2">
+              <img src="static/picture/guo-logo.png" alt="COMPANY 4">
+              <img src="static/picture/hao-logo.png" alt="COMPANY 5">
             </div>
           </div>
         </div>
@@ -838,7 +865,54 @@
       <!--== End Cases Area ==-->
 
 
-
+      <!--== Start Blog Area Wrapper ==-->
+      <section class="blog-area blog-default-area position-relative">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 m-auto">
+              <div class="section-title text-center">
+                <h4 class="subtitle" data-i18n="news_subtitle">最新消息</h4>
+                <h2 class="text-center mb-5" data-i18n="news_title">我们的最新动态</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row g-10" id="news-container">
+            <!-- 新闻项模板 -->
+            <div class="col-md-12 col-lg-6 news-item ">
+              <div class="case-card mb-4" style="padding: 20px;">
+                <article class="solution-feature-card">
+                  <div class="news-meta d-flex justify-content-between mb-3">
+                    <span class="badge bg-primary" data-i18n="news_category1">公司新闻</span>
+                    <time datetime="2024-03-15" data-i18n="news_date1">2024年11月</time>
+                  </div>
+                  <p data-i18n="news_excerpt1">感谢天津卫视采访，捷方优制斩获天津市 “海河英才”
+                    海外人才创新创业大赛三等奖。公司凭借以场景式AI切入工业场景、以全向物流机器人推动仓储物流发展的创新模式，在大赛中脱颖而出，彰显强劲创新实力。
+                  </p>
+                  <div class="thumb">
+                    <img src="static/picture/news1.png" alt="Image" width="auto" height="308">
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-6 news-item">
+              <div class="case-card mb-4" style="padding: 20px;">
+                <article class="solution-feature-card">
+                  <div class="news-meta d-flex justify-content-between mb-3">
+                    <span class="badge bg-warning text-dark" data-i18n="news_category3">项目突破</span>
+                    <time datetime="2024-03-05" data-i18n="news_date3">2025年5月</time>
+                  </div>
+                  <p data-i18n="news_excerpt3">恭贺！捷方优制在科研领域再获佳绩。其工业元宇宙场景纳入昆山市社科应用研究课题 ，“昆山元宇宙：推动文化产业数实融合的关键要素研究”
+                    项目顺利通过鉴定并准予结项，展现公司在元宇宙与产业融合研究的深厚实力与卓越成果。</p>
+                  <div class="thumb">
+                    <img src="static/picture/news2.png" alt="Image" width="auto" height="208">
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--== End Blog Area Wrapper ==-->
 
 
     </main>
@@ -888,7 +962,7 @@
                           data-i18n="submenu_rfid">rfid电子标签</span></a>
                     </li>
                     <li><a href="digital.html"><i class="icofont-minus"></i><span
-                      data-i18n="nav_digital">工业数字孪生系统</span></a>
+                          data-i18n="nav_digital">工业数字孪生系统</span></a>
                     </li>
                   </ul>
                 </nav>
@@ -900,7 +974,7 @@
                 <nav class="widget-menu-wrap">
                   <ul class="nav-menu nav">
                     <li><a href="index.html"><i class="icofont-minus"></i><span data-i18n="nav_home">首页</span></a></li>
-                    
+
                     <li><a href="cases.html"><i class="icofont-minus"></i><span data-i18n="nav_cases">成功案例</span></a>
                     </li>
                     <li><a href="about.html"><i class="icofont-minus"></i><span

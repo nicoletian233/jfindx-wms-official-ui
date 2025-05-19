@@ -28,147 +28,55 @@
   <link href="static/css/style.css" rel="stylesheet">
 
   <style>
-    /* 基础样式 */
-    .timeline-section {
-      padding: 4rem 0;
-      background: linear-gradient(45deg, #f8f9fa 0%, #f1f3f5 100%);
-    }
-
-    /* 时间轴容器 */
-    .timeline-wrapper {
+    /* 新增荣誉页面专属样式 */
+    .timeline-card {
+      border-left: 3px solid #2A5298;
       position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 0;
+      padding-left: 2rem;
+      margin-left: 1rem;
     }
 
-    /* 主轴线 */
-    .timeline-wrapper::before {
+    .timeline-card::before {
       content: '';
       position: absolute;
+      left: -10px;
       top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 100%;
-      background: #265c9d;
-      border-radius: 2px;
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-    }
-
-    /* 时间节点容器 */
-    .timeline-item {
-      position: relative;
-      width: 100%;
-      margin-bottom: 4rem;
-      display: flex;
-      align-items: center;
-      transition: all 0.3s ease;
-    }
-
-    /* 节点图标 */
-    .timeline-node {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 56px;
-      height: 56px;
-      background: #265c9d;
-      border: 3px solid white;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 3px solid #2A5298;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-      z-index: 2;
+    }
+
+    .cert-card {
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(42, 82, 152, 0.1);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .partner-logo {
+      filter: grayscale(100%);
       transition: all 0.3s ease;
+      opacity: 0.7;
     }
 
-    .timeline-node i {
-      font-size: 1.5rem;
-      color: white;
+    .partner-logo:hover {
+      filter: grayscale(0);
+      opacity: 1;
     }
 
-    /* 时间卡片 */
-    .timeline-card {
-      width: calc(50% - 4rem);
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-card {
-      margin-left: auto;
-      transform: translateX(2rem);
-    }
-
-    .timeline-item:nth-child(even) .timeline-card {
-      margin-right: auto;
-      transform: translateX(-2rem);
-    }
-
-    /* 年份标签 */
-    .timeline-year {
-      position: absolute;
-      top: -24px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #265c9d;
-      color: white;
-      padding: 4px 16px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
-    }
-
-    /* 交互效果 */
-    .timeline-item:hover .timeline-node {
-      transform: translateX(-50%) scale(1.1);
-      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
-    }
-
-    .timeline-item:hover .timeline-card {
-      transform: translateX(0) !important;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    /* 移动端适配 */
     @media (max-width: 768px) {
-      .timeline-wrapper::before {
-        left: 32px;
-      }
-
-      .timeline-node {
-        left: 32px;
-      }
-
       .timeline-card {
-        width: calc(100% - 6rem);
-        margin-left: 6rem !important;
-        transform: none !important;
+        margin-left: 0.5rem;
+        padding-left: 1.5rem;
       }
 
-      .timeline-year {
-        left: 32px;
-        transform: none;
+      .cert-card-body {
+        padding: 1rem;
       }
-    }
-
-    /* 卡片内容 */
-    .card-body {
-      padding: 1.5rem;
-    }
-
-    .card-title {
-      color: #1e293b;
-      margin-bottom: 0;
-    }
-
-    .card-text {
-      color: #64748b;
-      line-height: 1.6;
     }
   </style>
   <!--=======================Javascript============================-->
@@ -252,7 +160,11 @@
         "honor2022_date": "Sep 2022",
         "honor2022_desc": "Selected by MIT Technology Review",
 
-
+        // 认证证书
+        "cert_title": "Professional Certifications",
+        "cert_subtitle": "Our Authoritative Qualifications",
+        "cert1_title": "Quality Management System Certification",
+        "alt_iso": "ISO 9001 Certification",
 
         // 合作伙伴
         "partner_title": "Strategic Partners",
@@ -331,27 +243,23 @@
         "timeline_subtitle": "见证我们的成长历程",
 
         // 荣誉项
-        "honor2018_title": "重庆市江北区创业创新大赛：优胜奖",
-        "honor2018_date": "2023年3月",
+        "honor2018_title": "第四届中国工业互联网大赛  新锐组： 全国二等奖",
+        "honor2018_date": "2022年12月",
         "honor2018_desc": "",
 
-        "honor2020_title": "上海市 闵行区 春申金字塔杰出人才",
-        "honor2020_date": "2023年4月",
+        "honor2020_title": "第七届“创客中国”人工智能创新应用产业链赛道赛：全国优胜奖",
+        "honor2020_date": "2022年12月",
         "honor2020_desc": "",
 
-        "honor2022_title": "第三届海聚英才全球创新创业大赛 创业组：  全国铜奖  (全国8118组参赛队伍，获得铜奖)",
-        "honor2022_date": "2023年9月",
+        "honor2022_title": "重庆市江北区创业创新大赛：优胜奖",
+        "honor2022_date": "2023年3月",
         "honor2022_desc": "",
 
-        "honor2023_title": "上海市 东方英才 (原上海市领军人才)创业项目 青年创业人才",
-        "honor2023_date": "2023年12月",
-        "honor2023_desc": "",
-
-        "honor2024_title": "天津市 海河英才 海外人才创新创业大赛 三等奖",
-        "honor2024_date": "2024年11月",
-        "honor2024_desc": "",
-
-
+        // 认证证书
+        "cert_title": "权威认证",
+        "cert_subtitle": "我们获得的专业资质证明",
+        "cert1_title": "质量管理体系认证",
+        "alt_iso": "第七届“创客中国”人工智能创新应用产业链赛道赛：全国优胜奖证书",
 
         // 合作伙伴
         "partner_title": "战略合作伙伴",
@@ -508,80 +416,88 @@
             <p class="text-muted" data-i18n="timeline_subtitle">见证我们的成长历程</p>
           </div>
 
-          <!-- 时间轴容器 -->
-          <div class="timeline-wrapper">
-            <!-- 2018 -->
-            <div class="timeline-item">
-              <div class="timeline-node">
-                <i class="bi bi-rocket"></i>
-              </div>
+          <div class="row g-4">
+            <!-- 2022 -->
+            <div class="col-md-6 col-lg-4">
               <div class="timeline-card">
-                <div class="card-body">
-                  <div class="timeline-year" data-i18n="honor2018_date"></div>
-                  <h5 class="card-title" data-i18n="honor2018_title"></h5>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2020 -->
-            <div class="timeline-item">
-              <div class="timeline-node">
-                <i class="bi bi-award"></i>
-              </div>
-              <div class="timeline-card">
-                <div class="card-body">
-                  <div class="timeline-year" data-i18n="honor2020_date"></div>
-                  <h5 class="card-title" data-i18n="honor2020_title"></h5>
+                <div class="cert-card bg-white p-4 rounded-3 shadow-sm">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white rounded-3 p-2 me-3">
+                      <i class="bi bi-trophy fs-4"></i>
+                    </div>
+                    <div>
+                      <h5 data-i18n="honor2018_title">第四届中国工业互联网大赛 新锐组： 全国二等奖</h5>
+                      <span class="text-muted small" data-i18n="honor2018_date">2022年12月</span>
+                    </div>
+                  </div>
+                  <p class="text-muted" data-i18n="honor2018_desc">获得国家科技部认证，研发投入占比超过15%</p>
                 </div>
               </div>
             </div>
 
             <!-- 2022 -->
-            <div class="timeline-item">
-              <div class="timeline-node">
-                <i class="bi bi-globe2"></i>
-              </div>
+            <div class="col-md-6 col-lg-4">
               <div class="timeline-card">
-                <div class="card-body">
-                  <div class="timeline-year" data-i18n="honor2022_date"></div>
-                  <h5 class="card-title" data-i18n="honor2022_title"></h5>
+                <div class="cert-card bg-white p-4 rounded-3 shadow-sm">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white rounded-3 p-2 me-3">
+                      <i class="bi bi-shield-check fs-4"></i>
+                    </div>
+                    <div>
+                      <h5 data-i18n="honor2020_title">第七届“创客中国”人工智能创新应用产业链赛道赛：全国优胜奖</h5>
+                      <span class="text-muted small" data-i18n="honor2020_date">2022年12月</span>
+                    </div>
+                  </div>
+                  <p class="text-muted" data-i18n="honor2020_desc">质量管理体系认证，覆盖研发到交付全流程</p>
                 </div>
               </div>
             </div>
 
             <!-- 2023 -->
-            <div class="timeline-item">
-              <div class="timeline-node">
-                <i class="bi bi-people"></i>
-              </div>
+            <div class="col-md-6 col-lg-4">
               <div class="timeline-card">
-                <div class="card-body">
-                  <div class="timeline-year" data-i18n="honor2023_date"></div>
-                  <h5 class="card-title" data-i18n="honor2023_title"></h5>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2024 -->
-            <div class="timeline-item">
-              <div class="timeline-node">
-                <i class="bi bi-graph-up-arrow"></i>
-              </div>
-              <div class="timeline-card">
-                <div class="card-body">
-                  <div class="timeline-year" data-i18n="honor2024_date"></div>
-                  <h5 class="card-title" data-i18n="honor2024_title"></h5>
+                <div class="cert-card bg-white p-4 rounded-3 shadow-sm">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white rounded-3 p-2 me-3">
+                      <i class="bi bi-globe fs-4"></i>
+                    </div>
+                    <div>
+                      <h5 data-i18n="honor2022_title">重庆市江北区创业创新大赛：优胜奖</h5>
+                      <span class="text-muted small" data-i18n="honor2022_date">2023年3月</span>
+                    </div>
+                  </div>
+                  <p class="text-muted" data-i18n="honor2022_desc"></p>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
+      <!-- 认证证书展示 -->
+      <section class="section-padding bg-light">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h3 data-i18n="cert_title">权威认证</h3>
+            <p class="text-muted" data-i18n="cert_subtitle">我们获得的专业资质证明</p>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="post-details-content">
+                <div class="post-details-body">
+                  <div class="thumb">
+                    <img class="w-100" src="static/picture/zhuanli.png" alt="Image" width="1170" height="550">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- 战略合作伙伴 -->
-      <section class="section-padding bg-light">
+      <section class="section-padding">
         <div class="container">
           <div class="text-center mb-5">
             <h3 data-i18n="partner_title">战略合作伙伴</h3>
@@ -672,8 +588,8 @@
                           data-i18n="submenu_rfid">rfid电子标签</span></a>
                     </li>
                     <li><a href="digital.html"><i class="icofont-minus"></i><span
-                          data-i18n="nav_digital">工业数字孪生系统</span></a>
-                    </li>
+                      data-i18n="nav_digital">工业数字孪生系统</span></a>
+                </li>
                   </ul>
                 </nav>
               </div>
@@ -684,7 +600,7 @@
                 <nav class="widget-menu-wrap">
                   <ul class="nav-menu nav">
                     <li><a href="index.html"><i class="icofont-minus"></i><span data-i18n="nav_home">首页</span></a></li>
-
+                    
                     <li><a href="cases.html"><i class="icofont-minus"></i><span data-i18n="nav_cases">成功案例</span></a>
                     </li>
                     <li><a href="about.html"><i class="icofont-minus"></i><span

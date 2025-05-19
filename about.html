@@ -103,6 +103,119 @@
       transition: all 0.3s ease;
       z-index: 10;
     }
+/* 时间轴连线样式 */
+.timeline-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* 桌面端三列布局 */
+@media (min-width: 992px) {
+  .row.g-4 {
+    position: relative;
+  }
+
+  /* 水平连线 */
+  .timeline-card::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 85%;
+    width: 30%;
+    height: 2px;
+    background: #007bff;
+    z-index: -1;
+  }
+
+  /* 每行最后一个卡片不显示水平连线 */
+  .timeline-card:nth-child(3n+3)::after {
+    display: none;
+  }
+
+  /* 行间垂直线 */
+  .timeline-card:nth-child(3n+3)::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 85%;
+    width: 2px;
+    height: 120%;
+    background: #007bff;
+    z-index: -1;
+  }
+
+  /* 偶数行反向连线 */
+  .timeline-card:nth-child(3n+4)::after,
+  .timeline-card:nth-child(3n+5)::after {
+    left: auto;
+    right: 85%;
+    width: 30%;
+  }
+
+  .timeline-card:nth-child(3n+4)::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 15%;
+    width: 2px;
+    height: 120%;
+    background: #007bff;
+  }
+}
+
+/* 平板端两列布局 */
+@media (max-width: 991px) and (min-width: 768px) {
+  .timeline-card:nth-child(even)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    width: 15px;
+    height: 2px;
+    background: #007bff;
+    z-index: -1;
+  }
+
+  .timeline-card:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    width: 15px;
+    height: 2px;
+    background: #007bff;
+    z-index: -1;
+  }
+
+  .timeline-card:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    top: calc(50% + 40px);
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: #007bff;
+    z-index: -1;
+  }
+}
+
+/* 手机端垂直连线 */
+@media (max-width: 767px) {
+  .timeline-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 24px;
+    width: 2px;
+    height: 40px;
+    background: #007bff;
+    z-index: -1;
+  }
+
+  .timeline-card:first-child::before {
+    display: none;
+  }
+}
   </style>
     <!--=======================Javascript============================-->
     <script>
@@ -155,6 +268,7 @@
           "about_desc1": "Our team consists of industry elites, adhering to the mission of focusing on customer needs, providing customized automation and intelligent solutions to help enterprises achieve efficient operation and sustainable development, and committed to injecting intelligent innovation power for customers. At the same time, we also provide flexible supply chain software and hardware solutions for manufacturing enterprises at home and abroad. The core products are flexible supply chain management platform and intelligent warehousing solutions.",
           "about_desc2": "The company's core technical team mainly comes from well-known universities at home and abroad and Fortune 500 companies, such as Alibaba, Intel, etc., with excellent scientific research background and rich industrial experience. The company has made a number of innovative achievements in key technologies such as artificial intelligence algorithms, cloud platform software architecture, Internet of Things technology, and software and hardware control integration, driving the development of high-end manufacturing in domestic industries.",
           "about_desc3": "Our main businesses include: automated warehousing hardware equipment, intelligent warehousing management software WMS, automated equipment management system WCS, and digital twin system.",
+          "about_desc4": "As a provider of flexible supply chain software and hardware solutions focusing on artificial intelligence algorithms, the company's headquarters is located in Ningbo High-tech Zone, and its business network covers both domestic and overseas markets.There is a business office in Chongqing in China, and cooperative branches have been established in Penang, Malaysia and Sydney, Australia overseas, building a global service system. On the supply chain side, the company has cooperated with and invested in several hardware production factories in Suzhou, achieving a full-chain layout from technology research and development to production implementation."  ,
           "contact_us": "Contact Us",
           "contact_title": "Contact Us",
           "contact_desc": "If you are interested in our automation solutions or have any questions, please feel free to contact us. We look forward to starting a journey of cooperation with you.",
@@ -221,6 +335,7 @@
           "about_desc1": "我们的团队由行业精英组成，秉持着以客户需求为核心，通过定制化自动化智能化解决方案，助力企业实现高效运营与可持续发展的使命，致力于为客户注入智能创新动力。同时也为海内外制造型企业提供柔性供应链的软硬件解决方案。核心产品为柔性供应链管理平台及智能仓储解决方案。",
           "about_desc2": "公司核心技术团队主要来自海内外名校及世界 500 强企业，如：阿里巴巴、Intel等，有优秀的科学家科研背景及丰富的产业经验。公司在人工智能算法、云平台软件架构、物联网技术、软硬件控制集成等关键技术上，取得多项创新成果，带动国内产业高端制造的发展。",
           "about_desc3": "我们的主要业务包含：自动化仓储硬件设备、智能仓储管理软件WMS、自动化设备管理系统WCS、工业数字孪生系统这四大主要业务板块。",
+          "about_desc4": "作为聚焦人工智能算法的柔性供应链软硬件解决方案商，公司总部坐落于宁波高新区，业务网络覆盖海内外。国内设有重庆商务办事处，海外于马来西亚槟城、澳大利亚悉尼成立合作分公司，构建全球化服务体系。在供应链端，公司于苏州合作及投资数家硬件生产工厂，实现从技术研发到生产落地的全链条布局。",
           "contact_us": "联系我们",
           "contact_title": "联系我们",
           "contact_desc": "如果您对我们的自动化解决方案感兴趣或有任何疑问，请随时与我们联系。我们期待与您开启合作之旅。",
@@ -455,10 +570,6 @@
                 <img src="static/picture/home-about1.png" alt="Image" width="400" height="649">
                 <div class="about-thumb-shape"></div>
               </div>
-              <div class="about-thumb" style="margin-top: 50px;">
-                <img src="static/picture/home-about2.png" alt="Image" width="400" height="649">
-                <div class="about-thumb-shape"></div>
-              </div>
             </div>
             <div class="col-md-7">
               <div class="about-content">
@@ -471,10 +582,28 @@
                   <p data-i18n="about_desc2">公司核心技术团队主要来自海内外名校及世界 500
                     强企业，如：阿里巴巴、Intel等，有优秀的科学家科研背景及丰富的产业经验。公司在人工智能算法、云平台软件架构、物联网技术、软硬件控制集成等关键技术上，取得多项创新成果，带动国内产业高端制造的发展。
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-area about-style1-area bg-light">
+        <div class="container">
+          <div class="row about-content-style1">
+            <div class="col-md-5">
+              <div class="about-content">
+                <div class="section-title">
+                  <p data-i18n="about_desc4">
+                    作为聚焦人工智能算法的柔性供应链软硬件解决方案商，公司总部坐落于宁波高新区，业务网络覆盖海内外。国内设有重庆商务办事处，海外于马来西亚槟城、澳大利亚悉尼成立合作分公司，构建全球化服务体系。在供应链端，公司于苏州合作及投资数家硬件生产工厂，实现从技术研发到生产落地的全链条布局。
+                  </p>
                   <p data-i18n="about_desc3">我们的主要业务包含：自动化仓储硬件设备、智能仓储管理软件WMS、自动化设备管理系统WCS、工业数字孪生系统这四大主要业务板块。</p>
                   <a href="contact.html" class="btn-theme" data-i18n="contact_us">联系我们</a>
                 </div>
               </div>
+            </div>
+            <div class="col-md-7">
+                <img src="static/picture/home-about2.png" alt="Image" >
             </div>
           </div>
         </div>
@@ -518,20 +647,8 @@
                           <div class="content">
                             <div class="member-info">
                               <h4 class="name">闫玮成</h4>
-                              <h6 class="designation">AI算法技术负责人</h6>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="team-member" data-member="chen">
-                          <div class="thumb">
-                            <img src="static/picture/chenqingying.png" alt="陈庆盈" width="161" height="199">
-                          </div>
-                          <div class="content">
-                            <div class="member-info">
-                              <h4 class="name">陈庆盈</h4>
-                              <h6 class="designation">机器人技术顾问</h6>
+                              <h6 class="designation">AI算法技术负责人
+                              </h6>
                             </div>
                           </div>
                         </div>
@@ -563,27 +680,15 @@
                   <h4>方华韦</h4>
                   <h6>领军人物</h6>
                   <h6>台湾大学计算机工程研究所博士</h6>
-                  <p>宁波捷方优制创始人CEO，
-                    马来西亚JFindX(M)SdnBhd创始人CEO，
-                    上海宾通智能合伙人CTO，
-                    中科院宁波材料所先进制造技术研究所客座教授，
-                    西交利物浦大学、香港中文大学 业界导师、访问学者，
-                    上海市 东方英才/春申金字塔杰出人才，
-                    深耕AloT与AI视觉，拥有多项专利，获中国工业互联网二等奖、海聚英才铜奖等国家级奖项，历任阿里高级架构师、滚石CTO。</p>
+                  <p>宁波捷方优制 创始人CEO，马来西亚JFindX (M) Sdn Bhd 创始人CEO， 上海宾通智能 合伙人CTO，中国科学院宁波材料所 客座教授，西交利物浦大学、香港中文大学 业界导师、访问学者，深耕AI视觉算法、云服务及AloT架构等，拥有多项专利。</p>
+                  <p style="margin-top: 15px;">获得上海市 东方英才/春申金字塔杰出人才，中国工业互联网二等奖、海聚英才铜奖等国家级奖项，历任各大上市公司企业高管及CTO，如：阿里巴巴高级架构师、滚石CTO、中强光电集团、仁宝集团、Intel、Atos、Oplink等等。</p>
                 </div>
                 <div id="yan-desc" class="member-desc" style="display:none;">
                   <h4>闫玮成</h4>
                   <h6>AI算法技术负责人</h6>
-                  <h6>悉尼大学(QS18)人工智能博士候选人 / 英属哥伦比亚大学(QS38)应用科学硕士
+                  <h6>悉尼大学 人工智能博士候选人 / 英属哥伦比亚大学 应用科学硕士
                   </h6>
-                  <p>现任澳大利亚GENAVISTA AI联合创始人，
-                    澳大利亚CANVA可画算法负责人，专注生成式AI与计算机视觉，曾任Leonardo.Ai核心成员、Intel资深工程师，推动AI技术产业化。</p>
-                </div>
-                <div id="chen-desc" class="member-desc" style="display:none;">
-                  <h4>陈庆盈</h4>
-                  <h6>机器人技术顾问</h6>
-                  <h6>中山大学(台湾)机械与机电工程博士</h6>
-                  <p>中科院宁波材料所先进制造技术研究所研究员/博士生导师、浙江省千人计划专家。主攻精密运动与先进机器人，持有十余项专利，曾任台湾海洋科技中心助理研究员，链接学术与工业自动化应用。</p>
+                  <p>现任澳大利亚GENAVISTA AI联合创始人，专注生成式AI与计算机视觉，曾任Leonardo.Ai核心成员、Intel资深工程师，推动AI技术产业化。</p>
                 </div>
                 <div id="ma-desc" class="member-desc" style="display:none;">
                   <h4>马俊捷</h4>

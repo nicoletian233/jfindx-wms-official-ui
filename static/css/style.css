@@ -8740,7 +8740,8 @@ table p {
   position: absolute;
   left: -70px;
   top: 15px;
-  width: 100px;
+  width: 150px;
+  /* padding: 5px 10px; */
   text-align: center;
   font-weight: bold;
   color: #2a5298;
