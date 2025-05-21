@@ -237,31 +237,7 @@
       marker.setLabel(label);
     }
 
-    // 提交表单
-    document.getElementById('contact-form').addEventListener('submit', async function (e) {
-      e.preventDefault();
-
-      const form = e.target;
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        });
-
-        if (response.ok) {
-          alert(currentLang === 'cn' ? "提交成功！我们会尽快联系您。" : "Submitted successfully! We will contact you soon.");
-          form.reset();
-        } else {
-          alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
-        }
-      } catch (error) {
-        alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
-      }
-    });
-  </script>
+   </script>
 </head>
 
 <body>
@@ -609,7 +585,32 @@
     </aside>
     <!--== End Side Menu ==-->
   </div>
+<script>
+   // 提交表单
+   document.getElementById('contact-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
 
+      const form = e.target;
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        if (response.ok) {
+          alert(currentLang === 'cn' ? "提交成功！我们会尽快联系您。" : "Submitted successfully! We will contact you soon.");
+          form.reset();
+        } else {
+          alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
+        }
+      } catch (error) {
+        alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
+      }
+    });
+</script>
 
   <script src="https://api.map.baidu.com/api?v=3.0&ak=rIZVF5yTw4RRyKKbxi9fg5ZGaA4v4W8O&callback=initMap"></script>
   <!--=== Modernizr Min Js ===-->
