@@ -118,310 +118,316 @@
       transform: none !important;
     }
   </style>
-    <script>
-      // 扩展翻译数据
-      const translations = {
-        "en": {
-          "page_title": "Digital Twin System - JFindX",
-          "current_lang": "EN",
-          "alt_logo": "Main Logo of JFINDX",
-          "alt_logo_light": "Light Logo of JFINDX",
-          "alt_prev": "Previous Slide",
-          "alt_next": "Next Slide",
-          "alt_about1": "Illustration of Intelligent Warehouse Solution",
-          "alt_about2": "Illustration of System Architecture",
-          "alt_footer_logo": "Footer Logo",
-          // Navigation Menu
-          "nav_home": "Home",
-          "nav_solution": "OvrSolution",
-          "nav_software": "AI-FlexSC Software",
-          "submenu_wms": "Intelligent Warehouse Management System (WMS)",
-          "submenu_wcs": "Automated Equipment Management System (WCS)",
-          "nav_hardware": "Logistics",
-          "submenu_warehouse": "Intelligent Warehouse",
-          "submenu_logistics": "Intelligent Logistics",
-          "submenu_warehouse1": "Intelligent Warehousing Equipment",
-          "submenu_logistics1": "Intelligent logistics equipment",
-          "submenu_rfid": "RFID Electronic Tags",
-          "nav_digital": "Digital-Twin",
-          "nav_cases": "Success Cases",
-          "nav_about": "About Us",
-          "submenu_about": "Team Introduction",
-          "submenu_honor": "Company Honors",
-          "submenu_contact": "Contact Us",
-          // Footer
-          "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
-          "footer_services": "All Services",
-          "footer_company_email": "Company Email",
-          "footer_company_phone": "+86 130 5204 4828",
-          "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
-          "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
-          "footer_icp": "Zhejiang ICP No. 2023030316-1",
-  
-          "home": "Home",
-          "wms": "WMS System",
-          "wcs": "WCS System",
-          "digital": "Digital Twin",
-          "about": "About Us",
-          "digital_title": "Digital Twin System",
-          "digital_subtitle": "Create a virtual mirror of your warehouse facility. Anticipate problems in advance, optimize operational decisions, and open a new realm of intelligent warehousing.",
-          "digital_model_title": "3D Digital Twin Model Showcase",
-          "loading": "Loading...",
-          "loading_model": "Loading 3D model...",
-          "rotate_view": "Rotate View",
-          "zoom_in": "Zoom In",
-          "zoom_out": "Zoom Out",
-          "creation_process_title": "Digital Twin Creation Process",
-          "step1_title": "Data Collection",
-          "step1_desc": "Obtain comprehensive facility data through IoT sensors, laser scanning, and CAD drawings",
-          "step2_title": "Model Construction",
-          "step2_desc": "Use professional software to build high-precision 3D models that restore physical world details",
-          "step3_title": "Data Integration",
-          "step3_desc": "Correlate real-time operational data with the model to achieve dynamic mapping",
-          "step4_title": "System Deployment",
-          "step4_desc": "Deploy on cloud or local servers, supporting multi-terminal access",
-          "predictive_maintenance_title": "Predictive Maintenance Features",
-          "feature1_title": "Equipment Failure Warning",
-          "feature1_desc": "Use machine learning to analyze equipment operation data, detect abnormal patterns in advance, and issue warnings before failures occur, reducing unplanned downtime.",
-          "feature2_title": "Performance Optimization Suggestions",
-          "feature2_desc": "Simulate different operational scenarios based on digital twins, automatically generate equipment parameter adjustment suggestions, and improve overall operating efficiency by 15-30%.",
-          "feature3_title": "Lifespan Prediction",
-          "feature3_desc": "Predict the remaining lifespan of key components by combining equipment usage frequency, maintenance records, and environmental factors, scientifically planning spare parts procurement and replacement plans.",
-          "monitor_panel_title": "Real-time Monitoring Panel Example",
-          "equipment_health": "Equipment Health: <strong>92%</strong>",
-          "failure_probability": "Predicted Failure Probability: <strong>8%</strong>",
-          "energy_efficiency": "Energy Efficiency: <strong>88%</strong>",
-          "optimization_potential": "Optimization Potential: <strong>15%</strong>",
-          "case_studies_title": "Practical Application Cases",
-          "case1_title": "Guiyang S1 Line 3D Warehouse Twin System",
-          "case1_desc": "Simulate the real 3D storage situation through the digital twin system, monitor daily inbound and outbound data and storage occupancy in real time, and optimize the collaborative working mode of stackers, conveyor lines and different equipment.",
-          "before_optimization": "Before Optimization",
-          "energy_before": "Monthly Energy Consumption: 85,000 kWh",
-          "efficiency_before": "Overall Equipment Efficiency: 72%",
-          "peak_load_before": "Peak Load: 450 kW",
-          "after_optimization": "After Optimization",
-          "energy_after": "Monthly Energy Consumption: 68,000 kWh <span class='badge bg-success rounded-pill'>-20%</span>",
-          "efficiency_after": "Overall Equipment Efficiency: 86% <span class='badge bg-success rounded-pill'>+14%</span>",
-          "peak_load_after": "Peak Load: 380 kW <span class='badge bg-success rounded-pill'>-15.5%</span>",
-          "case2_title": "High-performance Sintered NdFeB Smart System",
-          "case2_desc": "The factory digital twin platform in the High-performance Sintered NdFeB Smart System of Haituo Intelligent Innovation Park. By extracting core equipment data, connecting with the production workshop management system, and connecting with the on-site autonomous navigation intelligent forklift dispatching system, it achieves a true mapping of the physical environment in the virtual environment, effectively promoting the intelligent operation of the borax forming press factory, improving efficiency and strengthening quality and process monitoring, solving past problems. Create real-time information flow to drive production and management activities, turning the factory into a transparent factory and smart factory.",
-          "before_implementation": "Before Implementation",
-          "downtime_before": "Annual Average Unplanned Downtime: 42 hours",
-          "accuracy_before": "Failure Prediction Accuracy: N/A",
-          "cost_before": "Maintenance Cost: ¥380,000/year",
-          "after_implementation": "After Implementation",
-          "downtime_after": "Annual Average Unplanned Downtime: 9 hours <span class='badge bg-success rounded-pill'>-78.6%</span>",
-          "accuracy_after": "Failure Prediction Accuracy: 92%",
-          "cost_after": "Maintenance Cost: ¥260,000/year <span class='badge bg-success rounded-pill'>-31.6%</span>",
-          "cta_title": "Ready to experience the power of digital twins?",
-          "cta_subtitle": "Our expert team will customize a dedicated digital twin solution for you",
-          "book_demo": "Book Demo",
-          "footer_desc": "JFindX - Automation solution experts, tailor-made automation solutions for you, covering comprehensive services from hardware equipment to software systems.",
-          "popular_products": "Popular Products",
-          "contact_us": "Contact Us",
-          "company_email": "Company Email",
-          "company_phone": "+86 130 5204 4828",
-          "company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo, Zhejiang Province",
-          "copyright": "© Ningbo JFindX Technology Co., Ltd. All Rights Reserved",
-          "page_heading": "Success Cases",
-          "page_subheading": "Industry Practice | Customer Testimonials | Solutions",
-          "industry1": "Smart Manufacturing",
-          "industry2": "Intelligent Logistics",
-          "industry3": "New Retail",
-          "industry4": "Healthcare",
-          "case_group1": "Smart Manufacturing Cases",
-          "case1_title1": "Auto Parts Group Smart Factory",
-          "case1_desc1": "Achieved 40% efficiency improvement and 65% defect reduction",
-          "alt_case1_1": "Automotive parts production line",
-          "case_tag1": "Intelligent Production",
-          "partner_title": "Summary of Successful Customer Cases"
-        },
-        "cn": {
-          "page_title": "工业数字孪生系统 - JFindX",
-          // 通用
-          "current_lang": "CN",
-          "alt_logo": "捷方优制主Logo",
-          "alt_logo_light": "捷方优制浅色Logo",
-          "alt_prev": "上一张幻灯片",
-          "alt_next": "下一张幻灯片",
-          "alt_about1": "智能仓储解决方案图示",
-          "alt_about2": "系统架构图示",
-          "alt_footer_logo": "页脚Logo",
-          // 导航菜单
-          "nav_home": "首页",
-          "nav_solution": "整体解决方案",
-          "nav_software": "AI柔性供应链软件",
-          "submenu_wms": "智能仓储管理系统WMS",
-          "submenu_wcs": "自动化设备管理系统WCS",
-          "nav_hardware": "智能仓储物流硬件",
-          "submenu_warehouse": "智能仓储",
-          "submenu_logistics": "智能物流",
-          "submenu_warehouse1": "智能仓储设备",
-          "submenu_logistics1": "智能物流设备",
-          "submenu_rfid": "RFID电子标签",
-          "nav_digital": "数字孪生系统",
-          "nav_cases": "成功案例",
-          "nav_about": "关于我们",
-          "submenu_about": "团队介绍",
-          "submenu_honor": "公司荣誉",
-          "submenu_contact": "联系我们",
-          // 页脚
-          "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-          "footer_services": "所有服务",
-          "footer_company_email": "公司邮箱",
-          "footer_company_phone": "+86 130 5204 4828",
-          "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-          "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
-          "footer_icp": "浙ICP备2023030316号-1",
-  
-          "home": "首页",
-          "wms": "智能仓储管理系统WMS",
-          "wcs": "自动化设备管理系统WCS",
-          "digital": "工业数字孪生系统",
-          "about": "关于我们",
-          "digital_title": "工业数字孪生系统",
-          "digital_subtitle": "为您的仓储设施打造虚拟镜像。提前预见问题，优化运营决策，开启智能化仓储新境界。",
-          "digital_model_title": "3D数字孪生模型展示",
-          "loading": "加载中...",
-          "loading_model": "正在加载3D模型...",
-          "rotate_view": "旋转视图",
-          "zoom_in": "放大",
-          "zoom_out": "缩小",
-          "creation_process_title": "数字孪生创建过程",
-          "step1_title": "数据采集",
-          "step1_desc": "通过IoT传感器、激光扫描和CAD图纸获取设施全维度数据",
-          "step2_title": "模型构建",
-          "step2_desc": "利用专业软件构建高精度3D模型，还原物理世界细节",
-          "step3_title": "数据集成",
-          "step3_desc": "将实时运营数据与模型关联，实现动态映射",
-          "step4_title": "系统部署",
-          "step4_desc": "在云端或本地服务器部署，支持多终端访问",
-          "predictive_maintenance_title": "预测性维护功能",
-          "feature1_title": "设备故障预警",
-          "feature1_desc": "通过机器学习分析设备运行数据，提前发现异常模式，在故障发生前发出预警，减少非计划停机时间。",
-          "feature2_title": "性能优化建议",
-          "feature2_desc": "基于数字孪生模拟不同运营场景，自动生成设备参数调整建议，提升整体运行效率15-30%。",
-          "feature3_title": "寿命预测",
-          "feature3_desc": "结合设备使用频率、维护记录和环境因素，预测关键部件剩余寿命，科学规划备件采购和更换计划。",
-          "monitor_panel_title": "实时监控面板示例",
-          "equipment_health": "设备健康度: <strong>92%</strong>",
-          "failure_probability": "预测故障概率: <strong>8%</strong>",
-          "energy_efficiency": "能耗效率: <strong>88%</strong>",
-          "optimization_potential": "优化潜力: <strong>15%</strong>",
-          "case_studies_title": "实际应用案例",
-          "case1_title": "贵阳S1号线立体仓储孪生系统",
-          "case1_desc": "通过工业数字孪生系统模拟真实立体的仓储情况，对每天的出入库数据以及库位占用情况进行实时监控，优化了堆垛机、输送线和不同设备的协同工作模式。",
-          "before_optimization": "优化前",
-          "energy_before": "月均能耗: 85,000 kWh",
-          "efficiency_before": "设备综合效率: 72%",
-          "peak_load_before": "峰值负载: 450 kW",
-          "after_optimization": "优化后",
-          "energy_after": "月均能耗: 68,000 kWh <span class='badge bg-success rounded-pill'>-20%</span>",
-          "efficiency_after": "设备综合效率: 86% <span class='badge bg-success rounded-pill'>+14%</span>",
-          "peak_load_after": "峰值负载: 380 kW <span class='badge bg-success rounded-pill'>-15.5%</span>",
-          "case2_title": "高性能烧结钕铁硼智慧系统",
-          "case2_desc": "海拓智创园高性能烧结钕铁硼智慧系统中的工厂数字孪生平台。通过对核心设备数据提取，对接生产车间管理系统，对接现场自主导航智能叉车调度系统，实现物理环境在虚拟环境下的真实映射，有效的推动硼砂成型压机工厂实现智能化运营，提升效率和加强质量、工艺监控，解决过去存在的问题。打造实时信息流驱动生产和管理活动，将工厂变成透明工厂、智能工厂。",
-          "before_implementation": "实施前",
-          "downtime_before": "年平均非计划停机: 42小时",
-          "accuracy_before": "故障预测准确率: N/A",
-          "cost_before": "维护成本: ¥380,000/年",
-          "after_implementation": "实施后",
-          "downtime_after": "年平均非计划停机: 9小时 <span class='badge bg-success rounded-pill'>-78.6%</span>",
-          "accuracy_after": "故障预测准确率: 92%",
-          "cost_after": "维护成本: ¥260,000/年 <span class='badge bg-success rounded-pill'>-31.6%</span>",
-          "cta_title": "准备好体验数字孪生的力量了吗？",
-          "cta_subtitle": "我们的专家团队将为您定制专属的数字孪生解决方案",
-          "book_demo": "预约演示",
-          "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-          "popular_products": "热门产品",
-          "contact_us": "联系我们",
-          "company_email": "公司邮箱",
-          "company_phone": "+86 130 5204 4828",
-          "company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-          "copyright": "宁波捷方优制科技有限公司版权所有",
-          "page_heading": "成功案例",
-          "page_subheading": "行业实践｜客户见证｜解决方案",
-          "industry1": "新能源汽车主机零部件",
-          "industry2": "城轨运输",
-          "industry3": "电子半导体",
-          "industry4": "海外案例",
-          "case_group1": "新能源汽车电池行业案例",
-          "case1_title1": "某汽车零部件集团智能工厂项目",
-          "case1_desc1": "实现生产流程数字化，效率提升40%，不良率降低65%",
-          "alt_case1_1": "汽车零部件智能生产线",
-          "case_tag1": "智慧生产",
-          "partner_title": "成功客户案例摘要",
-        }
-      };
-  
-      let currentLang = localStorage.getItem('language') || 'cn';
-  
-      // 核心翻译函数
-      function updateLanguage(lang) {
-        currentLang = lang;
-        localStorage.setItem('language', lang);
-  
-        // 更新所有带翻译标记的元素
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-          const key = element.getAttribute('data-i18n');
-          if (translations[lang][key]) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-              element.value = translations[lang][key];
-            } else {
-              element.textContent = translations[lang][key];
-            }
-          }
-        });
-  
-        // 更新placeholder
-        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-          const key = element.getAttribute('data-i18n-placeholder');
-          if (translations[lang][key]) {
-            element.setAttribute('placeholder', translations[lang][key]);
-          }
-        });
-  
-        // 更新按钮显示
-        document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
-  
-        // 更新页面标题
-        document.title = translations[lang]['page_title'];
+  <script>
+    // 扩展翻译数据
+    const translations = {
+      "en": {
+        "page_title": "Success Cases - JFindX",
+        "current_lang": "EN",
+        "alt_logo": "Main Logo of JFINDX",
+        "alt_logo_light": "Light Logo of JFINDX",
+        "alt_prev": "Previous Slide",
+        "alt_next": "Next Slide",
+        "alt_about1": "Illustration of Intelligent Warehouse Solution",
+        "alt_about2": "Illustration of System Architecture",
+        "alt_footer_logo": "Footer Logo",
+        // Navigation Menu
+        "nav_home": "Home",
+        "nav_solution": "Overall Solution",
+        "nav_software": "AI-FlexSC Software",
+        "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+        "submenu_wcs": "Automated Equipment Management System (WCS)",
+        "nav_hardware": "Logistics",
+        "submenu_warehouse": "Intelligent Warehouse",
+        "submenu_logistics": "Intelligent Logistics",
+        "submenu_warehouse1": "Intelligent Warehousing Equipment",
+        "submenu_logistics1": "Intelligent logistics equipment",
+        "submenu_rfid": "RFID Electronic Tags",
+        "nav_digital": "Digital-Twin",
+        "nav_cases": "Success Cases",
+        "nav_about": "About Us",
+        "submenu_about": "Team Introduction",
+        "submenu_honor": "Company Honors",
+        "submenu_contact": "Contact Us",
+        // Footer
+        "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+        "footer_services": "All Services",
+        "footer_company_email": "Company Email",
+        "footer_company_phone": "+86 130 5204 4828",
+        "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+        "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+        "footer_icp": "Zhejiang ICP No. 2023030316-1",
+        // Page Heading
+        "page_heading": "Success Cases",
+        "page_subheading": "Industry Practice | Customer Testimonials | Solutions",
+        "partner_title": "Summary of Successful Customer Cases",
+        "industry1": "New Energy Vehicle Main Engine Parts",
+        "industry3": "Electronics and Semiconductor",
+        "industry2": "Urban Rail Transport",
+        "industry4": "Overseas Cases",
+        "case1_intro_title": "Classic Case Introduction - Battery Production and Storage in FAW Hongqi New Energy Vehicle Factory",
+        "case1_company_desc": "Hongqi New Energy is a high - end automobile brand directly operated by China FAW Group. Since the establishment of the Hongqi brand in 1958, Hongqi cars have long been used as inspection vehicles for major Chinese celebration events and are one of the representatives of high - end Chinese national automobile brands.",
+        "case1_project_desc": "This project provides high - level three - dimensional warehouse racking systems, intelligent stacker systems, conveying and handling systems, battery on - line systems, battery transfer and conveying systems, in - warehouse battery detection systems, depalletizing and palletizing machine systems, computer management and monitoring systems, and warehouse management systems for the intelligent battery storage system in the creative factory area of the new energy powertrain division. It is used for the conveying and storage of finished batteries in the battery workshop of the creative factory area of FAW Group's new energy powertrain division to meet production requirements.",
+        "case1_project_key": "This project is a turn - key project. A turn - key project means that the bidder shall be responsible for the overall scheme planning and the design, manufacture, transportation, installation (including but not limited to equipment design, material selection, manufacturing, assembly, testing, installation, etc.), commissioning, training, delivery and acceptance, and after - sales service of the contract equipment. The equipment provided by the bidder must ensure to meet the production and quality requirements of the tenderer. Otherwise, the bidder shall be fully responsible for the consequences.",
+        "case2_intro_title": "Classic Case Introduction - Guoxuan Hi - Tech Jinzhai Automated Storage and Logistics Conveying System",
+        "case2_company_desc": "Guoxuan Hi - Tech New Energy Battery Company is a new energy technology enterprise established in 2006 with its headquarters in Hefei, China. The company is committed to the R & D, production, and sales of new energy vehicle power lithium - ion batteries, energy storage, power transmission and distribution equipment, and other business segments, and has an independent and mature R & D, procurement, production, and sales system. Guoxuan Hi - Tech is one of the important manufacturers of new energy power batteries in China and one of the leading enterprises in the global new energy lithium - ion battery industry. Its power lithium - ion battery business has become the company's largest business, and its ranking in the domestic and global power battery installation volume has also risen. In addition, Guoxuan Hi - Tech is also actively involved in providing system solutions for energy storage power stations, communication base stations, etc., and has obtained multiple domestic and international certifications and honors in R & D and technological innovation.",
+        "case2_project_key": "The project is implemented in the second - phase new energy battery factory in Jinzhai, Hefei. It involves the overall automated production from the production and processing of cell raw materials to the assembly of semi - finished products and the testing and verification of blue - print batteries, simplifying personnel management and work processes and improving the level of intelligent management. At the same time, automatic loading and unloading are realized between various process productions, and automatic access to and from the warehouse is completed in each material storage site.",
+        "case2_video_title": "Project On - site Commissioning Stage Video",
+        "case3_intro_title": "Classic Case Introduction - Bosch Mobility",
+        "case3_project_key": "Bosch Mobility presents highlights from the areas of connected mobility, automated mobility, and powertrain systems and electrified mobility. Find out more about our products and services, not only for passenger cars, but also for commercial vehicles, two - wheelers, off - highway applications, and ship and rail transport. Bosch offers a wide range of spare parts to the aftermarket and repair shops – from new and exchange parts to repair solutions – as well as repair shop equipment such as diagnostic software and hardware. With service training courses and partner programs for repair shops, Bosch offers automobile competence and knowledge to service technicians all over the world. Thus, repair shops can test and repair more efficiently, more safely, and more quickly.",
+        "case3_video_title": "Project On - site Commissioning Stage Video",
+        "case4_intro_title": "Classic Case Introduction - Yantai Shengdi Auto Parts",
+        "case4_company_desc": "Yantai Shengdi Auto Parts Manufacturing Co., Ltd. was established in 1995 and is the largest manufacturer of brake discs and brake drums in China, with an annual output of over 30 million pieces.",
+        "case4_project_desc": "Jiefang provided WMS software and algorithms, and the system was connected to the Jinshi robot stacker to realize the automatic management of inventory in the high - level and high - density three - dimensional warehouse stacker.",
+        "case4_project_phase1": "Project Phase I: Complete the handling of 600 storage locations for 2 stackers",
+        "case4_project_phase2": "Project Phase II: Expand to 12 stackers to manage the inbound and outbound operations of nearly 9,000 storage locations",
+        "case4_factory_note": "Yantai Shengdi Auto Parts North Factory 1",
+        "case4_factory_feature1": "1. The inbound and outbound ports can be used interchangeably",
+        "case4_factory_feature2": "2. Inbound storage includes two methods: direct entry into the storage location on the first floor and direct lifting by the elevator",
+        "case4_factory_feature3": "3. Two types of goods can be docked for inbound storage simultaneously",
+        "case4_factory_feature4": "4. An automatic lifting platform is used to reduce the difficulty of forklift loading",
+        "case4_factory_feature5": "5. Prepare for the subsequent use of unmanned forklifts",
+        "case_group1": "New Energy Vehicle Battery Industry Cases",
+        "case_group2": "Electronics and Semiconductor Industry Cases",
+        "case_intro_youli": "Classic Case Introduction - Youlikang Electronic Technology",
+        "project_intro_youli": "Project Introduction",
+        "project_desc_youli1": "The POC exhibition hall of Youlikang Company in Xinzhu has divided the storage area on - site and built three forms of storage and corresponding operation methods: mobile shelf storage, material box storage location storage, and full - pallet vertical warehouse storage.",
+        "project_desc_youli2": "A set of WMS system is used to manage the warehousing operations of three different automation modes simultaneously, and a customized display screen is provided according to on - site requirements.",
+        "case_intro_semiconductor": "Classic Case Introduction - World - Renowned Semiconductor Company",
+        "project_intro_semiconductor": "Project Introduction",
+        "project_desc_semiconductor1": "A well - known semiconductor industry customer (one of the top ten companies in the world by market value) has proposed a 'warehousing automation' improvement plan due to the increasing demand for products, production, and material warehousing. This plan faces many problems, such as the floor area, the area of each material receiving dock, the daily cargo throughput of each factory area, and the need to cooperate with tens of thousands of products and raw materials. Moreover, the customer has extremely high standards for the scheduling and traffic management of the overall handling system, especially in terms of stability and accuracy. The existing solutions cannot achieve the expected results and functions.",
+        "project_desc_semiconductor2": "Therefore, a complete system solution is adopted, and starting from its existing two factories (the two most advanced - process factories in the world, with the first phase completed exclusively), two sets of solutions are introduced. In 2021, the wafer warehousing automation handling system and the unmanned forklift handling system will be gradually introduced in the other three factory areas.",
+        "project_pain_semiconductor": "Project Pain Points",
+        "project_pain_semiconductor1": "Due to a serious shortage of manpower, the handling volume of materials, finished products, and semi - finished products is relatively large.",
+        "project_pain_semiconductor2": "Many goods contain chemicals (raw materials and semi - finished products) that are corrosive, harmful to humans and equipment, and heavy in weight, which are not convenient for manual handling. An automated logistics handling system is to be introduced to reduce the operational risks of employees and improve production efficiency.",
+        "project_pain_semiconductor3": "There is metal reflection in the scene, and there are also certain light difference problems.",
+        "project_pain_semiconductor4": "In the semiconductor industry, especially for this customer, the requirements for system safety and stability are extremely high. When providing a logistics handling system solution, various environmental impacts, abnormal handling and tracking, monitoring of operation status, and interaction management between various equipment need to be considered.",
+        "case_intro_haogongpin": "Classic Case Introduction - Haogongpin (Chongqing) Fasteners Co., Ltd.",
+        "project_intro_haogongpin": "Project Introduction",
+        "project_desc_haogongpin1": "Haogongpin (Chongqing) Fasteners Co., Ltd. is a B2B/B2C trading platform focusing on industrial parts. In addition to its self - purchased and self - sold product lines, it has established a new warehouse and started to expand by introducing third - party suppliers to expand its industrial product supply chain business. The new warehouse adopts a fully automated unmanned operation mode for inbound and outbound operations, and aims to seek solutions with JD's unmanned warehouse as the goal in the future.",
+        "project_key_haogongpin": "Project Key Points",
+        "project_key_desc_haogongpin": "In an area with a warehousing area of 12,000 square meters and a floor height of 10 meters, it is necessary to plan for a maximum storage capacity of 150,000 boxes of goods, and meet the peak - day shipping flow demand through dynamic inventory adjustment.",
+        "case_group_logistics": "Urban Rail Transport Industry Cases",
+        "case_intro_guiyang": "Classic Case Introduction - General Material Warehouse of Guiyang Metro Line S1 Phase I",
+        "project_intro_guiyang": "Project Introduction",
+        "project_desc_guiyang1": "The general material warehouse of Guiyang Metro Line S1 Phase I is the fourth opened and operated metro line in Guiyang. It started construction on November 7, 2019, and opened for operation of Phase I (Zaojiaoba Station - Wangchengpo Station) on December 28, 2024. Our company undertook the construction of the material three - dimensional warehouse in the vehicle maintenance section of the project, which has also been officially put into use. At the same time, this project is also the first intelligent three - dimensional warehouse project in the urban rail project to use 'digital twin' technology for material warehouse management.",
+        "project_key_guiyang": "Project Key Points",
+        "project_key_guiyang1": "The 1:1 digital twin technology of the supporting intelligent vertical warehouse has been added to achieve transparency and digitalization of material management within the warehouse.",
+        "project_key_guiyang2": "While reducing the demand for land area, lower the construction cost through intensive design; Automated management also reduces labor costs and the risk of human error. ",
+        "project_key_guiyang3": "The three-dimensional design of the material warehouse provides reliable material support for Line S1, ensuring the timeliness of train maintenance, fault rescue and other work, and indirectly enhancing the transportation capacity of the line.",
+        "project_key_guiyang4": "The advanced design of the stereoscopic warehouse provides a reference for subsequent rail transit projects and promotes the technological upgrade in the field of rail transit warehouse management in Guiyang and even the southwest region.",
+        "case_intro_taiyuan": "Introduction to Classic Cases - Materials General Warehouse of Taiyuan Metro Line 2",
+        "project_intro_taiyuan": "Project Introduction ",
+        "project_desc_taiyuan1": "The material three-dimensional Warehouse Project of the First Phase of Taiyuan Urban Rail Transit Line 1. The first phase of Taiyuan Metro Line 1 was opened to operation on February 22, 2025. Our company cooperated in the construction of the material main warehouse within the vehicle maintenance station located in Malianying, providing it with a complete set of intelligent vertical warehouse solutions including software, hardware for the three-dimensional warehouse, and shelf systems. ",
+        "project_key_taiyuan": "Project Focus",
+        "project_key_taiyuan1": "Heavy Equipment Materials Warehouse",
+        "project_key_taiyuan2": "High-density storage. The shelf occupies an area of 750 square meters and stores all the materials that previously needed to be laid out throughout an entire warehouse.",
+        "project_key_taiyuan3": "Large and small goods are stored separately. Half of the space in the site is freed up for the storage and retrieval of small items to further improve the space utilization rate.",
+        "project_key_taiyuan4": "Fully automatic inventory management, combined with the dedicated WMS system for stereoscopic warehouses to achieve automatic allocation of material inventory",
+        "case_intro_tianjin": "Classic Case Introduction - Automated Warehouse for Materials of Tianjin Metro Line 7",
+        "debug_video_tianjin": "Debug video",
+        "case_group_medical": "Overseas Case",
+        "case_intro_aap": "Classic Case Introduction - AAP Automated Warehouse in Penang, Malaysia",
+        "project_intro_aap": "Project Introduction",
+        "project_desc_aap1": "Armstrong Bicycle Parts Company was founded in 1972, specializing in the manufacturing of bicycle spokes and spoke caps. In 1978, with the establishment of Armstrong Automotive Parts Company (AAP), its business scope expanded to motorcycle parts.",
+        "project_desc_aap2": "Since 1989, the company has been continuously expanding its business and entering the automotive industry.Now, it is a company specializing in the manufacturing of automotive parts, with a wide variety of products. ",
+        "project_desc_aap3": "The company began the overall warehouse automation transformation of two automotive parts factories located in Penang City and City, Malaysia in 2024 to address the current problems of excessive staff, complex management, and insufficient personnel quality. At the same time, it also made early layouts and preparations for the expansion of future business directions.",
+        "design_key_aap": "Material Box Storage Area - Design Focus",
+        "design_key_aap1": "From the moment the delivery driver unloads the goods, the WMS system is fully used for the standardized inbound process of receiving goods - temporary storage - pre-inbound sorting - inbound - shelving for inventory management, and data records are strictly made according to the expiration date;",
+        "design_key_aap2": "The in-warehouse transfer work of small items from warehousing to shelving, picking to the outbound counter is carried out by the material box handling robot;",
+        "design_key_aap3": "Considering the efficiency of outbound picking, single-depth shelves are adopted for all storage locations to increase the handling speed of AGVs;",
+        "design_key_aap4": "Sorting management is carried out through the LED electronic label sorting wall to reduce the error rate of manual operations and improve the picking efficiency;",
+        "design_key_aap5": "Inventory allocation is controlled by WMS without manual intervention. It can be optimized and adjusted according to the requirements of production materials and the age of inventory in the warehouse, and reasonable purchasing and material preparation plans are given through data feedback;",
+        "after_construction_aap": "Post-construction status: Penang Small Cargo Container Warehouse",
+        "current_status_aap": "Current Situation Description: Large Item Pallet Storage Warehouse",
+        "after_construction_bulk_aap": "Post-construction status: Bulk Storage Warehouse for Large Items"
+      },
+      "cn": {
+        "page_title": "成功案例 - JFindX",
+        // 通用
+        "current_lang": "CN",
+        "alt_logo": "捷方优制主Logo",
+        "alt_logo_light": "捷方优制浅色Logo",
+        "alt_prev": "上一张幻灯片",
+        "alt_next": "下一张幻灯片",
+        "alt_about1": "智能仓储解决方案图示",
+        "alt_about2": "系统架构图示",
+        "alt_footer_logo": "页脚Logo",
+        // 导航菜单
+        "nav_home": "首页",
+        "nav_solution": "整体解决方案",
+        "nav_software": "AI柔性供应链软件",
+        "submenu_wms": "智能仓储管理系统WMS",
+        "submenu_wcs": "自动化设备管理系统WCS",
+        "nav_hardware": "智能仓储物流硬件",
+        "submenu_warehouse": "智能仓储",
+        "submenu_logistics": "智能物流",
+        "submenu_warehouse1": "智能仓储设备",
+        "submenu_logistics1": "智能物流设备",
+        "submenu_rfid": "RFID电子标签",
+        "nav_digital": "数字孪生系统",
+        "nav_cases": "成功案例",
+        "nav_about": "关于我们",
+        "submenu_about": "团队介绍",
+        "submenu_honor": "公司荣誉",
+        "submenu_contact": "联系我们",
+        // 页脚
+        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+        "footer_services": "所有服务",
+        "footer_company_email": "公司邮箱",
+        "footer_company_phone": "+86 130 5204 4828",
+        "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+        "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+        "footer_icp": "浙ICP备2023030316号-1",
+        // Page Heading
+        "page_heading": "成功案例",
+        "page_subheading": "行业实践｜客户见证｜解决方案",
+        "partner_title": "成功客户案例摘要",
+        "industry1": "新能源汽车主机零部件",
+        "industry3": "电子半导体",
+        "industry2": "城轨运输",
+        "industry4": "海外案例",
+        "case1_intro_title": "经典案例介绍 – 一汽红旗新能源汽车工厂电池生产仓储",
+        "case1_company_desc": "红旗新能源 公司是中国一汽集团直接运营的高端汽车品牌。自1958年红旗品牌创立以来，红旗轿车长期被用作中国重大庆典活动的检阅车，是中国民族汽车高端品牌代表之一。",
+        "case1_project_desc": "本项目为新能源动力总成事业部创意厂区电池智能仓储系统提供高位立体库货架系统、智能堆垛机系统、输送搬运系统、电池上线系统、电池转运输送系统、库内电池检测系统、拆码盘机系统、计算机管理监控系统及仓储管理系统等，用于一汽集团新能源动力总成事业部创意厂区的电池车间成品电池的输送及存储并满足生产要求。",
+        "case1_project_key": "本工程为交钥匙工程。交钥匙工程是指投标方应当负责整体方案规划及合同设备的设计、制造、运输、安装（包含但不限于：设备设计、选材、制造、组装、测试、安装等）、调试、培训、交付验收、售后服务等。投标方所提供的设备必须保证达到并满足招标方的生产要求和质量要求，否则造成的后果全部由投标方负责。",
+        "case2_intro_title": "经典案例介绍 – 国轩高科金寨自动化仓储物流输送系统",
+        "case2_company_desc": "国轩高科新能源电池公司是一家成立于2006年，总部位于中国合肥的新能源科技企业。该公司致力于新能源汽车动力锂电池、储能、输配电设备等业务板块的研发、生产和销售，拥有独立成熟的研发、采购、生产、销售体系。国轩高科是中国新能源动力电池的重要制造商之一，也是全球新能源锂电行业的领军企业之一。其动力锂电池业务已成为公司的最大业务，同时在国内和全球的动力电池装机量排名中也有所上升。此外，国轩高科还积极参与储能电站、通讯基站等领域的系统解决方案提供，并且在研发、技术创新方面也取得了多项国内及国际认证和荣誉。",
+        "case2_project_key": "项目落地在合肥金寨二期新能源电池工厂，涉及蓝本电池从电芯原料生产及加工工艺环节，到半成品装配组装环节，到测试验证环节整体自动化生产，简化人员管理及工作环节，提高智能管理水平。同时在各工艺生产间均实现自动上下料，并与各个物资仓储场地内完成自动出入库对接。",
+        "case2_video_title": "项目现场调试阶段视频",
+        "case3_intro_title": "经典案例介绍 – Bosch Mobility",
+        "case3_project_key": "Bosch Mobility presents highlights from the areas of connected mobility, automated mobility, and powertrain systems and electrified mobility. Find out more about our products and services, not only for passenger cars, but also for commercial vehicles, two - wheelers, off - highway applications, and ship and rail transport. Bosch offers a wide range of spare parts to the aftermarket and repair shops – from new and exchange parts to repair solutions – as well as repair shop equipment such as diagnostic software and hardware. With service training courses and partner programs for repair shops, Bosch offers automobile competence and knowledge to service technicians all over the world. Thus, repair shops can test and repair more efficiently, more safely, and more quickly.",
+        "case3_video_title": "项目现场调试阶段视频",
+        "case4_intro_title": "经典案例介绍 – 烟台胜地汽车零部件",
+        "case4_company_desc": "烟台胜地汽车零部件制造有限公司成立于1995年，是中国最大的刹车盘和刹车鼓制造商，目前年产量已超过3000万片。",
+        "case4_project_desc": "捷方提供了WMS软件及算法，系统对接金石机器人堆垛机，实现高位高密度立体库堆垛机自动管理库存。",
+        "case4_project_phase1": "项目一期：为2台堆垛机完成600个库位搬运",
+        "case4_project_phase2": "项目二期：将扩展至12台堆垛机管理近9000个库位的出入库作业",
+        "case4_factory_note": "烟台胜地汽车零部件 北1厂",
+        "case4_factory_feature1": "1、出入库口混合切换使用",
+        "case4_factory_feature2": "2、且入库分为一层直接进入货位与提升机直接提升两种",
+        "case4_factory_feature3": "3、可同时进行两类货物入库接驳",
+        "case4_factory_feature4": "4、搭配自动举升平台以降低叉车的放货难度",
+        "case4_factory_feature5": "5、为后续改用无人叉车做准备",
+        "case_group1": "新能源汽车电池行业案例",
+        "case_group2": "电子半导体行业案例",
+        "case_intro_youli": "经典案例介绍 – 有利康电子科技",
+        "project_intro_youli": "项目介绍",
+        "project_desc_youli1": "有利康公司位于新竹的POC展厅，现场区分库区，搭建了移动货架存储、料箱库位存储、整托立库存储三种形态以及对应作业方式。",
+        "project_desc_youli2": "采用一套WMS系统同时管理三种不同自动化模式的仓储作业，根据现场要求定制展示大屏。",
+        "case_intro_semiconductor": "经典案例介绍 – 世界知名半导体公司",
+        "project_intro_semiconductor": "项目介绍",
+        "project_desc_semiconductor1": "知名半导体行业客户（世界市值前十大公司）在产品需求量、生产及物料仓储需求日益扩大的情况下，提出了「仓储自动化」改善计划，该计划面临着占地面积、各物料收货码头面积，各厂区每日货物吞吐量，以及须配合上万种产品与原料等多方面问题，且客户对于整体的搬运系统的调度和交通管理方面有着极高的标准，尤其是稳定性和精准性方面，现有方案无法达到预期效果和功能。",
+        "project_desc_semiconductor2": "故采用整套系统解决方案，并以其现有的2座工厂（全世界最先进制程的2座工厂，已独家完成一期）为起点，导入两套解决方案。2021年将陆续在其他3座厂区导入晶圆仓储自动化搬运系统以及无人叉车搬运系统。",
+        "project_pain_semiconductor": "项目痛点",
+        "project_pain_semiconductor1": "因人力严重不足，物料、成品及办成品搬运量比较大；",
+        "project_pain_semiconductor2": "许多货物中含化学品（原物料及半成品）具有腐蚀性，对人体及设备有危害，且重量较重，不便于人工搬运，想要引入自动化物流搬运系统，以降低职工作业风险，提高生产效率；",
+        "project_pain_semiconductor3": "场景中有金属反光，还有一定的光线差异问题；",
+        "project_pain_semiconductor4": "半导体行业，尤其是该客户对于系统安全性、稳定性要求极高，在提供物流搬运系统解决方案，需考虑各种环境影响，异常的处理和跟踪，监控作业状况以及各种设备之间的交互管理。",
+        "case_intro_haogongpin": "经典案例介绍 – 好工品(重庆)紧固件有限公司",
+        "project_intro_haogongpin": "项目介绍",
+        "project_desc_haogongpin1": "好工品(重庆)紧固件有限公司是专注于工业零部件B2B/B2C交易平台。除自采自销的产品线外，建立新仓开始扩展引入第三方供应商，来拓展工业品供应链业务。新仓库采用出入库全自动无人作业方式，未来以京东无人仓为目标来寻求解决方案。",
+        "project_key_haogongpin": "项目重点",
+        "project_key_desc_haogongpin": "在仓储面积12000m²，层高10米的区域内，需规划出最大支持15万箱货物存储量，并且通过动态库存调整，满足峰值日出货达到流量需求。",
+        "case_group_logistics": "城轨运输行业案例",
+        "case_intro_guiyang": "经典案例介绍 – 贵阳地铁S1线一期线物资总库",
+        "project_intro_guiyang": "项目介绍",
+        "project_desc_guiyang1": "贵阳市地铁S1线一期物资总库，是贵阳市第四条建成运营的地铁线路，于2019年11月7日开工建设，于2024年12月28日开通运营一期（皂角坝站—望城坡站）。我司在项目中为其承建了车辆检修段的物资立体库部分，也已正式投入使用。同时该项目也是城轨项目中首个采用了“数字孪生”技术进行物资库管理的智能立体库项目。",
+        "project_key_guiyang": "项目重点",
+        "project_key_guiyang1": "配套智能立库的1:1数字孪生技术加入，实现库内物资管理透明化，数字化",
+        "project_key_guiyang2": "减少占地面积需求的同时，通过集约化设计降低建设成本；自动化管理也减少了人力成本和人为错误风险。",
+        "project_key_guiyang3": "物资总库的立体化设计为S1线提供可靠的物资保障，确保列车检修、故障救援等工作的及时性，间接提升线路运能",
+        "project_key_guiyang4": "立体库的先进设计为后续轨道交通项目提供参考，推动贵阳乃至西南地区在轨道交通仓储管理领域的技术升级。",
+        "case_intro_taiyuan": "经典案例介绍 – 太原地铁2号线物资总库",
+        "project_intro_taiyuan": "项目介绍",
+        "project_desc_taiyuan1": "太原市城市轨道交通1号线一期工程场段物资立体库项目。太原地铁1号线已于2025年2月22日开通运营一期。我司配合建设位于马练营的车辆检修站点内的物资总库，为其提供从软件、立体库硬件、货架系统等一整套智能立库解决方案。",
+        "project_key_taiyuan": "项目重点",
+        "project_key_taiyuan1": "重型设备物资库",
+        "project_key_taiyuan2": "高密度存储，货架占地面积750㎡，存储了以往需要平铺一整个库房的所有物资，",
+        "project_key_taiyuan3": "大小货分区存储，场地空出一半空间用于小件物资存取，进一步提高空间利用率",
+        "project_key_taiyuan4": "全自动库存管理，搭配立体库专用WMS系统实现物资库存自动分配",
+        "case_intro_tianjin": "经典案例介绍 – 天津地铁7号线物资自动化仓库",
+        "debug_video_tianjin": "调试视频",
+        "case_group_medical": "海外案例",
+        "case_intro_aap": "经典案例介绍 – AAP 马来西亚槟城 自动化仓储",
+        "project_intro_aap": "项目介绍",
+        "project_desc_aap1": "阿姆斯特朗自行车配件公司成立于1972年，专注于自行车辐条和辐条帽的制造，1978年随着阿姆斯特朗汽车零部件公司（AAP）的成立，其业务范围扩大到摩托车零部件。",
+        "project_desc_aap2": "自1989年以来，该公司不断扩大业务，进军汽车行业。现在，它是一家专注于汽车零部件制造业务的公司，产品种类繁多。",
+        "project_desc_aap3": "公司于2024年开始对位于马来西亚槟城市、芙蓉市的两座汽车零部件工厂进行整体仓储自动化改造，以应对当前人员过多，管理繁杂，且人员素质不足的问题，同时也为未来业务方向的拓展做好提前布局与准备。",
+        "design_key_aap": "料箱库区 – 设计重点",
+        "design_key_aap1": "从送货司机卸货一刻开始，全面使用WMS系统进行收货-暂存-入库前分拣-入库-上架的标准化入库流程进行库存管理，并严格按效期做数据记录；",
+        "design_key_aap2": "由料箱搬运机器人执行小件货品从入库到上架、拣货到出库台的库内转运工作；",
+        "design_key_aap3": "考虑出库拣选的效率，货位全采用单深位货架，以提高AGV搬运速度；",
+        "design_key_aap4": "通过LED电子标签分拣墙进行分拣管理，降低人工作业错误率，并提高拣选效率；",
+        "design_key_aap5": "由WMS对库存分配进行管控，无需人工干预，并可根据生产物料所需，以及库内库存库龄情况做优化调整，通过数据反馈给出合理采购和备料计划；",
+        "after_construction_aap": "建设后状况：槟城小件料箱仓",
+        "current_status_aap": "现状说明：大件整托存储仓",
+        "after_construction_bulk_aap": "建设后状况：大件整托存储仓"
       }
-  
-  
-  
-      // 初始化
-      document.addEventListener('DOMContentLoaded', () => {
-        // 初始化语言
-        updateLanguage(currentLang);
-        // 显示页面内容
-        document.body.style.visibility = 'visible';
-  
-        // 绑定语言切换事件
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-          item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const lang = e.target.getAttribute('data-lang');
-            updateLanguage(lang);
-  
-            // 手动关闭下拉菜单（Bootstrap5方法）
-            const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
-            dropdown.hide();
-          });
-        });
-  
-        // 初始化Bootstrap下拉组件
-        new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
-  
-        // 初始化显示第一个案例组
-        document.querySelector('.case-group').classList.add('active');
-        document.querySelectorAll('.case-card').forEach(card => card.classList.add('show'));
+    };
+
+    let currentLang = localStorage.getItem('language') || 'cn';
+
+    // 核心翻译函数
+    function updateLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
+
+      // 更新所有带翻译标记的元素
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.value = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
       });
-  
-      
-        
-  
-    </script>
+
+      // 更新placeholder
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+          element.setAttribute('placeholder', translations[lang][key]);
+        }
+      });
+
+      // 更新按钮显示
+      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+      // 更新页面标题
+      document.title = translations[lang]['page_title'];
+    }
+
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 初始化语言
+      updateLanguage(currentLang);
+      // 显示页面内容
+      document.body.style.visibility = 'visible';
+
+      // 绑定语言切换事件
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = e.target.getAttribute('data-lang');
+          updateLanguage(lang);
+
+          // 手动关闭下拉菜单（Bootstrap5方法）
+          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+          dropdown.hide();
+        });
+      });
+
+      // 初始化Bootstrap下拉组件
+      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+
+      // 初始化显示第一个案例组
+      document.querySelector('.case-group').classList.add('active');
+      document.querySelectorAll('.case-card').forEach(card => card.classList.add('show'));
+    });
+  </script>
 </head>
 
 <body>
@@ -534,7 +540,7 @@
             </div>
           </div>
         </div>
-      <!-- 行业导航 -->
+        <!-- 行业导航 -->
         <div class="container">
           <div class="industry-nav">
             <button class="industry-btn btn-outline-primary rounded-3 active" data-industry="manufacturing"
@@ -563,14 +569,15 @@
             <div class="row g-4">
 
               <div class="case-card bg-light rounded-3 shadow-sm show ">
-                <h5 class="title" data-i18n="inventory_module">经典案例介绍 – 一汽红旗新能源汽车工厂电池生产仓储</h5>
+                <h5 class="title" data-i18n="case1_intro_title">经典案例介绍 – 一汽红旗新能源汽车工厂电池生产仓储</h5>
                 <div class="badge bg-primary">项目介绍</div>
-                <p>红旗新能源 公司是中国一汽集团直接运营的高端汽车品牌。自1958年红旗品牌创立以来，红旗轿车长期被用作中国重大庆典活动的检阅车，是中国民族汽车高端品牌代表之一。</p>
-                <p>
+                <p data-i18n="case1_company_desc">红旗新能源
+                  公司是中国一汽集团直接运营的高端汽车品牌。自1958年红旗品牌创立以来，红旗轿车长期被用作中国重大庆典活动的检阅车，是中国民族汽车高端品牌代表之一。</p>
+                <p data-i18n="case1_project_desc">
                   本项目为新能源动力总成事业部创意厂区电池智能仓储系统提供高位立体库货架系统、智能堆垛机系统、输送搬运系统、电池上线系统、电池转运输送系统、库内电池检测系统、拆码盘机系统、计算机管理监控系统及仓储管理系统等，用于一汽集团新能源动力总成事业部创意厂区的电池车间成品电池的输送及存储并满足生产要求。
                 </p>
                 <div class="badge bg-primary">项目重点</div>
-                <p data-i18n="inventory_desc">
+                <p data-i18n="case1_project_key">
                   本工程为交钥匙工程。交钥匙工程是指投标方应当负责整体方案规划及合同设备的设计、制造、运输、安装（包含但不限于：设备设计、选材、制造、组装、测试、安装等）、调试、培训、交付验收、售后服务等。投标方所提供的设备必须保证达到并满足招标方的生产要求和质量要求，否则造成的后果全部由投标方负责。
                 </p>
                 <div class="post-item2">
@@ -595,15 +602,16 @@
                 </div>
               </div>
               <div class="case-card bg-light rounded-3 shadow-sm show ">
-                <h5 class="title" data-i18n="sorting_module">经典案例介绍 – 国轩高科金寨自动化仓储物流输送系统</h5>
+                <h5 class="title" data-i18n="case2_intro_title">经典案例介绍 – 国轩高科金寨自动化仓储物流输送系统</h5>
                 <div class="badge bg-primary">项目介绍</div>
-                <p>国轩高科新能源电池公司是一家成立于2006年，总部位于中国合肥的新能源科技企业。该公司致力于新能源汽车动力锂电池、储能、输配电设备等业务板块的研发、生产和销售，拥有独立成熟的研发、采购、生产、销售体系。
+                <p data-i18n="case2_company_desc">
+                  国轩高科新能源电池公司是一家成立于2006年，总部位于中国合肥的新能源科技企业。该公司致力于新能源汽车动力锂电池、储能、输配电设备等业务板块的研发、生产和销售，拥有独立成熟的研发、采购、生产、销售体系。
                 </p>
-                <p>
+                <p data-i18n="case2_company_desc">
                   国轩高科是中国新能源动力电池的重要制造商之一，也是全球新能源锂电行业的领军企业之一。其动力锂电池业务已成为公司的最大业务，同时在国内和全球的动力电池装机量排名中也有所上升。此外，国轩高科还积极参与储能电站、通讯基站等领域的系统解决方案提供，并且在研发、技术创新方面也取得了多项国内及国际认证和荣誉。
                 </p>
                 <div class="badge bg-primary">项目重点</div>
-                <p data-i18n="sorting_desc">
+                <p data-i18n="case2_project_key">
                   项目落地在合肥金寨二期新能源电池工厂，涉及蓝本电池从电芯原料生产及加工工艺环节，到半成品装配组装环节，到测试验证环节整体自动化生产，简化人员管理及工作环节，提高智能管理水平。同时在各工艺生产间均实现自动上下料，并与各个物资仓储场地内完成自动出入库对接。
                 </p>
                 <div class="post-item2">
@@ -611,7 +619,7 @@
                     <a><img src="static/picture/case19.png" alt="Image" width="370" height="285"></a>
                   </div>
                 </div>
-                <div class="badge bg-primary">项目现场调试阶段视频</div>
+                <div class="badge bg-primary" data-i18n="case2_video_title">项目现场调试阶段视频</div>
 
                 <!-- 响应式视频容器 -->
                 <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
@@ -623,18 +631,20 @@
 
               </div>
               <div class="case-card bg-light rounded-3 shadow-sm show ">
-                <h5 class="title" data-i18n="sorting_module">经典案例介绍 – Bosch Mobility</h5>
+                <h5 class="title" data-i18n="case3_intro_title">经典案例介绍 – Bosch Mobility</h5>
                 <div class="badge bg-primary">项目重点</div>
-                <p>Bosch Mobility presents highlights from the areas of connected mobility, automated mobility, and
+                <p data-i18n="case3_project_key">Bosch Mobility presents highlights from the areas of connected
+                  mobility, automated mobility, and
                   powertrain systems and electrified mobility. Find out more about our products and services, not only
                   for passenger cars, but also for commercial vehicles, two-wheelers, off-highway applications, and ship
                   and rail transport.</p>
-                <p>Bosch offers a wide range of spare parts to the aftermarket and repair shops – from new and exchange
+                <p data-i18n="case3_project_key">Bosch offers a wide range of spare parts to the aftermarket and repair
+                  shops – from new and exchange
                   parts to repair solutions – as well as repair shop equipment such as diagnostic software and hardware.
                   With service training courses and partner programs for repair shops, Bosch offers automobile
                   competence and knowledge to service technicians all over the world. Thus, repair shops can test and
                   repair more efficiently, more safely, and more quickly.</p>
-                <div class="badge bg-primary">项目现场调试阶段视频
+                <div class="badge bg-primary" data-i18n="case3_video_title">项目现场调试阶段视频
                 </div>
                 <!-- 响应式视频容器 -->
                 <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
@@ -644,24 +654,24 @@
                 </div>
               </div>
               <div class="case-card bg-light rounded-3 shadow-sm show ">
-                <h5 class="title" data-i18n="sorting_module">经典案例介绍 – 烟台胜地汽车零部件</h5>
+                <h5 class="title" data-i18n="case4_intro_title">经典案例介绍 – 烟台胜地汽车零部件</h5>
                 <div class="badge bg-primary">项目重点</div>
-                <p>烟台胜地汽车零部件制造有限公司成立于1995年，是中国最大的刹车盘和刹车鼓制造商，目前年产量已超过3000万片。</p>
-                <p>捷方提供了WMS软件及算法，系统对接金石机器人堆垛机，实现高位高密度立体库堆垛机自动管理库存。
+                <p data-i18n="case4_company_desc">烟台胜地汽车零部件制造有限公司成立于1995年，是中国最大的刹车盘和刹车鼓制造商，目前年产量已超过3000万片。</p>
+                <p data-i18n="case4_project_desc">捷方提供了WMS软件及算法，系统对接金石机器人堆垛机，实现高位高密度立体库堆垛机自动管理库存。
                 </p>
                 <p><i class="icofont-check-circled"></i><span
-                    data-i18n="inventory_feature1">项目一期：为2台堆垛机完成600个库位搬运</span></p>
+                    data-i18n="case4_project_phase1">项目一期：为2台堆垛机完成600个库位搬运</span></p>
                 <p><i class="icofont-check-circled"></i><span
-                    data-i18n="inventory_feature1">项目二期：将扩展至12台堆垛机管理近9000个库位的出入库作业</span></p>
-                <div class="badge bg-primary">烟台胜地汽车零部件 北1厂
+                    data-i18n="case4_project_phase2">项目二期：将扩展至12台堆垛机管理近9000个库位的出入库作业</span></p>
+                <div class="badge bg-primary" data-i18n="case4_factory_note">烟台胜地汽车零部件 北1厂
                 </div>
                 <div class="post-item2">
                   <div class="thumb">
-                    <p>1、出入库口混合切换使用</p>
-                    <p>2、且入库分为一层直接进入货位与提升机直接提升两种</p>
-                    <p>3、可同时进行两类货物入库接驳</p>
-                    <p>4、搭配自动举升平台以降低叉车的放货难度</p>
-                    <p>5、为后续改用无人叉车做准备</p>
+                    <p data-i18n="case4_factory_feature1">1、出入库口混合切换使用</p>
+                    <p data-i18n="case4_factory_feature2">2、且入库分为一层直接进入货位与提升机直接提升两种</p>
+                    <p data-i18n="case4_factory_feature3">3、可同时进行两类货物入库接驳</p>
+                    <p data-i18n="case4_factory_feature4">4、搭配自动举升平台以降低叉车的放货难度</p>
+                    <p data-i18n="case4_factory_feature5">5、为后续改用无人叉车做准备</p>
                   </div>
                 </div>
                 <div class="row" style="padding-bottom: 20px;">
@@ -693,13 +703,13 @@
             <h3 class="mb-4" data-i18n="case_group2">电子半导体行业案例</h3>
             <div class="row g-4">
               <div class="case-card bg-light rounded-3 shadow-sm show ">
-                <h5 class="title" data-i18n="inventory_module">经典案例介绍 – 有利康电子科技
-                </h5>
-                <div class="badge bg-primary">项目介绍</div>
-                <p>
+                <h5 class="title" data-i18n="case_intro_youli">经典案例介绍 – 有利康电子科技</h5>
+                <div class="badge bg-primary" data-i18n="project_intro_youli">项目介绍</div>
+                <p data-i18n="project_desc_youli1">
                   有利康公司位于新竹的POC展厅，现场区分库区，搭建了移动货架存储、料箱库位存储、整托立库存储三种形态以及对应作业方式。
                 </p>
-                <p>采用一套WMS系统同时管理三种不同自动化模式的仓储作业，根据现场要求定制展示大屏。
+                <p data-i18n="project_desc_youli2">
+                  采用一套WMS系统同时管理三种不同自动化模式的仓储作业，根据现场要求定制展示大屏。
                 </p>
 
                 <div class="row">
@@ -757,31 +767,28 @@
                 </div>
               </div>
               <div class="case-card bg-light rounded-3 shadow-sm show ">
-                <h5 class="title" data-i18n="inventory_module">经典案例介绍 – 世界知名半导体公司
-                </h5>
-                <div class="badge bg-primary">项目介绍</div>
-                <p>
+                <h5 class="title" data-i18n="case_intro_semiconductor">经典案例介绍 – 世界知名半导体公司</h5>
+                <div class="badge bg-primary" data-i18n="project_intro_semiconductor">项目介绍</div>
+                <p data-i18n="project_desc_semiconductor1">
                   知名半导体行业客户（世界市值前十大公司）在产品需求量、生产及物料仓储需求日益扩大的情况下，提出了「仓储自动化」改善计划，该计划面临着占地面积、各物料收货码头面积，各厂区每日货物吞吐量，以及须配合上万种产品与原料等多方面问题，且客户对于整体的搬运系统的调度和交通管理方面有着极高的标准，尤其是稳定性和精准性方面，现有方案无法达到预期效果和功能。
                 </p>
-                <p>故采用整套系统解决方案，并以其现有的2座工厂（全世界最先进制程的2座工厂，已独家完成一期）为起点，导入两套解决方案。2021年将陆续在其他3座厂区导入晶圆仓储自动化搬运系统以及无人叉车搬运系统。
+                <p data-i18n="project_desc_semiconductor2">
+                  故采用整套系统解决方案，并以其现有的2座工厂（全世界最先进制程的2座工厂，已独家完成一期）为起点，导入两套解决方案。2021年将陆续在其他3座厂区导入晶圆仓储自动化搬运系统以及无人叉车搬运系统。
                 </p>
 
-                <div class="badge bg-primary">项目痛点</div>
+                <div class="badge bg-primary" data-i18n="project_pain_semiconductor">项目痛点</div>
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
                     <p><i class="icofont-check-circled"></i><span
-                        data-i18n="inventory_feature1">因人力严重不足，物料、成品及办成品搬运量比较大；</span>
+                        data-i18n="project_pain_semiconductor1">因人力严重不足，物料、成品及办成品搬运量比较大；</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="project_pain_semiconductor2">许多货物中含化学品（原物料及半成品）具有腐蚀性，对人体及设备有危害，且重量较重，不便于人工搬运，想要引入自动化物流搬运系统，以降低职工作业风险，提高生产效率；</span>
                     </p>
                     <p><i class="icofont-check-circled"></i><span
-                        data-i18n="inventory_feature1">许多货物中含化学品（原物料及半成品）具有腐蚀性，对人体及设备有危害，且重量较重，不便于人工搬运，想要引入自动化物流搬运系统，以降低职工作业风险，提高生产效率；</span>
-                    </p>
+                        data-i18n="project_pain_semiconductor3">场景中有金属反光，还有一定的光线差异问题；</span></p>
                     <p><i class="icofont-check-circled"></i><span
-                        data-i18n="inventory_feature1">场景中有金属反光，还有一定的光线差异问题；</span>
+                        data-i18n="project_pain_semiconductor4">半导体行业，尤其是该客户对于系统安全性、稳定性要求极高，在提供物流搬运系统解决方案，需考虑各种环境影响，异常的处理和跟踪，监控作业状况以及各种设备之间的交互管理。</span>
                     </p>
-                    <p><i class="icofont-check-circled"></i><span
-                        data-i18n="inventory_feature1">半导体行业，尤其是该客户对于系统安全性、稳定性要求极高，在提供物流搬运系统解决方案，需考虑各种环境影响，异常的处理和跟踪，监控作业状况以及各种设备之间的交互管理。</span>
-                    </p>
-
                   </div>
                   <div class="col-sm-12 col-md-6">
                     <div class="post-item2">
@@ -793,95 +800,292 @@
                 </div>
               </div>
               <div class="case-card bg-light rounded-3 shadow-sm show ">
-                <h5 class="title" data-i18n="sorting_module">经典案例介绍 – 好工品(重庆)紧固件有限公司</h5>
-                <div class="badge bg-primary">项目介绍</div>
-                <p>
+                <h5 class="title" data-i18n="case_intro_haogongpin">经典案例介绍 – 好工品(重庆)紧固件有限公司</h5>
+                <div class="badge bg-primary" data-i18n="project_intro_haogongpin">项目介绍</div>
+                <p data-i18n="project_desc_haogongpin1">
                   好工品(重庆)紧固件有限公司是专注于工业零部件B2B/B2C交易平台。除自采自销的产品线外，建立新仓开始扩展引入第三方供应商，来拓展工业品供应链业务。新仓库采用出入库全自动无人作业方式，未来以京东无人仓为目标来寻求解决方案。
                 </p>
-
-
-                <div class="badge bg-primary">项目重点</div>
-                <p>在仓储面积12000m²，层高10米的区域内，需规划出最大支持15万箱货物存储量，并且通过动态库存调整，满足峰值日出货达到流量需求。</p>
-                
-               
-                    <div class="row">
-                      <div class="col-sm-6 col-md-4">
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case33.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case37.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case34.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4">
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case35.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case36.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case38.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4">
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case33.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case31.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
-                        <div class="post-item2">
-                          <div class="thumb">
-                            <a><img src="static/picture/case30.png" alt="Image" width="370" height="285"></a>
-                          </div>
-                        </div>
+                <div class="badge bg-primary" data-i18n="project_key_haogongpin">项目重点</div>
+                <p data-i18n="project_key_desc_haogongpin">
+                  在仓储面积12000m²，层高10米的区域内，需规划出最大支持15万箱货物存储量，并且通过动态库存调整，满足峰值日出货达到流量需求。
+                </p>
+                <div class="row">
+                  <div class="col-sm-6 col-md-4">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case33.png" alt="Image" width="370" height="285"></a>
                       </div>
                     </div>
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case37.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case34.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case35.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case36.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case38.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case33.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case31.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case30.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <!-- 城轨运输案例 (默认隐藏) -->
           <div class="case-group" data-industry="logistics">
-            <h3 class="mb-4" data-i18n="case_group3">城轨运输行业案例</h3>
+            <h3 class="mb-4" data-i18n="case_group_logistics">城轨运输行业案例</h3>
             <div class="row g-4">
-              
+              <div class="case-card bg-light rounded-3 shadow-sm show ">
+                <h5 class="title" data-i18n="case_intro_guiyang">经典案例介绍 – 贵阳地铁S1线一期线物资总库</h5>
+                <div class="badge bg-primary" data-i18n="project_intro_guiyang">项目介绍</div>
+                <p data-i18n="project_desc_guiyang1">
+                  贵阳市地铁S1线一期物资总库，是贵阳市第四条建成运营的地铁线路，于2019年11月7日开工建设，于2024年12月28日开通运营一期（皂角坝站—望城坡站）。我司在项目中为其承建了车辆检修段的物资立体库部分，也已正式投入使用。同时该项目也是城轨项目中首个采用了“数字孪生”技术进行物资库管理的智能立体库项目。
+                </p>
+                <div class="badge bg-primary" data-i18n="project_key_guiyang">项目重点</div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="project_key_guiyang1">配套智能立库的1:1数字孪生技术加入，实现库内物资管理透明化，数字化</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="project_key_guiyang2">减少占地面积需求的同时，通过集约化设计降低建设成本；自动化管理也减少了人力成本和人为错误风险。</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="project_key_guiyang3">物资总库的立体化设计为S1线提供可靠的物资保障，确保列车检修、故障救援等工作的及时性，间接提升线路运能</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="project_key_guiyang4">立体库的先进设计为后续轨道交通项目提供参考，推动贵阳乃至西南地区在轨道交通仓储管理领域的技术升级。</span></p>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-gui1.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-item2">
+                  <div class="thumb">
+                    <a><img src="static/picture/case-gui2.png" alt="Image" width="370" height="285"></a>
+                  </div>
+                </div>
+                <div class="post-item2">
+                  <div class="thumb">
+                    <a><img src="static/picture/case-gui3.png" alt="Image" width="370" height="285"></a>
+                  </div>
+                </div>
+                <div class="post-item2">
+                  <div class="thumb">
+                    <a><img src="static/picture/case-gui5.png" alt="Image" width="370" height="285"></a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-gui6.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-gui7.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-4">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-gui8.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-4">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-gui9.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-4">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-gui4.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 响应式视频容器 -->
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
+                      <video class="video-player" controls preload="metadata" poster=""
+                        data-src="static/picture/case-gui.mp4" playsinline muted style="background: #000;">
+                      </video>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
+                      <video class="video-player" controls preload="metadata" poster=""
+                        data-src="static/picture/case-gui1.mp4" playsinline muted style="background: #000;">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="case-card bg-light rounded-3 shadow-sm show ">
+                <h5 class="title" data-i18n="case_intro_taiyuan">经典案例介绍 – 太原地铁2号线物资总库</h5>
+                <div class="badge bg-primary" data-i18n="project_intro_taiyuan">项目介绍</div>
+                <p data-i18n="project_desc_taiyuan1">
+                  太原市城市轨道交通1号线一期工程场段物资立体库项目。太原地铁1号线已于2025年2月22日开通运营一期。我司配合建设位于马练营的车辆检修站点内的物资总库，为其提供从软件、立体库硬件、货架系统等一整套智能立库解决方案。
+                </p>
+                <div class="badge bg-primary" data-i18n="project_key_taiyuan">项目重点</div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <p><i class="icofont-check-circled"></i><span data-i18n="project_key_taiyuan1">重型设备物资库</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="project_key_taiyuan2">高密度存储，货架占地面积750㎡，存储了以往需要平铺一整个库房的所有物资，</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="project_key_taiyuan3">大小货分区存储，场地空出一半空间用于小件物资存取，进一步提高空间利用率</span></p>
+                    <p><i class="icofont-check-circled"></i><span
+                        data-i18n="project_key_taiyuan4">全自动库存管理，搭配立体库专用WMS系统实现物资库存自动分配</span></p>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-tai1.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-item2">
+                  <div class="thumb">
+                    <a><img src="static/picture/case-tai2.png" alt="Image" width="370" height="285"></a>
+                  </div>
+                </div>
+                <div class="post-item2">
+                  <div class="thumb">
+                    <a><img src="static/picture/case-tai3.png" alt="Image" width="370" height="285"></a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-tai4.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-tai5.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-tai6.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-tai7.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-tai8.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="post-item2">
+                      <div class="thumb">
+                        <a><img src="static/picture/case-tai9.png" alt="Image" width="370" height="285"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="case-card bg-light rounded-3 shadow-sm show ">
+                <h5 class="title" data-i18n="case_intro_tianjin">经典案例介绍 – 天津地铁7号线物资自动化仓库</h5>
+                <div class="badge bg-primary" data-i18n="debug_video_tianjin">调试视频</div>
+                <!-- 响应式视频容器 -->
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
+                      <video class="video-player" controls preload="metadata" poster=""
+                        data-src="static/picture/case-tian1.mp4" playsinline muted style="background: #000;">
+                      </video>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden">
+                      <video class="video-player" controls preload="metadata" poster=""
+                        data-src="static/picture/case-tian2.mp4" playsinline muted style="background: #000;">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- 海外案例 (默认隐藏) -->
           <div class="case-group" data-industry="medical">
-            <h3 class="mb-4" data-i18n="case_group4">海外案例</h3>
+            <h3 class="mb-4" data-i18n="case_group_medical">海外案例</h3>
             <div class="row g-4">
-
               <div class="case-card bg-light rounded-3 shadow-sm show ">
-                <h5 class="title" data-i18n="inventory_module">经典案例介绍 – AAP 马来西亚槟城 自动化仓储
-                </h5>
-                <div class="badge bg-primary">项目介绍</div>
-                <p>阿姆斯特朗自行车配件公司成立于1972年，专注于自行车辐条和辐条帽的制造，1978年随着阿姆斯特朗汽车零部件公司（AAP）的成立，其业务范围扩大到摩托车零部件。
-                </p>
-                <p>自1989年以来，该公司不断扩大业务，进军汽车行业。现在，它是一家专注于汽车零部件制造业务的公司，产品种类繁多。
-                </p>
-                <p>公司于2024年开始对位于马来西亚槟城市、芙蓉市的两座汽车零部件工厂进行整体仓储自动化改造，以应对当前人员过多，管理繁杂，且人员素质不足的问题，同时也为未来业务方向的拓展做好提前布局与准备。
-                </p>
+                <h5 class="title" data-i18n="case_intro_aap">经典案例介绍 – AAP 马来西亚槟城 自动化仓储</h5>
+                <div class="badge bg-primary" data-i18n="project_intro_aap">项目介绍</div>
+                <p data-i18n="project_desc_aap1">
+                  阿姆斯特朗自行车配件公司成立于1972年，专注于自行车辐条和辐条帽的制造，1978年随着阿姆斯特朗汽车零部件公司（AAP）的成立，其业务范围扩大到摩托车零部件。</p>
+                <p data-i18n="project_desc_aap2">自1989年以来，该公司不断扩大业务，进军汽车行业。现在，它是一家专注于汽车零部件制造业务的公司，产品种类繁多。</p>
+                <p data-i18n="project_desc_aap3">
+                  公司于2024年开始对位于马来西亚槟城市、芙蓉市的两座汽车零部件工厂进行整体仓储自动化改造，以应对当前人员过多，管理繁杂，且人员素质不足的问题，同时也为未来业务方向的拓展做好提前布局与准备。</p>
                 <div class="post-item2">
                   <div class="thumb">
                     <a><img src="static/picture/case40.png" alt="Image" width="370" height="285"></a>
@@ -892,40 +1096,32 @@
                     <a><img src="static/picture/case42.png" alt="Image" width="370" height="285"></a>
                   </div>
                 </div>
-               
-
-                <div class="badge bg-primary">料箱库区 – 设计重点
-                </div>
-                <p><i class="icofont-check-circled"></i><span data-i18n="inventory_feature1">从送货司机卸货一刻开始，全面使用WMS系统进行
-                    收货-暂存-入库前分拣-入库-上架 的标准化入库流程进行库存管理，并严格按效期做数据记录；</span>
-                </p>
+                <div class="badge bg-primary" data-i18n="design_key_aap">料箱库区 – 设计重点</div>
                 <p><i class="icofont-check-circled"></i><span
-                    data-i18n="inventory_feature1">由料箱搬运机器人执行小件货品从入库到上架、拣货到出库台的库内转运工作；</span></p>
+                    data-i18n="design_key_aap1">从送货司机卸货一刻开始，全面使用WMS系统进行收货-暂存-入库前分拣-入库-上架
+                    的标准化入库流程进行库存管理，并严格按效期做数据记录；</span></p>
                 <p><i class="icofont-check-circled"></i><span
-                    data-i18n="inventory_feature1">考虑出库拣选的效率，货位全采用单深位货架，以提高AGV搬运速度；</span>
-                </p>
+                    data-i18n="design_key_aap2">由料箱搬运机器人执行小件货品从入库到上架、拣货到出库台的库内转运工作；</span></p>
                 <p><i class="icofont-check-circled"></i><span
-                    data-i18n="inventory_feature1">通过LED电子标签分拣墙进行分拣管理，降低人工作业错误率，并提高拣选效率；</span>
-                </p>
+                    data-i18n="design_key_aap3">考虑出库拣选的效率，货位全采用单深位货架，以提高AGV搬运速度；</span></p>
                 <p><i class="icofont-check-circled"></i><span
-                    data-i18n="inventory_feature1">由WMS对库存分配进行管控，无需人工干预，并可根据生产物料所需，以及库内库存库龄情况做优化调整，通过数据反馈给出合理采购和备料计划；</span>
+                    data-i18n="design_key_aap4">通过LED电子标签分拣墙进行分拣管理，降低人工作业错误率，并提高拣选效率；</span></p>
+                <p><i class="icofont-check-circled"></i><span
+                    data-i18n="design_key_aap5">由WMS对库存分配进行管控，无需人工干预，并可根据生产物料所需，以及库内库存库龄情况做优化调整，通过数据反馈给出合理采购和备料计划；</span>
                 </p>
-                <div class="badge bg-primary">建设后状况：槟城小件料箱仓
-                </div>
+                <div class="badge bg-primary" data-i18n="after_construction_aap">建设后状况：槟城小件料箱仓</div>
                 <div class="post-item2">
                   <div class="thumb">
                     <a><img src="static/picture/case43.png" alt="Image" width="370" height="285"></a>
                   </div>
                 </div>
-                <div class="badge bg-primary">现状说明：大件整托存储仓
-                </div>
+                <div class="badge bg-primary" data-i18n="current_status_aap">现状说明：大件整托存储仓</div>
                 <div class="post-item2">
                   <div class="thumb">
                     <a><img src="static/picture/case45.png" alt="Image" width="370" height="285"></a>
                   </div>
                 </div>
-                <div class="badge bg-primary">建设后状况：大件整托存储仓
-                </div>
+                <div class="badge bg-primary" data-i18n="after_construction_bulk_aap">建设后状况：大件整托存储仓</div>
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
                     <div class="post-item2">
@@ -994,8 +1190,8 @@
                           data-i18n="submenu_rfid">rfid电子标签</span></a>
                     </li>
                     <li><a href="digital.html"><i class="icofont-minus"></i><span
-                      data-i18n="nav_digital">工业数字孪生系统</span></a>
-                </li>
+                          data-i18n="nav_digital">工业数字孪生系统</span></a>
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -1006,7 +1202,7 @@
                 <nav class="widget-menu-wrap">
                   <ul class="nav-menu nav">
                     <li><a href="index.html"><i class="icofont-minus"></i><span data-i18n="nav_home">首页</span></a></li>
-                    
+
                     <li><a href="cases.html"><i class="icofont-minus"></i><span data-i18n="nav_cases">成功案例</span></a>
                     </li>
                     <li><a href="about.html"><i class="icofont-minus"></i><span

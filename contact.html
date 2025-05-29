@@ -587,29 +587,39 @@
   </div>
 <script>
    // 提交表单
-   document.getElementById('contact-form').addEventListener('submit', async function (e) {
-      e.preventDefault();
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
 
-      const form = e.target;
-      const formData = new FormData(form);
+  try {
+    // 强制使用 HTTPS 并添加超时
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5秒超时
 
-      try {
-        const response = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        });
-
-        if (response.ok) {
-          alert(currentLang === 'cn' ? "提交成功！我们会尽快联系您。" : "Submitted successfully! We will contact you soon.");
-          form.reset();
-        } else {
-          alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
-        }
-      } catch (error) {
-        alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
-      }
+    const response = await fetch('https://formsubmit.co/jerryma@jfindx.ltd', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      body: new URLSearchParams(formData).toString(),
+      signal: controller.signal
     });
+
+    clearTimeout(timeoutId);
+
+    if (response.ok) {
+          alert(currentLang === 'cn' ? "提交成功！我们会尽快联系您。" : "Submitted successfully! We will contact you soon.");
+      form.reset();
+    } else {
+      alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
+    }
+  } catch (error) {
+   
+    alert(currentLang === 'cn' ? "提交失败，请稍后重试。" : "Submission failed, please try again later.");
+  }
+});
 </script>
 
   <script src="https://api.map.baidu.com/api?v=3.0&ak=rIZVF5yTw4RRyKKbxi9fg5ZGaA4v4W8O&callback=initMap"></script>
