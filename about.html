@@ -103,370 +103,398 @@
       transition: all 0.3s ease;
       z-index: 10;
     }
-/* 时间轴连线样式 */
-.timeline-card {
-  position: relative;
-  z-index: 1;
-}
 
-/* 桌面端三列布局 */
-@media (min-width: 992px) {
-  .row.g-4 {
-    position: relative;
-  }
+    /* 时间轴连线样式 */
+    .timeline-card {
+      position: relative;
+      z-index: 1;
+    }
 
-  /* 水平连线 */
-  .timeline-card::after {
-    content: '';
-    position: absolute;
-    top: 40%;
-    left: 85%;
-    width: 30%;
-    height: 2px;
-    background: #007bff;
-    z-index: -1;
-  }
-
-  /* 每行最后一个卡片不显示水平连线 */
-  .timeline-card:nth-child(3n+3)::after {
-    display: none;
-  }
-
-  /* 行间垂直线 */
-  .timeline-card:nth-child(3n+3)::before {
-    content: '';
-    position: absolute;
-    top: 60%;
-    left: 85%;
-    width: 2px;
-    height: 120%;
-    background: #007bff;
-    z-index: -1;
-  }
-
-  /* 偶数行反向连线 */
-  .timeline-card:nth-child(3n+4)::after,
-  .timeline-card:nth-child(3n+5)::after {
-    left: auto;
-    right: 85%;
-    width: 30%;
-  }
-
-  .timeline-card:nth-child(3n+4)::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    left: 15%;
-    width: 2px;
-    height: 120%;
-    background: #007bff;
-  }
-}
-
-/* 平板端两列布局 */
-@media (max-width: 991px) and (min-width: 768px) {
-  .timeline-card:nth-child(even)::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -15px;
-    width: 15px;
-    height: 2px;
-    background: #007bff;
-    z-index: -1;
-  }
-
-  .timeline-card:nth-child(odd)::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -15px;
-    width: 15px;
-    height: 2px;
-    background: #007bff;
-    z-index: -1;
-  }
-
-  .timeline-card:nth-child(even)::after {
-    content: '';
-    position: absolute;
-    top: calc(50% + 40px);
-    left: 50%;
-    width: 2px;
-    height: 40px;
-    background: #007bff;
-    z-index: -1;
-  }
-}
-
-/* 手机端垂直连线 */
-@media (max-width: 767px) {
-  .timeline-card::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 24px;
-    width: 2px;
-    height: 40px;
-    background: #007bff;
-    z-index: -1;
-  }
-
-  .timeline-card:first-child::before {
-    display: none;
-  }
-}
-  </style>
-    <!--=======================Javascript============================-->
-    <script>
-      // 初始化语言系统
-      const translations = {
-        "en": {
-          "page_title": "About - JFindX",
-          "current_lang": "EN",
-          "alt_logo": "Main Logo of JFINDX",
-          "alt_logo_light": "Light Logo of JFINDX",
-          "alt_prev": "Previous Slide",
-          "alt_next": "Next Slide",
-          "alt_about1": "Illustration of Intelligent Warehouse Solution",
-          "alt_about2": "Illustration of System Architecture",
-          "alt_footer_logo": "Footer Logo",
-          // Navigation Menu
-          "nav_home": "Home",
-          "nav_solution": "OvrSolution",
-          "nav_software": "AI-FlexSC Software",
-          "submenu_wms": "Intelligent Warehouse Management System (WMS)",
-          "submenu_wcs": "Automated Equipment Management System (WCS)",
-          "nav_hardware": "Logistics",
-          "submenu_warehouse": "Intelligent Warehouse",
-          "submenu_logistics": "Intelligent Logistics",
-          "submenu_warehouse1": "Intelligent Warehousing Equipment",
-"submenu_logistics1": "Intelligent logistics equipment",
-          "submenu_rfid": "RFID Electronic Tags",
-          "nav_digital": "Digital-Twin",
-          "nav_cases": "Success Cases",
-          "nav_about": "About Us",
-          "submenu_about": "Team Introduction",
-          "submenu_honor": "Company Honors",
-          "submenu_contact": "Contact Us",
-          // Footer
-          "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
-          "footer_services": "All Services",
-          "footer_company_email": "Company Email",
-          "footer_company_phone": "+86 130 5204 4828",
-          "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
-          "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
-          "footer_icp": "Zhejiang ICP No. 2023030316-1",
-  
-          "home": "Home",
-          "wms": "WMS System",
-          "wcs": "WCS System",
-          "digital": "Digital Twin",
-          "about": "About Us",
-          "about_title": "About Us",
-          "company_name": "Ningbo JFindX Technology Co., Ltd",
-          "about_desc1": "Our team consists of industry elites, adhering to the mission of focusing on customer needs, providing customized automation and intelligent solutions to help enterprises achieve efficient operation and sustainable development, and committed to injecting intelligent innovation power for customers. At the same time, we also provide flexible supply chain software and hardware solutions for manufacturing enterprises at home and abroad. The core products are flexible supply chain management platform and intelligent warehousing solutions.",
-          "about_desc2": "The company's core technical team mainly comes from well-known universities at home and abroad and Fortune 500 companies, such as Alibaba, Intel, etc., with excellent scientific research background and rich industrial experience. The company has made a number of innovative achievements in key technologies such as artificial intelligence algorithms, cloud platform software architecture, Internet of Things technology, and software and hardware control integration, driving the development of high-end manufacturing in domestic industries.",
-          "about_desc3": "Our main businesses include: automated warehousing hardware equipment, intelligent warehousing management software WMS, automated equipment management system WCS, and digital twin system.",
-          "about_desc4": "As a provider of flexible supply chain software and hardware solutions focusing on artificial intelligence algorithms, the company's headquarters is located in Ningbo High-tech Zone, and its business network covers both domestic and overseas markets.There is a business office in Chongqing in China, and cooperative branches have been established in Penang, Malaysia and Sydney, Australia overseas, building a global service system. On the supply chain side, the company has cooperated with and invested in several hardware production factories in Suzhou, achieving a full-chain layout from technology research and development to production implementation."  ,
-          "contact_us": "Contact Us",
-          "contact_title": "Contact Us",
-          "contact_desc": "If you are interested in our automation solutions or have any questions, please feel free to contact us. We look forward to starting a journey of cooperation with you.",
-          "form_name": "Name",
-          "form_company": "Company",
-          "form_phone": "Phone",
-          "form_subject": "Subject",
-          "form_message": "Detailed Questions",
-          "form_submit": "Submit Now",
-          "contact_business": "Consultation and Business Cooperation",
-          "company_address": "Company Address",
-          "full_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo, Zhejiang Province",
-          "popular_products": "Popular Products",
-          "footer_desc": "JFindX - Automation solution experts, tailor-made automation solutions for you, covering comprehensive services from hardware equipment to software systems.",
-          "company_email": "Company Email",
-          "company_phone": "+86 130 5204 4828",
-          "copyright": "© Ningbo JFindX Technology Co., Ltd. All Rights Reserved"
-        },
-        "cn": {
-          "page_title": "关于我们 - JFindX",
-          // 通用
-          "current_lang": "CN",
-          "alt_logo": "捷方优制主Logo",
-          "alt_logo_light": "捷方优制浅色Logo",
-          "alt_prev": "上一张幻灯片",
-          "alt_next": "下一张幻灯片",
-          "alt_about1": "智能仓储解决方案图示",
-          "alt_about2": "系统架构图示",
-          "alt_footer_logo": "页脚Logo",
-          // 导航菜单
-          "nav_home": "首页",
-          "nav_solution": "整体解决方案",
-          "nav_software": "AI柔性供应链软件",
-          "submenu_wms": "智能仓储管理系统WMS",
-          "submenu_wcs": "自动化设备管理系统WCS",
-          "nav_hardware": "智能仓储物流硬件",
-          "submenu_warehouse": "智能仓储",
-          "submenu_logistics": "智能物流",
-          "submenu_warehouse1": "智能仓储设备",
-          "submenu_logistics1": "智能物流设备",
-          "submenu_rfid": "RFID电子标签",
-          "nav_digital": "数字孪生系统",
-          "nav_cases": "成功案例",
-          "nav_about": "关于我们",
-          "submenu_about": "团队介绍",
-          "submenu_honor": "公司荣誉",
-          "submenu_contact": "联系我们",
-          // 页脚
-          "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-          "footer_services": "所有服务",
-          "footer_company_email": "公司邮箱",
-          "footer_company_phone": "+86 130 5204 4828",
-          "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-          "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
-          "footer_icp": "浙ICP备2023030316号-1",
-  
-          "home": "首页",
-          "wms": "智能仓储管理系统WMS",
-          "wcs": "自动化设备管理系统WCS",
-          "digital": "工业数字孪生系统",
-          "about": "关于我们",
-          "about_title": "关于我们",
-          "company_name": "宁波捷方优制科技有限公司",
-          "about_desc1": "我们的团队由行业精英组成，秉持着以客户需求为核心，通过定制化自动化智能化解决方案，助力企业实现高效运营与可持续发展的使命，致力于为客户注入智能创新动力。同时也为海内外制造型企业提供柔性供应链的软硬件解决方案。核心产品为柔性供应链管理平台及智能仓储解决方案。",
-          "about_desc2": "公司核心技术团队主要来自海内外名校及世界 500 强企业，如：阿里巴巴、Intel等，有优秀的科学家科研背景及丰富的产业经验。公司在人工智能算法、云平台软件架构、物联网技术、软硬件控制集成等关键技术上，取得多项创新成果，带动国内产业高端制造的发展。",
-          "about_desc3": "我们的主要业务包含：自动化仓储硬件设备、智能仓储管理软件WMS、自动化设备管理系统WCS、工业数字孪生系统这四大主要业务板块。",
-          "about_desc4": "作为聚焦人工智能算法的柔性供应链软硬件解决方案商，公司总部坐落于宁波高新区，业务网络覆盖海内外。国内设有重庆商务办事处，海外于马来西亚槟城、澳大利亚悉尼成立合作分公司，构建全球化服务体系。在供应链端，公司于苏州合作及投资数家硬件生产工厂，实现从技术研发到生产落地的全链条布局。",
-          "contact_us": "联系我们",
-          "contact_title": "联系我们",
-          "contact_desc": "如果您对我们的自动化解决方案感兴趣或有任何疑问，请随时与我们联系。我们期待与您开启合作之旅。",
-          "form_name": "姓名",
-          "form_company": "公司名称",
-          "form_phone": "联系方式",
-          "form_subject": "咨询主题",
-          "form_message": "详细问题",
-          "form_submit": "立即提交",
-          "contact_business": "咨询和业务合作",
-          "company_address": "公司地址",
-          "full_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-          "popular_products": "热门产品",
-          "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-          "company_email": "公司邮箱",
-          "company_phone": "+86 130 5204 4828",
-          "copyright": "宁波捷方优制科技有限公司版权所有"
-        }
-      };
-  
-      let currentLang = localStorage.getItem('language') || 'cn';
-  
-      // 核心翻译函数
-      function updateLanguage(lang) {
-        currentLang = lang;
-        localStorage.setItem('language', lang);
-  
-        // 更新所有带翻译标记的元素
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-          const key = element.getAttribute('data-i18n');
-          if (translations[lang][key]) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-              element.value = translations[lang][key];
-            } else {
-              element.textContent = translations[lang][key];
-            }
-          }
-        });
-  
-        // 更新placeholder
-        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-          const key = element.getAttribute('data-i18n-placeholder');
-          if (translations[lang][key]) {
-            element.setAttribute('placeholder', translations[lang][key]);
-          }
-        });
-  
-        // 更新按钮显示
-        document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
-  
-        // 更新页面标题
-        document.title = translations[lang]['page_title'];
+    /* 桌面端三列布局 */
+    @media (min-width: 992px) {
+      .row.g-4 {
+        position: relative;
       }
-  
-  
-  
-      // 初始化
-      document.addEventListener('DOMContentLoaded', () => {
-        // 初始化语言
-        updateLanguage(currentLang);
-        // 显示页面内容
-        document.body.style.visibility = 'visible';
-  
-        // 绑定语言切换事件
-        document.querySelectorAll('.dropdown-item').forEach(item => {
-          item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const lang = e.target.getAttribute('data-lang');
-            updateLanguage(lang);
-  
-            // 手动关闭下拉菜单（Bootstrap5方法）
-            const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
-            dropdown.hide();
-          });
+
+      /* 水平连线 */
+      .timeline-card::after {
+        content: '';
+        position: absolute;
+        top: 40%;
+        left: 85%;
+        width: 30%;
+        height: 2px;
+        background: #007bff;
+        z-index: -1;
+      }
+
+      /* 每行最后一个卡片不显示水平连线 */
+      .timeline-card:nth-child(3n+3)::after {
+        display: none;
+      }
+
+      /* 行间垂直线 */
+      .timeline-card:nth-child(3n+3)::before {
+        content: '';
+        position: absolute;
+        top: 60%;
+        left: 85%;
+        width: 2px;
+        height: 120%;
+        background: #007bff;
+        z-index: -1;
+      }
+
+      /* 偶数行反向连线 */
+      .timeline-card:nth-child(3n+4)::after,
+      .timeline-card:nth-child(3n+5)::after {
+        left: auto;
+        right: 85%;
+        width: 30%;
+      }
+
+      .timeline-card:nth-child(3n+4)::before {
+        content: '';
+        position: absolute;
+        top: -20%;
+        left: 15%;
+        width: 2px;
+        height: 120%;
+        background: #007bff;
+      }
+    }
+
+    /* 平板端两列布局 */
+    @media (max-width: 991px) and (min-width: 768px) {
+      .timeline-card:nth-child(even)::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        width: 15px;
+        height: 2px;
+        background: #007bff;
+        z-index: -1;
+      }
+
+      .timeline-card:nth-child(odd)::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -15px;
+        width: 15px;
+        height: 2px;
+        background: #007bff;
+        z-index: -1;
+      }
+
+      .timeline-card:nth-child(even)::after {
+        content: '';
+        position: absolute;
+        top: calc(50% + 40px);
+        left: 50%;
+        width: 2px;
+        height: 40px;
+        background: #007bff;
+        z-index: -1;
+      }
+    }
+
+    /* 手机端垂直连线 */
+    @media (max-width: 767px) {
+      .timeline-card::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 24px;
+        width: 2px;
+        height: 40px;
+        background: #007bff;
+        z-index: -1;
+      }
+
+      .timeline-card:first-child::before {
+        display: none;
+      }
+    }
+  </style>
+  <!--=======================Javascript============================-->
+  <script>
+    // 初始化语言系统
+    const translations = {
+      "en": {
+        "page_title": "About - JFindX",
+        "current_lang": "EN",
+        "alt_logo": "Main Logo of JFINDX",
+        "alt_logo_light": "Light Logo of JFINDX",
+        "alt_prev": "Previous Slide",
+        "alt_next": "Next Slide",
+        "alt_about1": "Illustration of Intelligent Warehouse Solution",
+        "alt_about2": "Illustration of System Architecture",
+        "alt_footer_logo": "Footer Logo",
+        // Navigation Menu
+        "nav_home": "Home",
+        "nav_solution": "OvrSolution",
+        "nav_software": "AI-FlexSC Software",
+        "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+        "submenu_wcs": "Automated Equipment Management System (WCS)",
+        "nav_hardware": "Logistics",
+        "submenu_warehouse": "Intelligent Warehouse",
+        "submenu_logistics": "Intelligent Logistics",
+        "submenu_warehouse1": "Intelligent Warehousing Equipment",
+        "submenu_logistics1": "Intelligent logistics equipment",
+        "submenu_rfid": "RFID Electronic Tags",
+        "nav_digital": "Digital-Twin",
+        "nav_cases": "Success Cases",
+        "nav_about": "About Us",
+        "submenu_about": "Team Introduction",
+        "submenu_honor": "Company Honors",
+        "submenu_contact": "Contact Us",
+        // Footer
+        "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+        "footer_services": "All Services",
+        "footer_company_email": "Company Email",
+        "footer_company_phone": "+86 130 5204 4828",
+        "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+        "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+        "footer_icp": "Zhejiang ICP No. 2023030316-1",
+
+        "home": "Home",
+        "wms": "WMS System",
+        "wcs": "WCS System",
+        "digital": "Digital Twin",
+        "about": "About Us",
+        "about_title": "About Us",
+        "company_name": "Ningbo JFindX Technology Co., Ltd",
+        "about_desc1": "Our team consists of industry elites, adhering to the mission of focusing on customer needs, providing customized automation and intelligent solutions to help enterprises achieve efficient operation and sustainable development, and committed to injecting intelligent innovation power for customers. At the same time, we also provide flexible supply chain software and hardware solutions for manufacturing enterprises at home and abroad. The core products are flexible supply chain management platform and intelligent warehousing solutions.",
+        "about_desc2": "The company's core technical team mainly comes from well-known universities at home and abroad and Fortune 500 companies, such as Alibaba, Intel, etc., with excellent scientific research background and rich industrial experience. The company has made a number of innovative achievements in key technologies such as artificial intelligence algorithms, cloud platform software architecture, Internet of Things technology, and software and hardware control integration, driving the development of high-end manufacturing in domestic industries.",
+        "about_desc3": "Our main businesses include: automated warehousing hardware equipment, intelligent warehousing management software WMS, automated equipment management system WCS, and digital twin system.",
+        "about_desc4": "As a provider of flexible supply chain software and hardware solutions focusing on artificial intelligence algorithms, the company's headquarters is located in Ningbo High-tech Zone, and its business network covers both domestic and overseas markets. There is a business office in Chongqing in China, and cooperative branches have been established in Penang, Malaysia and Sydney, Australia overseas, building a global service system. On the supply chain side, the company has cooperated with and invested in several hardware production factories in Suzhou, achieving a full-chain layout from technology research and development to production implementation.",
+        "contact_us": "Contact Us",
+        "contact_title": "Contact Us",
+        "contact_desc": "If you are interested in our automation solutions or have any questions, please feel free to contact us. We look forward to starting a journey of cooperation with you.",
+        "form_name": "Name",
+        "form_company": "Company",
+        "form_phone": "Phone",
+        "form_subject": "Subject",
+        "form_message": "Detailed Questions",
+        "form_submit": "Submit Now",
+        "contact_business": "Consultation and Business Cooperation",
+        "company_address": "Company Address",
+        "full_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo, Zhejiang Province",
+        "popular_products": "Popular Products",
+        "footer_desc": "JFindX - Automation solution experts, tailor-made automation solutions for you, covering comprehensive services from hardware equipment to software systems.",
+        "company_email": "Company Email",
+        "company_phone": "+86 130 5204 4828",
+        "copyright": "© Ningbo JFindX Technology Co., Ltd. All Rights Reserved",
+        "team": "Core team",
+        "fang_name": "Fang Huawei",
+        "fang_role": "Leader",
+        "fang_degree": "Doctor of Computer Engineering, National Taiwan University",
+        "fang_intro1": "Founder and CEO of Ningbo JFindX, Founder and CEO of JFindX (M) Sdn Bhd in Malaysia, Partner and CTO of Shanghai Bit通 Intelligence, Visiting Professor at Ningbo Institute of Materials, Chinese Academy of Sciences, Industry Mentor and Visiting Scholar at Xi'an Jiaotong-Liverpool University and The Chinese University of Hong Kong. Specialized in AI vision algorithms, cloud services, and AloT architecture, with multiple patents.",
+        "fang_intro2": "Awarded as Outstanding Talent of Dongfang Yingcai/Chunshen Pyramid in Shanghai, Second Prize of China Industrial Internet, Bronze Award of Haiju Yingcai and other national awards. Served as senior executives and CTOs of major listed companies, such as Senior Architect at Alibaba, CTO at Rolling Stone, Zhongqiang Optoelectronics Group, Compal Group, Intel, Atos, Oplink, etc.",
+        "yan_name": "Yan Weicheng",
+        "yan_role": "AI Algorithm Technology Leader",
+        "yan_degree": "Ph.D. Candidate in Artificial Intelligence, University of Sydney / Master of Applied Science, University of British Columbia",
+        "yan_intro": "Co-founder of GENAVISTA AI in Australia, focusing on generative AI and computer vision. Former core member of Leonardo.Ai and senior engineer at Intel, promoting the industrialization of AI technology.",
+        "ma_name": "Ma Junjie",
+        "ma_role": "Project Leader",
+        "ma_degree": "Bachelor of Computer Hardware, East China University of Science and Technology",
+        "ma_intro": "More than ten years of experience in software product management. Led projects such as Shanghai Benchmark Supply Chain and Bit通 Intelligence, focusing on Internet of Things and intelligent supply chain solutions, and promoting technology implementation through efficient team collaboration."
+      },
+      "cn": {
+        "page_title": "关于我们 - JFindX",
+        // 通用
+        "current_lang": "CN",
+        "alt_logo": "捷方优制主Logo",
+        "alt_logo_light": "捷方优制浅色Logo",
+        "alt_prev": "上一张幻灯片",
+        "alt_next": "下一张幻灯片",
+        "alt_about1": "智能仓储解决方案图示",
+        "alt_about2": "系统架构图示",
+        "alt_footer_logo": "页脚Logo",
+        // 导航菜单
+        "nav_home": "首页",
+        "nav_solution": "整体解决方案",
+        "nav_software": "AI柔性供应链软件",
+        "submenu_wms": "智能仓储管理系统WMS",
+        "submenu_wcs": "自动化设备管理系统WCS",
+        "nav_hardware": "智能仓储物流硬件",
+        "submenu_warehouse": "智能仓储",
+        "submenu_logistics": "智能物流",
+        "submenu_warehouse1": "智能仓储设备",
+        "submenu_logistics1": "智能物流设备",
+        "submenu_rfid": "RFID电子标签",
+        "nav_digital": "数字孪生系统",
+        "nav_cases": "成功案例",
+        "nav_about": "关于我们",
+        "submenu_about": "团队介绍",
+        "submenu_honor": "公司荣誉",
+        "submenu_contact": "联系我们",
+        // 页脚
+        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+        "footer_services": "所有服务",
+        "footer_company_email": "公司邮箱",
+        "footer_company_phone": "+86 130 5204 4828",
+        "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+        "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+        "footer_icp": "浙ICP备2023030316号-1",
+
+        "home": "首页",
+        "wms": "智能仓储管理系统WMS",
+        "wcs": "自动化设备管理系统WCS",
+        "digital": "工业数字孪生系统",
+        "about": "关于我们",
+        "about_title": "关于我们",
+        "company_name": "宁波捷方优制科技有限公司",
+        "about_desc1": "我们的团队由行业精英组成，秉持着以客户需求为核心，通过定制化自动化智能化解决方案，助力企业实现高效运营与可持续发展的使命，致力于为客户注入智能创新动力。同时也为海内外制造型企业提供柔性供应链的软硬件解决方案。核心产品为柔性供应链管理平台及智能仓储解决方案。",
+        "about_desc2": "公司核心技术团队主要来自海内外名校及世界 500 强企业，如：阿里巴巴、Intel等，有优秀的科学家科研背景及丰富的产业经验。公司在人工智能算法、云平台软件架构、物联网技术、软硬件控制集成等关键技术上，取得多项创新成果，带动国内产业高端制造的发展。",
+        "about_desc3": "我们的主要业务包含：自动化仓储硬件设备、智能仓储管理软件WMS、自动化设备管理系统WCS、工业数字孪生系统这四大主要业务板块。",
+        "about_desc4": "作为聚焦人工智能算法的柔性供应链软硬件解决方案商，公司总部坐落于宁波高新区，业务网络覆盖海内外。国内设有重庆商务办事处，海外于马来西亚槟城、澳大利亚悉尼成立合作分公司，构建全球化服务体系。在供应链端，公司于苏州合作及投资数家硬件生产工厂，实现从技术研发到生产落地的全链条布局。",
+        "contact_us": "联系我们",
+        "contact_title": "联系我们",
+        "contact_desc": "如果您对我们的自动化解决方案感兴趣或有任何疑问，请随时与我们联系。我们期待与您开启合作之旅。",
+        "form_name": "姓名",
+        "form_company": "公司名称",
+        "form_phone": "联系方式",
+        "form_subject": "咨询主题",
+        "form_message": "详细问题",
+        "form_submit": "立即提交",
+        "contact_business": "咨询和业务合作",
+        "company_address": "公司地址",
+        "full_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+        "popular_products": "热门产品",
+        "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+        "company_email": "公司邮箱",
+        "company_phone": "+86 130 5204 4828",
+        "copyright": "宁波捷方优制科技有限公司版权所有",
+        "team": "核心团队",
+        "fang_name": "方华韦",
+        "fang_role": "领军人物",
+        "fang_degree": "台湾大学计算机工程研究所博士",
+        "fang_intro1": "宁波捷方优制 创始人CEO，马来西亚JFindX (M) Sdn Bhd 创始人CEO， 上海宾通智能 合伙人CTO，中国科学院宁波材料所 客座教授，西交利物浦大学、香港中文大学 业界导师、访问学者，深耕AI视觉算法、云服务及AloT架构等，拥有多项专利。",
+        "fang_intro2": "获得上海市 东方英才/春申金字塔杰出人才，中国工业互联网二等奖、海聚英才铜奖等国家级奖项，历任各大上市公司企业高管及CTO，如：阿里巴巴高级架构师、滚石CTO、中强光电集团、仁宝集团、Intel、Atos、Oplink等等。",
+        "yan_name": "闫玮成",
+        "yan_role": "AI算法技术负责人",
+        "yan_degree": "悉尼大学 人工智能博士候选人 / 英属哥伦比亚大学 应用科学硕士",
+        "yan_intro": "现任澳大利亚GENAVISTA AI联合创始人，专注生成式AI与计算机视觉，曾任Leonardo.Ai核心成员、Intel资深工程师，推动AI技术产业化。",
+        "ma_name": "马俊捷",
+        "ma_role": "项目负责人",
+        "ma_degree": "华东理工大学计算机硬件本科",
+        "ma_intro": "十余年软件产品管理经验。主导上海标杆供应链、宾通智能等项目，专注物联网与智能供应链解决方案，以高效团队协作推动技术落地。"
+      }
+    };
+
+    let currentLang = localStorage.getItem('language') || 'cn';
+
+    // 核心翻译函数
+    function updateLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('language', lang);
+
+      // 更新所有带翻译标记的元素
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.value = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      // 更新placeholder
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+          element.setAttribute('placeholder', translations[lang][key]);
+        }
+      });
+
+      // 更新按钮显示
+      document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+      // 更新页面标题
+      document.title = translations[lang]['page_title'];
+    }
+
+
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 初始化语言
+      updateLanguage(currentLang);
+      // 显示页面内容
+      document.body.style.visibility = 'visible';
+
+      // 绑定语言切换事件
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = e.target.getAttribute('data-lang');
+          updateLanguage(lang);
+
+          // 手动关闭下拉菜单（Bootstrap5方法）
+          const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+          dropdown.hide();
         });
-  
-        // 初始化Bootstrap下拉组件
-        new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
-  
-        const members = document.querySelectorAll('.team-member');
-        const descriptions = document.querySelectorAll('.member-desc');
-        const pointer = document.querySelector('.member-pointer');
-  
-        // Initialize with 方华韦 as default
-        const defaultMember = document.querySelector('.team-member[data-member="fang"]');
-        const defaultDesc = document.getElementById('fang-desc');
-  
-        // Position pointer for default member immediately
+      });
+
+      // 初始化Bootstrap下拉组件
+      new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+
+      const members = document.querySelectorAll('.team-member');
+      const descriptions = document.querySelectorAll('.member-desc');
+      const pointer = document.querySelector('.member-pointer');
+
+      // Initialize with 方华韦 as default
+      const defaultMember = document.querySelector('.team-member[data-member="fang"]');
+      const defaultDesc = document.getElementById('fang-desc');
+
+      // Position pointer for default member immediately
+      if (defaultMember) {
+        positionPointer(defaultMember);
+      }
+
+      members.forEach(member => {
+        member.addEventListener('mouseenter', function () {
+          // Update active state
+          members.forEach(m => m.classList.remove('active'));
+          this.classList.add('active');
+
+          // Update descriptions
+          const memberId = this.getAttribute('data-member');
+          descriptions.forEach(desc => {
+            desc.style.display = desc.id === memberId + '-desc' ? 'block' : 'none';
+          });
+
+          // Position the pointer
+          positionPointer(this);
+        });
+      });
+
+      function positionPointer(memberElement) {
+        const memberRect = memberElement.getBoundingClientRect();
+        const containerRect = document.querySelector('.team-display-container').getBoundingClientRect();
+
+        // Calculate center position
+        const centerX = memberRect.left + memberRect.width / 2 - containerRect.left;
+        const bottomY = memberRect.bottom - containerRect.top;
+
+        // Position the pointer
+        pointer.style.left = `${centerX - 12}px`;
+        pointer.style.top = `${bottomY + 5}px`;
+        pointer.style.visibility = 'visible';
+      }
+
+      // Initialize pointer position for default member
+      window.addEventListener('load', function () {
         if (defaultMember) {
           positionPointer(defaultMember);
         }
-  
-        members.forEach(member => {
-          member.addEventListener('mouseenter', function () {
-            // Update active state
-            members.forEach(m => m.classList.remove('active'));
-            this.classList.add('active');
-  
-            // Update descriptions
-            const memberId = this.getAttribute('data-member');
-            descriptions.forEach(desc => {
-              desc.style.display = desc.id === memberId + '-desc' ? 'block' : 'none';
-            });
-  
-            // Position the pointer
-            positionPointer(this);
-          });
-        });
-  
-        function positionPointer(memberElement) {
-          const memberRect = memberElement.getBoundingClientRect();
-          const containerRect = document.querySelector('.team-display-container').getBoundingClientRect();
-  
-          // Calculate center position
-          const centerX = memberRect.left + memberRect.width / 2 - containerRect.left;
-          const bottomY = memberRect.bottom - containerRect.top;
-  
-          // Position the pointer
-          pointer.style.left = `${centerX - 12}px`;
-          pointer.style.top = `${bottomY + 5}px`;
-          pointer.style.visibility = 'visible';
-        }
-  
-        // Initialize pointer position for default member
-        window.addEventListener('load', function () {
-          if (defaultMember) {
-            positionPointer(defaultMember);
-          }
-        });
       });
-    </script>
+    });
+  </script>
 </head>
 
 <body>
@@ -603,7 +631,7 @@
               </div>
             </div>
             <div class="col-md-7">
-                <img src="static/picture/home-about2.png" alt="Image" >
+              <img src="static/picture/home-about2.png" alt="Image">
             </div>
           </div>
         </div>
@@ -616,7 +644,7 @@
             <div class="col-lg-12 m-auto">
               <div class="section-title text-center">
                 <!-- <h4 class="subtitle">公司介绍及荣誉</h4> -->
-                <h2 class="title">核心团队</h2>
+                <h2 class="title" data-i18n="team">核心团队</h2>
               </div>
             </div>
           </div>
@@ -633,8 +661,8 @@
                           </div>
                           <div class="content">
                             <div class="member-info">
-                              <h4 class="name">方华韦</h4>
-                              <h6 class="designation">领军人物</h6>
+                              <h4 class="name" data-i18n="fang_name">方华韦</h4>
+                              <h6 class="designation" data-i18n="fang_role">领军人物</h6>
                             </div>
                           </div>
                         </div>
@@ -646,8 +674,8 @@
                           </div>
                           <div class="content">
                             <div class="member-info">
-                              <h4 class="name">闫玮成</h4>
-                              <h6 class="designation">AI算法技术负责人
+                              <h4 class="name" data-i18n="yan_name">闫玮成</h4>
+                              <h6 class="designation" data-i18n="yan_role">AI算法技术负责人
                               </h6>
                             </div>
                           </div>
@@ -660,8 +688,8 @@
                           </div>
                           <div class="content">
                             <div class="member-info">
-                              <h4 class="name">马俊捷</h4>
-                              <h6 class="designation">项目负责人</h6>
+                              <h4 class="name" data-i18n="ma_name">马俊捷</h4>
+                              <h6 class="designation" data-i18n="ma_role">项目负责人</h6>
                             </div>
                           </div>
                         </div>
@@ -677,24 +705,28 @@
             <div class="member-description">
               <div class="description-content">
                 <div id="fang-desc" class="member-desc">
-                  <h4>方华韦</h4>
-                  <h6>领军人物</h6>
-                  <h6>台湾大学计算机工程研究所博士</h6>
-                  <p>宁波捷方优制 创始人CEO，马来西亚JFindX (M) Sdn Bhd 创始人CEO， 上海宾通智能 合伙人CTO，中国科学院宁波材料所 客座教授，西交利物浦大学、香港中文大学 业界导师、访问学者，深耕AI视觉算法、云服务及AloT架构等，拥有多项专利。</p>
-                  <p style="margin-top: 15px;">获得上海市 东方英才/春申金字塔杰出人才，中国工业互联网二等奖、海聚英才铜奖等国家级奖项，历任各大上市公司企业高管及CTO，如：阿里巴巴高级架构师、滚石CTO、中强光电集团、仁宝集团、Intel、Atos、Oplink等等。</p>
+                  <h4 data-i18n="fang_name">方华韦</h4>
+                  <h6 data-i18n="fang_role">领军人物</h6>
+                  <h6 data-i18n="fang_degree">台湾大学计算机工程研究所博士</h6>
+                  <p data-i18n="fang_intro1">宁波捷方优制 创始人CEO，马来西亚JFindX (M) Sdn Bhd 创始人CEO， 上海宾通智能 合伙人CTO，中国科学院宁波材料所
+                    客座教授，西交利物浦大学、香港中文大学 业界导师、访问学者，深耕AI视觉算法、云服务及AloT架构等，拥有多项专利。</p>
+                  <p style="margin-top: 15px;" data-i18n="fang_intro2">获得上海市
+                    东方英才/春申金字塔杰出人才，中国工业互联网二等奖、海聚英才铜奖等国家级奖项，历任各大上市公司企业高管及CTO，如：阿里巴巴高级架构师、滚石CTO、中强光电集团、仁宝集团、Intel、Atos、Oplink等等。
+                  </p>
                 </div>
                 <div id="yan-desc" class="member-desc" style="display:none;">
-                  <h4>闫玮成</h4>
-                  <h6>AI算法技术负责人</h6>
-                  <h6>悉尼大学 人工智能博士候选人 / 英属哥伦比亚大学 应用科学硕士
+                  <h4 data-i18n="yan_name">闫玮成</h4>
+                  <h6 data-i18n="yan_role">AI算法技术负责人</h6>
+                  <h6 data-i18n="yan_degree">悉尼大学 人工智能博士候选人 / 英属哥伦比亚大学 应用科学硕士
                   </h6>
-                  <p>现任澳大利亚GENAVISTA AI联合创始人，专注生成式AI与计算机视觉，曾任Leonardo.Ai核心成员、Intel资深工程师，推动AI技术产业化。</p>
+                  <p data-i18n="yan_intro">现任澳大利亚GENAVISTA AI联合创始人，专注生成式AI与计算机视觉，曾任Leonardo.Ai核心成员、Intel资深工程师，推动AI技术产业化。
+                  </p>
                 </div>
                 <div id="ma-desc" class="member-desc" style="display:none;">
-                  <h4>马俊捷</h4>
-                  <h6>项目负责人</h6>
-                  <h6>华东理工大学计算机硬件本科</h6>
-                  <p>十余年软件产品管理经验。主导上海标杆供应链、宾通智能等项目，专注物联网与智能供应链解决方案，以高效团队协作推动技术落地。</p>
+                  <h4 data-i18n="ma_name">马俊捷</h4>
+                  <h6 data-i18n="ma_role">项目负责人</h6>
+                  <h6 data-i18n="ma_degree">华东理工大学计算机硬件本科</h6>
+                  <p data-i18n="ma_intro">十余年软件产品管理经验。主导上海标杆供应链、宾通智能等项目，专注物联网与智能供应链解决方案，以高效团队协作推动技术落地。</p>
                 </div>
 
               </div>
@@ -751,8 +783,8 @@
                           data-i18n="submenu_rfid">rfid电子标签</span></a>
                     </li>
                     <li><a href="digital.html"><i class="icofont-minus"></i><span
-                      data-i18n="nav_digital">工业数字孪生系统</span></a>
-                </li>
+                          data-i18n="nav_digital">工业数字孪生系统</span></a>
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -763,7 +795,7 @@
                 <nav class="widget-menu-wrap">
                   <ul class="nav-menu nav">
                     <li><a href="index.html"><i class="icofont-minus"></i><span data-i18n="nav_home">首页</span></a></li>
-                    
+
                     <li><a href="cases.html"><i class="icofont-minus"></i><span data-i18n="nav_cases">成功案例</span></a>
                     </li>
                     <li><a href="about.html"><i class="icofont-minus"></i><span

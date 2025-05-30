@@ -27,7 +27,6 @@
     <!--== Main Style CSS ==-->
     <link href="static/css/style.css" rel="stylesheet">
 
-
     <style>
         :root {
             --primary-color: #2A5298;
@@ -326,209 +325,298 @@
             border-left: 4px solid #0d6efd;
         }
     </style>
-        <!-- Scripts -->
-        <script>
-            const translations = {
-                "en": {
-                    "page_heading": "Intelligent Logistics",
-                    "agv.title": "Underride AGV",
-                    "tote.title": "Tote Handling Robot",
-                    "page_title": "Intelligent Warehouse Hardware - JFindX",
-                    "current_lang": "EN",
-                    "alt_logo": "Main Logo of JFINDX",
-                    "alt_logo_light": "Light Logo of JFINDX",
-                    "alt_prev": "Previous Slide",
-                    "alt_next": "Next Slide",
-                    "alt_about1": "Illustration of Intelligent Warehouse Solution",
-                    "alt_about2": "Illustration of System Architecture",
-                    "alt_footer_logo": "Footer Logo",
-                    // Navigation Menu
-                    "nav_home": "Home",
-                    "nav_solution": "OvrSolution",
-                    "nav_software": "AI-FlexSC Software",
-                    "submenu_wms": "Intelligent Warehouse Management System (WMS)",
-                    "submenu_wcs": "Automated Equipment Management System (WCS)",
-                    "nav_hardware": "Logistics",
-                    "submenu_warehouse": "Intelligent Warehouse",
-                    "submenu_logistics": "Intelligent Logistics",
-                    "submenu_warehouse1": "Intelligent Warehousing Equipment",
-                    "submenu_logistics1": "Intelligent logistics equipment",
-                    "submenu_rfid": "RFID Electronic Tags",
-                    "nav_digital": "Digital-Twin",
-                    "nav_cases": "Success Cases",
-                    "nav_about": "About Us",
-                    "submenu_about": "Team Introduction",
-                    "submenu_honor": "Company Honors",
-                    "submenu_contact": "Contact Us",
-                    // Footer
-                    "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
-                    "footer_services": "All Services",
-                    "footer_company_email": "Company Email",
-                    "footer_company_phone": "+86 130 5204 4828",
-                    "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
-                    "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
-                    "footer_icp": "Zhejiang ICP No. 2023030316-1",
-    
-                    "hero_title": "Smart Warehouse Solutions",
-                    "hero_subtitle": "Automation | Intelligence | Modular Design",
-                    "core_hardware": "Core Equipment",
-                    "hardware_desc": "Modular Design · Flexible Configuration · Rapid Deployment",
-                    "technical_specs": "Technical Specifications",
-                    "features": "Key Features",
-                    "applications": "Applications",
-                    "equipment1.title": "Pallet Stacker Crane",
-                    "equipment1.type": "Heavy-duty Storage",
-                    "equipment1.feature1": "Double-deep fork design increases storage density by 40%",
-                    "application.manufacturing": "Automotive Manufacturing",
-                    "application.bulk_storage": "Bulk Storage",
-                    "tech_comparison": "Technical Comparison",
-                    "comparison_desc": "Performance Comparison",
-                    "parameter": "Parameter",
-                    "spec.max_speed": "Max Speed",
-                    "spec.max_load": "Max Load",
-                    "workflow_title": "Standard Workflow",
-                    "workflow_desc": "Intelligent Operation Process",
-                    "step1_title": "Command Receiving",
-                    "step1_desc": "WMS system issues operation commands",
-                    "cta_title": "Start Smart Transformation",
-                    "cta_desc": "Get Customized Solution Consultation",
-                    "contact_us": "Contact Now"
-                },
-                "cn": {
-                    "page_heading": "智能物流",
-                    "agv.title": "潜伏式搬运AGV",
-                    "tote.title": "料箱搬运机器人",
-                    "page_title": "智能仓储硬件设备 - 捷方优制",
-                    // 通用
-                    "current_lang": "CN",
-                    "alt_logo": "捷方优制主Logo",
-                    "alt_logo_light": "捷方优制浅色Logo",
-                    "alt_prev": "上一张幻灯片",
-                    "alt_next": "下一张幻灯片",
-                    "alt_about1": "智能仓储解决方案图示",
-                    "alt_about2": "系统架构图示",
-                    "alt_footer_logo": "页脚Logo",
-                    // 导航菜单
-                    "nav_home": "首页",
-                    "nav_solution": "整体解决方案",
-                    "nav_software": "AI柔性供应链软件",
-                    "submenu_wms": "智能仓储管理系统WMS",
-                    "submenu_wcs": "自动化设备管理系统WCS",
-                    "nav_hardware": "智能仓储物流硬件",
-                    "submenu_warehouse": "智能仓储",
-                    "submenu_logistics": "智能物流",
-                    "submenu_warehouse1": "智能仓储设备",
-                    "submenu_logistics1": "智能物流设备",
-                    "submenu_rfid": "RFID电子标签",
-                    "nav_digital": "数字孪生系统",
-                    "nav_cases": "成功案例",
-                    "nav_about": "关于我们",
-                    "submenu_about": "团队介绍",
-                    "submenu_honor": "公司荣誉",
-                    "submenu_contact": "联系我们",
-                    // 页脚
-                    "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
-                    "footer_services": "所有服务",
-                    "footer_company_email": "公司邮箱",
-                    "footer_company_phone": "+86 130 5204 4828",
-                    "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
-                    "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
-                    "footer_icp": "浙ICP备2023030316号-1",
-    
-                    "hero_title": "智能仓储解决方案",
-                    "hero_subtitle": "自动化｜智能化｜模块化设计",
-                    "core_hardware": "核心设备",
-                    "hardware_desc": "模块化设计·灵活配置·快速部署",
-                    "technical_specs": "技术参数",
-                    "features": "功能特性",
-                    "applications": "应用场景",
-                    "equipment1.title": "托盘堆垛机",
-                    "equipment1.type": "重型存储",
-                    "equipment1.feature1": "双深位货叉设计提升40%存储密度",
-                    "application.manufacturing": "汽车制造",
-                    "application.bulk_storage": "大宗仓储",
-                    "tech_comparison": "技术参数对比",
-                    "comparison_desc": "多设备性能横向对比",
-                    "parameter": "参数",
-                    "spec.max_speed": "最大速度",
-                    "spec.max_load": "最大载荷",
-                    "workflow_title": "标准作业流程",
-                    "workflow_desc": "智能化操作流程管理",
-                    "step1_title": "指令接收",
-                    "step1_desc": "WMS系统下发作业指令",
-                    "cta_title": "开启智能仓储转型",
-                    "cta_desc": "获取定制化解决方案咨询",
-                    "contact_us": "立即咨询"
-                }
-            };
-    
-            let currentLang = localStorage.getItem('language') || 'cn';
-    
-            // 核心翻译函数
-            function updateLanguage(lang) {
-                currentLang = lang;
-                localStorage.setItem('language', lang);
-    
-                // 更新所有带翻译标记的元素
-                document.querySelectorAll('[data-i18n]').forEach(element => {
-                    const key = element.getAttribute('data-i18n');
-                    if (translations[lang][key]) {
-                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                            element.value = translations[lang][key];
-                        } else {
-                            element.textContent = translations[lang][key];
-                        }
-                    }
-                });
-    
-                // 更新placeholder
-                document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-                    const key = element.getAttribute('data-i18n-placeholder');
-                    if (translations[lang][key]) {
-                        element.setAttribute('placeholder', translations[lang][key]);
-                    }
-                });
-    
-                // 更新按钮显示
-                document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
-    
-                // 更新页面标题
-                document.title = translations[lang]['page_title'];
+    <!-- Scripts -->
+    <script>
+        const translations = {
+            "en": {
+                "page_heading": "Intelligent Logistics",
+                "page_subheading": "Flexible Handling | Intelligent Scheduling | Unmanned Operation",
+                "agv.title": "Under-ride Automated Guided Vehicle (AGV)",
+                "agv.type": "Expert in Flexible Handling",
+                "tote.title": "Tote Handling Robot",
+                "page_title": "Intelligent Warehouse Hardware Equipment - JFindX",
+                "current_lang": "EN",
+                "alt_logo": "Main Logo of JFINDX",
+                "alt_logo_light": "Light Logo of JFINDX",
+                "alt_prev": "Previous Slide",
+                "alt_next": "Next Slide",
+                "alt_about1": "Illustration of Intelligent Warehouse Solution",
+                "alt_about2": "Illustration of System Architecture",
+                "alt_footer_logo": "Footer Logo",
+                // Navigation Menu
+                "nav_home": "Home",
+                "nav_solution": "Overall Solution",
+                "nav_software": "AI-FlexSC Software",
+                "submenu_wms": "Intelligent Warehouse Management System (WMS)",
+                "submenu_wcs": "Automated Equipment Management System (WCS)",
+                "nav_hardware": "Logistics",
+                "submenu_warehouse": "Intelligent Warehouse",
+                "submenu_logistics": "Intelligent Logistics",
+                "submenu_warehouse1": "Intelligent Warehousing Equipment",
+                "submenu_logistics1": "Intelligent logistics equipment",
+                "submenu_rfid": "RFID Electronic Tags",
+                "nav_digital": "Digital-Twin",
+                "nav_cases": "Success Cases",
+                "nav_about": "About Us",
+                "submenu_about": "Team Introduction",
+                "submenu_honor": "Company Honors",
+                "submenu_contact": "Contact Us",
+                // Footer
+                "footer_desc": "JFindX - Automation Solution Expert, customizing the most suitable automation solutions for you, covering full-service from hardware devices to software systems.",
+                "footer_services": "All Services",
+                "footer_company_email": "Company Email",
+                "footer_company_phone": "+86 130 5204 4828",
+                "footer_company_address": "2nd Floor, Building F1, Hangzhou Bay Intelligent Industrial Park, Baisha Road Street, Cixi City, Ningbo City, Zhejiang Province",
+                "footer_copyright": "© 2023 Ningbo Jiefang Youzhi Technology Co., Ltd. All rights reserved",
+                "footer_icp": "Zhejiang ICP No. 2023030316-1",
+                "core_equipment": "Core Logistics Equipment",
+                "equipment_desc": "Autonomous Navigation | Cluster Scheduling | 24/7 Operation",
+                "technical_specs": "Technical Specifications",
+                "features": "Key Features",
+                "applications": "Applications",
+                "equipment1.title": "Pallet Stacker Crane",
+                "equipment1.type": "Heavy-duty Storage",
+                "equipment1.feature1": "Double-deep fork design increases storage density by 40%",
+                "application.manufacturing": "Automotive Manufacturing",
+                "application.bulk_storage": "Bulk Storage",
+                "tech_comparison": "Technical Comparison",
+                "comparison_desc": "Performance Comparison",
+                "parameter": "Parameter",
+                "spec.max_speed": "Max Speed",
+                "spec.max_load": "Max Load",
+                "workflow_title": "Standard Workflow",
+                "workflow_desc": "Intelligent Operation Process",
+                "step1_title": "Command Receiving",
+                "step1_desc": "WMS system issues operation commands",
+                "cta_title": "Start Smart Transformation",
+                "cta_desc": "Get Customized Solution Consultation",
+                "contact_us": "Contact Now",
+                "agv.feature1": "SLAM Navigation Technology",
+                "agv.feature1_desc": "±10mm positioning accuracy, no reflector required",
+                "agv.feature2": "Intelligent Charging System",
+                "agv.app1": "Production Line Distribution",
+                "agv.app2": "Wharf Loading and Unloading",
+                "tote.type": "Goods-to-Person Picking",
+                "tote.feature1": "3D Visual Recognition",
+                "tote.feature1_desc": "±2mm grasping accuracy, 99.9% recognition rate",
+                "tote.feature2": "Multi-Robot Collaboration System",
+                "tote.app1": "E-commerce Sorting",
+                "tote.app2": "Pharmaceutical Logistics",
+                "agv.features": "Core Advantages",
+                "tote.features": "Outstanding Features",
+                "basic_spec": "Basic Specifications",
+                "performance": "Performance Indicators",
+                "spec.load": "Load Capacity",
+                "spec.load.num": "50kg/ box",
+                "spec.navigation": "Navigation mode",
+                "spec.navigation.slam": "Laser slam",
+                "spec.navigation.er": "QR Code + Inertial Navigation",
+                "spec.speed": "Operating Speed",
+                "spec.accuracy": "Positioning Accuracy",
+                "workflow": "Intelligent Workflow",
+                "phase1": "Order Receiving",
+                "phase1_desc": "WMS/WCS issues transport task commands",
+                "agv_action": "AGV: Task queue management",
+                "tote_action": "Robot: Slot allocation",
+                "phase2": "Path Planning",
+                "phase2_desc": "Dynamic traffic control algorithm",
+                "agv_path": "AGV: A* dynamic pathfinding",
+                "tote_path": "Robot: Aisle priority strategy",
+                "phase3": "Execution",
+                "phase3_desc": "Real-time status monitoring",
+                "agv_exec": "AGV: Automatic charging scheduling",
+                "tote_exec": "Robot: Vision-assisted grasping",
+                "phase4": "Completion Feedback",
+                "phase4_desc": "Data transmission and recording",
+                "agv_feedback": "AGV: Trajectory log generation",
+                "tote_feedback": "Robot: Operation image archiving",
+                "cta_subtitle": "Professional team to customize solutions for you",
+                "book_demo": "Book Demo",
+                "charging_time": "Charging time",
+                "charging_time.num": "90 minutes",
+                "charging_time.desc": "Supports automatic charging and has a battery life of over 8 hours",
+                "lifting_height": "Lifting Height",
+                "processing_capacity": "Processing capacity",
+                "processing_capacity.desc": " Support the operation of over 50 robot clusters",
+                "processing_capacity.num": "800 boxes per hour"
+            },
+            "cn": {
+                "page_heading": "智能物流",
+                "page_subheading": "柔性搬运｜智能调度｜无人化作业",
+                "agv.title": "潜伏式搬运AGV",
+                "agv.type": "柔性搬运专家",
+                "tote.title": "料箱搬运机器人",
+                "page_title": "智能仓储硬件设备 - 捷方优制",
+                "current_lang": "CN",
+                "alt_logo": "捷方优制主Logo",
+                "alt_logo_light": "捷方优制浅色Logo",
+                "alt_prev": "上一张幻灯片",
+                "alt_next": "下一张幻灯片",
+                "alt_about1": "智能仓储解决方案图示",
+                "alt_about2": "系统架构图示",
+                "alt_footer_logo": "页脚Logo",
+                // 导航菜单
+                "nav_home": "首页",
+                "nav_solution": "整体解决方案",
+                "nav_software": "AI柔性供应链软件",
+                "submenu_wms": "智能仓储管理系统WMS",
+                "submenu_wcs": "自动化设备管理系统WCS",
+                "nav_hardware": "智能仓储物流硬件",
+                "submenu_warehouse": "智能仓储",
+                "submenu_logistics": "智能物流",
+                "submenu_warehouse1": "智能仓储设备",
+                "submenu_logistics1": "智能物流设备",
+                "submenu_rfid": "RFID电子标签",
+                "nav_digital": "数字孪生系统",
+                "nav_cases": "成功案例",
+                "nav_about": "关于我们",
+                "submenu_about": "团队介绍",
+                "submenu_honor": "公司荣誉",
+                "submenu_contact": "联系我们",
+                // 页脚
+                "footer_desc": "JFindX - 自动化解决方案专家，为您量身定制最适合的自动化方案，涵盖从硬件设备到软件系统的全方位服务。",
+                "footer_services": "所有服务",
+                "footer_company_email": "公司邮箱",
+                "footer_company_phone": "+86 130 5204 4828",
+                "footer_company_address": "浙江省宁波市慈溪市白沙路街道环杭州湾智能产业园F1栋2层",
+                "footer_copyright": "© 2023 宁波捷方优制科技有限公司版权所有",
+                "footer_icp": "浙ICP备2023030316号-1",
+                "core_equipment": "核心物流设备",
+                "equipment_desc": "自主导航｜集群调度｜7×24小时运行",
+                "technical_specs": "技术参数",
+                "features": "功能特性",
+                "applications": "应用场景",
+                "equipment1.title": "托盘堆垛机",
+                "equipment1.type": "重型存储",
+                "equipment1.feature1": "双深位货叉设计提升40%存储密度",
+                "application.manufacturing": "汽车制造",
+                "application.bulk_storage": "大宗仓储",
+                "tech_comparison": "技术参数对比",
+                "comparison_desc": "多设备性能横向对比",
+                "parameter": "参数",
+                "spec.max_speed": "最大速度",
+                "spec.max_load": "最大载荷",
+                "workflow_title": "标准作业流程",
+                "workflow_desc": "智能化操作流程管理",
+                "step1_title": "指令接收",
+                "step1_desc": "WMS系统下发作业指令",
+                "cta_title": "开启智能仓储转型",
+                "cta_desc": "获取定制化解决方案咨询",
+                "contact_us": "立即咨询",
+                "agv.feature1": "SLAM导航技术",
+                "agv.feature1_desc": "±10mm定位精度，无需反光板",
+                "agv.feature2": "智能充电系统",
+                "agv.app1": "产线配送",
+                "agv.app2": "码头装卸",
+                "tote.type": "货到人拣选",
+                "tote.feature1": "三维视觉识别",
+                "tote.feature1_desc": "±2mm抓取精度，99.9%识别率",
+                "tote.feature2": "多机协作系统",
+                "tote.app1": "电商分拣",
+                "tote.app2": "医药物流",
+                "agv.features": "核心优势",
+                "tote.features": "卓越特性",
+                "basic_spec": "基础参数",
+                "performance": "性能指标",
+                "spec.load": "额定载荷",
+                "spec.load.num": "50kg/箱",
+                "spec.navigation": "导航方式",
+                "spec.navigation.slam": "激光SLAM",
+                "spec.navigation.er": "二维码+惯性导航",
+                "spec.speed": "运行速度",
+                "spec.accuracy": "定位精度",
+                "workflow": "智能作业流程",
+                "phase1": "订单接收",
+                "phase1_desc": "WMS/WCS下发搬运任务指令",
+                "agv_action": "AGV：任务队列管理",
+                "tote_action": "机器人：货位分配",
+                "phase2": "路径规划",
+                "phase2_desc": "动态交通管制算法",
+                "agv_path": "AGV：A*动态寻路",
+                "tote_path": "机器人：巷道优先策略",
+                "phase3": "执行搬运",
+                "phase3_desc": "实时状态监控",
+                "agv_exec": "AGV：自动充电调度",
+                "tote_exec": "机器人：视觉辅助抓取",
+                "phase4": "完成反馈",
+                "phase4_desc": "数据回传与记录",
+                "agv_feedback": "AGV：轨迹日志生成",
+                "tote_feedback": "机器人：操作图像存档",
+                "cta_subtitle": "专业团队为您定制解决方案",
+                "book_demo": "立即咨询",
+                "charging_time": "充电时间",
+                "charging_time.num": "90分钟",
+                "charging_time.desc": "支持自动充电，续航时间8h+",
+                "lifting_height": "提升高度",
+                "processing_capacity": "处理能力",
+                "processing_capacity.desc": "支持50+机器人集群作业",
+                "processing_capacity.num": "800箱/小时"
             }
-    
-    
-    
-             // 初始化
-        document.addEventListener('DOMContentLoaded', () => {
-          // 初始化语言
-          updateLanguage(currentLang);
-          // 显示页面内容
-          document.body.style.visibility = 'visible';
-    
-          // 绑定语言切换事件
-          document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', (e) => {
-              e.preventDefault();
-              const lang = e.target.getAttribute('data-lang');
-              updateLanguage(lang);
-    
-              // 手动关闭下拉菜单（Bootstrap5方法）
-              const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
-              dropdown.hide();
+        };
+
+        let currentLang = localStorage.getItem('language') || 'cn';
+
+        // 核心翻译函数
+        function updateLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            // 更新所有带翻译标记的元素
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
             });
-          });
-    
-          // 初始化Bootstrap下拉组件
-          new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
+
+            // 更新placeholder
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    element.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+
+            // 更新按钮显示
+            document.querySelector('#dropdownLang').textContent = lang.toUpperCase();
+
+            // 更新页面标题
+            document.title = translations[lang]['page_title'];
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 初始化语言
+            updateLanguage(currentLang);
+            // 显示页面内容
+            document.body.style.visibility = 'visible';
+
+            // 绑定语言切换事件
+            document.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = e.target.getAttribute('data-lang');
+                    updateLanguage(lang);
+
+                    // 手动关闭下拉菜单（Bootstrap5方法）
+                    const dropdown = bootstrap.Dropdown.getInstance(document.querySelector('#dropdownLang'));
+                    dropdown.hide();
+                });
+            });
+
+            // 初始化Bootstrap下拉组件
+            new bootstrap.Dropdown(document.querySelector('#dropdownLang'));
         });
-        </script>
+    </script>
 </head>
 
 <body>
-
     <!--wrapper start-->
     <div class="wrapper page-blog-details-wrapper">
-
         <!--== Start Header Wrapper ==-->
         <header class="header-wrapper">
             <div class="header-area header-default header-transparent sticky-header">
@@ -617,6 +705,7 @@
                 </div>
                 <div class="bg-overlay3"></div>
             </section>
+
             <!-- 核心设备展示 -->
             <section class="section-padding bg-light">
                 <div class="container">
@@ -652,14 +741,16 @@
                                             <i class="bi bi-geo-alt text-primary me-2 mt-1"></i>
                                             <div>
                                                 <h6 data-i18n="agv.feature1">SLAM导航技术</h6>
-                                                <p class="text-muted mb-0">±10mm定位精度，无需反光板</p>
+                                                <p class="text-muted mb-0" data-i18n="agv.feature1_desc">±10mm定位精度，无需反光板
+                                                </p>
                                             </div>
                                         </li>
                                         <li class="mb-3 d-flex">
                                             <i class="bi bi-lightning-charge text-primary me-2 mt-1"></i>
                                             <div>
                                                 <h6 data-i18n="agv.feature2">智能充电系统</h6>
-                                                <p class="text-muted mb-0">支持自动充电，续航时间8h+</p>
+                                                <p class="text-muted mb-0" data-i18n="charging_time.desc">支持自动充电，续航时间8h+
+                                                </p>
                                             </div>
                                         </li>
                                     </ul>
@@ -670,15 +761,15 @@
                                             <div class="col-6 col-md-4">
                                                 <div class="spec-card text-center p-3">
                                                     <i class="bi bi-speedometer2 fs-4 text-primary"></i>
-                                                    <div class="text-muted small">最大速度</div>
+                                                    <div class="text-muted small" data-i18n="spec.max_speed">最大速度</div>
                                                     <strong>1.5m/s</strong>
                                                 </div>
                                             </div>
                                             <div class="col-6 col-md-4">
                                                 <div class="spec-card text-center p-3">
                                                     <i class="bi bi-battery-charging fs-4 text-primary"></i>
-                                                    <div class="text-muted small">充电时间</div>
-                                                    <strong>90分钟</strong>
+                                                    <div class="text-muted small" data-i18n="charging_time">充电时间</div>
+                                                    <strong data-i18n="charging_time.num">90分钟</strong>
                                                 </div>
                                             </div>
                                         </div>
@@ -728,39 +819,43 @@
                                             <i class="bi bi-grid-3x3 text-warning me-2 mt-1"></i>
                                             <div>
                                                 <h6 data-i18n="tote.feature1">三维视觉识别</h6>
-                                                <p class="text-muted mb-0">±2mm抓取精度，99.9%识别率</p>
+                                                <p class="text-muted mb-0" data-i18n="tote.feature1_desc">
+                                                    ±2mm抓取精度，99.9%识别率</p>
                                             </div>
                                         </li>
                                         <li class="mb-3 d-flex">
                                             <i class="bi bi-shuffle text-warning me-2 mt-1"></i>
                                             <div>
                                                 <h6 data-i18n="tote.feature2">多机协作系统</h6>
-                                                <p class="text-muted mb-0">支持50+机器人集群作业</p>
+                                                <p class="text-muted mb-0" data-i18n="processing_capacity.desc">
+                                                    支持50+机器人集群作业
+                                                </p>
                                             </div>
                                         </li>
                                     </ul>
 
                                     <div class="specs-dashboard bg-light p-4 mt-4 rounded-4">
-                                        <h5>技术参数</h5>
+                                        <h5 data-i18n="technical_specs">技术参数</h5>
                                         <div class="row g-3">
                                             <div class="col-6 col-md-4">
                                                 <div class="spec-card text-center p-3">
                                                     <i class="bi bi-arrows-move fs-4 text-warning"></i>
-                                                    <div class="text-muted small">提升高度</div>
+                                                    <div class="text-muted small" data-i18n="lifting_height">提升高度</div>
                                                     <strong>4.5m</strong>
                                                 </div>
                                             </div>
                                             <div class="col-6 col-md-4">
                                                 <div class="spec-card text-center p-3">
                                                     <i class="bi bi-cpu fs-4 text-warning"></i>
-                                                    <div class="text-muted small">处理能力</div>
-                                                    <strong>800箱/小时</strong>
+                                                    <div class="text-muted small" data-i18n="processing_capacity">处理能力
+                                                    </div>
+                                                    <strong data-i18n="processing_capacity.num">800箱/小时</strong>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <h4 class="mt-5 gradient-text">应用场景</h4>
+                                    <h4 class="mt-5 gradient-text" data-i18n="applications">应用场景</h4>
                                     <div class="d-flex flex-wrap gap-3 mt-3">
                                         <div class="app-badge">
                                             <i class="bi bi-cart4 me-2"></i>
@@ -782,8 +877,8 @@
             <section class="section-padding">
                 <div class="container">
                     <div class="text-center mb-5">
-                        <h2 data-i18n="tech_compare">技术参数对比</h2>
-                        <p class="text-muted" data-i18n="compare_desc">物流设备性能横向对比</p>
+                        <h2 data-i18n="tech_comparison">技术参数对比</h2>
+                        <p class="text-muted" data-i18n="comparison_desc">物流设备性能横向对比</p>
                     </div>
 
                     <div class="table-responsive">
@@ -802,12 +897,12 @@
                                 <tr>
                                     <td data-i18n="spec.load">额定载荷</td>
                                     <td>1000kg</td>
-                                    <td>50kg/箱</td>
+                                    <td data-i18n="spec.load.num">50kg/箱</td>
                                 </tr>
                                 <tr>
                                     <td data-i18n="spec.navigation">导航方式</td>
-                                    <td>激光SLAM</td>
-                                    <td>二维码+惯性导航</td>
+                                    <td data-i18n="spec.navigation.slam">激光SLAM</td>
+                                    <td data-i18n="spec.navigation.er">二维码+惯性导航</td>
                                 </tr>
 
                                 <tr class="table-primary">
@@ -841,7 +936,7 @@
                         <!-- 订单接收 -->
                         <div class="col-md-6 col-lg-3">
                             <div class="phase-card card-hover text-center p-4">
-                                <div class=" bg-primary">1</div>
+                                <div class="phase-number bg-primary">1</div>
                                 <h5 class="my-3" data-i18n="phase1">订单接收</h5>
                                 <p class="text-muted" data-i18n="phase1_desc">WMS/WCS下发搬运任务指令</p>
                                 <div class="nav-indicator p-2 mt-3">
@@ -893,7 +988,6 @@
                 </div>
             </section>
 
-
             <!--== 底部CTA ==-->
             <section class="divider-area divider-default-area">
                 <div class="container">
@@ -919,6 +1013,7 @@
                 </div>
             </section>
         </main>
+
         <!--== Start Footer Area Wrapper ==-->
         <footer class="footer-area default-style">
             <div class="footer-main">
@@ -941,13 +1036,11 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- 页脚其他区块保持原样 -->
                         <div class="col-md-6 col-lg-3 offset-lg-0 col-xl-3 offset-xl-1">
                             <div class="widget-item">
                                 <h4 class="widget-title" data-i18n="footer_services">所有服务</h4>
                                 <nav class="widget-menu-wrap">
                                     <ul class="nav-menu nav">
-
                                         <li><a href="solution.html"><i class="icofont-minus"></i><span
                                                     data-i18n="nav_solution">解决方案</span></a>
                                         </li>
@@ -1068,8 +1161,8 @@
                                 </ul>
                             </li>
                             <li><a href="digital.html" data-i18n="nav_digital">数字孪生系统</a></li>
-                            <li><a href="cases.html"" data-i18n=" nav_cases">成功案例</a></li>
-                            <li><a href=" javascript:void(0)" data-i18n="nav_about">关于我们</a>
+                            <li><a href="cases.html" data-i18n="nav_cases">成功案例</a></li>
+                            <li><a href="javascript:void(0)" data-i18n="nav_about">关于我们</a>
                                 <ul>
                                     <li><a href="about.html" data-i18n="submenu_about">团队介绍</a></li>
                                     <li><a href="honor.html" data-i18n="submenu_honor">公司荣誉</a></li>
@@ -1086,8 +1179,6 @@
     </div>
 
     <!--=======================Javascript============================-->
-
-
     <!--=== Modernizr Min Js ===-->
     <script src="static/js/modernizr.js"></script>
     <!--=== jQuery Min Js ===-->

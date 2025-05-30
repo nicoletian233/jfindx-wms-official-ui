@@ -8773,3 +8773,6 @@ table p {
   gap: 15px;
   margin: 15px 0;
 }
+.phase-number {
+  color: #fff;
+}
